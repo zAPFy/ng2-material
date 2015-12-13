@@ -1,0 +1,85 @@
+[
+  {
+    "name": "Card",
+    "examples": [
+      {
+        "template": "examples/components/card/action_buttons.html",
+        "styles": "examples/components/card/action_buttons.scss",
+        "source": "examples/components/card/action_buttons.ts",
+        "component": "card-action-buttons",
+        "name": "Action Buttons"
+      },
+      {
+        "template": "examples/components/card/basic_usage.html",
+        "styles": "examples/components/card/basic_usage.scss",
+        "source": "examples/components/card/basic_usage.ts",
+        "component": "card-basic-usage",
+        "name": "Basic Usage"
+      },
+      {
+        "template": "examples/components/card/inline_actions.html",
+        "styles": "examples/components/card/inline_actions.scss",
+        "source": "examples/components/card/inline_actions.ts",
+        "component": "card-inline-actions",
+        "name": "Inline Actions"
+      }
+    ]
+  },
+  {
+    "name": "Progress Circular",
+    "examples": [
+      {
+        "template": "examples/components/progress_circular/basic_usage.html",
+        "source": "examples/components/progress_circular/basic_usage.ts",
+        "component": "progress-circular-basic-usage",
+        "name": "Basic Usage"
+      }
+    ]
+  },
+  {
+    "name": "Progress Linear",
+    "examples": [
+      {
+        "template": "examples/components/progress_linear/basic_usage.html",
+        "source": "examples/components/progress_linear/basic_usage.ts",
+        "component": "progress-linear-basic-usage",
+        "name": "Basic Usage"
+      }
+    ]
+  },
+  {
+    "name": "Radio",
+    "examples": [
+      {
+        "template": "examples/components/radio/basic_usage.html",
+        "styles": "examples/components/radio/basic_usage.scss",
+        "source": "examples/components/radio/basic_usage.ts",
+        "component": "radio-basic-usage",
+        "name": "Basic Usage"
+      }
+    ]
+  },
+  {
+    "name": "Switch",
+    "examples": [
+      {
+        "template": "examples/components/switch/basic_usage.html",
+        "source": "examples/components/switch/basic_usage.ts",
+        "component": "switch-basic-usage",
+        "name": "Basic Usage"
+      }
+    ]
+  },
+  {
+    "name": "Toolbar",
+    "examples": [
+      {
+        "template": "examples/components/toolbar/basic_usage.html",
+        "styles": "examples/components/toolbar/basic_usage.scss",
+        "source": "examples/components/toolbar/basic_usage.ts",
+        "component": "toolbar-basic-usage",
+        "name": "Basic Usage"
+      }
+    ]
+  }
+]

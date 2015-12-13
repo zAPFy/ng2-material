@@ -1,0 +1,74 @@
+/*
+Error: Undefined variable: "$layout-gutter-width".
+        on line 33 of layout.scss
+
+28: }
+29: 
+30: [layout-padding] > [flex-sm],
+31: [layout-padding] > [flex-lt-md]
+32: {
+33:   padding: $layout-gutter-width / 4;
+34: }
+35: [layout-padding],
+36: [layout-padding] > [flex],
+37: [layout-padding] > [flex-gt-sm],
+38: [layout-padding] > [flex-md],
+
+Backtrace:
+layout.scss:33
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/script/tree/variable.rb:49:in `_perform'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/script/tree/node.rb:50:in `perform'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/script/tree/operation.rb:64:in `_perform'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/script/tree/node.rb:50:in `perform'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:394:in `visit_prop'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/stack.rb:79:in `block in with_base'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/stack.rb:79:in `with_base'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `block (2 levels) in visit_rule'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `map'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `block in visit_rule'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/stack.rb:79:in `block in with_base'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/stack.rb:79:in `with_base'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/engine.rb:295:in `render_with_sourcemap'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/plugin.rb:82:in `update_stylesheets'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/exec/sass_scss.rb:364:in `watch_or_update'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/exec/base.rb:52:in `parse'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/lib/sass/exec/base.rb:19:in `parse!'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448@global/gems/sass-3.4.16/bin/scss:13:in `<top (required)>'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448/bin/scss:19:in `load'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448/bin/scss:19:in `<main>'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448/bin/ruby_executable_hooks:15:in `eval'
+/Users/justindujardin/.rvm/gems/ruby-1.9.3-p448/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$layout-gutter-width\".\A         on line 33 of layout.scss\A \A 28: }\A 29: \A 30: [layout-padding] > [flex-sm],\A 31: [layout-padding] > [flex-lt-md]\A 32: {\A 33:   padding: $layout-gutter-width / 4;\A 34: }\A 35: [layout-padding],\A 36: [layout-padding] > [flex],\A 37: [layout-padding] > [flex-gt-sm],\A 38: [layout-padding] > [flex-md],"; }

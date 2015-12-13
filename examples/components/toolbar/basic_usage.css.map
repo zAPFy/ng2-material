@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,MAAO;EACL,KAAK,EAAE,WAAW",
+"sources": ["basic_usage.scss"],
+"names": [],
+"file": "basic_usage.css"
+}

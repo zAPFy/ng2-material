@@ -1,0 +1,145 @@
+md-progress-circular {
+  display: block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  padding-top: 0 !important;
+  margin-bottom: 0 !important;
+  z-index: 2; }
+  md-progress-circular .md-spinner-wrapper {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%; }
+    md-progress-circular .md-spinner-wrapper .md-inner {
+      width: 100px;
+      height: 100px;
+      position: relative; }
+      md-progress-circular .md-spinner-wrapper .md-inner .md-gap {
+        position: absolute;
+        left: 49px;
+        right: 49px;
+        top: 0;
+        bottom: 0;
+        border-top-width: 10px;
+        border-top-style: solid;
+        box-sizing: border-box; }
+      md-progress-circular .md-spinner-wrapper .md-inner .md-left, md-progress-circular .md-spinner-wrapper .md-inner .md-right {
+        position: absolute;
+        top: 0;
+        height: 100px;
+        width: 50px;
+        overflow: hidden; }
+        md-progress-circular .md-spinner-wrapper .md-inner .md-left .md-half-circle, md-progress-circular .md-spinner-wrapper .md-inner .md-right .md-half-circle {
+          position: absolute;
+          top: 0;
+          width: 100px;
+          height: 100px;
+          box-sizing: border-box;
+          border-width: 10px;
+          border-style: solid;
+          border-bottom-color: transparent;
+          border-radius: 50%; }
+      md-progress-circular .md-spinner-wrapper .md-inner .md-left {
+        left: 0; }
+        md-progress-circular .md-spinner-wrapper .md-inner .md-left .md-half-circle {
+          left: 0;
+          border-right-color: transparent; }
+      md-progress-circular .md-spinner-wrapper .md-inner .md-right {
+        right: 0; }
+        md-progress-circular .md-spinner-wrapper .md-inner .md-right .md-half-circle {
+          right: 0;
+          border-left-color: transparent; }
+  md-progress-circular .md-mode-indeterminate .md-spinner-wrapper {
+    animation: outer-rotate 2.91667s linear infinite; }
+    md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner {
+      animation: sporadic-rotate 5.25s cubic-bezier(0.35, 0, 0.25, 1) infinite; }
+      md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner .md-left .md-half-circle, md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner .md-right .md-half-circle {
+        animation-iteration-count: infinite;
+        animation-duration: 1.3125s;
+        animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1); }
+      md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner .md-left .md-half-circle {
+        animation-name: left-wobble; }
+      md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner .md-right .md-half-circle {
+        animation-name: right-wobble; }
+  md-progress-circular md-progress-circular.ng-hide .md-spinner-wrapper {
+    animation: none; }
+    md-progress-circular md-progress-circular.ng-hide .md-spinner-wrapper .md-inner {
+      animation: none; }
+      md-progress-circular md-progress-circular.ng-hide .md-spinner-wrapper .md-inner .md-left .md-half-circle {
+        animation-name: none; }
+      md-progress-circular md-progress-circular.ng-hide .md-spinner-wrapper .md-inner .md-right .md-half-circle {
+        animation-name: none; }
+  md-progress-circular .md-spinner-wrapper.ng-hide {
+    animation: none; }
+    md-progress-circular .md-spinner-wrapper.ng-hide .md-inner {
+      animation: none; }
+      md-progress-circular .md-spinner-wrapper.ng-hide .md-inner .md-left .md-half-circle {
+        animation-name: none; }
+      md-progress-circular .md-spinner-wrapper.ng-hide .md-inner .md-right .md-half-circle {
+        animation-name: none; }
+
+@keyframes outer-rotate {
+  0% {
+    transform: rotate(0deg) scale(0.5); }
+  100% {
+    transform: rotate(360deg) scale(0.5); } }
+@keyframes left-wobble {
+  0%, 100% {
+    transform: rotate(130deg); }
+  50% {
+    transform: rotate(-5deg); } }
+@keyframes right-wobble {
+  0%, 100% {
+    transform: rotate(-130deg); }
+  50% {
+    transform: rotate(5deg); } }
+@keyframes sporadic-rotate {
+  12.5% {
+    transform: rotate(135deg); }
+  25% {
+    transform: rotate(270deg); }
+  37.5% {
+    transform: rotate(405deg); }
+  50% {
+    transform: rotate(540deg); }
+  62.5% {
+    transform: rotate(675deg); }
+  75% {
+    transform: rotate(810deg); }
+  87.5% {
+    transform: rotate(945deg); }
+  100% {
+    transform: rotate(1080deg); } }
+md-progress-circular {
+  background-color: transparent; }
+  md-progress-circular .md-inner .md-gap {
+    border-top-color: #3f51b5;
+    border-bottom-color: #3f51b5; }
+  md-progress-circular .md-inner .md-left .md-half-circle, md-progress-circular .md-inner .md-right .md-half-circle {
+    border-top-color: #3f51b5; }
+  md-progress-circular .md-inner .md-right .md-half-circle {
+    border-right-color: #3f51b5; }
+  md-progress-circular .md-inner .md-left .md-half-circle {
+    border-left-color: #3f51b5; }
+  md-progress-circular.md-warn .md-inner .md-gap {
+    border-top-color: #f44336;
+    border-bottom-color: #f44336; }
+  md-progress-circular.md-warn .md-inner .md-left .md-half-circle, md-progress-circular.md-warn .md-inner .md-right .md-half-circle {
+    border-top-color: #f44336; }
+  md-progress-circular.md-warn .md-inner .md-right .md-half-circle {
+    border-right-color: #f44336; }
+  md-progress-circular.md-warn .md-inner .md-left .md-half-circle {
+    border-left-color: #f44336; }
+  md-progress-circular.md-accent .md-inner .md-gap {
+    border-top-color: #f9a825;
+    border-bottom-color: #f9a825; }
+  md-progress-circular.md-accent .md-inner .md-left .md-half-circle, md-progress-circular.md-accent .md-inner .md-right .md-half-circle {
+    border-top-color: #f9a825; }
+  md-progress-circular.md-accent .md-inner .md-right .md-half-circle {
+    border-right-color: #f9a825; }
+  md-progress-circular.md-accent .md-inner .md-left .md-half-circle {
+    border-left-color: #f9a825; }
+
+/*# sourceMappingURL=progress_circular.css.map */
