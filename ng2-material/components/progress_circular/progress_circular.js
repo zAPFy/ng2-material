@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -29,6 +28,6 @@ var MdProgressCircular = (function (_super) {
         __metadata('design:paramtypes', [])
     ], MdProgressCircular);
     return MdProgressCircular;
-}(progress_linear_1.MdProgressLinear));
+})(progress_linear_1.MdProgressLinear);
 exports.MdProgressCircular = MdProgressCircular;
 //# sourceMappingURL=progress_circular.js.map

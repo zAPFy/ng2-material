@@ -102,8 +102,8 @@ md-toolbar:not(.md-menu-toolbar) {
   md-toolbar:not(.md-menu-toolbar) [md-button] {
     color: rgba(255, 255, 255, 0.87059); }
   md-toolbar:not(.md-menu-toolbar).md-accent {
-    background-color: #f9a825;
-    color: rgba(0, 0, 0, 0.87059); }
+    background-color: #e91e63;
+    color: white; }
   md-toolbar:not(.md-menu-toolbar).md-warn {
     background-color: #f44336;
     color: white; }

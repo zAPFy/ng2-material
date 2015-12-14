@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -49,7 +48,7 @@ var MdButton = (function () {
         __metadata('design:paramtypes', [])
     ], MdButton);
     return MdButton;
-}());
+})();
 exports.MdButton = MdButton;
 var MdAnchor = (function (_super) {
     __extends(MdAnchor, _super);
@@ -102,6 +101,6 @@ var MdAnchor = (function (_super) {
         __metadata('design:paramtypes', [])
     ], MdAnchor);
     return MdAnchor;
-}(MdButton));
+})(MdButton);
 exports.MdAnchor = MdAnchor;
 //# sourceMappingURL=button.js.map

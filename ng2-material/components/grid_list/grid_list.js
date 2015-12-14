@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -22,7 +21,7 @@ var RowHeightMode = (function () {
     RowHeightMode.FIXED = 'fixed';
     RowHeightMode.RATIO = 'ratio';
     return RowHeightMode;
-}());
+})();
 var MdGridList = (function () {
     function MdGridList() {
         this.tiles = [];
@@ -122,7 +121,7 @@ var MdGridList = (function () {
         __metadata('design:paramtypes', [])
     ], MdGridList);
     return MdGridList;
-}());
+})();
 exports.MdGridList = MdGridList;
 var MdGridTile = (function () {
     function MdGridTile(gridList) {
@@ -183,7 +182,7 @@ var MdGridTile = (function () {
         __metadata('design:paramtypes', [MdGridList])
     ], MdGridTile);
     return MdGridTile;
-}());
+})();
 exports.MdGridTile = MdGridTile;
 var TileCoordinator = (function () {
     function TileCoordinator(numColumns, tiles) {
@@ -245,18 +244,18 @@ var TileCoordinator = (function () {
         }
     };
     return TileCoordinator;
-}());
+})();
 var Position = (function () {
     function Position(row, col) {
         this.row = row;
         this.col = col;
     }
     return Position;
-}());
+})();
 var TileStyle = (function () {
     function TileStyle() {
     }
     return TileStyle;
-}());
+})();
 exports.TileStyle = TileStyle;
 //# sourceMappingURL=grid_list.js.map

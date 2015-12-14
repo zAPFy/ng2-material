@@ -133,13 +133,13 @@ md-progress-circular {
   md-progress-circular.md-warn .md-inner .md-left .md-half-circle {
     border-left-color: #f44336; }
   md-progress-circular.md-accent .md-inner .md-gap {
-    border-top-color: #f9a825;
-    border-bottom-color: #f9a825; }
+    border-top-color: #e91e63;
+    border-bottom-color: #e91e63; }
   md-progress-circular.md-accent .md-inner .md-left .md-half-circle, md-progress-circular.md-accent .md-inner .md-right .md-half-circle {
-    border-top-color: #f9a825; }
+    border-top-color: #e91e63; }
   md-progress-circular.md-accent .md-inner .md-right .md-half-circle {
-    border-right-color: #f9a825; }
+    border-right-color: #e91e63; }
   md-progress-circular.md-accent .md-inner .md-left .md-half-circle {
-    border-left-color: #f9a825; }
+    border-left-color: #e91e63; }
 
 /*# sourceMappingURL=progress_circular.css.map */

@@ -43,7 +43,7 @@
   [md-button].md-primary {
     color: #3f51b5; }
   [md-button].md-accent {
-    color: #f9a825; }
+    color: #e91e63; }
   [md-button].md-warn {
     color: #f44336; }
   [md-button].md-icon {
@@ -100,7 +100,7 @@
   [md-raised-button].md-primary {
     color: #3f51b5; }
   [md-raised-button].md-accent {
-    color: #f9a825; }
+    color: #e91e63; }
   [md-raised-button].md-warn {
     color: #f44336; }
   [md-raised-button].md-icon {
@@ -128,10 +128,10 @@
     [md-raised-button].md-primary:hover, [md-raised-button].md-primary.md-button-focus {
       background-color: #3949ab; }
   [md-raised-button].md-accent {
-    color: rgba(0, 0, 0, 0.87059);
-    background-color: #f9a825; }
+    color: white;
+    background-color: #e91e63; }
     [md-raised-button].md-accent:hover, [md-raised-button].md-accent.md-button-focus {
-      background-color: #ffd600; }
+      background-color: #c51162; }
   [md-raised-button].md-warn {
     color: white;
     background-color: #f44336; }
@@ -187,8 +187,8 @@
   height: 56px;
   line-height: 56px;
   vertical-align: middle;
-  background-color: #f9a825;
-  color: rgba(0, 0, 0, 0.87059); }
+  background-color: #e91e63;
+  color: white; }
   [md-fab]:focus {
     outline: none; }
   [md-fab]:hover, [md-fab]:focus {
@@ -198,7 +198,7 @@
   [md-fab].md-primary {
     color: #3f51b5; }
   [md-fab].md-accent {
-    color: #f9a825; }
+    color: #e91e63; }
   [md-fab].md-warn {
     color: #f44336; }
   [md-fab].md-icon {
@@ -226,10 +226,10 @@
     [md-fab].md-primary:hover, [md-fab].md-primary.md-button-focus {
       background-color: #3949ab; }
   [md-fab].md-accent {
-    color: rgba(0, 0, 0, 0.87059);
-    background-color: #f9a825; }
+    color: white;
+    background-color: #e91e63; }
     [md-fab].md-accent:hover, [md-fab].md-accent.md-button-focus {
-      background-color: #ffd600; }
+      background-color: #c51162; }
   [md-fab].md-warn {
     color: white;
     background-color: #f44336; }
@@ -246,11 +246,11 @@
   [md-fab].md-button-focus {
     background: #9e9e9e; }
   [md-fab] [md-icon] {
-    color: rgba(0, 0, 0, 0.87059); }
+    color: white; }
   [md-fab]:not([disabled]):hover {
-    background-color: #f9a825; }
+    background-color: #e91e63; }
   [md-fab]:not([disabled]).md-focused {
-    background-color: #ffd600; }
+    background-color: #c51162; }
   [md-fab].md-mini {
     line-height: 40px;
     width: 40px;

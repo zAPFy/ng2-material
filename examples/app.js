@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -33,7 +32,7 @@ var DemosApp = (function () {
         __metadata('design:paramtypes', [http_1.Http])
     ], DemosApp);
     return DemosApp;
-}());
+})();
 exports.DemosApp = DemosApp;
 angular2_1.bootstrap(DemosApp, [http_1.HTTP_PROVIDERS, all_1.MATERIAL_PROVIDERS]);
 //# sourceMappingURL=app.js.map

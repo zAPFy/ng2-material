@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -69,7 +68,7 @@ var MdDialog = (function () {
         __metadata('design:paramtypes', [core_1.DynamicComponentLoader])
     ], MdDialog);
     return MdDialog;
-}());
+})();
 exports.MdDialog = MdDialog;
 var MdDialogRef = (function () {
     function MdDialogRef() {
@@ -116,7 +115,7 @@ var MdDialogRef = (function () {
         });
     };
     return MdDialogRef;
-}());
+})();
 exports.MdDialogRef = MdDialogRef;
 var MdDialogConfig = (function () {
     function MdDialogConfig() {
@@ -124,7 +123,7 @@ var MdDialogConfig = (function () {
         this.height = null;
     }
     return MdDialogConfig;
-}());
+})();
 exports.MdDialogConfig = MdDialogConfig;
 var MdDialogContainer = (function () {
     function MdDialogContainer() {
@@ -155,7 +154,7 @@ var MdDialogContainer = (function () {
         __metadata('design:paramtypes', [])
     ], MdDialogContainer);
     return MdDialogContainer;
-}());
+})();
 var MdDialogContent = (function () {
     function MdDialogContent(dialogContainer, elementRef) {
         dialogContainer.contentRef = elementRef;
@@ -169,7 +168,7 @@ var MdDialogContent = (function () {
         __metadata('design:paramtypes', [MdDialogContainer, core_1.ElementRef])
     ], MdDialogContent);
     return MdDialogContent;
-}());
+})();
 var MdBackdrop = (function () {
     function MdBackdrop(dialogRef) {
         this.dialogRef = dialogRef;
@@ -188,5 +187,5 @@ var MdBackdrop = (function () {
         __metadata('design:paramtypes', [MdDialogRef])
     ], MdBackdrop);
     return MdBackdrop;
-}());
+})();
 //# sourceMappingURL=dialog.js.map

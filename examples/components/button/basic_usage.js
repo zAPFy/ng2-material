@@ -8,18 +8,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var dom_adapter_1 = require('angular2/src/platform/dom/dom_adapter');
-var MdIcon = (function () {
-    function MdIcon(element) {
-        dom_adapter_1.DOM.addClass(element.nativeElement, 'material-icons');
+var base_1 = require('../../base');
+var ButtonBasicUsage = (function () {
+    function ButtonBasicUsage() {
+        this.googleUrl = 'https://www.google.com';
+        this.title1 = 'Button';
+        this.title4 = 'Warn';
+        this.isDisabled = true;
     }
-    MdIcon = __decorate([
-        core_1.Directive({
-            selector: '[md-icon], .md-icon'
+    ButtonBasicUsage = __decorate([
+        core_1.Component({ selector: 'button-basic-usage' }),
+        core_1.View({
+            templateUrl: 'examples/components/button/basic_usage.html',
+            styleUrls: ['examples/components/button/basic_usage.css'],
+            directives: [base_1.MATERIAL_DIRECTIVES]
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
-    ], MdIcon);
-    return MdIcon;
+        __metadata('design:paramtypes', [])
+    ], ButtonBasicUsage);
+    return ButtonBasicUsage;
 })();
-exports.MdIcon = MdIcon;
-//# sourceMappingURL=icon.js.map
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = ButtonBasicUsage;
+//# sourceMappingURL=basic_usage.js.map

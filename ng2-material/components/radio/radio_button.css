@@ -67,10 +67,10 @@ md-radio-group {
   border-color: rgba(0, 0, 0, 0.54); }
 
 .md-radio-on {
-  background-color: rgba(249, 168, 37, 0.87); }
+  background-color: rgba(233, 30, 99, 0.87); }
 
 .md-radio-checked .md-radio-off {
-  border-color: rgba(249, 168, 37, 0.87); }
+  border-color: rgba(233, 30, 99, 0.87); }
 
 md-radio-group:not([disabled]) md-radio:not([disabled]).md-primary .md-radio-on {
   background-color: rgba(63, 81, 181, 0.87); }

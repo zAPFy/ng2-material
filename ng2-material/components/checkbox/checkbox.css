@@ -79,13 +79,13 @@ md-checkbox {
   user-select: text; }
 
 md-checkbox .md-ripple {
-  color: #fdd835; }
+  color: #d81b60; }
 md-checkbox[aria-checked="true"] .md-ripple {
   color: #757575; }
 md-checkbox .md-checkbox-icon {
   border-color: rgba(0, 0, 0, 0.54); }
 md-checkbox[aria-checked="true"] .md-checkbox-icon {
-  background-color: rgba(249, 168, 37, 0.87); }
+  background-color: rgba(233, 30, 99, 0.87); }
 md-checkbox[aria-checked="true"] .md-checkbox-icon:after {
   border-color: #eeeeee; }
 md-checkbox:not([disabled]).md-primary .md-ripple {

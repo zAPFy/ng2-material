@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,17 +57,10 @@ var Highlight = (function () {
             .replace('<head/>', '');
         this.rendered = highlightedCode.value;
     };
-    __decorate([
-        core_1.Input('type'), 
-        __metadata('design:type', String)
-    ], Highlight.prototype, "type", null);
-    __decorate([
-        core_1.Input('text'), 
-        __metadata('design:type', String)
-    ], Highlight.prototype, "text", null);
     Highlight = __decorate([
         core_1.Component({
-            selector: 'highlight'
+            selector: 'highlight',
+            properties: ['type', 'text']
         }),
         core_1.View({
             template: "<pre><code class=\"highlight\" [innerHtml]=\"rendered || text\"></code></pre>",
@@ -78,6 +70,6 @@ var Highlight = (function () {
         __metadata('design:paramtypes', [])
     ], Highlight);
     return Highlight;
-}());
+})();
 exports.Highlight = Highlight;
 //# sourceMappingURL=highlight.js.map

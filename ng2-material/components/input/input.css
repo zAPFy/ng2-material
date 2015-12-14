@@ -121,9 +121,9 @@ md-input-container:not(.md-input-invalid).md-input-focused label {
 md-input-container:not(.md-input-invalid).md-input-focused md-icon {
   color: #3f51b5; }
 md-input-container:not(.md-input-invalid).md-input-focused.md-accent .md-input {
-  border-color: #ffeb3b; }
+  border-color: #e91e63; }
 md-input-container:not(.md-input-invalid).md-input-focused.md-accent label {
-  color: #ffeb3b; }
+  color: #e91e63; }
 md-input-container:not(.md-input-invalid).md-input-focused.md-warn .md-input {
   border-color: #f44336; }
 md-input-container:not(.md-input-invalid).md-input-focused.md-warn label {

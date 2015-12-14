@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -69,7 +68,7 @@ var Example = (function () {
                 __metadata('design:paramtypes', [])
             ], CompiledComponent);
             return CompiledComponent;
-        }());
+        })();
         this.dcl.loadIntoLocation(CompiledComponent, this._element, 'example')
             .then(function (ref) {
             if (_this._reference) {
@@ -110,7 +109,7 @@ var Example = (function () {
         __metadata('design:paramtypes', [core_4.ElementRef, http_1.Http, core_3.DynamicComponentLoader])
     ], Example);
     return Example;
-}());
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Example;
 //# sourceMappingURL=example.js.map

@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -31,7 +30,7 @@ var MdList = (function () {
         __metadata('design:paramtypes', [])
     ], MdList);
     return MdList;
-}());
+})();
 exports.MdList = MdList;
 var MdListItem = (function () {
     function MdListItem(_element, dcl, _href) {
@@ -94,7 +93,7 @@ var MdListItem = (function () {
                 __metadata('design:paramtypes', [])
             ], CompiledComponent);
             return CompiledComponent;
-        }());
+        })();
         this.dcl.loadIntoLocation(CompiledComponent, this._element, this.wrap)
             .then(function (ref) {
             console.log("rendered component " + ref);
@@ -126,7 +125,7 @@ var MdListItem = (function () {
         __metadata('design:paramtypes', [core_2.ElementRef, core_6.DynamicComponentLoader, String])
     ], MdListItem);
     return MdListItem;
-}());
+})();
 exports.MdListItem = MdListItem;
 var MdListItemButton = (function () {
     function MdListItemButton() {
@@ -145,7 +144,7 @@ var MdListItemButton = (function () {
         __metadata('design:paramtypes', [])
     ], MdListItemButton);
     return MdListItemButton;
-}());
+})();
 function MdListController($scope, $element, $mdListInkRipple) {
 }
 //# sourceMappingURL=list.js.map

@@ -134,9 +134,9 @@ md-progress-linear.md-warn .md-progress-linear-container {
 md-progress-linear.md-warn .md-progress-linear-bar {
   background-color: #f44336; }
 md-progress-linear.md-accent .md-progress-linear-container {
-  background-color: #fff9c4; }
+  background-color: #f8bbd0; }
 md-progress-linear.md-accent .md-progress-linear-bar {
-  background-color: #f9a825; }
+  background-color: #e91e63; }
 md-progress-linear[mode=buffer].md-primary .md-progress-linear-bar1 {
   background-color: #c5cae9; }
 md-progress-linear[mode=buffer].md-primary .md-progress-linear-dashed:before {
@@ -146,8 +146,8 @@ md-progress-linear[mode=buffer].md-warn .md-progress-linear-bar1 {
 md-progress-linear[mode=buffer].md-warn .md-progress-linear-dashed:before {
   background: radial-gradient(#ffcdd2 0%, #ffcdd2 16%, transparent 42%); }
 md-progress-linear[mode=buffer].md-accent .md-progress-linear-bar1 {
-  background-color: #fff9c4; }
+  background-color: #f8bbd0; }
 md-progress-linear[mode=buffer].md-accent .md-progress-linear-dashed:before {
-  background: radial-gradient(#fff9c4 0%, #fff9c4 16%, transparent 42%); }
+  background: radial-gradient(#f8bbd0 0%, #f8bbd0 16%, transparent 42%); }
 
 /*# sourceMappingURL=progress_linear.css.map */

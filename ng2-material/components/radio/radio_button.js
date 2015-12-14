@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -157,7 +156,7 @@ var MdRadioGroup = (function () {
         __metadata('design:paramtypes', [String, String, radio_dispatcher_1.MdRadioDispatcher])
     ], MdRadioGroup);
     return MdRadioGroup;
-}());
+})();
 exports.MdRadioGroup = MdRadioGroup;
 var MdRadioButton = (function () {
     function MdRadioButton(radioGroup, id, value, tabindex, radioDispatcher) {
@@ -247,6 +246,6 @@ var MdRadioButton = (function () {
         __metadata('design:paramtypes', [MdRadioGroup, String, String, String, radio_dispatcher_1.MdRadioDispatcher])
     ], MdRadioButton);
     return MdRadioButton;
-}());
+})();
 exports.MdRadioButton = MdRadioButton;
 //# sourceMappingURL=radio_button.js.map
