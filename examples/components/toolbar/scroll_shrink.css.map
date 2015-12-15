@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,iBAAkB;EAChB,MAAM,EAAC,KAAK",
+"sources": ["scroll_shrink.scss"],
+"names": [],
+"file": "scroll_shrink.css"
+}

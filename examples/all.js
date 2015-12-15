@@ -7,6 +7,7 @@ var inline_actions_1 = require('./components/card/inline_actions');
 var basic_usage_2 = require('./components/button/basic_usage');
 var action_buttons_1 = require('./components/card/action_buttons');
 var basic_usage_3 = require('./components/toolbar/basic_usage');
+var scroll_shrink_1 = require('./components/toolbar/scroll_shrink');
 var basic_usage_4 = require('./components/progress_circular/basic_usage');
 var basic_usage_5 = require('./components/progress_linear/basic_usage');
 var basic_usage_6 = require('./components/radio/basic_usage');
@@ -16,7 +17,7 @@ exports.DEMO_DIRECTIVES = lang_1.CONST_EXPR([
     basic_usage_2.default,
     basic_usage_6.default,
     basic_usage_7.default,
-    basic_usage_3.default,
+    basic_usage_3.default, scroll_shrink_1.default,
     basic_usage_4.default,
     basic_usage_5.default
 ]);

@@ -98,6 +98,13 @@
         "source": "examples/components/toolbar/basic_usage.ts",
         "component": "toolbar-basic-usage",
         "name": "Basic Usage"
+      },
+      {
+        "template": "examples/components/toolbar/scroll_shrink.html",
+        "styles": "examples/components/toolbar/scroll_shrink.scss",
+        "source": "examples/components/toolbar/scroll_shrink.ts",
+        "component": "toolbar-scroll-shrink",
+        "name": "Scroll Shrink"
       }
     ]
   }
