@@ -7,7 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var angular2_1 = require('angular2/angular2');
+var core_1 = require('angular2/core');
+var browser_1 = require('angular2/platform/browser');
 var all_1 = require('../ng2-material/all');
 var all_2 = require('./all');
 var example_1 = require('./example');
@@ -22,10 +23,10 @@ var DemosApp = (function () {
         });
     }
     DemosApp = __decorate([
-        angular2_1.Component({
+        core_1.Component({
             selector: 'demos-app'
         }),
-        angular2_1.View({
+        core_1.View({
             templateUrl: 'examples/app.html',
             directives: [all_1.MATERIAL_DIRECTIVES, example_1.default, all_2.DEMO_DIRECTIVES]
         }), 
@@ -34,5 +35,5 @@ var DemosApp = (function () {
     return DemosApp;
 })();
 exports.DemosApp = DemosApp;
-angular2_1.bootstrap(DemosApp, [http_1.HTTP_PROVIDERS, all_1.MATERIAL_PROVIDERS]);
+browser_1.bootstrap(DemosApp, [http_1.HTTP_PROVIDERS, all_1.MATERIAL_PROVIDERS]);
 //# sourceMappingURL=app.js.map

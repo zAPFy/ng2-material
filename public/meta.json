@@ -40,18 +40,6 @@
     ]
   },
   {
-    "name": "Progress Circular",
-    "id": "progress-circular",
-    "examples": [
-      {
-        "template": "examples/components/progress_circular/basic_usage.html",
-        "source": "examples/components/progress_circular/basic_usage.ts",
-        "component": "progress-circular-basic-usage",
-        "name": "Basic Usage"
-      }
-    ]
-  },
-  {
     "name": "Progress Linear",
     "id": "progress-linear",
     "examples": [
