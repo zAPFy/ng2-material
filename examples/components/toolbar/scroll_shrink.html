@@ -3,7 +3,7 @@
   <md-toolbar md-scroll-shrink>
     <div class="md-toolbar-tools">
       <h3>
-        <span [innerText]="title"></span>
+        <span>{{ title }}</span>
       </h3>
     </div>
   </md-toolbar>
@@ -16,9 +16,9 @@
         <img [src]="item.face" [alt]="item.who" class="md-avatar">
 
         <div class="md-list-item-text">
-          <h3 [innerText]="item.what"></h3>
-          <h4 [innerText]="item.who"></h4>
-          <p [innerText]="item.notes"></p>
+          <h3>{{ item.what }}</h3>
+          <h4>{{ item.who }}</h4>
+          <p>{{ item.notes }}</p>
         </div>
         <md-divider inset></md-divider>
       </md-list-item>
