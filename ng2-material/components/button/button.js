@@ -15,15 +15,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('angular2/core');
 var async_1 = require('angular2/src/facade/async');
 var lang_1 = require('angular2/src/facade/lang');
+var core_2 = require("angular2/core");
+var ink_1 = require("../../core/util/ink");
 var MdButton = (function () {
-    function MdButton() {
+    function MdButton(_element) {
+        this._element = _element;
         this.isMouseDown = false;
         this.isKeyboardFocused = false;
     }
-    MdButton.prototype.onMousedown = function () {
+    MdButton.prototype.onMousedown = function (event) {
         var _this = this;
         this.isMouseDown = true;
-        async_1.TimerWrapper.setTimeout(function () { _this.isMouseDown = false; }, 100);
+        async_1.TimerWrapper.setTimeout(function () {
+            _this.isMouseDown = false;
+        }, 100);
+        if (this._element && ink_1.Ink.canApply(this._element.nativeElement)) {
+            ink_1.Ink.rippleEvent(this._element.nativeElement, event);
+        }
     };
     MdButton.prototype.onFocus = function () {
         this.isKeyboardFocused = !this.isMouseDown;
@@ -35,7 +43,7 @@ var MdButton = (function () {
         core_1.Component({
             selector: '[md-button]:not(a), [md-fab]:not(a), [md-raised-button]:not(a)',
             host: {
-                '(mousedown)': 'onMousedown()',
+                '(mousedown)': 'onMousedown($event)',
                 '(focus)': 'onFocus()',
                 '(blur)': 'onBlur()',
                 '[class.md-button-focus]': 'isKeyboardFocused',
@@ -45,7 +53,7 @@ var MdButton = (function () {
             templateUrl: 'ng2-material/components/button/button.html',
             encapsulation: core_1.ViewEncapsulation.None,
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [core_2.ElementRef])
     ], MdButton);
     return MdButton;
 })();

@@ -5,13 +5,12 @@ section {
   margin: 1em;
   position: relative !important;
   padding-bottom: 10px; }
+  section [md-button], section [md-raised-button], section [md-fab] {
+    margin-top: 16px;
+    margin-bottom: 16px; }
 
 md-content {
   margin-right: 7px; }
-
-section [md-button] {
-  margin-top: 16px;
-  margin-bottom: 16px; }
 
 .label {
   position: absolute;

@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var base_1 = require('../../base');
+var all_1 = require('ng2-material/all');
 var CardActionButtons = (function () {
     function CardActionButtons() {
     }
@@ -17,7 +17,7 @@ var CardActionButtons = (function () {
         core_1.View({
             templateUrl: 'examples/components/card/action_buttons.html',
             styleUrls: ['examples/components/card/action_buttons.css'],
-            directives: [base_1.MATERIAL_DIRECTIVES]
+            directives: [all_1.MATERIAL_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
     ], CardActionButtons);

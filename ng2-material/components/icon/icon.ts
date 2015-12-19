@@ -3,10 +3,10 @@ import {DOM} from 'angular2/src/platform/dom/dom_adapter';
 
 
 @Directive({
-  selector: '[md-icon], .md-icon'
+  selector: '[md-icon], .md-icon',
+  host: {
+    '[class.material-icons]': 'true'
+  }
 })
 export class MdIcon {
-  constructor(element: ElementRef) {
-    DOM.addClass(element.nativeElement, 'material-icons');
-  }
 }

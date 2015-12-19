@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var base_1 = require('../../base');
+var all_1 = require('ng2-material/all');
 var SwitchBasicUsage = (function () {
     function SwitchBasicUsage() {
         this.data = {
@@ -24,7 +24,7 @@ var SwitchBasicUsage = (function () {
     ;
     SwitchBasicUsage = __decorate([
         core_1.Component({ selector: 'switch-basic-usage' }),
-        core_1.View({ templateUrl: 'examples/components/switch/basic_usage.html', directives: [base_1.MATERIAL_DIRECTIVES] }), 
+        core_1.View({ templateUrl: 'examples/components/switch/basic_usage.html', directives: [all_1.MATERIAL_DIRECTIVES] }), 
         __metadata('design:paramtypes', [])
     ], SwitchBasicUsage);
     return SwitchBasicUsage;

@@ -77,6 +77,26 @@
     ]
   },
   {
+    "name": "Tabs",
+    "id": "tabs",
+    "examples": [
+      {
+        "template": "examples/components/tabs/dynamic_height.html",
+        "styles": "examples/components/tabs/dynamic_height.scss",
+        "source": "examples/components/tabs/dynamic_height.ts",
+        "component": "tabs-dynamic-height",
+        "name": "Dynamic Height"
+      },
+      {
+        "template": "examples/components/tabs/dynamic_tabs.html",
+        "styles": "examples/components/tabs/dynamic_tabs.scss",
+        "source": "examples/components/tabs/dynamic_tabs.ts",
+        "component": "tabs-dynamic-tabs",
+        "name": "Dynamic Tabs"
+      }
+    ]
+  },
+  {
     "name": "Toolbar",
     "id": "toolbar",
     "examples": [

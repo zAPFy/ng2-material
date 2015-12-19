@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,mBAAoB;EAClB,gBAAgB,EAAE,sBAAsB;EACxC,2BAAQ;IACN,UAAU,EAAE,OAAO;IACnB,MAAM,EAAE,iBAAiB;IACzB,2CAAgB;MACd,UAAU,EAAE,KAAK;IAEnB,sCAAW;MACT,gBAAgB,EAAE,WAAW;EAGjC,kCAAe;IACb,UAAU,EAAE,CAAC",
+"sources": ["dynamic_height.scss"],
+"names": [],
+"file": "dynamic_height.css"
+}

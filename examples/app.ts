@@ -6,6 +6,10 @@ import {DEMO_DIRECTIVES} from './all';
 import Example from './example';
 import {Http, Response, HTTP_PROVIDERS} from 'angular2/http';
 
+//
+// PLUNKR for ng2: http://plnkr.co/edit/UPJESEgyKFsm4hyW4fWR
+//
+
 /**
  * Describe an example that can be dynamically loaded.
  */
@@ -30,17 +34,17 @@ export class DemosApp {
   constructor(http: Http) {
     http.get('public/meta.json')
       .subscribe((res: Response) => {
+        this.meta = res.json();
         // HACKS: use to filter down to a single example for testing
         //let data = res.json();
         //let results = [];
         //data.forEach((d) => {
-        //  if(d.name === 'Toolbar'){
+        //  if(d.name === 'Button'){
         //    results.push(d);
         //  }
         //});
         //this.meta = results;
 
-        this.meta = res.json();
         console.log(this.meta);
       });
   }

@@ -31,6 +31,8 @@ var switch_1 = require('./components/switcher/switch');
 __export(require('./components/switcher/switch'));
 var toolbar_1 = require('./components/toolbar/toolbar');
 __export(require('./components/toolbar/toolbar'));
+var tabs_1 = require('./components/tabs/tabs');
+__export(require('./components/toolbar/toolbar'));
 exports.MATERIAL_DIRECTIVES = lang_1.CONST_EXPR([
     button_1.MdAnchor, button_1.MdButton,
     checkbox_1.MdCheckbox,
@@ -44,7 +46,8 @@ exports.MATERIAL_DIRECTIVES = lang_1.CONST_EXPR([
     progress_circular_1.MdProgressCircular,
     radio_button_1.MdRadioButton, radio_button_1.MdRadioGroup,
     switch_1.MdSwitch,
-    toolbar_1.MdToolbar
+    toolbar_1.MdToolbar,
+    tabs_1.MdTab, tabs_1.MdTabs
 ]);
 exports.MATERIAL_PROVIDERS = lang_1.CONST_EXPR([
     radio_dispatcher_1.MdRadioDispatcher

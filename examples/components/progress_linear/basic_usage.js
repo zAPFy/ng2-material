@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var base_1 = require('../../base');
+var all_1 = require('ng2-material/all');
 var ProgressLinearBasicUsage = (function () {
     function ProgressLinearBasicUsage() {
         var _this = this;
@@ -56,7 +56,7 @@ var ProgressLinearBasicUsage = (function () {
     ;
     ProgressLinearBasicUsage = __decorate([
         core_1.Component({ selector: 'progress-linear-basic-usage' }),
-        core_1.View({ templateUrl: 'examples/components/progress_linear/basic_usage.html', directives: [base_1.MATERIAL_DIRECTIVES] }), 
+        core_1.View({ templateUrl: 'examples/components/progress_linear/basic_usage.html', directives: [all_1.MATERIAL_DIRECTIVES] }), 
         __metadata('design:paramtypes', [])
     ], ProgressLinearBasicUsage);
     return ProgressLinearBasicUsage;

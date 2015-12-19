@@ -8,16 +8,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var dom_adapter_1 = require('angular2/src/platform/dom/dom_adapter');
 var MdIcon = (function () {
-    function MdIcon(element) {
-        dom_adapter_1.DOM.addClass(element.nativeElement, 'material-icons');
+    function MdIcon() {
     }
     MdIcon = __decorate([
         core_1.Directive({
-            selector: '[md-icon], .md-icon'
+            selector: '[md-icon], .md-icon',
+            host: {
+                '[class.material-icons]': 'true'
+            }
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [])
     ], MdIcon);
     return MdIcon;
 })();
