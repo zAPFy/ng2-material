@@ -6,6 +6,9 @@ import {DEMO_DIRECTIVES} from './all';
 import Example from './example';
 import {Http, Response, HTTP_PROVIDERS} from 'angular2/http';
 
+import {UrlResolver} from 'angular2/src/compiler/url_resolver';
+import {provide} from "angular2/core";
+
 //
 // PLUNKR for ng2: http://plnkr.co/edit/UPJESEgyKFsm4hyW4fWR
 //
@@ -50,4 +53,26 @@ export class DemosApp {
   }
 }
 
-bootstrap(DemosApp, [HTTP_PROVIDERS, MATERIAL_PROVIDERS]);
+
+export class MaterialTemplateResolver extends UrlResolver {
+  static TEMPLATE_MATCHER: RegExp = /^ng2-material\/.*?\.(html|css)$/;
+
+  resolve(baseUrl: string, url: string): string {
+    if (baseUrl !== './') {
+      let foo = 2;
+      foo++;
+    }
+    let w: any = window;
+
+    if (w._mdTemplatesHack && baseUrl.startsWith(w._mdTemplatesHack)) {
+      baseUrl = baseUrl.substr(0, w._mdTemplatesHack.length);
+    }
+    let result = super.resolve(baseUrl, url);
+    if (w._mdTemplatesHack && MaterialTemplateResolver.TEMPLATE_MATCHER.test(result)) {
+      return `${w._mdTemplatesHack}${result}`;
+    }
+    return result;
+  }
+}
+
+bootstrap(DemosApp, [HTTP_PROVIDERS, provide(UrlResolver, {useValue: new MaterialTemplateResolver()}), MATERIAL_PROVIDERS]);
