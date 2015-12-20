@@ -2561,12 +2561,27 @@ System.register("ng2-material/components/tabs/tabs.ts", ["angular2/core.js", "an
     }
 });
 
-System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "ng2-material/components/button/button.ts", "ng2-material/components/checkbox/checkbox.ts", "ng2-material/components/content/content.ts", "ng2-material/components/dialog/dialog.ts", "ng2-material/components/divider/divider.ts", "ng2-material/components/grid_list/grid_list.ts", "ng2-material/components/icon/icon.ts", "ng2-material/components/input/input.ts", "ng2-material/components/list/list.ts", "ng2-material/components/progress_linear/progress_linear.ts", "ng2-material/components/progress_circular/progress_circular.ts", "ng2-material/components/radio/radio_button.ts", "ng2-material/components/radio/radio_dispatcher.ts", "ng2-material/components/switcher/switch.ts", "ng2-material/components/toolbar/toolbar.ts", "ng2-material/components/tabs/tabs.ts"], function(exports_1) {
-    var lang_1, button_1, checkbox_1, content_1, divider_1, grid_list_1, icon_1, input_1, list_1, progress_linear_1, progress_circular_1, radio_button_1, radio_dispatcher_1, switch_1, toolbar_1, tabs_1;
-    var MATERIAL_DIRECTIVES, MATERIAL_PROVIDERS;
+System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "angular2/core.js", "ng2-material/components/button/button.ts", "ng2-material/components/checkbox/checkbox.ts", "ng2-material/components/content/content.ts", "ng2-material/components/dialog/dialog.ts", "ng2-material/components/divider/divider.ts", "ng2-material/components/grid_list/grid_list.ts", "ng2-material/components/icon/icon.ts", "ng2-material/components/input/input.ts", "ng2-material/components/list/list.ts", "ng2-material/components/progress_linear/progress_linear.ts", "ng2-material/components/progress_circular/progress_circular.ts", "ng2-material/components/radio/radio_button.ts", "ng2-material/components/radio/radio_dispatcher.ts", "ng2-material/components/switcher/switch.ts", "ng2-material/components/toolbar/toolbar.ts", "ng2-material/components/tabs/tabs.ts", "angular2/compiler.js"], function(exports_1) {
+    var __extends = (this && this.__extends) || function (d, b) {
+        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+    var lang_1, core_1, button_1, checkbox_1, content_1, divider_1, grid_list_1, icon_1, input_1, list_1, progress_linear_1, progress_circular_1, radio_button_1, radio_dispatcher_1, switch_1, toolbar_1, tabs_1, compiler_1;
+    var MATERIAL_DIRECTIVES, BASE_URL, MaterialTemplateResolver, MATERIAL_PROVIDERS;
+    /**
+     * Specify the baseUrl to load templates and styles from.
+     * @param url
+     */
+    function setBaseUrl(url) {
+        BASE_URL = url;
+    }
+    exports_1("setBaseUrl", setBaseUrl);
     var exportedNames_1 = {
         'MATERIAL_DIRECTIVES': true,
-        'MATERIAL_PROVIDERS': true
+        'MaterialTemplateResolver': true,
+        'MATERIAL_PROVIDERS': true,
+        'setBaseUrl': true
     };
     function exportStar_1(m) {
         var exports = {};
@@ -2579,6 +2594,9 @@ System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "ng2-mate
         setters:[
             function (lang_1_1) {
                 lang_1 = lang_1_1;
+            },
+            function (core_1_1) {
+                core_1 = core_1_1;
             },
             function (button_1_1) {
                 button_1 = button_1_1;
@@ -2642,6 +2660,9 @@ System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "ng2-mate
             },
             function (tabs_1_1) {
                 tabs_1 = tabs_1_1;
+            },
+            function (compiler_1_1) {
+                compiler_1 = compiler_1_1;
             }],
         execute: function() {
             /**
@@ -2664,11 +2685,43 @@ System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "ng2-mate
                 tabs_1.MdTab, tabs_1.MdTabs
             ]));
             /**
+             * Reference to specified base load URL for templates and styles.
+             * @private
+             */
+            BASE_URL = null;
+            /**
+             * This is a workaround to tell us where to load templates and styles from until
+             * we have a better template bundling strategy.
+             */
+            MaterialTemplateResolver = (function (_super) {
+                __extends(MaterialTemplateResolver, _super);
+                function MaterialTemplateResolver() {
+                    _super.apply(this, arguments);
+                }
+                MaterialTemplateResolver.prototype.resolve = function (baseUrl, url) {
+                    if (!BASE_URL) {
+                        return _super.prototype.resolve.call(this, baseUrl, url);
+                    }
+                    if (baseUrl.startsWith(BASE_URL)) {
+                        baseUrl = baseUrl.substr(0, BASE_URL.length);
+                    }
+                    var result = _super.prototype.resolve.call(this, baseUrl, url);
+                    if (MaterialTemplateResolver.RESOURCE_MATCHER.test(result)) {
+                        return "" + BASE_URL + result;
+                    }
+                    return result;
+                };
+                MaterialTemplateResolver.RESOURCE_MATCHER = /^ng2-material\/.*?\.(html|css)$/;
+                return MaterialTemplateResolver;
+            })(compiler_1.UrlResolver);
+            exports_1("MaterialTemplateResolver", MaterialTemplateResolver);
+            /**
              * Collection of Material Design component providers.
              */
-            exports_1("MATERIAL_PROVIDERS", MATERIAL_PROVIDERS = lang_1.CONST_EXPR([
-                radio_dispatcher_1.MdRadioDispatcher
-            ]));
+            exports_1("MATERIAL_PROVIDERS", MATERIAL_PROVIDERS = [
+                radio_dispatcher_1.MdRadioDispatcher,
+                core_1.provide(compiler_1.UrlResolver, { useValue: new MaterialTemplateResolver() })
+            ]);
         }
     }
 });
