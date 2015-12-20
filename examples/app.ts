@@ -1,6 +1,6 @@
 import {Component, View} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
-import {MATERIAL_DIRECTIVES, MATERIAL_PROVIDERS, setBaseUrl} from '../ng2-material/all';
+import {MATERIAL_DIRECTIVES, MATERIAL_PROVIDERS} from '../ng2-material/all';
 
 import {DEMO_DIRECTIVES} from './all';
 import Example from './example';
@@ -31,6 +31,8 @@ export interface IExampleData {
 export class DemosApp {
   meta: any;
 
+  version: string;
+
   constructor(http: Http) {
     http.get('public/meta.json')
       .subscribe((res: Response) => {
@@ -44,10 +46,12 @@ export class DemosApp {
         //  }
         //});
         //this.meta = results;
-
-        console.log(this.meta);
+      });
+    http.get('public/version.json')
+      .subscribe((res: Response) => {
+        this.version = res.json().version;
       });
   }
 }
 
-setBaseUrl('https://cdn.rawgit.com/justindujardin/ng2-material/gh-pages/');
+bootstrap(DemosApp, [HTTP_PROVIDERS, MATERIAL_PROVIDERS]);

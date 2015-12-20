@@ -10021,8 +10021,6 @@ md-toolbar.demo-toolbar [md-button] {
   display: block;
   height: 400px; }
 
-demos-app .md-toolbar {
-  max-width: 200px; }
 demos-app md-content > section {
   max-width: 800px; }
   demos-app md-content > section > h1 {

@@ -8,6 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
+var browser_1 = require('angular2/platform/browser');
 var all_1 = require('../ng2-material/all');
 var all_2 = require('./all');
 var example_1 = require('./example');
@@ -18,7 +19,10 @@ var DemosApp = (function () {
         http.get('public/meta.json')
             .subscribe(function (res) {
             _this.meta = res.json();
-            console.log(_this.meta);
+        });
+        http.get('public/version.json')
+            .subscribe(function (res) {
+            _this.version = res.json().version;
         });
     }
     DemosApp = __decorate([
@@ -34,5 +38,5 @@ var DemosApp = (function () {
     return DemosApp;
 })();
 exports.DemosApp = DemosApp;
-all_1.setBaseUrl('https://cdn.rawgit.com/justindujardin/ng2-material/gh-pages/');
+browser_1.bootstrap(DemosApp, [http_1.HTTP_PROVIDERS, all_1.MATERIAL_PROVIDERS]);
 //# sourceMappingURL=app.js.map
