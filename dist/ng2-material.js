@@ -2124,8 +2124,12 @@ System.register("ng2-material/components/toolbar/toolbar.ts", ["angular2/core.js
                     var scrollTop = e ? e.target.scrollTop : this._previousScrollTop;
                     this._debouncedUpdateHeight();
                     this._currentY = Math.min(this._toolbarHeight / this.mdShrinkSpeed, Math.max(0, this._currentY + scrollTop - this._previousScrollTop));
-                    dom_adapter_1.DOM.setStyle(this.el.nativeElement, 'transform', "translate3d(0," + -this._currentY * this.mdShrinkSpeed + "px,0)");
-                    dom_adapter_1.DOM.setStyle(this._content, 'transform', "translate3d(0," + (this._toolbarHeight - this._currentY) * this.mdShrinkSpeed + "px,0)");
+                    var toolbarXform = "translate3d(0," + -this._currentY * this.mdShrinkSpeed + "px,0)";
+                    var contentXform = "translate3d(0," + (this._toolbarHeight - this._currentY) * this.mdShrinkSpeed + "px,0)";
+                    dom_adapter_1.DOM.setStyle(this._content, '-webkit-transform', contentXform);
+                    dom_adapter_1.DOM.setStyle(this._content, 'transform', contentXform);
+                    dom_adapter_1.DOM.setStyle(this.el.nativeElement, '-webkit-transform', toolbarXform);
+                    dom_adapter_1.DOM.setStyle(this.el.nativeElement, 'transform', toolbarXform);
                     this._previousScrollTop = scrollTop;
                     util_1.rAF(function () {
                         var hasWhiteFrame = dom_adapter_1.DOM.hasClass(_this.el.nativeElement, 'md-whiteframe-z1');

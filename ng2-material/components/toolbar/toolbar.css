@@ -8,14 +8,22 @@
 
 md-toolbar {
   box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative;
   z-index: 2;
   font-size: 20px;
   min-height: 64px;
   width: 100%; }
   md-toolbar.md-whiteframe-z1-add, md-toolbar.md-whiteframe-z1-remove {
+    -webkit-transition: box-shadow 0.5s linear;
     transition: box-shadow 0.5s linear; }
   md-toolbar md-toolbar-filler {
     width: 72px; }
@@ -47,9 +55,19 @@ md-toolbar {
   letter-spacing: 0.005em;
   box-sizing: border-box;
   font-weight: 400;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100%;
   height: 64px;
   max-height: 64px;
@@ -63,8 +81,14 @@ md-toolbar {
     color: inherit;
     text-decoration: none; }
   .md-toolbar-tools .fill-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center; }
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
   .md-toolbar-tools [md-button] {
     margin-top: 0;
     margin-bottom: 0; }

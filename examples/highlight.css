@@ -6,7 +6,9 @@ highlight {
   color: white;
   font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
   line-height: 1.45;
-  tab-size: 2;
+  -moz-tab-size: 2;
+    -o-tab-size: 2;
+       tab-size: 2;
   -webkit-font-smoothing: auto;
   -webkit-text-size-adjust: none;
   position: relative;

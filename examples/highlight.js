@@ -9,8 +9,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("angular2/core");
 var core_2 = require("angular2/core");
+var dom_adapter_1 = require("angular2/src/platform/dom/dom_adapter");
+var core_3 = require("angular2/core");
 var Highlight = (function () {
-    function Highlight() {
+    function Highlight(element) {
+        this.element = element;
         this._text = '';
         this._type = 'typescript';
         this.rendered = null;
@@ -37,6 +40,11 @@ var Highlight = (function () {
         enumerable: true,
         configurable: true
     });
+    Highlight.prototype.ngAfterContentInit = function () {
+        if (this._text === '' && this.element) {
+            this.text = dom_adapter_1.DOM.getText(this.element.nativeElement);
+        }
+    };
     Highlight.prototype.render = function () {
         var lines = this._text.split('\n');
         if (this._text.trim().length === 0 || lines.length === 0) {
@@ -63,11 +71,11 @@ var Highlight = (function () {
             properties: ['type', 'text']
         }),
         core_1.View({
-            template: "<pre><code class=\"highlight\" [innerHtml]=\"rendered || text\"></code></pre>",
+            template: "<pre><code class=\"highlight\" [innerHtml]=\"rendered || text\"><ng-content></ng-content></code></pre>",
             styleUrls: ['examples/highlight.css'],
             encapsulation: core_2.ViewEncapsulation.None
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [core_3.ElementRef])
     ], Highlight);
     return Highlight;
 })();

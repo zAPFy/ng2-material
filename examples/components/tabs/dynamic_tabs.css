@@ -35,6 +35,7 @@ tabs-dynamic-tabs label {
 tabs-dynamic-tabs .long > input {
   width: 264px; }
 tabs-dynamic-tabs .md-button.add-tab {
-  transform: translateY(5px); }
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px); }
 
 /*# sourceMappingURL=dynamic_tabs.css.map */

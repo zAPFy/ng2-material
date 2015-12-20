@@ -52,66 +52,142 @@ md-progress-circular {
           right: 0;
           border-left-color: transparent; }
   md-progress-circular .md-mode-indeterminate .md-spinner-wrapper {
-    animation: outer-rotate 2.91667s linear infinite; }
+    -webkit-animation: outer-rotate 2.91667s linear infinite;
+            animation: outer-rotate 2.91667s linear infinite; }
     md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner {
-      animation: sporadic-rotate 5.25s cubic-bezier(0.35, 0, 0.25, 1) infinite; }
+      -webkit-animation: sporadic-rotate 5.25s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+              animation: sporadic-rotate 5.25s cubic-bezier(0.35, 0, 0.25, 1) infinite; }
       md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner .md-left .md-half-circle, md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner .md-right .md-half-circle {
-        animation-iteration-count: infinite;
-        animation-duration: 1.3125s;
-        animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1); }
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        -webkit-animation-duration: 1.3125s;
+                animation-duration: 1.3125s;
+        -webkit-animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+                animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1); }
       md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner .md-left .md-half-circle {
-        animation-name: left-wobble; }
+        -webkit-animation-name: left-wobble;
+                animation-name: left-wobble; }
       md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner .md-right .md-half-circle {
-        animation-name: right-wobble; }
+        -webkit-animation-name: right-wobble;
+                animation-name: right-wobble; }
   md-progress-circular md-progress-circular.ng-hide .md-spinner-wrapper {
-    animation: none; }
+    -webkit-animation: none;
+            animation: none; }
     md-progress-circular md-progress-circular.ng-hide .md-spinner-wrapper .md-inner {
-      animation: none; }
+      -webkit-animation: none;
+              animation: none; }
       md-progress-circular md-progress-circular.ng-hide .md-spinner-wrapper .md-inner .md-left .md-half-circle {
-        animation-name: none; }
+        -webkit-animation-name: none;
+                animation-name: none; }
       md-progress-circular md-progress-circular.ng-hide .md-spinner-wrapper .md-inner .md-right .md-half-circle {
-        animation-name: none; }
+        -webkit-animation-name: none;
+                animation-name: none; }
   md-progress-circular .md-spinner-wrapper.ng-hide {
-    animation: none; }
+    -webkit-animation: none;
+            animation: none; }
     md-progress-circular .md-spinner-wrapper.ng-hide .md-inner {
-      animation: none; }
+      -webkit-animation: none;
+              animation: none; }
       md-progress-circular .md-spinner-wrapper.ng-hide .md-inner .md-left .md-half-circle {
-        animation-name: none; }
+        -webkit-animation-name: none;
+                animation-name: none; }
       md-progress-circular .md-spinner-wrapper.ng-hide .md-inner .md-right .md-half-circle {
-        animation-name: none; }
+        -webkit-animation-name: none;
+                animation-name: none; }
+
+@-webkit-keyframes outer-rotate {
+  0% {
+    -webkit-transform: rotate(0deg) scale(0.5);
+            transform: rotate(0deg) scale(0.5); }
+  100% {
+    -webkit-transform: rotate(360deg) scale(0.5);
+            transform: rotate(360deg) scale(0.5); } }
 
 @keyframes outer-rotate {
   0% {
-    transform: rotate(0deg) scale(0.5); }
+    -webkit-transform: rotate(0deg) scale(0.5);
+            transform: rotate(0deg) scale(0.5); }
   100% {
-    transform: rotate(360deg) scale(0.5); } }
+    -webkit-transform: rotate(360deg) scale(0.5);
+            transform: rotate(360deg) scale(0.5); } }
+@-webkit-keyframes left-wobble {
+  0%, 100% {
+    -webkit-transform: rotate(130deg);
+            transform: rotate(130deg); }
+  50% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg); } }
 @keyframes left-wobble {
   0%, 100% {
-    transform: rotate(130deg); }
+    -webkit-transform: rotate(130deg);
+            transform: rotate(130deg); }
   50% {
-    transform: rotate(-5deg); } }
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg); } }
+@-webkit-keyframes right-wobble {
+  0%, 100% {
+    -webkit-transform: rotate(-130deg);
+            transform: rotate(-130deg); }
+  50% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg); } }
 @keyframes right-wobble {
   0%, 100% {
-    transform: rotate(-130deg); }
+    -webkit-transform: rotate(-130deg);
+            transform: rotate(-130deg); }
   50% {
-    transform: rotate(5deg); } }
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg); } }
+@-webkit-keyframes sporadic-rotate {
+  12.5% {
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg); }
+  25% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg); }
+  37.5% {
+    -webkit-transform: rotate(405deg);
+            transform: rotate(405deg); }
+  50% {
+    -webkit-transform: rotate(540deg);
+            transform: rotate(540deg); }
+  62.5% {
+    -webkit-transform: rotate(675deg);
+            transform: rotate(675deg); }
+  75% {
+    -webkit-transform: rotate(810deg);
+            transform: rotate(810deg); }
+  87.5% {
+    -webkit-transform: rotate(945deg);
+            transform: rotate(945deg); }
+  100% {
+    -webkit-transform: rotate(1080deg);
+            transform: rotate(1080deg); } }
 @keyframes sporadic-rotate {
   12.5% {
-    transform: rotate(135deg); }
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg); }
   25% {
-    transform: rotate(270deg); }
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg); }
   37.5% {
-    transform: rotate(405deg); }
+    -webkit-transform: rotate(405deg);
+            transform: rotate(405deg); }
   50% {
-    transform: rotate(540deg); }
+    -webkit-transform: rotate(540deg);
+            transform: rotate(540deg); }
   62.5% {
-    transform: rotate(675deg); }
+    -webkit-transform: rotate(675deg);
+            transform: rotate(675deg); }
   75% {
-    transform: rotate(810deg); }
+    -webkit-transform: rotate(810deg);
+            transform: rotate(810deg); }
   87.5% {
-    transform: rotate(945deg); }
+    -webkit-transform: rotate(945deg);
+            transform: rotate(945deg); }
   100% {
-    transform: rotate(1080deg); } }
+    -webkit-transform: rotate(1080deg);
+            transform: rotate(1080deg); } }
 md-progress-circular {
   background-color: transparent; }
   md-progress-circular .md-inner .md-gap {
