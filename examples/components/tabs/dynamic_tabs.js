@@ -18,7 +18,7 @@ var TabsDynamicTabs = (function () {
         ];
         this.selected = null;
         this.previous = null;
-        this._selectedIndex = 0;
+        this._selectedIndex = 1;
     }
     Object.defineProperty(TabsDynamicTabs.prototype, "selectedIndex", {
         get: function () {
@@ -46,7 +46,10 @@ var TabsDynamicTabs = (function () {
         __metadata('design:paramtypes', [Number])
     ], TabsDynamicTabs.prototype, "selectedIndex", null);
     TabsDynamicTabs = __decorate([
-        core_1.Component({ selector: 'tabs-dynamic-tabs' }),
+        core_1.Component({
+            selector: 'tabs-dynamic-tabs',
+            properties: ['selectedIndex']
+        }),
         core_1.View({
             templateUrl: 'examples/components/tabs/dynamic_tabs.html',
             styleUrls: ['examples/components/tabs/dynamic_tabs.css'],

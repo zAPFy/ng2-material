@@ -1,10 +1,15 @@
 import {
-  Component, Directive, Input, QueryList, Attribute, AfterContentInit,
-  ViewContainerRef, TemplateRef, ContentChildren
+  Component, Directive, Input, QueryList, Attribute, AfterViewInit,
+  ViewContainerRef, TemplateRef, ContentChildren, forwardRef
 } from 'angular2/core';
 import {isPresent} from "angular2/src/facade/lang";
 import {Ink} from "../../core/util/ink";
 import {ViewEncapsulation} from "angular2/core";
+import {NgFor} from "angular2/common";
+import {Host} from "angular2/core";
+import {SkipSelf} from "angular2/core";
+import {Query} from "angular2/core";
+import {ElementRef} from "angular2/core";
 
 
 // TODO: behaviors to test
@@ -33,7 +38,9 @@ export class MdTab {
   }
 
   @Input() set active(active: boolean) {
-    if (active == this._active) return;
+    if (active == this._active) {
+      return;
+    }
     this._active = active;
     if (active) {
       this.viewContainer.createEmbeddedView(this.templateRef);
@@ -49,32 +56,67 @@ export class MdTab {
 
 @Component({
   selector: 'md-tabs',
-  templateUrl: 'ng2-material/components/tabs/tabs.html',
+  template: `
+    <md-tabs-wrapper>
+      <md-tab-data></md-tab-data>
+      <md-tabs-canvas role="tablist">
+        <md-pagination-wrapper>
+          <md-tab-item tabindex="-1"
+                       class="md-tab"
+                       (click)="onTabClick(pane,$event)"
+                       [class.md-active]="selectedTab == pane"
+                       [disabled]="pane.disabled"
+                       [style.max-width]="maxTabWidth + 'px'"
+                       *ngFor="#pane of panes"
+                       role="tab">
+            {{pane.label}}
+          </md-tab-item>
+          <md-ink-bar></md-ink-bar>
+        </md-pagination-wrapper>
+      </md-tabs-canvas>
+    </md-tabs-wrapper>
+    <md-tabs-content-wrapper>
+      <md-tab-content role="tabpanel" class="md-active"
+                      [class.md-no-scroll]="mdNoScroll">
+        <ng-content></ng-content>
+      </md-tab-content>
+    </md-tabs-content-wrapper>`,
+  directives: [NgFor],
+  properties: ['selected'],
   encapsulation: ViewEncapsulation.None
 })
-export class MdTabs implements AfterContentInit {
-  @ContentChildren(MdTab) panes: QueryList<MdTab>;
+export class MdTabs {
 
   @Input() mdNoScroll: boolean = false;
 
-  constructor(@Attribute('mdNoScroll') noScroll: string) {
+  constructor(@Query(MdTab) public panes: QueryList<MdTab>,
+              private _element: ElementRef,
+              @Attribute('mdNoScroll') noScroll: string) {
     this.mdNoScroll = isPresent(noScroll);
+    this.panes.changes.subscribe((_) => {
+      this.panes.toArray().forEach((p: MdTab, index: number) => {
+        p.active = index === this._selected;
+      });
+    });
   }
 
-  private _selectedIndex: number = -1;
-  get selectedIndex(): number {
-    return this._selectedIndex;
+  private _selected: number = 0;
+  get selected(): number {
+    return this._selected;
   }
 
-  set selectedIndex(value: number) {
+  @Input()
+  set selected(index: number) {
     let panes = this.panes.toArray();
-    if (value > 0 && value < panes.length) {
-      this.select(panes[value]);
-      this._selectedIndex = value;
+    let pane = null;
+    if (index >= 0 && index < panes.length) {
+      pane = panes[index];
     }
+    this.selectedTab = pane;
+    this._selected = index;
   }
 
-  get selected(): MdTab {
+  get selectedTab(): MdTab {
     let result = null;
     this.panes.toArray().forEach((p: MdTab) => {
       if (p.active) {
@@ -84,22 +126,19 @@ export class MdTabs implements AfterContentInit {
     return result;
   }
 
-  select(pane: MdTab) {
-    this.panes.toArray().forEach((p: MdTab) => p.active = p == pane);
+  set selectedTab(value: MdTab) {
+    this.panes.toArray().forEach((p: MdTab, index: number) => {
+      p.active = p == value;
+      if (p.active) {
+        this._selected = index;
+      }
+    });
   }
 
   onTabClick(pane: MdTab, event?) {
-    if (event && Ink.canApply(event.target)) {
+    if (event && Ink.canApply(this._element.nativeElement)) {
       Ink.rippleEvent(event.target, event);
     }
-    this.select(pane);
-  }
-
-  ngAfterContentInit(): any {
-    setTimeout(()=> {
-      if (this._selectedIndex === -1) {
-        this.select(this.panes.toArray()[0]);
-      }
-    }, 0);
+    this.selectedTab = pane;
   }
 }

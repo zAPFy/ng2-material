@@ -115,7 +115,7 @@ var MdGridList = (function () {
     MdGridList = __decorate([
         core_1.Component({ selector: 'md-grid-list', inputs: ['cols', 'rowHeight', 'gutterSize'] }),
         core_1.View({
-            templateUrl: 'ng2-material/components/grid_list/grid_list.html',
+            template: "\n    <div class=\"md-grid-list\">\n      <ng-content></ng-content>\n    </div>",
             encapsulation: core_1.ViewEncapsulation.None
         }), 
         __metadata('design:paramtypes', [])
@@ -174,7 +174,7 @@ var MdGridTile = (function () {
             }
         }),
         core_1.View({
-            templateUrl: 'ng2-material/components/grid_list/grid_tile.html',
+            template: "\n    <style>@import \"ng2-material/components/grid_list/grid-list.css\";</style>\n    <figure>\n      <ng-content></ng-content>\n    </figure>",
             encapsulation: core_1.ViewEncapsulation.None
         }),
         __param(0, core_1.SkipSelf()),

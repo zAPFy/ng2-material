@@ -35,7 +35,7 @@ var MdSwitch = (function (_super) {
             }
         }),
         core_1.View({
-            templateUrl: 'ng2-material/components/switcher/switch.html',
+            template: "\n    <div class=\"md-switch-container\">\n      <div class=\"md-switch-bar\"></div>\n      <div class=\"md-switch-thumb-container\">\n        <div class=\"md-switch-thumb\"></div>\n      </div>\n    </div>\n    <div class=\"md-switch-label\">\n      <ng-content></ng-content>\n    </div>",
             directives: [],
             encapsulation: core_1.ViewEncapsulation.None
         }),

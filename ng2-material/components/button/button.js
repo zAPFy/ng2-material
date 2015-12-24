@@ -17,6 +17,7 @@ var async_1 = require('angular2/src/facade/async');
 var lang_1 = require('angular2/src/facade/lang');
 var core_2 = require("angular2/core");
 var ink_1 = require("../../core/util/ink");
+var BUTTON_TEMPLATE = "<span class=\"md-button-wrapper\"><ng-content></ng-content></span>";
 var MdButton = (function () {
     function MdButton(_element) {
         this._element = _element;
@@ -50,7 +51,7 @@ var MdButton = (function () {
             },
         }),
         core_1.View({
-            templateUrl: 'ng2-material/components/button/button.html',
+            template: BUTTON_TEMPLATE,
             encapsulation: core_1.ViewEncapsulation.None,
         }), 
         __metadata('design:paramtypes', [core_2.ElementRef])
@@ -103,7 +104,7 @@ var MdAnchor = (function (_super) {
             },
         }),
         core_1.View({
-            templateUrl: 'ng2-material/components/button/button.html',
+            template: BUTTON_TEMPLATE,
             encapsulation: core_1.ViewEncapsulation.None
         }), 
         __metadata('design:paramtypes', [])

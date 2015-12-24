@@ -14,7 +14,7 @@ System.register("ng2-material/components/button/button.ts", ["angular2/core.js",
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, async_1, lang_1, core_2, ink_1;
-    var MdButton, MdAnchor;
+    var BUTTON_TEMPLATE, MdButton, MdAnchor;
     return {
         setters:[
             function (core_1_1) {
@@ -31,6 +31,7 @@ System.register("ng2-material/components/button/button.ts", ["angular2/core.js",
                 ink_1 = ink_1_1;
             }],
         execute: function() {
+            BUTTON_TEMPLATE = "<span class=\"md-button-wrapper\"><ng-content></ng-content></span>";
             // TODO(jelbourn): Make the `isMouseDown` stuff done with one global listener.
             MdButton = (function () {
                 function MdButton(_element) {
@@ -71,8 +72,7 @@ System.register("ng2-material/components/button/button.ts", ["angular2/core.js",
                         },
                     }),
                     core_1.View({
-                        templateUrl: 'ng2-material/components/button/button.html',
-                        //styleUrls: ['ng2-material/components/button/button.css'],
+                        template: BUTTON_TEMPLATE,
                         encapsulation: core_1.ViewEncapsulation.None,
                     }), 
                     __metadata('design:paramtypes', [(typeof (_a = typeof core_2.ElementRef !== 'undefined' && core_2.ElementRef) === 'function' && _a) || Object])
@@ -131,7 +131,7 @@ System.register("ng2-material/components/button/button.ts", ["angular2/core.js",
                         },
                     }),
                     core_1.View({
-                        templateUrl: 'ng2-material/components/button/button.html',
+                        template: BUTTON_TEMPLATE,
                         encapsulation: core_1.ViewEncapsulation.None
                     }), 
                     __metadata('design:paramtypes', [])
@@ -409,7 +409,7 @@ System.register("ng2-material/components/dialog/dialog.ts", ["angular2/core.js",
                     }),
                     core_1.View({
                         encapsulation: core_1.ViewEncapsulation.None,
-                        templateUrl: 'ng2-material/components/dialog/dialog.html',
+                        template: "\n    <md-dialog-content></md-dialog-content>\n    <div tabindex=\"0\" (focus)=\"wrapFocus()\"></div>",
                         directives: [core_1.forwardRef(function () { return MdDialogContent; })]
                     }), 
                     __metadata('design:paramtypes', [])
@@ -698,7 +698,7 @@ System.register("ng2-material/components/grid_list/grid_list.ts", ["angular2/cor
                 MdGridList = __decorate([
                     core_1.Component({ selector: 'md-grid-list', inputs: ['cols', 'rowHeight', 'gutterSize'] }),
                     core_1.View({
-                        templateUrl: 'ng2-material/components/grid_list/grid_list.html',
+                        template: "\n    <div class=\"md-grid-list\">\n      <ng-content></ng-content>\n    </div>",
                         encapsulation: core_1.ViewEncapsulation.None
                     }), 
                     __metadata('design:paramtypes', [])
@@ -765,7 +765,7 @@ System.register("ng2-material/components/grid_list/grid_list.ts", ["angular2/cor
                         }
                     }),
                     core_1.View({
-                        templateUrl: 'ng2-material/components/grid_list/grid_tile.html',
+                        template: "\n    <style>@import \"ng2-material/components/grid_list/grid-list.css\";</style>\n    <figure>\n      <ng-content></ng-content>\n    </figure>",
                         encapsulation: core_1.ViewEncapsulation.None
                     }),
                     __param(0, core_1.SkipSelf()),
@@ -1163,7 +1163,7 @@ System.register("ng2-material/components/list/list.ts", ["angular2/core.js", "an
                         properties: ['wrap']
                     }),
                     core_4.View({
-                        templateUrl: 'ng2-material/components/list/list_item.html'
+                        template: "\n    <div class=\"md-no-style md-list-item-inner\">\n      <ng-content></ng-content>\n    </div>"
                     }), 
                     __metadata('design:paramtypes', [(typeof (_a = typeof core_2.ElementRef !== 'undefined' && core_2.ElementRef) === 'function' && _a) || Object])
                 ], MdListItem);
@@ -1299,7 +1299,7 @@ System.register("ng2-material/components/progress_linear/progress_linear.ts", ["
                         }
                     }),
                     core_1.View({
-                        templateUrl: 'ng2-material/components/progress_linear/progress_linear.html',
+                        template: "\n    <div class=\"md-progress-linear-container md-ready\">\n      <div class=\"md-progress-linear-dashed\"></div>\n      <div class=\"md-progress-linear-bar md-progress-linear-bar1\"\n          [style.transform]=\"secondaryBarTransform\"></div>\n      <div class=\"md-progress-linear-bar md-progress-linear-bar2\"\n          [style.transform]=\"primaryBarTransform\"></div>\n    </div>",
                         directives: [],
                         encapsulation: core_1.ViewEncapsulation.None
                     }),
@@ -1347,7 +1347,7 @@ System.register("ng2-material/components/progress_circular/progress_circular.ts"
                 MdProgressCircular = __decorate([
                     core_1.Component({ selector: 'md-progress-circular' }),
                     core_1.View({
-                        templateUrl: 'ng2-material/components/progress_circular/progress_circular.html',
+                        template: "\n    <div class=\"md-spinner-wrapper\">\n      <div class=\"md-inner\">\n        <div class=\"md-gap\"></div>\n        <div class=\"md-left\">\n          <div class=\"md-half-circle\"></div>\n        </div>\n        <div class=\"md-right\">\n          <div class=\"md-half-circle\"></div>\n        </div>\n      </div>\n    </div>",
                         encapsulation: core_1.ViewEncapsulation.None
                     }), 
                     __metadata('design:paramtypes', [])
@@ -1396,9 +1396,6 @@ System.register("ng2-material/components/radio/radio_button.ts", ["angular2/core
             // TODO(jdd): [disabled] style
             // TODO(jelbourn): Behaviors to test
             // Radios set default tab index iff not in parent group
-            // Radios are unique-select
-            // Radio updates parent group's value
-            // Change to parent group's value updates the selected child radio
             // Radio name is pulled on parent group
             // Radio group changes on arrow keys
             // Radio group skips disabled radios on arrow keys
@@ -1429,6 +1426,7 @@ System.register("ng2-material/components/radio/radio_button.ts", ["angular2/core
                         if (button) {
                             this.selectedRadioId = button.id;
                             this.activedescendant = button.id;
+                            button.checked = true;
                         }
                     },
                     enumerable: true,
@@ -1554,7 +1552,7 @@ System.register("ng2-material/components/radio/radio_button.ts", ["angular2/core
                         }
                     }),
                     core_1.View({
-                        templateUrl: 'ng2-material/components/radio/radio_group.html',
+                        template: "<ng-content></ng-content>",
                         encapsulation: core_1.ViewEncapsulation.None
                     }),
                     __param(0, core_1.Attribute('tabindex')),
@@ -1654,7 +1652,7 @@ System.register("ng2-material/components/radio/radio_button.ts", ["angular2/core
                         }
                     }),
                     core_1.View({
-                        templateUrl: 'ng2-material/components/radio/radio_button.html',
+                        template: "\n    <!-- TODO(jelbourn): render the radio on either side of the content -->\n    <label role=\"radio\" class=\"md-radio-root\"\n        [class.md-radio-checked]=\"checked\">\n      <!-- The actual radio part of the control. -->\n      <div class=\"md-radio-container\">\n        <div class=\"md-radio-off\"></div>\n        <div class=\"md-radio-on\"></div>\n      </div>\n\n      <!-- The label for radio control. -->\n      <div class=\"md-radio-label\">\n          <ng-content></ng-content>\n      </div>\n    </label>",
                         directives: [],
                         encapsulation: core_1.ViewEncapsulation.None
                     }),
@@ -1862,7 +1860,7 @@ System.register("ng2-material/components/checkbox/checkbox.ts", ["angular2/core.
                         }
                     }),
                     core_1.View({
-                        templateUrl: 'ng2-material/components/checkbox/checkbox.html',
+                        template: "\n    <div (click)=\"toggle($event)\">\n      <div class=\"md-checkbox-container\">\n        <div class=\"md-checkbox-icon\"></div>\n      </div>\n      <div class=\"md-checkbox-label\"><ng-content></ng-content></div>\n    </div>",
                         directives: [],
                         encapsulation: core_1.ViewEncapsulation.None
                     }),
@@ -1926,7 +1924,7 @@ System.register("ng2-material/components/switcher/switch.ts", ["angular2/core.js
                         }
                     }),
                     core_1.View({
-                        templateUrl: 'ng2-material/components/switcher/switch.html',
+                        template: "\n    <div class=\"md-switch-container\">\n      <div class=\"md-switch-bar\"></div>\n      <div class=\"md-switch-thumb-container\">\n        <div class=\"md-switch-thumb\"></div>\n      </div>\n    </div>\n    <div class=\"md-switch-label\">\n      <ng-content></ng-content>\n    </div>",
                         directives: [],
                         encapsulation: core_1.ViewEncapsulation.None
                     }),
@@ -2403,7 +2401,7 @@ System.register("ng2-material/core/util/ink.ts", ["angular2/src/facade/lang.js",
     }
 });
 
-System.register("ng2-material/components/tabs/tabs.ts", ["angular2/core.js", "angular2/src/facade/lang.js", "ng2-material/core/util/ink.ts"], function(exports_1) {
+System.register("ng2-material/components/tabs/tabs.ts", ["angular2/core.js", "angular2/src/facade/lang.js", "ng2-material/core/util/ink.ts", "angular2/common.js"], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2416,19 +2414,24 @@ System.register("ng2-material/components/tabs/tabs.ts", ["angular2/core.js", "an
     var __param = (this && this.__param) || function (paramIndex, decorator) {
         return function (target, key) { decorator(target, key, paramIndex); }
     };
-    var core_1, lang_1, ink_1, core_2;
+    var core_1, lang_1, ink_1, core_2, common_1, core_3, core_4;
     var MdTab, MdTabs;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
                 core_2 = core_1_1;
+                core_3 = core_1_1;
+                core_4 = core_1_1;
             },
             function (lang_1_1) {
                 lang_1 = lang_1_1;
             },
             function (ink_1_1) {
                 ink_1 = ink_1_1;
+            },
+            function (common_1_1) {
+                common_1 = common_1_1;
             }],
         execute: function() {
             // TODO: behaviors to test
@@ -2453,8 +2456,9 @@ System.register("ng2-material/components/tabs/tabs.ts", ["angular2/core.js", "an
                         return this._active;
                     },
                     set: function (active) {
-                        if (active == this._active)
+                        if (active == this._active) {
                             return;
+                        }
                         this._active = active;
                         if (active) {
                             this.viewContainer.createEmbeddedView(this.templateRef);
@@ -2491,26 +2495,36 @@ System.register("ng2-material/components/tabs/tabs.ts", ["angular2/core.js", "an
             })();
             exports_1("MdTab", MdTab);
             MdTabs = (function () {
-                function MdTabs(noScroll) {
+                function MdTabs(panes, _element, noScroll) {
+                    var _this = this;
+                    this.panes = panes;
+                    this._element = _element;
                     this.mdNoScroll = false;
-                    this._selectedIndex = -1;
+                    this._selected = 0;
                     this.mdNoScroll = lang_1.isPresent(noScroll);
+                    this.panes.changes.subscribe(function (_) {
+                        _this.panes.toArray().forEach(function (p, index) {
+                            p.active = index === _this._selected;
+                        });
+                    });
                 }
-                Object.defineProperty(MdTabs.prototype, "selectedIndex", {
+                Object.defineProperty(MdTabs.prototype, "selected", {
                     get: function () {
-                        return this._selectedIndex;
+                        return this._selected;
                     },
-                    set: function (value) {
+                    set: function (index) {
                         var panes = this.panes.toArray();
-                        if (value > 0 && value < panes.length) {
-                            this.select(panes[value]);
-                            this._selectedIndex = value;
+                        var pane = null;
+                        if (index >= 0 && index < panes.length) {
+                            pane = panes[index];
                         }
+                        this.selectedTab = pane;
+                        this._selected = index;
                     },
                     enumerable: true,
                     configurable: true
                 });
-                Object.defineProperty(MdTabs.prototype, "selected", {
+                Object.defineProperty(MdTabs.prototype, "selectedTab", {
                     get: function () {
                         var result = null;
                         this.panes.toArray().forEach(function (p) {
@@ -2520,30 +2534,24 @@ System.register("ng2-material/components/tabs/tabs.ts", ["angular2/core.js", "an
                         });
                         return result;
                     },
+                    set: function (value) {
+                        var _this = this;
+                        this.panes.toArray().forEach(function (p, index) {
+                            p.active = p == value;
+                            if (p.active) {
+                                _this._selected = index;
+                            }
+                        });
+                    },
                     enumerable: true,
                     configurable: true
                 });
-                MdTabs.prototype.select = function (pane) {
-                    this.panes.toArray().forEach(function (p) { return p.active = p == pane; });
-                };
                 MdTabs.prototype.onTabClick = function (pane, event) {
-                    if (event && ink_1.Ink.canApply(event.target)) {
+                    if (event && ink_1.Ink.canApply(this._element.nativeElement)) {
                         ink_1.Ink.rippleEvent(event.target, event);
                     }
-                    this.select(pane);
+                    this.selectedTab = pane;
                 };
-                MdTabs.prototype.ngAfterContentInit = function () {
-                    var _this = this;
-                    setTimeout(function () {
-                        if (_this._selectedIndex === -1) {
-                            _this.select(_this.panes.toArray()[0]);
-                        }
-                    }, 0);
-                };
-                __decorate([
-                    core_1.ContentChildren(MdTab), 
-                    __metadata('design:type', (typeof (_a = typeof core_1.QueryList !== 'undefined' && core_1.QueryList) === 'function' && _a) || Object)
-                ], MdTabs.prototype, "panes", void 0);
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', Boolean)
@@ -2551,14 +2559,17 @@ System.register("ng2-material/components/tabs/tabs.ts", ["angular2/core.js", "an
                 MdTabs = __decorate([
                     core_1.Component({
                         selector: 'md-tabs',
-                        templateUrl: 'ng2-material/components/tabs/tabs.html',
+                        template: "\n    <md-tabs-wrapper>\n      <md-tab-data></md-tab-data>\n      <md-tabs-canvas role=\"tablist\">\n        <md-pagination-wrapper>\n          <md-tab-item tabindex=\"-1\"\n                       class=\"md-tab\"\n                       (click)=\"onTabClick(pane,$event)\"\n                       [class.md-active]=\"selectedTab == pane\"\n                       [disabled]=\"pane.disabled\"\n                       [style.max-width]=\"maxTabWidth + 'px'\"\n                       *ngFor=\"#pane of panes\"\n                       role=\"tab\">\n            {{pane.label}}\n          </md-tab-item>\n          <md-ink-bar></md-ink-bar>\n        </md-pagination-wrapper>\n      </md-tabs-canvas>\n    </md-tabs-wrapper>\n    <md-tabs-content-wrapper>\n      <md-tab-content role=\"tabpanel\" class=\"md-active\"\n                      [class.md-no-scroll]=\"mdNoScroll\">\n        <ng-content></ng-content>\n      </md-tab-content>\n    </md-tabs-content-wrapper>",
+                        directives: [common_1.NgFor],
+                        properties: ['selected'],
                         encapsulation: core_2.ViewEncapsulation.None
                     }),
-                    __param(0, core_1.Attribute('mdNoScroll')), 
-                    __metadata('design:paramtypes', [String])
+                    __param(0, core_3.Query(MdTab)),
+                    __param(2, core_1.Attribute('mdNoScroll')), 
+                    __metadata('design:paramtypes', [(typeof (_a = typeof core_1.QueryList !== 'undefined' && core_1.QueryList) === 'function' && _a) || Object, (typeof (_b = typeof core_4.ElementRef !== 'undefined' && core_4.ElementRef) === 'function' && _b) || Object, String])
                 ], MdTabs);
                 return MdTabs;
-                var _a;
+                var _a, _b;
             })();
             exports_1("MdTabs", MdTabs);
         }

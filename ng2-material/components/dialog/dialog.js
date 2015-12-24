@@ -148,7 +148,7 @@ var MdDialogContainer = (function () {
         }),
         core_1.View({
             encapsulation: core_1.ViewEncapsulation.None,
-            templateUrl: 'ng2-material/components/dialog/dialog.html',
+            template: "\n    <md-dialog-content></md-dialog-content>\n    <div tabindex=\"0\" (focus)=\"wrapFocus()\"></div>",
             directives: [core_1.forwardRef(function () { return MdDialogContent; })]
         }), 
         __metadata('design:paramtypes', [])

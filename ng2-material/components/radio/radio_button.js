@@ -38,6 +38,7 @@ var MdRadioGroup = (function () {
             if (button) {
                 this.selectedRadioId = button.id;
                 this.activedescendant = button.id;
+                button.checked = true;
             }
         },
         enumerable: true,
@@ -148,7 +149,7 @@ var MdRadioGroup = (function () {
             }
         }),
         core_1.View({
-            templateUrl: 'ng2-material/components/radio/radio_group.html',
+            template: "<ng-content></ng-content>",
             encapsulation: core_1.ViewEncapsulation.None
         }),
         __param(0, core_1.Attribute('tabindex')),
@@ -233,7 +234,7 @@ var MdRadioButton = (function () {
             }
         }),
         core_1.View({
-            templateUrl: 'ng2-material/components/radio/radio_button.html',
+            template: "\n    <!-- TODO(jelbourn): render the radio on either side of the content -->\n    <label role=\"radio\" class=\"md-radio-root\"\n        [class.md-radio-checked]=\"checked\">\n      <!-- The actual radio part of the control. -->\n      <div class=\"md-radio-container\">\n        <div class=\"md-radio-off\"></div>\n        <div class=\"md-radio-on\"></div>\n      </div>\n\n      <!-- The label for radio control. -->\n      <div class=\"md-radio-label\">\n          <ng-content></ng-content>\n      </div>\n    </label>",
             directives: [],
             encapsulation: core_1.ViewEncapsulation.None
         }),

@@ -22,7 +22,7 @@ var MdProgressCircular = (function (_super) {
     MdProgressCircular = __decorate([
         core_1.Component({ selector: 'md-progress-circular' }),
         core_1.View({
-            templateUrl: 'ng2-material/components/progress_circular/progress_circular.html',
+            template: "\n    <div class=\"md-spinner-wrapper\">\n      <div class=\"md-inner\">\n        <div class=\"md-gap\"></div>\n        <div class=\"md-left\">\n          <div class=\"md-half-circle\"></div>\n        </div>\n        <div class=\"md-right\">\n          <div class=\"md-half-circle\"></div>\n        </div>\n      </div>\n    </div>",
             encapsulation: core_1.ViewEncapsulation.None
         }), 
         __metadata('design:paramtypes', [])

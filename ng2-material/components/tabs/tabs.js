@@ -14,6 +14,9 @@ var core_1 = require('angular2/core');
 var lang_1 = require("angular2/src/facade/lang");
 var ink_1 = require("../../core/util/ink");
 var core_2 = require("angular2/core");
+var common_1 = require("angular2/common");
+var core_3 = require("angular2/core");
+var core_4 = require("angular2/core");
 var MdTab = (function () {
     function MdTab(viewContainer, disabled, templateRef) {
         this.viewContainer = viewContainer;
@@ -27,8 +30,9 @@ var MdTab = (function () {
             return this._active;
         },
         set: function (active) {
-            if (active == this._active)
+            if (active == this._active) {
                 return;
+            }
             this._active = active;
             if (active) {
                 this.viewContainer.createEmbeddedView(this.templateRef);
@@ -64,26 +68,36 @@ var MdTab = (function () {
 })();
 exports.MdTab = MdTab;
 var MdTabs = (function () {
-    function MdTabs(noScroll) {
+    function MdTabs(panes, _element, noScroll) {
+        var _this = this;
+        this.panes = panes;
+        this._element = _element;
         this.mdNoScroll = false;
-        this._selectedIndex = -1;
+        this._selected = 0;
         this.mdNoScroll = lang_1.isPresent(noScroll);
+        this.panes.changes.subscribe(function (_) {
+            _this.panes.toArray().forEach(function (p, index) {
+                p.active = index === _this._selected;
+            });
+        });
     }
-    Object.defineProperty(MdTabs.prototype, "selectedIndex", {
+    Object.defineProperty(MdTabs.prototype, "selected", {
         get: function () {
-            return this._selectedIndex;
+            return this._selected;
         },
-        set: function (value) {
+        set: function (index) {
             var panes = this.panes.toArray();
-            if (value > 0 && value < panes.length) {
-                this.select(panes[value]);
-                this._selectedIndex = value;
+            var pane = null;
+            if (index >= 0 && index < panes.length) {
+                pane = panes[index];
             }
+            this.selectedTab = pane;
+            this._selected = index;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MdTabs.prototype, "selected", {
+    Object.defineProperty(MdTabs.prototype, "selectedTab", {
         get: function () {
             var result = null;
             this.panes.toArray().forEach(function (p) {
@@ -93,30 +107,24 @@ var MdTabs = (function () {
             });
             return result;
         },
+        set: function (value) {
+            var _this = this;
+            this.panes.toArray().forEach(function (p, index) {
+                p.active = p == value;
+                if (p.active) {
+                    _this._selected = index;
+                }
+            });
+        },
         enumerable: true,
         configurable: true
     });
-    MdTabs.prototype.select = function (pane) {
-        this.panes.toArray().forEach(function (p) { return p.active = p == pane; });
-    };
     MdTabs.prototype.onTabClick = function (pane, event) {
-        if (event && ink_1.Ink.canApply(event.target)) {
+        if (event && ink_1.Ink.canApply(this._element.nativeElement)) {
             ink_1.Ink.rippleEvent(event.target, event);
         }
-        this.select(pane);
+        this.selectedTab = pane;
     };
-    MdTabs.prototype.ngAfterContentInit = function () {
-        var _this = this;
-        setTimeout(function () {
-            if (_this._selectedIndex === -1) {
-                _this.select(_this.panes.toArray()[0]);
-            }
-        }, 0);
-    };
-    __decorate([
-        core_1.ContentChildren(MdTab), 
-        __metadata('design:type', core_1.QueryList)
-    ], MdTabs.prototype, "panes", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Boolean)
@@ -124,11 +132,14 @@ var MdTabs = (function () {
     MdTabs = __decorate([
         core_1.Component({
             selector: 'md-tabs',
-            templateUrl: 'ng2-material/components/tabs/tabs.html',
+            template: "\n    <md-tabs-wrapper>\n      <md-tab-data></md-tab-data>\n      <md-tabs-canvas role=\"tablist\">\n        <md-pagination-wrapper>\n          <md-tab-item tabindex=\"-1\"\n                       class=\"md-tab\"\n                       (click)=\"onTabClick(pane,$event)\"\n                       [class.md-active]=\"selectedTab == pane\"\n                       [disabled]=\"pane.disabled\"\n                       [style.max-width]=\"maxTabWidth + 'px'\"\n                       *ngFor=\"#pane of panes\"\n                       role=\"tab\">\n            {{pane.label}}\n          </md-tab-item>\n          <md-ink-bar></md-ink-bar>\n        </md-pagination-wrapper>\n      </md-tabs-canvas>\n    </md-tabs-wrapper>\n    <md-tabs-content-wrapper>\n      <md-tab-content role=\"tabpanel\" class=\"md-active\"\n                      [class.md-no-scroll]=\"mdNoScroll\">\n        <ng-content></ng-content>\n      </md-tab-content>\n    </md-tabs-content-wrapper>",
+            directives: [common_1.NgFor],
+            properties: ['selected'],
             encapsulation: core_2.ViewEncapsulation.None
         }),
-        __param(0, core_1.Attribute('mdNoScroll')), 
-        __metadata('design:paramtypes', [String])
+        __param(0, core_3.Query(MdTab)),
+        __param(2, core_1.Attribute('mdNoScroll')), 
+        __metadata('design:paramtypes', [core_1.QueryList, core_4.ElementRef, String])
     ], MdTabs);
     return MdTabs;
 })();

@@ -75,7 +75,7 @@ var MdCheckbox = (function () {
             }
         }),
         core_1.View({
-            templateUrl: 'ng2-material/components/checkbox/checkbox.html',
+            template: "\n    <div (click)=\"toggle($event)\">\n      <div class=\"md-checkbox-container\">\n        <div class=\"md-checkbox-icon\"></div>\n      </div>\n      <div class=\"md-checkbox-label\"><ng-content></ng-content></div>\n    </div>",
             directives: [],
             encapsulation: core_1.ViewEncapsulation.None
         }),

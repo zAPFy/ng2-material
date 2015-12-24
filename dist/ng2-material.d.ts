@@ -600,7 +600,8 @@ declare module 'ng2-material/components/toolbar/toolbar' {
 
 }
 declare module 'ng2-material/components/tabs/tabs' {
-	import { QueryList, AfterContentInit, ViewContainerRef, TemplateRef } from 'angular2/core';
+	import { QueryList, ViewContainerRef, TemplateRef } from 'angular2/core';
+	import { ElementRef } from "angular2/core";
 	export class MdTab {
 	    viewContainer: ViewContainerRef;
 	    templateRef: TemplateRef;
@@ -610,16 +611,15 @@ declare module 'ng2-material/components/tabs/tabs' {
 	    constructor(viewContainer: ViewContainerRef, disabled: string, templateRef: TemplateRef);
 	    active: boolean;
 	}
-	export class MdTabs implements AfterContentInit {
+	export class MdTabs {
 	    panes: QueryList<MdTab>;
+	    private _element;
 	    mdNoScroll: boolean;
-	    constructor(noScroll: string);
-	    private _selectedIndex;
-	    selectedIndex: number;
-	    selected: MdTab;
-	    select(pane: MdTab): void;
+	    constructor(panes: QueryList<MdTab>, _element: ElementRef, noScroll: string);
+	    private _selected;
+	    selected: number;
+	    selectedTab: MdTab;
 	    onTabClick(pane: MdTab, event?: any): void;
-	    ngAfterContentInit(): any;
 	}
 
 }

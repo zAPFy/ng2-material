@@ -22,9 +22,6 @@ import {Output, Input} from 'angular2/core';
 
 // TODO(jelbourn): Behaviors to test
 // Radios set default tab index iff not in parent group
-// Radios are unique-select
-// Radio updates parent group's value
-// Change to parent group's value updates the selected child radio
 // Radio name is pulled on parent group
 // Radio group changes on arrow keys
 // Radio group skips disabled radios on arrow keys
@@ -44,7 +41,7 @@ var _uniqueIdCounter: number = 0;
   }
 })
 @View({
-  templateUrl: 'ng2-material/components/radio/radio_group.html',
+  template: `<ng-content></ng-content>`,
   encapsulation: ViewEncapsulation.None
 })
 export class MdRadioGroup implements OnChanges {
@@ -61,6 +58,7 @@ export class MdRadioGroup implements OnChanges {
     if (button) {
       this.selectedRadioId = button.id;
       this.activedescendant = button.id;
+      button.checked = true;
     }
   }
 
@@ -222,7 +220,21 @@ export class MdRadioGroup implements OnChanges {
   }
 })
 @View({
-  templateUrl: 'ng2-material/components/radio/radio_button.html',
+  template: `
+    <!-- TODO(jelbourn): render the radio on either side of the content -->
+    <label role="radio" class="md-radio-root"
+        [class.md-radio-checked]="checked">
+      <!-- The actual radio part of the control. -->
+      <div class="md-radio-container">
+        <div class="md-radio-off"></div>
+        <div class="md-radio-on"></div>
+      </div>
+
+      <!-- The label for radio control. -->
+      <div class="md-radio-label">
+          <ng-content></ng-content>
+      </div>
+    </label>`,
   directives: [],
   encapsulation: ViewEncapsulation.None
 })

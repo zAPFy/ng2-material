@@ -58,7 +58,7 @@ var MdListItem = (function () {
             properties: ['wrap']
         }),
         core_4.View({
-            templateUrl: 'ng2-material/components/list/list_item.html'
+            template: "\n    <div class=\"md-no-style md-list-item-inner\">\n      <ng-content></ng-content>\n    </div>"
         }), 
         __metadata('design:paramtypes', [core_2.ElementRef])
     ], MdListItem);

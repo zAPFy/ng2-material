@@ -104,7 +104,7 @@ var MdProgressLinear = (function () {
             }
         }),
         core_1.View({
-            templateUrl: 'ng2-material/components/progress_linear/progress_linear.html',
+            template: "\n    <div class=\"md-progress-linear-container md-ready\">\n      <div class=\"md-progress-linear-dashed\"></div>\n      <div class=\"md-progress-linear-bar md-progress-linear-bar1\"\n          [style.transform]=\"secondaryBarTransform\"></div>\n      <div class=\"md-progress-linear-bar md-progress-linear-bar2\"\n          [style.transform]=\"primaryBarTransform\"></div>\n    </div>",
             directives: [],
             encapsulation: core_1.ViewEncapsulation.None
         }),
