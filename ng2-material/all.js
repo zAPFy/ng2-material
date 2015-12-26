@@ -15,6 +15,7 @@ __export(require('./components/checkbox/checkbox'));
 var content_1 = require('./components/content/content');
 __export(require('./components/content/content'));
 __export(require('./components/dialog/dialog'));
+var dialog_2 = require('./components/dialog/dialog');
 var divider_1 = require('./components/divider/divider');
 __export(require('./components/divider/divider'));
 var grid_list_1 = require('./components/grid_list/grid_list');
@@ -84,6 +85,7 @@ var MaterialTemplateResolver = (function (_super) {
 })(compiler_1.UrlResolver);
 exports.MaterialTemplateResolver = MaterialTemplateResolver;
 exports.MATERIAL_PROVIDERS = [
+    dialog_2.MdDialog,
     radio_dispatcher_1.MdRadioDispatcher,
     core_1.provide(compiler_1.UrlResolver, { useValue: new MaterialTemplateResolver() })
 ];

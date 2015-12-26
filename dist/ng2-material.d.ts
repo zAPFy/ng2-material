@@ -146,16 +146,162 @@ declare module 'ng2-material/components/content/content' {
 	}
 
 }
+declare module 'ng2-material/components/dialog/dialog_ref' {
+	import { ComponentRef } from "angular2/core";
+	/**
+	 * Reference to an opened dialog.
+	 */
+	export class MdDialogRef {
+	    containerRef: ComponentRef;
+	    _backdropRef: ComponentRef;
+	    _contentRef: ComponentRef;
+	    isClosed: boolean;
+	    whenClosedDeferred: any;
+	    contentRefDeferred: any;
+	    constructor();
+	    backdropRef: ComponentRef;
+	    contentRef: ComponentRef;
+	    /** Gets the component instance for the content of the dialog. */
+	    instance: any;
+	    /** Gets a promise that is resolved when the dialog is closed. */
+	    whenClosed: Promise<any>;
+	    /** Closes the dialog. This operation is asynchronous. */
+	    close(result?: any): Promise<void>;
+	}
+
+}
+declare module 'ng2-material/components/dialog/dialog_config' {
+	import { MdDialogRef } from 'ng2-material/components/dialog/dialog_ref';
+	/** Configuration for a dialog to be opened. */
+	export class MdDialogConfig {
+	    width: string;
+	    height: string;
+	    container: HTMLElement;
+	    sourceEvent: Event;
+	    clickClose: boolean;
+	    context: any;
+	    parent(element: HTMLElement): MdDialogConfig;
+	    clickOutsideToClose(enabled: boolean): MdDialogConfig;
+	    title(text: string): MdDialogConfig;
+	    textContent(text: string): MdDialogConfig;
+	    ariaLabel(text: string): MdDialogConfig;
+	    ok(text: string): MdDialogConfig;
+	    cancel(text: string): MdDialogConfig;
+	    targetEvent(ev: Event): MdDialogConfig;
+	    dialogRef(ref: MdDialogRef): MdDialogConfig;
+	}
+
+}
+declare module 'ng2-material/components/dialog/dialog_container' {
+	import { ElementRef } from "angular2/core";
+	import { MdDialogRef } from 'ng2-material/components/dialog/dialog_ref';
+	/**
+	 * Container for user-provided dialog content.
+	 */
+	export class MdDialogContainer {
+	    contentRef: ElementRef;
+	    dialogRef: MdDialogRef;
+	    constructor();
+	    wrapFocus(): void;
+	    documentKeypress(event: KeyboardEvent): void;
+	}
+	/**
+	 * Simple decorator used only to communicate an ElementRef to the parent MdDialogContainer as the
+	 * location for where the dialog content will be loaded.
+	 */
+	export class MdDialogContent {
+	    constructor(dialogContainer: MdDialogContainer, elementRef: ElementRef);
+	}
+
+}
+declare module 'ng2-material/components/dialog/dialog_basic' {
+	import { IDialogComponent } from 'ng2-material/components/dialog/dialog';
+	import { MdDialogRef } from 'ng2-material/components/dialog/dialog_ref';
+	export class MdDialogBasic implements IDialogComponent {
+	    dialog: MdDialogRef;
+	    title: string;
+	    textContent: string;
+	    cancel: string;
+	    ok: string;
+	    type: string;
+	}
+
+}
+declare module 'ng2-material/components/backdrop/backdrop' {
+	import { ElementRef } from "angular2/core";
+	import { EventEmitter } from "angular2/core";
+	/**
+	 * A transparent overlay for content on the page.
+	 */
+	export class MdBackdrop {
+	    element: ElementRef;
+	    /**
+	     * When true, clicking on the backdrop will close it
+	     */
+	    clickClose: boolean;
+	    /**
+	     * Emits when the backdrop begins to hide.
+	     */
+	    onHiding: EventEmitter<MdBackdrop>;
+	    /**
+	     * Emits when the backdrop has finished being hidden.
+	     */
+	    onHidden: EventEmitter<MdBackdrop>;
+	    /**
+	     * Emits when the backdrop begins to be shown.
+	     */
+	    onShowing: EventEmitter<MdBackdrop>;
+	    /**
+	     * Emits when the backdrop has finished being shown.
+	     */
+	    onShown: EventEmitter<MdBackdrop>;
+	    constructor(element: ElementRef);
+	    private _visible;
+	    /**
+	     * Read-only property indicating whether the backdrop is visible or not.
+	     */
+	    visible: boolean;
+	    onClick(): void;
+	    /**
+	     * Show the backdrop and return a promise that is resolved when the show animations are
+	     * complete.
+	     */
+	    show(): Promise<void>;
+	    /**
+	     * Hide the backdrop and return a promise that is resolved when the hide animations are
+	     * complete.
+	     */
+	    hide(): Promise<void>;
+	}
+
+}
 declare module 'ng2-material/components/dialog/dialog' {
 	import { ComponentRef, DynamicComponentLoader, ElementRef, ResolvedProvider } from 'angular2/core';
 	import { Promise } from 'angular2/src/facade/async';
 	import { Type } from 'angular2/src/facade/lang';
+	import { MdDialogRef } from 'ng2-material/components/dialog/dialog_ref';
+	import { MdDialogConfig } from 'ng2-material/components/dialog/dialog_config';
+	import { Renderer } from "angular2/core";
+	export * from 'ng2-material/components/dialog/dialog_config';
+	export * from 'ng2-material/components/dialog/dialog_container';
+	export * from 'ng2-material/components/dialog/dialog_ref';
+	export * from 'ng2-material/components/dialog/dialog_basic';
+	/**
+	 * Any components that are launched through MdDialog should implement this
+	 * interface. The `dialog` will be injected into the component instance to
+	 * allow dismissing or interacting with the dialog reference.
+	 */
+	export interface IDialogComponent {
+	    dialog: MdDialogRef;
+	}
 	/**
 	 * Service for opening modal dialogs.
 	 */
 	export class MdDialog {
 	    componentLoader: DynamicComponentLoader;
-	    constructor(loader: DynamicComponentLoader);
+	    renderer: Renderer;
+	    constructor(componentLoader: DynamicComponentLoader, renderer: Renderer);
+	    private _defaultContainer;
 	    /**
 	     * Opens a modal dialog.
 	     * @param type The component to open.
@@ -165,33 +311,9 @@ declare module 'ng2-material/components/dialog/dialog' {
 	     */
 	    open(type: Type, elementRef: ElementRef, options?: MdDialogConfig): Promise<MdDialogRef>;
 	    /** Loads the dialog backdrop (transparent overlay over the rest of the page). */
-	    _openBackdrop(elementRef: ElementRef, bindings: ResolvedProvider[]): Promise<ComponentRef>;
+	    _openBackdrop(elementRef: ElementRef, bindings: ResolvedProvider[], options: MdDialogConfig): Promise<ComponentRef>;
 	    alert(message: string, okMessage: string): Promise<any>;
 	    confirm(message: string, okMessage: string, cancelMessage: string): Promise<any>;
-	}
-	/**
-	 * Reference to an opened dialog.
-	 */
-	export class MdDialogRef {
-	    containerRef: ComponentRef;
-	    _contentRef: ComponentRef;
-	    isClosed: boolean;
-	    whenClosedDeferred: any;
-	    contentRefDeferred: any;
-	    constructor();
-	    contentRef: ComponentRef;
-	    /** Gets the component instance for the content of the dialog. */
-	    instance: any;
-	    /** Gets a promise that is resolved when the dialog is closed. */
-	    whenClosed: Promise<any>;
-	    /** Closes the dialog. This operation is asynchronous. */
-	    close(result?: any): void;
-	}
-	/** Confiuration for a dialog to be opened. */
-	export class MdDialogConfig {
-	    width: string;
-	    height: string;
-	    constructor();
 	}
 
 }

@@ -1,6 +1,9 @@
 [
   {
     "name": "Button",
+    "sources": [
+      "ng2-material/components/button/button.ts"
+    ],
     "id": "button",
     "examples": [
       {
@@ -14,6 +17,9 @@
   },
   {
     "name": "Card",
+    "sources": [
+      "ng2-material/components/card/card.ts"
+    ],
     "id": "card",
     "examples": [
       {
@@ -40,7 +46,30 @@
     ]
   },
   {
+    "name": "Dialog",
+    "sources": [
+      "ng2-material/components/dialog/dialog_basic.ts",
+      "ng2-material/components/dialog/dialog_config.ts",
+      "ng2-material/components/dialog/dialog_container.ts",
+      "ng2-material/components/dialog/dialog_ref.ts",
+      "ng2-material/components/dialog/dialog.ts"
+    ],
+    "id": "dialog",
+    "examples": [
+      {
+        "template": "examples/components/dialog/basic_usage.html",
+        "styles": "examples/components/dialog/basic_usage.scss",
+        "source": "examples/components/dialog/basic_usage.ts",
+        "component": "dialog-basic-usage",
+        "name": "Basic Usage"
+      }
+    ]
+  },
+  {
     "name": "Progress Linear",
+    "sources": [
+      "ng2-material/components/progress_linear/progress_linear.ts"
+    ],
     "id": "progress-linear",
     "examples": [
       {
@@ -53,6 +82,10 @@
   },
   {
     "name": "Radio",
+    "sources": [
+      "ng2-material/components/radio/radio_button.ts",
+      "ng2-material/components/radio/radio_dispatcher.ts"
+    ],
     "id": "radio",
     "examples": [
       {
@@ -66,6 +99,7 @@
   },
   {
     "name": "Switch",
+    "sources": [],
     "id": "switch",
     "examples": [
       {
@@ -78,6 +112,9 @@
   },
   {
     "name": "Tabs",
+    "sources": [
+      "ng2-material/components/tabs/tabs.ts"
+    ],
     "id": "tabs",
     "examples": [
       {
@@ -98,6 +135,9 @@
   },
   {
     "name": "Toolbar",
+    "sources": [
+      "ng2-material/components/toolbar/toolbar.ts"
+    ],
     "id": "toolbar",
     "examples": [
       {

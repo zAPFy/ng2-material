@@ -1,3 +1,431 @@
+System.register("ng2-material/components/content/content.ts", ["angular2/core.js"], function(exports_1) {
+    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+    var __metadata = (this && this.__metadata) || function (k, v) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    };
+    var core_1;
+    var MdContent;
+    return {
+        setters:[
+            function (core_1_1) {
+                core_1 = core_1_1;
+            }],
+        execute: function() {
+            /**
+             * @name mdContent
+             *
+             * @description
+             * The `<md-content>` directive is a container element useful for scrollable content
+             *
+             * @usage
+             *
+             * - Add the `[layout-padding]` attribute to make the content padded.
+             *
+             * <hljs lang="html">
+             *  <md-content layout-padding>
+             *      Lorem ipsum dolor sit amet, ne quod novum mei.
+             *  </md-content>
+             * </hljs>
+             *
+             */
+            MdContent = (function () {
+                function MdContent() {
+                }
+                MdContent = __decorate([
+                    core_1.Directive({ selector: 'md-content' }), 
+                    __metadata('design:paramtypes', [])
+                ], MdContent);
+                return MdContent;
+            })();
+            exports_1("MdContent", MdContent);
+        }
+    }
+});
+
+System.register("ng2-material/components/dialog/dialog_ref.ts", ["angular2/src/facade/promise.js", "ng2-material/core/util/animate.ts", "angular2/src/facade/lang.js"], function(exports_1) {
+    var promise_1, animate_1, lang_1;
+    var MdDialogRef;
+    return {
+        setters:[
+            function (promise_1_1) {
+                promise_1 = promise_1_1;
+            },
+            function (animate_1_1) {
+                animate_1 = animate_1_1;
+            },
+            function (lang_1_1) {
+                lang_1 = lang_1_1;
+            }],
+        execute: function() {
+            /**
+             * Reference to an opened dialog.
+             */
+            MdDialogRef = (function () {
+                function MdDialogRef() {
+                    this._contentRef = null;
+                    this.containerRef = null;
+                    this.isClosed = false;
+                    this.contentRefDeferred = promise_1.PromiseWrapper.completer();
+                    this.whenClosedDeferred = promise_1.PromiseWrapper.completer();
+                }
+                Object.defineProperty(MdDialogRef.prototype, "backdropRef", {
+                    set: function (value) {
+                        var _this = this;
+                        this._backdropRef = value;
+                        var subscription = this._backdropRef.instance.onHiding.subscribe(function () {
+                            _this.close();
+                            subscription.unsubscribe();
+                        });
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(MdDialogRef.prototype, "contentRef", {
+                    set: function (value) {
+                        this._contentRef = value;
+                        this.contentRefDeferred.resolve(value);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(MdDialogRef.prototype, "instance", {
+                    /** Gets the component instance for the content of the dialog. */
+                    get: function () {
+                        if (lang_1.isPresent(this._contentRef)) {
+                            return this._contentRef.instance;
+                        }
+                        // The only time one could attempt to access this property before the value is set is if an
+                        // access occurs during
+                        // the constructor of the very instance they are trying to get (which is much more easily
+                        // accessed as `this`).
+                        throw "Cannot access dialog component instance *from* that component's constructor.";
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(MdDialogRef.prototype, "whenClosed", {
+                    /** Gets a promise that is resolved when the dialog is closed. */
+                    get: function () {
+                        return this.whenClosedDeferred.promise;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                /** Closes the dialog. This operation is asynchronous. */
+                MdDialogRef.prototype.close = function (result) {
+                    var _this = this;
+                    if (result === void 0) { result = null; }
+                    return animate_1.Animate.leave(this.containerRef.location.nativeElement, 'md-active').then(function () {
+                        if (_this._backdropRef) {
+                            _this._backdropRef.instance.hide();
+                        }
+                        return _this.contentRefDeferred.promise.then(function (_) {
+                            if (!_this.isClosed) {
+                                _this.isClosed = true;
+                                _this.containerRef.dispose();
+                                _this.whenClosedDeferred.resolve(result);
+                            }
+                        });
+                    });
+                };
+                return MdDialogRef;
+            })();
+            exports_1("MdDialogRef", MdDialogRef);
+        }
+    }
+});
+
+System.register("ng2-material/components/dialog/dialog_config.ts", [], function(exports_1) {
+    var MdDialogConfig;
+    return {
+        setters:[],
+        execute: function() {
+            /** Configuration for a dialog to be opened. */
+            MdDialogConfig = (function () {
+                function MdDialogConfig() {
+                    this.width = null;
+                    this.height = null;
+                    this.container = null;
+                    this.sourceEvent = null;
+                    this.clickClose = true;
+                    this.context = {};
+                }
+                MdDialogConfig.prototype.parent = function (element) {
+                    this.container = element;
+                    return this;
+                };
+                MdDialogConfig.prototype.clickOutsideToClose = function (enabled) {
+                    this.clickClose = enabled;
+                    return this;
+                };
+                MdDialogConfig.prototype.title = function (text) {
+                    this.context.title = text;
+                    return this;
+                };
+                MdDialogConfig.prototype.textContent = function (text) {
+                    this.context.textContent = text;
+                    return this;
+                };
+                MdDialogConfig.prototype.ariaLabel = function (text) {
+                    this.context.ariaLabel = text;
+                    return this;
+                };
+                MdDialogConfig.prototype.ok = function (text) {
+                    this.context.ok = text;
+                    return this;
+                };
+                MdDialogConfig.prototype.cancel = function (text) {
+                    this.context.cancel = text;
+                    return this;
+                };
+                MdDialogConfig.prototype.targetEvent = function (ev) {
+                    this.sourceEvent = ev;
+                    return this;
+                };
+                MdDialogConfig.prototype.dialogRef = function (ref) {
+                    this.context.dialog = ref;
+                    return this;
+                };
+                return MdDialogConfig;
+            })();
+            exports_1("MdDialogConfig", MdDialogConfig);
+        }
+    }
+});
+
+System.register("ng2-material/components/dialog/dialog_container.ts", ["angular2/core.js", "ng2-material/core/key_codes.ts"], function(exports_1) {
+    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+    var __metadata = (this && this.__metadata) || function (k, v) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    };
+    var __param = (this && this.__param) || function (paramIndex, decorator) {
+        return function (target, key) { decorator(target, key, paramIndex); }
+    };
+    var core_1, core_2, core_3, core_4, key_codes_1, core_5, core_6, core_7, core_8;
+    var MdDialogContainer, MdDialogContent;
+    return {
+        setters:[
+            function (core_1_1) {
+                core_1 = core_1_1;
+                core_2 = core_1_1;
+                core_3 = core_1_1;
+                core_4 = core_1_1;
+                core_5 = core_1_1;
+                core_6 = core_1_1;
+                core_7 = core_1_1;
+                core_8 = core_1_1;
+            },
+            function (key_codes_1_1) {
+                key_codes_1 = key_codes_1_1;
+            }],
+        execute: function() {
+            /**
+             * Container for user-provided dialog content.
+             */
+            MdDialogContainer = (function () {
+                function MdDialogContainer() {
+                    this.contentRef = null;
+                    this.dialogRef = null;
+                }
+                MdDialogContainer.prototype.wrapFocus = function () {
+                    // Return the focus to the host element. Blocked on #1251.
+                };
+                MdDialogContainer.prototype.documentKeypress = function (event) {
+                    if (event.keyCode == key_codes_1.KeyCodes.ESCAPE) {
+                        this.dialogRef.close();
+                    }
+                };
+                MdDialogContainer = __decorate([
+                    core_3.Component({
+                        selector: 'md-dialog-container',
+                        host: {
+                            'class': 'md-dialog',
+                            'tabindex': '0',
+                            '(body:keydown)': 'documentKeypress($event)',
+                        },
+                    }),
+                    core_2.View({
+                        encapsulation: core_1.ViewEncapsulation.None,
+                        template: "\n    <md-dialog-content></md-dialog-content>\n    <div tabindex=\"0\" (focus)=\"wrapFocus()\"></div>",
+                        directives: [core_5.forwardRef(function () { return MdDialogContent; })]
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], MdDialogContainer);
+                return MdDialogContainer;
+            })();
+            exports_1("MdDialogContainer", MdDialogContainer);
+            /**
+             * Simple decorator used only to communicate an ElementRef to the parent MdDialogContainer as the
+             * location for where the dialog content will be loaded.
+             */
+            MdDialogContent = (function () {
+                function MdDialogContent(dialogContainer, elementRef) {
+                    dialogContainer.contentRef = elementRef;
+                }
+                MdDialogContent = __decorate([
+                    core_6.Directive({
+                        selector: 'md-dialog-content'
+                    }),
+                    __param(0, core_7.Host()),
+                    __param(0, core_8.SkipSelf()), 
+                    __metadata('design:paramtypes', [MdDialogContainer, (typeof (_a = typeof core_4.ElementRef !== 'undefined' && core_4.ElementRef) === 'function' && _a) || Object])
+                ], MdDialogContent);
+                return MdDialogContent;
+                var _a;
+            })();
+            exports_1("MdDialogContent", MdDialogContent);
+        }
+    }
+});
+
+System.register("ng2-material/components/backdrop/backdrop.ts", ["ng2-material/core/util/animate.ts", "angular2/core.js"], function(exports_1) {
+    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+    var __metadata = (this && this.__metadata) || function (k, v) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    };
+    var animate_1, core_1, core_2, core_3, core_4, core_5, core_6, core_7;
+    var MdBackdrop;
+    return {
+        setters:[
+            function (animate_1_1) {
+                animate_1 = animate_1_1;
+            },
+            function (core_1_1) {
+                core_1 = core_1_1;
+                core_2 = core_1_1;
+                core_3 = core_1_1;
+                core_4 = core_1_1;
+                core_5 = core_1_1;
+                core_6 = core_1_1;
+                core_7 = core_1_1;
+            }],
+        execute: function() {
+            /**
+             * A transparent overlay for content on the page.
+             */
+            MdBackdrop = (function () {
+                function MdBackdrop(element) {
+                    this.element = element;
+                    /**
+                     * When true, clicking on the backdrop will close it
+                     */
+                    this.clickClose = false;
+                    /**
+                     * Emits when the backdrop begins to hide.
+                     */
+                    this.onHiding = new core_7.EventEmitter();
+                    /**
+                     * Emits when the backdrop has finished being hidden.
+                     */
+                    this.onHidden = new core_7.EventEmitter();
+                    /**
+                     * Emits when the backdrop begins to be shown.
+                     */
+                    this.onShowing = new core_7.EventEmitter();
+                    /**
+                     * Emits when the backdrop has finished being shown.
+                     */
+                    this.onShown = new core_7.EventEmitter();
+                    this._visible = false;
+                }
+                Object.defineProperty(MdBackdrop.prototype, "visible", {
+                    /**
+                     * Read-only property indicating whether the backdrop is visible or not.
+                     */
+                    get: function () {
+                        return this._visible;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                MdBackdrop.prototype.onClick = function () {
+                    if (this.clickClose && this.visible) {
+                        this.hide();
+                    }
+                };
+                /**
+                 * Show the backdrop and return a promise that is resolved when the show animations are
+                 * complete.
+                 */
+                MdBackdrop.prototype.show = function () {
+                    var _this = this;
+                    if (this._visible) {
+                        return Promise.resolve();
+                    }
+                    this._visible = true;
+                    this.onShowing.emit(this);
+                    return animate_1.Animate.enter(this.element.nativeElement, 'md-active').then(function () {
+                        _this.onShown.emit(_this);
+                    });
+                };
+                /**
+                 * Hide the backdrop and return a promise that is resolved when the hide animations are
+                 * complete.
+                 */
+                MdBackdrop.prototype.hide = function () {
+                    var _this = this;
+                    if (!this._visible) {
+                        return Promise.resolve();
+                    }
+                    this._visible = false;
+                    this.onHiding.emit(this);
+                    return animate_1.Animate.leave(this.element.nativeElement, 'md-active').then(function () {
+                        _this.onHidden.emit(_this);
+                    });
+                };
+                __decorate([
+                    core_5.Input(), 
+                    __metadata('design:type', Boolean)
+                ], MdBackdrop.prototype, "clickClose", void 0);
+                __decorate([
+                    core_6.Output(), 
+                    __metadata('design:type', (typeof (_a = typeof core_7.EventEmitter !== 'undefined' && core_7.EventEmitter) === 'function' && _a) || Object)
+                ], MdBackdrop.prototype, "onHiding", void 0);
+                __decorate([
+                    core_6.Output(), 
+                    __metadata('design:type', (typeof (_b = typeof core_7.EventEmitter !== 'undefined' && core_7.EventEmitter) === 'function' && _b) || Object)
+                ], MdBackdrop.prototype, "onHidden", void 0);
+                __decorate([
+                    core_6.Output(), 
+                    __metadata('design:type', (typeof (_c = typeof core_7.EventEmitter !== 'undefined' && core_7.EventEmitter) === 'function' && _c) || Object)
+                ], MdBackdrop.prototype, "onShowing", void 0);
+                __decorate([
+                    core_6.Output(), 
+                    __metadata('design:type', (typeof (_d = typeof core_7.EventEmitter !== 'undefined' && core_7.EventEmitter) === 'function' && _d) || Object)
+                ], MdBackdrop.prototype, "onShown", void 0);
+                MdBackdrop = __decorate([
+                    core_4.Component({
+                        selector: 'md-backdrop',
+                        host: {
+                            '(click)': 'onClick()',
+                        },
+                    }),
+                    core_3.View({ template: '', encapsulation: core_2.ViewEncapsulation.None }), 
+                    __metadata('design:paramtypes', [(typeof (_e = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _e) || Object])
+                ], MdBackdrop);
+                return MdBackdrop;
+                var _a, _b, _c, _d, _e;
+            })();
+            exports_1("MdBackdrop", MdBackdrop);
+        }
+    }
+});
+
 System.register("ng2-material/components/button/button.ts", ["angular2/core.js", "angular2/src/facade/async.js", "angular2/src/facade/lang.js", "ng2-material/core/util/ink.ts"], function(exports_1) {
     var __extends = (this && this.__extends) || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -143,7 +571,7 @@ System.register("ng2-material/components/button/button.ts", ["angular2/core.js",
     }
 });
 
-System.register("ng2-material/components/content/content.ts", ["angular2/core.js"], function(exports_1) {
+System.register("ng2-material/components/dialog/dialog_basic.ts", ["angular2/common.js", "ng2-material/components/button/button.ts", "angular2/core.js"], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -153,46 +581,66 @@ System.register("ng2-material/components/content/content.ts", ["angular2/core.js
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
-    var MdContent;
+    var common_1, button_1, core_1, core_2, core_3;
+    var MdDialogBasic;
     return {
         setters:[
+            function (common_1_1) {
+                common_1 = common_1_1;
+            },
+            function (button_1_1) {
+                button_1 = button_1_1;
+            },
             function (core_1_1) {
                 core_1 = core_1_1;
+                core_2 = core_1_1;
+                core_3 = core_1_1;
             }],
         execute: function() {
-            /**
-             * @name mdContent
-             *
-             * @description
-             * The `<md-content>` directive is a container element useful for scrollable content
-             *
-             * @usage
-             *
-             * - Add the `[layout-padding]` attribute to make the content padded.
-             *
-             * <hljs lang="html">
-             *  <md-content layout-padding>
-             *      Lorem ipsum dolor sit amet, ne quod novum mei.
-             *  </md-content>
-             * </hljs>
-             *
-             */
-            MdContent = (function () {
-                function MdContent() {
+            MdDialogBasic = (function () {
+                function MdDialogBasic() {
+                    this.title = '';
+                    this.textContent = '';
+                    this.cancel = '';
+                    this.ok = '';
+                    this.type = 'alert';
                 }
-                MdContent = __decorate([
-                    core_1.Directive({ selector: 'md-content' }), 
+                __decorate([
+                    core_3.Input(), 
+                    __metadata('design:type', String)
+                ], MdDialogBasic.prototype, "title", void 0);
+                __decorate([
+                    core_3.Input(), 
+                    __metadata('design:type', String)
+                ], MdDialogBasic.prototype, "textContent", void 0);
+                __decorate([
+                    core_3.Input(), 
+                    __metadata('design:type', String)
+                ], MdDialogBasic.prototype, "cancel", void 0);
+                __decorate([
+                    core_3.Input(), 
+                    __metadata('design:type', String)
+                ], MdDialogBasic.prototype, "ok", void 0);
+                __decorate([
+                    core_3.Input(), 
+                    __metadata('design:type', String)
+                ], MdDialogBasic.prototype, "type", void 0);
+                MdDialogBasic = __decorate([
+                    core_2.Component({ selector: 'md-dialog-basic' }),
+                    core_1.View({
+                        template: "\n  <h2>{{ title }}</h2>\n  <p>{{ textContent }}</p>\n  <md-dialog-actions>\n    <button md-button *ngIf=\"cancel != ''\" type=\"button\" (click)=\"dialog.close(false)\">\n      <span>{{ cancel }}</span>\n    </button>\n    <button md-button *ngIf=\"ok != ''\" class=\"md-primary\" type=\"button\" (click)=\"dialog.close(true)\">\n      <span>{{ ok }}</span>\n    </button>\n  </md-dialog-actions>",
+                        directives: [button_1.MdButton, common_1.NgIf]
+                    }), 
                     __metadata('design:paramtypes', [])
-                ], MdContent);
-                return MdContent;
+                ], MdDialogBasic);
+                return MdDialogBasic;
             })();
-            exports_1("MdContent", MdContent);
+            exports_1("MdDialogBasic", MdDialogBasic);
         }
     }
 });
 
-System.register("ng2-material/components/dialog/dialog.ts", ["angular2/core.js", "angular2/src/facade/async.js", "angular2/src/facade/lang.js", "angular2/src/platform/dom/dom_adapter.js", "ng2-material/core/key_codes.ts"], function(exports_1) {
+System.register("ng2-material/components/dialog/dialog.ts", ["angular2/core.js", "angular2/src/facade/lang.js", "ng2-material/components/dialog/dialog_ref.ts", "ng2-material/components/dialog/dialog_config.ts", "ng2-material/components/dialog/dialog_container.ts", "ng2-material/components/backdrop/backdrop.ts", "angular2/src/platform/dom/dom_adapter.js", "ng2-material/core/util/animate.ts", "ng2-material/components/dialog/dialog_basic.ts"], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -202,43 +650,60 @@ System.register("ng2-material/components/dialog/dialog.ts", ["angular2/core.js",
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var __param = (this && this.__param) || function (paramIndex, decorator) {
-        return function (target, key) { decorator(target, key, paramIndex); }
+    var core_1, lang_1, dialog_ref_1, dialog_config_1, dialog_container_1, backdrop_1, dom_adapter_1, core_2, animate_1;
+    var MdDialog;
+    var exportedNames_1 = {
+        'MdDialog': true
     };
-    var core_1, async_1, lang_1, dom_adapter_1, key_codes_1;
-    var MdDialog, MdDialogRef, MdDialogConfig, MdDialogContainer, MdDialogContent, MdBackdrop;
+    function exportStar_1(m) {
+        var exports = {};
+        for(var n in m) {
+            if (n !== "default"&& !exportedNames_1.hasOwnProperty(n)) exports[n] = m[n];
+        }
+        exports_1(exports);
+    }
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (async_1_1) {
-                async_1 = async_1_1;
+                core_2 = core_1_1;
             },
             function (lang_1_1) {
                 lang_1 = lang_1_1;
             },
+            function (dialog_ref_1_1) {
+                dialog_ref_1 = dialog_ref_1_1;
+                exportStar_1(dialog_ref_1_1);
+            },
+            function (dialog_config_1_1) {
+                dialog_config_1 = dialog_config_1_1;
+                exportStar_1(dialog_config_1_1);
+            },
+            function (dialog_container_1_1) {
+                dialog_container_1 = dialog_container_1_1;
+                exportStar_1(dialog_container_1_1);
+            },
+            function (backdrop_1_1) {
+                backdrop_1 = backdrop_1_1;
+            },
             function (dom_adapter_1_1) {
                 dom_adapter_1 = dom_adapter_1_1;
             },
-            function (key_codes_1_1) {
-                key_codes_1 = key_codes_1_1;
+            function (animate_1_1) {
+                animate_1 = animate_1_1;
+            },
+            function (dialog_basic_1_1) {
+                exportStar_1(dialog_basic_1_1);
             }],
         execute: function() {
-            // TODO(jelbourn): Opener of dialog can control where it is rendered.
-            // TODO(jelbourn): body scrolling is disabled while dialog is open.
-            // TODO(jelbourn): Don't manually construct and configure a DOM element. See #1402
-            // TODO(jelbourn): Wrap focus from end of dialog back to the start. Blocked on #1251
-            // TODO(jelbourn): Focus the dialog element when it is opened.
-            // TODO(jelbourn): Real dialog styles.
-            // TODO(jelbourn): Pre-built `alert` and `confirm` dialogs.
-            // TODO(jelbourn): Animate dialog out of / into opening element.
             /**
              * Service for opening modal dialogs.
              */
             MdDialog = (function () {
-                function MdDialog(loader) {
-                    this.componentLoader = loader;
+                function MdDialog(componentLoader, renderer) {
+                    this.componentLoader = componentLoader;
+                    this.renderer = renderer;
+                    this._defaultContainer = dom_adapter_1.DOM.query('body');
                 }
                 /**
                  * Opens a modal dialog.
@@ -250,13 +715,14 @@ System.register("ng2-material/components/dialog/dialog.ts", ["angular2/core.js",
                 MdDialog.prototype.open = function (type, elementRef, options) {
                     var _this = this;
                     if (options === void 0) { options = null; }
-                    var config = lang_1.isPresent(options) ? options : new MdDialogConfig();
+                    var config = lang_1.isPresent(options) ? options : new dialog_config_1.MdDialogConfig();
                     // Create the dialogRef here so that it can be injected into the content component.
-                    var dialogRef = new MdDialogRef();
-                    var bindings = core_1.Injector.resolve([core_1.provide(MdDialogRef, { useValue: dialogRef })]);
-                    var backdropRefPromise = this._openBackdrop(elementRef, bindings);
+                    var dialogRef = new dialog_ref_1.MdDialogRef();
+                    config.dialogRef(dialogRef);
+                    var bindings = core_1.Injector.resolve([core_1.provide(dialog_ref_1.MdDialogRef, { useValue: dialogRef })]);
+                    var backdropRefPromise = this._openBackdrop(elementRef, bindings, options);
                     // First, load the MdDialogContainer, into which the given component will be loaded.
-                    return this.componentLoader.loadNextToLocation(MdDialogContainer, elementRef)
+                    return this.componentLoader.loadNextToLocation(dialog_container_1.MdDialogContainer, elementRef)
                         .then(function (containerRef) {
                         // TODO(tbosch): clean this up when we have custom renderers
                         // (https://github.com/angular/angular/issues/1807)
@@ -264,41 +730,47 @@ System.register("ng2-material/components/dialog/dialog.ts", ["angular2/core.js",
                         // directly on the document body (also needed for web workers stuff).
                         // Create a DOM node to serve as a physical host element for the dialog.
                         var dialogElement = containerRef.location.nativeElement;
-                        dom_adapter_1.DOM.appendChild(dom_adapter_1.DOM.query('body'), dialogElement);
-                        // TODO(jelbourn): Do this with hostProperties (or another rendering abstraction) once
-                        // ready.
+                        _this.renderer.setElementClass(containerRef.location, 'md-dialog-absolute', !!config.container);
+                        dom_adapter_1.DOM.appendChild(config.container || _this._defaultContainer, dialogElement);
                         if (lang_1.isPresent(config.width)) {
-                            dom_adapter_1.DOM.setStyle(dialogElement, 'width', config.width);
+                            _this.renderer.setElementStyle(containerRef.location, 'width', config.width);
                         }
                         if (lang_1.isPresent(config.height)) {
-                            dom_adapter_1.DOM.setStyle(dialogElement, 'height', config.height);
+                            _this.renderer.setElementStyle(containerRef.location, 'height', config.height);
                         }
                         dialogRef.containerRef = containerRef;
                         // Now load the given component into the MdDialogContainer.
                         return _this.componentLoader.loadNextToLocation(type, containerRef.instance.contentRef, bindings)
                             .then(function (contentRef) {
+                            Object.keys(config.context).forEach(function (key) {
+                                contentRef.instance[key] = config.context[key];
+                            });
                             // Wrap both component refs for the container and the content so that we can return
                             // the `instance` of the content but the dispose method of the container back to the
                             // opener.
                             dialogRef.contentRef = contentRef;
                             containerRef.instance.dialogRef = dialogRef;
                             backdropRefPromise.then(function (backdropRef) {
-                                dialogRef.whenClosed.then(function (_) { backdropRef.dispose(); });
+                                dialogRef.backdropRef = backdropRef;
+                                dialogRef.whenClosed.then(function (_) {
+                                    backdropRef.dispose();
+                                });
                             });
-                            return dialogRef;
+                            return animate_1.Animate.enter(dialogElement, 'md-active').then(function () { return dialogRef; });
                         });
                     });
                 };
                 /** Loads the dialog backdrop (transparent overlay over the rest of the page). */
-                MdDialog.prototype._openBackdrop = function (elementRef, bindings) {
-                    return this.componentLoader.loadNextToLocation(MdBackdrop, elementRef, bindings)
+                MdDialog.prototype._openBackdrop = function (elementRef, bindings, options) {
+                    var _this = this;
+                    return this.componentLoader.loadNextToLocation(backdrop_1.MdBackdrop, elementRef, bindings)
                         .then(function (componentRef) {
-                        // TODO(tbosch): clean this up when we have custom renderers
-                        // (https://github.com/angular/angular/issues/1807)
-                        var backdropElement = componentRef.location.nativeElement;
-                        dom_adapter_1.DOM.addClass(backdropElement, 'md-backdrop');
-                        dom_adapter_1.DOM.appendChild(dom_adapter_1.DOM.query('body'), backdropElement);
-                        return componentRef;
+                        var backdrop = componentRef.instance;
+                        backdrop.clickClose = options.clickClose;
+                        _this.renderer.setElementClass(componentRef.location, 'md-backdrop', true);
+                        _this.renderer.setElementClass(componentRef.location, 'md-backdrop-absolute', !!options.container);
+                        dom_adapter_1.DOM.appendChild(options.container || _this._defaultContainer, componentRef.location.nativeElement);
+                        return backdrop.show().then(function () { return componentRef; });
                     });
                 };
                 MdDialog.prototype.alert = function (message, okMessage) {
@@ -309,155 +781,12 @@ System.register("ng2-material/components/dialog/dialog.ts", ["angular2/core.js",
                 };
                 MdDialog = __decorate([
                     core_1.Injectable(), 
-                    __metadata('design:paramtypes', [(typeof (_a = typeof core_1.DynamicComponentLoader !== 'undefined' && core_1.DynamicComponentLoader) === 'function' && _a) || Object])
+                    __metadata('design:paramtypes', [(typeof (_a = typeof core_1.DynamicComponentLoader !== 'undefined' && core_1.DynamicComponentLoader) === 'function' && _a) || Object, (typeof (_b = typeof core_2.Renderer !== 'undefined' && core_2.Renderer) === 'function' && _b) || Object])
                 ], MdDialog);
                 return MdDialog;
-                var _a;
+                var _a, _b;
             })();
             exports_1("MdDialog", MdDialog);
-            /**
-             * Reference to an opened dialog.
-             */
-            MdDialogRef = (function () {
-                function MdDialogRef() {
-                    this._contentRef = null;
-                    this.containerRef = null;
-                    this.isClosed = false;
-                    this.contentRefDeferred = async_1.PromiseWrapper.completer();
-                    this.whenClosedDeferred = async_1.PromiseWrapper.completer();
-                }
-                Object.defineProperty(MdDialogRef.prototype, "contentRef", {
-                    set: function (value) {
-                        this._contentRef = value;
-                        this.contentRefDeferred.resolve(value);
-                    },
-                    enumerable: true,
-                    configurable: true
-                });
-                Object.defineProperty(MdDialogRef.prototype, "instance", {
-                    /** Gets the component instance for the content of the dialog. */
-                    get: function () {
-                        if (lang_1.isPresent(this._contentRef)) {
-                            return this._contentRef.instance;
-                        }
-                        // The only time one could attempt to access this property before the value is set is if an
-                        // access occurs during
-                        // the constructor of the very instance they are trying to get (which is much more easily
-                        // accessed as `this`).
-                        throw "Cannot access dialog component instance *from* that component's constructor.";
-                    },
-                    enumerable: true,
-                    configurable: true
-                });
-                Object.defineProperty(MdDialogRef.prototype, "whenClosed", {
-                    /** Gets a promise that is resolved when the dialog is closed. */
-                    get: function () {
-                        return this.whenClosedDeferred.promise;
-                    },
-                    enumerable: true,
-                    configurable: true
-                });
-                /** Closes the dialog. This operation is asynchronous. */
-                MdDialogRef.prototype.close = function (result) {
-                    var _this = this;
-                    if (result === void 0) { result = null; }
-                    this.contentRefDeferred.promise.then(function (_) {
-                        if (!_this.isClosed) {
-                            _this.isClosed = true;
-                            _this.containerRef.dispose();
-                            _this.whenClosedDeferred.resolve(result);
-                        }
-                    });
-                };
-                return MdDialogRef;
-            })();
-            exports_1("MdDialogRef", MdDialogRef);
-            /** Confiuration for a dialog to be opened. */
-            MdDialogConfig = (function () {
-                function MdDialogConfig() {
-                    // Default configuration.
-                    this.width = null;
-                    this.height = null;
-                }
-                return MdDialogConfig;
-            })();
-            exports_1("MdDialogConfig", MdDialogConfig);
-            /**
-             * Container for user-provided dialog content.
-             */
-            MdDialogContainer = (function () {
-                function MdDialogContainer() {
-                    this.contentRef = null;
-                    this.dialogRef = null;
-                }
-                MdDialogContainer.prototype.wrapFocus = function () {
-                    // Return the focus to the host element. Blocked on #1251.
-                };
-                MdDialogContainer.prototype.documentKeypress = function (event) {
-                    if (event.keyCode == key_codes_1.KeyCodes.ESCAPE) {
-                        this.dialogRef.close();
-                    }
-                };
-                MdDialogContainer = __decorate([
-                    core_1.Component({
-                        selector: 'md-dialog-container',
-                        host: {
-                            'class': 'md-dialog',
-                            'tabindex': '0',
-                            '(body:keydown)': 'documentKeypress($event)',
-                        },
-                    }),
-                    core_1.View({
-                        encapsulation: core_1.ViewEncapsulation.None,
-                        template: "\n    <md-dialog-content></md-dialog-content>\n    <div tabindex=\"0\" (focus)=\"wrapFocus()\"></div>",
-                        directives: [core_1.forwardRef(function () { return MdDialogContent; })]
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], MdDialogContainer);
-                return MdDialogContainer;
-            })();
-            /**
-             * Simple decorator used only to communicate an ElementRef to the parent MdDialogContainer as the
-             * location
-             * for where the dialog content will be loaded.
-             */
-            MdDialogContent = (function () {
-                function MdDialogContent(dialogContainer, elementRef) {
-                    dialogContainer.contentRef = elementRef;
-                }
-                MdDialogContent = __decorate([
-                    core_1.Directive({
-                        selector: 'md-dialog-content',
-                    }),
-                    __param(0, core_1.Host()),
-                    __param(0, core_1.SkipSelf()), 
-                    __metadata('design:paramtypes', [MdDialogContainer, (typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
-                ], MdDialogContent);
-                return MdDialogContent;
-                var _a;
-            })();
-            /** Component for the dialog "backdrop", a transparent overlay over the rest of the page. */
-            MdBackdrop = (function () {
-                function MdBackdrop(dialogRef) {
-                    this.dialogRef = dialogRef;
-                }
-                MdBackdrop.prototype.onClick = function () {
-                    // TODO(jelbourn): Use MdDialogConfig to capture option for whether dialog should close on
-                    // clicking outside.
-                    this.dialogRef.close();
-                };
-                MdBackdrop = __decorate([
-                    core_1.Component({
-                        selector: 'md-backdrop',
-                        host: {
-                            '(click)': 'onClick()',
-                        },
-                    }),
-                    core_1.View({ template: '', encapsulation: core_1.ViewEncapsulation.None }), 
-                    __metadata('design:paramtypes', [MdDialogRef])
-                ], MdBackdrop);
-                return MdBackdrop;
-            })();
         }
     }
 });
@@ -2582,7 +2911,7 @@ System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "angular2
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
-    var lang_1, core_1, button_1, checkbox_1, content_1, divider_1, grid_list_1, icon_1, input_1, list_1, progress_linear_1, progress_circular_1, radio_button_1, radio_dispatcher_1, switch_1, toolbar_1, tabs_1, compiler_1;
+    var lang_1, core_1, button_1, checkbox_1, content_1, dialog_1, divider_1, grid_list_1, icon_1, input_1, list_1, progress_linear_1, progress_circular_1, radio_button_1, radio_dispatcher_1, switch_1, toolbar_1, tabs_1, compiler_1;
     var MATERIAL_DIRECTIVES, BASE_URL, MaterialTemplateResolver, MATERIAL_PROVIDERS;
     /**
      * Specify the baseUrl to load templates and styles from.
@@ -2625,8 +2954,9 @@ System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "angular2
                 content_1 = content_1_1;
                 exportStar_1(content_1_1);
             },
-            function (dialog_1_1) {
-                exportStar_1(dialog_1_1);
+            function (dialog_2_1) {
+                exportStar_1(dialog_2_1);
+                dialog_1 = dialog_2_1;
             },
             function (divider_1_1) {
                 divider_1 = divider_1_1;
@@ -2734,6 +3064,7 @@ System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "angular2
              * Collection of Material Design component providers.
              */
             exports_1("MATERIAL_PROVIDERS", MATERIAL_PROVIDERS = [
+                dialog_1.MdDialog,
                 radio_dispatcher_1.MdRadioDispatcher,
                 core_1.provide(compiler_1.UrlResolver, { useValue: new MaterialTemplateResolver() })
             ]);

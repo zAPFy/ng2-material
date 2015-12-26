@@ -1,24 +1,90 @@
+.md-whiteframe-z1 {
+  box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
+  z-index: 1; }
+
+.md-whiteframe-z2 {
+  box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
+  z-index: 2; }
+
 .md-dialog {
-  position: absolute;
+  position: fixed;
   z-index: 80;
   /** Center the dialog. */
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 300px;
-  height: 300px;
-  background-color: white;
-  border: 1px solid black;
-  box-shadow: 0 4px 4px;
-  padding: 20px; }
+  min-width: 300px;
+  min-height: 100px;
+  padding: 24px;
+  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 13px 19px 2px rgba(0, 0, 0, 0.14), 0px 5px 24px 4px rgba(0, 0, 0, 0.12);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  opacity: 0;
+  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -webkit-transform: translate3d(-50%, -50%, 0) scale(0.2);
+          transform: translate3d(-50%, -50%, 0) scale(0.2);
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+      -ms-flex-order: 1;
+          order: 1;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; }
+  .md-dialog:not([layout=row]) > * > *:first-child:not(.md-subheader) {
+    margin-top: 0; }
+  .md-dialog:focus {
+    outline: none; }
+  .md-dialog.md-active {
+    opacity: 1;
+    -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    -webkit-transform: translate3d(-50%, -50%, 0) scale(1);
+            transform: translate3d(-50%, -50%, 0) scale(1); }
+  .md-dialog.md-dialog-absolute {
+    position: absolute; }
+  .md-dialog .md-actions, .md-dialog md-dialog-actions {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+    box-sizing: border-box;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding-top: 24px;
+    padding-right: 8px;
+    padding-left: 16px;
+    margin-bottom: -24px;
+    margin-left: -24px;
+    margin-right: -24px;
+    right: -24px;
+    min-height: 52px;
+    overflow: hidden; }
+    .md-dialog .md-actions [md-button], .md-dialog .md-actions [md-raised-button], .md-dialog md-dialog-actions [md-button], .md-dialog md-dialog-actions [md-raised-button] {
+      margin-bottom: 8px;
+      margin-left: 8px;
+      margin-right: 0;
+      margin-top: 8px; }
 
-.md-backdrop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.12); }
+.md-dialog {
+  border-radius: 4px;
+  background-color: white; }
+  .md-dialog.md-content-overflow .md-actions, .md-dialog.md-content-overflow md-dialog-actions {
+    border-top-color: rgba(0, 0, 0, 0.12); }
 
 /*# sourceMappingURL=dialog.css.map */

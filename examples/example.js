@@ -7,6 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 var core_1 = require('angular2/core');
 var core_2 = require('angular2/core');
 var core_3 = require("angular2/core");
@@ -15,16 +18,22 @@ var all_1 = require("./all");
 var all_2 = require("ng2-material/all");
 var http_1 = require("angular2/http");
 var highlight_1 = require('./highlight');
+var async_1 = require("angular2/src/facade/async");
+var tabs_1 = require("ng2-material/components/tabs/tabs");
+var core_5 = require("angular2/core");
+var core_6 = require("angular2/core");
 var Example = (function () {
-    function Example(_element, http, dcl) {
+    function Example(_element, http, panes, dcl) {
         this._element = _element;
         this.http = http;
+        this.panes = panes;
         this.dcl = dcl;
         this._model = null;
         this._reference = null;
         this._loaded = false;
         this.orderedFiles = [];
         this.showSource = false;
+        this.showTabs = false;
         this.selected = 'html';
     }
     Object.defineProperty(Example.prototype, "model", {
@@ -88,6 +97,21 @@ var Example = (function () {
         });
         this.orderedFiles.push(desc);
     };
+    Example.prototype.toggleSource = function () {
+        var _this = this;
+        if (this.showSource) {
+            this.showTabs = false;
+            async_1.TimerWrapper.setTimeout(function () {
+                _this.showSource = false;
+            }, 500);
+        }
+        else {
+            this.showSource = true;
+            async_1.TimerWrapper.setTimeout(function () {
+                _this.showTabs = true;
+            }, 25);
+        }
+    };
     __decorate([
         core_2.Input(), 
         __metadata('design:type', Object), 
@@ -105,8 +129,9 @@ var Example = (function () {
         core_1.View({
             templateUrl: 'examples/example.html',
             directives: [all_2.MATERIAL_DIRECTIVES, all_1.DEMO_DIRECTIVES, highlight_1.Highlight]
-        }), 
-        __metadata('design:paramtypes', [core_4.ElementRef, http_1.Http, core_3.DynamicComponentLoader])
+        }),
+        __param(2, core_5.Query(tabs_1.MdTabs)), 
+        __metadata('design:paramtypes', [core_4.ElementRef, http_1.Http, core_6.QueryList, core_3.DynamicComponentLoader])
     ], Example);
     return Example;
 })();
