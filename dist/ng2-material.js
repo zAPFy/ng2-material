@@ -47,99 +47,6 @@ System.register("ng2-material/components/content/content.ts", ["angular2/core.js
     }
 });
 
-System.register("ng2-material/components/dialog/dialog_ref.ts", ["angular2/src/facade/promise.js", "ng2-material/core/util/animate.ts", "angular2/src/facade/lang.js"], function(exports_1) {
-    var promise_1, animate_1, lang_1;
-    var MdDialogRef;
-    return {
-        setters:[
-            function (promise_1_1) {
-                promise_1 = promise_1_1;
-            },
-            function (animate_1_1) {
-                animate_1 = animate_1_1;
-            },
-            function (lang_1_1) {
-                lang_1 = lang_1_1;
-            }],
-        execute: function() {
-            /**
-             * Reference to an opened dialog.
-             */
-            MdDialogRef = (function () {
-                function MdDialogRef() {
-                    this._contentRef = null;
-                    this.containerRef = null;
-                    this.isClosed = false;
-                    this.contentRefDeferred = promise_1.PromiseWrapper.completer();
-                    this.whenClosedDeferred = promise_1.PromiseWrapper.completer();
-                }
-                Object.defineProperty(MdDialogRef.prototype, "backdropRef", {
-                    set: function (value) {
-                        var _this = this;
-                        this._backdropRef = value;
-                        var subscription = this._backdropRef.instance.onHiding.subscribe(function () {
-                            _this.close();
-                            subscription.unsubscribe();
-                        });
-                    },
-                    enumerable: true,
-                    configurable: true
-                });
-                Object.defineProperty(MdDialogRef.prototype, "contentRef", {
-                    set: function (value) {
-                        this._contentRef = value;
-                        this.contentRefDeferred.resolve(value);
-                    },
-                    enumerable: true,
-                    configurable: true
-                });
-                Object.defineProperty(MdDialogRef.prototype, "instance", {
-                    /** Gets the component instance for the content of the dialog. */
-                    get: function () {
-                        if (lang_1.isPresent(this._contentRef)) {
-                            return this._contentRef.instance;
-                        }
-                        // The only time one could attempt to access this property before the value is set is if an
-                        // access occurs during
-                        // the constructor of the very instance they are trying to get (which is much more easily
-                        // accessed as `this`).
-                        throw "Cannot access dialog component instance *from* that component's constructor.";
-                    },
-                    enumerable: true,
-                    configurable: true
-                });
-                Object.defineProperty(MdDialogRef.prototype, "whenClosed", {
-                    /** Gets a promise that is resolved when the dialog is closed. */
-                    get: function () {
-                        return this.whenClosedDeferred.promise;
-                    },
-                    enumerable: true,
-                    configurable: true
-                });
-                /** Closes the dialog. This operation is asynchronous. */
-                MdDialogRef.prototype.close = function (result) {
-                    var _this = this;
-                    if (result === void 0) { result = null; }
-                    return animate_1.Animate.leave(this.containerRef.location.nativeElement, 'md-active').then(function () {
-                        if (_this._backdropRef) {
-                            _this._backdropRef.instance.hide();
-                        }
-                        return _this.contentRefDeferred.promise.then(function (_) {
-                            if (!_this.isClosed) {
-                                _this.isClosed = true;
-                                _this.containerRef.dispose();
-                                _this.whenClosedDeferred.resolve(result);
-                            }
-                        });
-                    });
-                };
-                return MdDialogRef;
-            })();
-            exports_1("MdDialogRef", MdDialogRef);
-        }
-    }
-});
-
 System.register("ng2-material/components/dialog/dialog_config.ts", [], function(exports_1) {
     var MdDialogConfig;
     return {
@@ -185,10 +92,6 @@ System.register("ng2-material/components/dialog/dialog_config.ts", [], function(
                 };
                 MdDialogConfig.prototype.targetEvent = function (ev) {
                     this.sourceEvent = ev;
-                    return this;
-                };
-                MdDialogConfig.prototype.dialogRef = function (ref) {
-                    this.context.dialog = ref;
                     return this;
                 };
                 return MdDialogConfig;
@@ -571,7 +474,100 @@ System.register("ng2-material/components/button/button.ts", ["angular2/core.js",
     }
 });
 
-System.register("ng2-material/components/dialog/dialog_basic.ts", ["angular2/common.js", "ng2-material/components/button/button.ts", "angular2/core.js"], function(exports_1) {
+System.register("ng2-material/components/dialog/dialog_ref.ts", ["angular2/src/facade/promise.js", "ng2-material/core/util/animate.ts", "angular2/src/facade/lang.js"], function(exports_1) {
+    var promise_1, animate_1, lang_1;
+    var MdDialogRef;
+    return {
+        setters:[
+            function (promise_1_1) {
+                promise_1 = promise_1_1;
+            },
+            function (animate_1_1) {
+                animate_1 = animate_1_1;
+            },
+            function (lang_1_1) {
+                lang_1 = lang_1_1;
+            }],
+        execute: function() {
+            /**
+             * Reference to an opened dialog.
+             */
+            MdDialogRef = (function () {
+                function MdDialogRef() {
+                    this._contentRef = null;
+                    this.containerRef = null;
+                    this.isClosed = false;
+                    this.contentRefDeferred = promise_1.PromiseWrapper.completer();
+                    this.whenClosedDeferred = promise_1.PromiseWrapper.completer();
+                }
+                Object.defineProperty(MdDialogRef.prototype, "backdropRef", {
+                    set: function (value) {
+                        var _this = this;
+                        this._backdropRef = value;
+                        var subscription = this._backdropRef.instance.onHiding.subscribe(function () {
+                            _this.close();
+                            subscription.unsubscribe();
+                        });
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(MdDialogRef.prototype, "contentRef", {
+                    set: function (value) {
+                        this._contentRef = value;
+                        this.contentRefDeferred.resolve(value);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(MdDialogRef.prototype, "instance", {
+                    /** Gets the component instance for the content of the dialog. */
+                    get: function () {
+                        if (lang_1.isPresent(this._contentRef)) {
+                            return this._contentRef.instance;
+                        }
+                        // The only time one could attempt to access this property before the value is set is if an
+                        // access occurs during
+                        // the constructor of the very instance they are trying to get (which is much more easily
+                        // accessed as `this`).
+                        throw "Cannot access dialog component instance *from* that component's constructor.";
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(MdDialogRef.prototype, "whenClosed", {
+                    /** Gets a promise that is resolved when the dialog is closed. */
+                    get: function () {
+                        return this.whenClosedDeferred.promise;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                /** Closes the dialog. This operation is asynchronous. */
+                MdDialogRef.prototype.close = function (result) {
+                    var _this = this;
+                    if (result === void 0) { result = null; }
+                    return animate_1.Animate.leave(this.containerRef.location.nativeElement, 'md-active').then(function () {
+                        if (_this._backdropRef) {
+                            _this._backdropRef.instance.hide();
+                        }
+                        return _this.contentRefDeferred.promise.then(function (_) {
+                            if (!_this.isClosed) {
+                                _this.isClosed = true;
+                                _this.containerRef.dispose();
+                                _this.whenClosedDeferred.resolve(result);
+                            }
+                        });
+                    });
+                };
+                return MdDialogRef;
+            })();
+            exports_1("MdDialogRef", MdDialogRef);
+        }
+    }
+});
+
+System.register("ng2-material/components/dialog/dialog_basic.ts", ["angular2/common.js", "ng2-material/components/button/button.ts", "angular2/core.js", "ng2-material/components/dialog/dialog_ref.ts"], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -581,7 +577,7 @@ System.register("ng2-material/components/dialog/dialog_basic.ts", ["angular2/com
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var common_1, button_1, core_1, core_2, core_3;
+    var common_1, button_1, core_1, core_2, dialog_ref_1, core_3;
     var MdDialogBasic;
     return {
         setters:[
@@ -595,10 +591,14 @@ System.register("ng2-material/components/dialog/dialog_basic.ts", ["angular2/com
                 core_1 = core_1_1;
                 core_2 = core_1_1;
                 core_3 = core_1_1;
+            },
+            function (dialog_ref_1_1) {
+                dialog_ref_1 = dialog_ref_1_1;
             }],
         execute: function() {
             MdDialogBasic = (function () {
-                function MdDialogBasic() {
+                function MdDialogBasic(dialog) {
+                    this.dialog = dialog;
                     this.title = '';
                     this.textContent = '';
                     this.cancel = '';
@@ -631,9 +631,10 @@ System.register("ng2-material/components/dialog/dialog_basic.ts", ["angular2/com
                         template: "\n  <h2>{{ title }}</h2>\n  <p>{{ textContent }}</p>\n  <md-dialog-actions>\n    <button md-button *ngIf=\"cancel != ''\" type=\"button\" (click)=\"dialog.close(false)\">\n      <span>{{ cancel }}</span>\n    </button>\n    <button md-button *ngIf=\"ok != ''\" class=\"md-primary\" type=\"button\" (click)=\"dialog.close(true)\">\n      <span>{{ ok }}</span>\n    </button>\n  </md-dialog-actions>",
                         directives: [button_1.MdButton, common_1.NgIf]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [(typeof (_a = typeof dialog_ref_1.MdDialogRef !== 'undefined' && dialog_ref_1.MdDialogRef) === 'function' && _a) || Object])
                 ], MdDialogBasic);
                 return MdDialogBasic;
+                var _a;
             })();
             exports_1("MdDialogBasic", MdDialogBasic);
         }
@@ -696,6 +697,12 @@ System.register("ng2-material/components/dialog/dialog.ts", ["angular2/core.js",
                 exportStar_1(dialog_basic_1_1);
             }],
         execute: function() {
+            // TODO(jelbourn): body scrolling is disabled while dialog is open.
+            // TODO(jelbourn): Don't manually construct and configure a DOM element. See #1402
+            // TODO(jelbourn): Wrap focus from end of dialog back to the start. Blocked on #1251
+            // TODO(jelbourn): Focus the dialog element when it is opened.
+            // TODO(jelbourn): Pre-built `alert` and `confirm` dialogs.
+            // TODO(jelbourn): Animate dialog out of / into opening element.
             /**
              * Service for opening modal dialogs.
              */
@@ -718,7 +725,6 @@ System.register("ng2-material/components/dialog/dialog.ts", ["angular2/core.js",
                     var config = lang_1.isPresent(options) ? options : new dialog_config_1.MdDialogConfig();
                     // Create the dialogRef here so that it can be injected into the content component.
                     var dialogRef = new dialog_ref_1.MdDialogRef();
-                    config.dialogRef(dialogRef);
                     var bindings = core_1.Injector.resolve([core_1.provide(dialog_ref_1.MdDialogRef, { useValue: dialogRef })]);
                     var backdropRefPromise = this._openBackdrop(elementRef, bindings, options);
                     // First, load the MdDialogContainer, into which the given component will be loaded.
@@ -2315,7 +2321,7 @@ System.register("ng2-material/core/util/util.ts", [], function(exports_1) {
     }
 });
 
-System.register("ng2-material/components/toolbar/toolbar.ts", ["angular2/core.js", "ng2-material/core/util/util.ts", "angular2/src/platform/dom/dom_adapter.js"], function(exports_1) {
+System.register("ng2-material/components/toolbar/toolbar.ts", ["angular2/core.js", "ng2-material/core/util/util.ts", "angular2/src/platform/dom/dom_adapter.js", "angular2/src/facade/lang.js"], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2325,10 +2331,7 @@ System.register("ng2-material/components/toolbar/toolbar.ts", ["angular2/core.js
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var __param = (this && this.__param) || function (paramIndex, decorator) {
-        return function (target, key) { decorator(target, key, paramIndex); }
-    };
-    var core_1, util_1, core_2, dom_adapter_1;
+    var core_1, util_1, core_2, dom_adapter_1, lang_1, lang_2, lang_3;
     var MdToolbar;
     return {
         setters:[
@@ -2341,6 +2344,11 @@ System.register("ng2-material/components/toolbar/toolbar.ts", ["angular2/core.js
             },
             function (dom_adapter_1_1) {
                 dom_adapter_1 = dom_adapter_1_1;
+            },
+            function (lang_1_1) {
+                lang_1 = lang_1_1;
+                lang_2 = lang_1_1;
+                lang_3 = lang_1_1;
             }],
         execute: function() {
             /**
@@ -2393,10 +2401,9 @@ System.register("ng2-material/components/toolbar/toolbar.ts", ["angular2/core.js
              * at one fourth the rate at which the user scrolls down. Default 0.5.
              */
             MdToolbar = (function () {
-                function MdToolbar(scrollShrink, el) {
-                    this.scrollShrink = scrollShrink;
+                function MdToolbar(el) {
                     this.el = el;
-                    this.mdShrinkSpeed = 0.5;
+                    this._mdShrinkSpeed = 0.5;
                     this._debouncedContentScroll = null;
                     this._debouncedUpdateHeight = null;
                     this._content = null;
@@ -2404,12 +2411,33 @@ System.register("ng2-material/components/toolbar/toolbar.ts", ["angular2/core.js
                     this._cancelScrollShrink = null;
                     this._previousScrollTop = 0;
                     this._currentY = 0;
+                    this._mdScrollShrink = false;
                     this._debouncedContentScroll = util_1.throttle(this.onContentScroll, 10, this);
                     this._debouncedUpdateHeight = util_1.debounce(this.updateToolbarHeight, 5 * 1000, this);
                 }
-                MdToolbar.prototype.ngAfterViewInit = function () {
+                Object.defineProperty(MdToolbar.prototype, "mdShrinkSpeed", {
+                    get: function () {
+                        return this._mdShrinkSpeed;
+                    },
+                    set: function (value) {
+                        this._mdShrinkSpeed = lang_2.isString(value) ? lang_3.NumberWrapper.parseFloat(value) : value;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(MdToolbar.prototype, "mdScrollShrink", {
+                    get: function () {
+                        return this._mdScrollShrink;
+                    },
+                    set: function (value) {
+                        this._mdScrollShrink = !!lang_1.isPresent(value);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                MdToolbar.prototype.ngAfterContentInit = function () {
                     this.disableScrollShrink();
-                    if (this.scrollShrink === null) {
+                    if (!this.mdScrollShrink) {
                         return;
                     }
                     // TODO(jdd): better way to find siblings?
@@ -2435,16 +2463,18 @@ System.register("ng2-material/components/toolbar/toolbar.ts", ["angular2/core.js
                 };
                 MdToolbar.prototype.updateToolbarHeight = function () {
                     this._toolbarHeight = dom_adapter_1.DOM.getProperty(this.el.nativeElement, 'offsetHeight');
-                    // Add a negative margin-top the size of the toolbar to the content el.
-                    // The content will start transformed down the toolbarHeight amount,
-                    // so everything looks normal.
-                    //
-                    // As the user scrolls down, the content will be transformed up slowly
-                    // to put the content underneath where the toolbar was.
-                    var margin = (-this._toolbarHeight * this.mdShrinkSpeed) + 'px';
-                    dom_adapter_1.DOM.setStyle(this._content, "margin-top", margin);
-                    dom_adapter_1.DOM.setStyle(this._content, "margin-bottom", margin);
-                    this.onContentScroll();
+                    if (this._content) {
+                        // Add a negative margin-top the size of the toolbar to the content el.
+                        // The content will start transformed down the toolbarHeight amount,
+                        // so everything looks normal.
+                        //
+                        // As the user scrolls down, the content will be transformed up slowly
+                        // to put the content underneath where the toolbar was.
+                        var margin = (-this._toolbarHeight * this.mdShrinkSpeed) + 'px';
+                        dom_adapter_1.DOM.setStyle(this._content, "margin-top", margin);
+                        dom_adapter_1.DOM.setStyle(this._content, "margin-bottom", margin);
+                        this.onContentScroll();
+                    }
                 };
                 MdToolbar.prototype.onContentScroll = function (e) {
                     var _this = this;
@@ -2470,12 +2500,20 @@ System.register("ng2-material/components/toolbar/toolbar.ts", ["angular2/core.js
                 };
                 __decorate([
                     core_1.Input(), 
-                    __metadata('design:type', Number)
-                ], MdToolbar.prototype, "mdShrinkSpeed", void 0);
+                    __metadata('design:type', Number), 
+                    __metadata('design:paramtypes', [Number])
+                ], MdToolbar.prototype, "mdShrinkSpeed", null);
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Boolean), 
+                    __metadata('design:paramtypes', [Boolean])
+                ], MdToolbar.prototype, "mdScrollShrink", null);
                 MdToolbar = __decorate([
-                    core_1.Directive({ selector: 'md-toolbar' }),
-                    __param(0, core_1.Attribute('md-scroll-shrink')), 
-                    __metadata('design:paramtypes', [Object, (typeof (_a = typeof core_2.ElementRef !== 'undefined' && core_2.ElementRef) === 'function' && _a) || Object])
+                    core_1.Directive({
+                        selector: 'md-toolbar',
+                        inputs: ['mdShrinkSpeed', 'mdScrollShrink']
+                    }), 
+                    __metadata('design:paramtypes', [(typeof (_a = typeof core_2.ElementRef !== 'undefined' && core_2.ElementRef) === 'function' && _a) || Object])
                 ], MdToolbar);
                 return MdToolbar;
                 var _a;

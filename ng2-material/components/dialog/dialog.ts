@@ -32,15 +32,6 @@ export * from './dialog_basic';
 // TODO(jelbourn): Animate dialog out of / into opening element.
 
 /**
- * Any components that are launched through MdDialog should implement this
- * interface. The `dialog` will be injected into the component instance to
- * allow dismissing or interacting with the dialog reference.
- */
-export interface IDialogComponent {
-  dialog: MdDialogRef;
-}
-
-/**
  * Service for opening modal dialogs.
  */
 @Injectable()
@@ -64,7 +55,6 @@ export class MdDialog {
 
     // Create the dialogRef here so that it can be injected into the content component.
     var dialogRef = new MdDialogRef();
-    config.dialogRef(dialogRef);
 
     var bindings = Injector.resolve([provide(MdDialogRef, {useValue: dialogRef})]);
 

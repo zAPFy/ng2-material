@@ -2,7 +2,6 @@ import {NgIf} from "angular2/common";
 import {MdButton} from "../button/button";
 import {View} from "angular2/core";
 import {Component} from "angular2/core";
-import {IDialogComponent} from "./dialog";
 import {MdDialogRef} from "./dialog_ref";
 import {Input} from "angular2/core";
 
@@ -21,11 +20,13 @@ import {Input} from "angular2/core";
   </md-dialog-actions>`,
   directives: [MdButton, NgIf]
 })
-export class MdDialogBasic implements IDialogComponent {
-  dialog: MdDialogRef;
+export class MdDialogBasic {
   @Input() title: string = '';
   @Input() textContent: string = '';
   @Input() cancel: string = '';
   @Input() ok: string = '';
   @Input() type: string = 'alert';
+
+  constructor(public dialog: MdDialogRef) {
+  }
 }

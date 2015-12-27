@@ -39,10 +39,6 @@ var MdDialogConfig = (function () {
         this.sourceEvent = ev;
         return this;
     };
-    MdDialogConfig.prototype.dialogRef = function (ref) {
-        this.context.dialog = ref;
-        return this;
-    };
     return MdDialogConfig;
 })();
 exports.MdDialogConfig = MdDialogConfig;

@@ -7,18 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 var core_1 = require("angular2/core");
 var util_1 = require('../../core/util/util');
 var core_2 = require("angular2/core");
 var dom_adapter_1 = require("angular2/src/platform/dom/dom_adapter");
+var lang_1 = require("angular2/src/facade/lang");
+var lang_2 = require("angular2/src/facade/lang");
+var lang_3 = require("angular2/src/facade/lang");
 var MdToolbar = (function () {
-    function MdToolbar(scrollShrink, el) {
-        this.scrollShrink = scrollShrink;
+    function MdToolbar(el) {
         this.el = el;
-        this.mdShrinkSpeed = 0.5;
+        this._mdShrinkSpeed = 0.5;
         this._debouncedContentScroll = null;
         this._debouncedUpdateHeight = null;
         this._content = null;
@@ -26,12 +25,33 @@ var MdToolbar = (function () {
         this._cancelScrollShrink = null;
         this._previousScrollTop = 0;
         this._currentY = 0;
+        this._mdScrollShrink = false;
         this._debouncedContentScroll = util_1.throttle(this.onContentScroll, 10, this);
         this._debouncedUpdateHeight = util_1.debounce(this.updateToolbarHeight, 5 * 1000, this);
     }
-    MdToolbar.prototype.ngAfterViewInit = function () {
+    Object.defineProperty(MdToolbar.prototype, "mdShrinkSpeed", {
+        get: function () {
+            return this._mdShrinkSpeed;
+        },
+        set: function (value) {
+            this._mdShrinkSpeed = lang_2.isString(value) ? lang_3.NumberWrapper.parseFloat(value) : value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MdToolbar.prototype, "mdScrollShrink", {
+        get: function () {
+            return this._mdScrollShrink;
+        },
+        set: function (value) {
+            this._mdScrollShrink = !!lang_1.isPresent(value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    MdToolbar.prototype.ngAfterContentInit = function () {
         this.disableScrollShrink();
-        if (this.scrollShrink === null) {
+        if (!this.mdScrollShrink) {
             return;
         }
         this._content = dom_adapter_1.DOM.querySelector(dom_adapter_1.DOM.parentElement(this.el.nativeElement), 'md-content');
@@ -56,10 +76,12 @@ var MdToolbar = (function () {
     };
     MdToolbar.prototype.updateToolbarHeight = function () {
         this._toolbarHeight = dom_adapter_1.DOM.getProperty(this.el.nativeElement, 'offsetHeight');
-        var margin = (-this._toolbarHeight * this.mdShrinkSpeed) + 'px';
-        dom_adapter_1.DOM.setStyle(this._content, "margin-top", margin);
-        dom_adapter_1.DOM.setStyle(this._content, "margin-bottom", margin);
-        this.onContentScroll();
+        if (this._content) {
+            var margin = (-this._toolbarHeight * this.mdShrinkSpeed) + 'px';
+            dom_adapter_1.DOM.setStyle(this._content, "margin-top", margin);
+            dom_adapter_1.DOM.setStyle(this._content, "margin-bottom", margin);
+            this.onContentScroll();
+        }
     };
     MdToolbar.prototype.onContentScroll = function (e) {
         var _this = this;
@@ -85,12 +107,20 @@ var MdToolbar = (function () {
     };
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Number)
-    ], MdToolbar.prototype, "mdShrinkSpeed", void 0);
+        __metadata('design:type', Number), 
+        __metadata('design:paramtypes', [Number])
+    ], MdToolbar.prototype, "mdShrinkSpeed", null);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Boolean), 
+        __metadata('design:paramtypes', [Boolean])
+    ], MdToolbar.prototype, "mdScrollShrink", null);
     MdToolbar = __decorate([
-        core_1.Directive({ selector: 'md-toolbar' }),
-        __param(0, core_1.Attribute('md-scroll-shrink')), 
-        __metadata('design:paramtypes', [Object, core_2.ElementRef])
+        core_1.Directive({
+            selector: 'md-toolbar',
+            inputs: ['mdShrinkSpeed', 'mdScrollShrink']
+        }), 
+        __metadata('design:paramtypes', [core_2.ElementRef])
     ], MdToolbar);
     return MdToolbar;
 })();

@@ -11,9 +11,11 @@ var common_1 = require("angular2/common");
 var button_1 = require("../button/button");
 var core_1 = require("angular2/core");
 var core_2 = require("angular2/core");
+var dialog_ref_1 = require("./dialog_ref");
 var core_3 = require("angular2/core");
 var MdDialogBasic = (function () {
-    function MdDialogBasic() {
+    function MdDialogBasic(dialog) {
+        this.dialog = dialog;
         this.title = '';
         this.textContent = '';
         this.cancel = '';
@@ -46,7 +48,7 @@ var MdDialogBasic = (function () {
             template: "\n  <h2>{{ title }}</h2>\n  <p>{{ textContent }}</p>\n  <md-dialog-actions>\n    <button md-button *ngIf=\"cancel != ''\" type=\"button\" (click)=\"dialog.close(false)\">\n      <span>{{ cancel }}</span>\n    </button>\n    <button md-button *ngIf=\"ok != ''\" class=\"md-primary\" type=\"button\" (click)=\"dialog.close(true)\">\n      <span>{{ ok }}</span>\n    </button>\n  </md-dialog-actions>",
             directives: [button_1.MdButton, common_1.NgIf]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [dialog_ref_1.MdDialogRef])
     ], MdDialogBasic);
     return MdDialogBasic;
 })();

@@ -171,7 +171,6 @@ declare module 'ng2-material/components/dialog/dialog_ref' {
 
 }
 declare module 'ng2-material/components/dialog/dialog_config' {
-	import { MdDialogRef } from 'ng2-material/components/dialog/dialog_ref';
 	/** Configuration for a dialog to be opened. */
 	export class MdDialogConfig {
 	    width: string;
@@ -188,7 +187,6 @@ declare module 'ng2-material/components/dialog/dialog_config' {
 	    ok(text: string): MdDialogConfig;
 	    cancel(text: string): MdDialogConfig;
 	    targetEvent(ev: Event): MdDialogConfig;
-	    dialogRef(ref: MdDialogRef): MdDialogConfig;
 	}
 
 }
@@ -215,15 +213,15 @@ declare module 'ng2-material/components/dialog/dialog_container' {
 
 }
 declare module 'ng2-material/components/dialog/dialog_basic' {
-	import { IDialogComponent } from 'ng2-material/components/dialog/dialog';
 	import { MdDialogRef } from 'ng2-material/components/dialog/dialog_ref';
-	export class MdDialogBasic implements IDialogComponent {
+	export class MdDialogBasic {
 	    dialog: MdDialogRef;
 	    title: string;
 	    textContent: string;
 	    cancel: string;
 	    ok: string;
 	    type: string;
+	    constructor(dialog: MdDialogRef);
 	}
 
 }
@@ -286,14 +284,6 @@ declare module 'ng2-material/components/dialog/dialog' {
 	export * from 'ng2-material/components/dialog/dialog_container';
 	export * from 'ng2-material/components/dialog/dialog_ref';
 	export * from 'ng2-material/components/dialog/dialog_basic';
-	/**
-	 * Any components that are launched through MdDialog should implement this
-	 * interface. The `dialog` will be injected into the component instance to
-	 * allow dismissing or interacting with the dialog reference.
-	 */
-	export interface IDialogComponent {
-	    dialog: MdDialogRef;
-	}
 	/**
 	 * Service for opening modal dialogs.
 	 */
@@ -649,7 +639,7 @@ declare module 'ng2-material/core/util/util' {
 
 }
 declare module 'ng2-material/components/toolbar/toolbar' {
-	import { AfterViewInit, OnChanges, OnDestroy } from "angular2/core";
+	import { AfterContentInit, OnChanges, OnDestroy } from "angular2/core";
 	import { ElementRef } from "angular2/core";
 	/**
 	 * @ngdoc directive
@@ -700,10 +690,11 @@ declare module 'ng2-material/components/toolbar/toolbar' {
 	 * shrinking by. For example, if 0.25 is given then the toolbar will shrink
 	 * at one fourth the rate at which the user scrolls down. Default 0.5.
 	 */
-	export class MdToolbar implements AfterViewInit, OnChanges, OnDestroy {
-	    scrollShrink: any;
+	export class MdToolbar implements AfterContentInit, OnChanges, OnDestroy {
 	    el: ElementRef;
 	    mdShrinkSpeed: number;
+	    mdScrollShrink: boolean;
+	    private _mdShrinkSpeed;
 	    private _debouncedContentScroll;
 	    private _debouncedUpdateHeight;
 	    private _content;
@@ -711,8 +702,9 @@ declare module 'ng2-material/components/toolbar/toolbar' {
 	    private _cancelScrollShrink;
 	    private _previousScrollTop;
 	    private _currentY;
-	    constructor(scrollShrink: any, el: ElementRef);
-	    ngAfterViewInit(): any;
+	    private _mdScrollShrink;
+	    constructor(el: ElementRef);
+	    ngAfterContentInit(): any;
 	    ngOnChanges(changes: {}): any;
 	    ngOnDestroy(): any;
 	    disableScrollShrink(): void;

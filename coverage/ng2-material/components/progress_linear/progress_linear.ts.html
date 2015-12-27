@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ng2-material/components/progress_linear/progress_linear.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">ng2-material/components/progress_linear/</a> progress_linear.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">63.41% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>26/41</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">59.46% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>22/37</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {Component, View, ViewEncapsulation, Attribute, OnChanges} from 'angular2/core';
+import {CONST} from 'angular2/src/facade/lang';
+import {isPresent, isBlank} from 'angular2/src/facade/lang';
+import {Math} from 'angular2/src/facade/math';
+import {Input} from 'angular2/core';
+&nbsp;
+/** Different display / behavior modes for progress_linear. */
+@CONST()
+class ProgressMode {
+  @CONST() static DETERMINATE = 'determinate';
+  @CONST() static INDETERMINATE = 'indeterminate';
+  @CONST() static BUFFER = 'buffer';
+  @CONST() static QUERY = 'query';
+}
+&nbsp;
+@Component({
+  selector: 'md-progress-linear',
+  inputs: ['value', 'bufferValue'],
+  host: {
+    'role': 'progressbar',
+    'aria-valuemin': '0',
+    'aria-valuemax': '100',
+    '[attr.aria-valuenow]': 'value'
+  }
+})
+@View({
+  template: `
+    &lt;div class="md-progress-linear-container md-ready"&gt;
+      &lt;div class="md-progress-linear-dashed"&gt;&lt;/div&gt;
+      &lt;div class="md-progress-linear-bar md-progress-linear-bar1"
+          [style.transform]="secondaryBarTransform"&gt;&lt;/div&gt;
+      &lt;div class="md-progress-linear-bar md-progress-linear-bar2"
+          [style.transform]="primaryBarTransform"&gt;&lt;/div&gt;
+    &lt;/div&gt;`,
+  directives: [],
+  encapsulation: ViewEncapsulation.None
+})
+export class MdProgressLinear implements OnChanges {
+  /** Clamps a value to be between 0 and 100. */
+<span class="fstat-no" title="function not covered" >  static clamp(v)</span> {
+<span class="cstat-no" title="statement not covered" >    return Math.max(0, Math.min(100, v));</span>
+  }
+&nbsp;
+&nbsp;
+  /** Value for the primary bar. */
+  @Input('value') value_: number;
+&nbsp;
+  /** Value for the secondary bar. */
+  @Input() bufferValue: number;
+&nbsp;
+  /** The render mode for the progress bar. */
+  @Input() mode: string;
+&nbsp;
+  /** CSS `transform` property applied to the primary bar. */
+  primaryBarTransform: string;
+&nbsp;
+  /** CSS `transform` property applied to the secondary bar. */
+  secondaryBarTransform: string;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor(@Attribute('mode') mode: string)</span> {
+<span class="cstat-no" title="statement not covered" >    this.primaryBarTransform = '';</span>
+<span class="cstat-no" title="statement not covered" >    this.secondaryBarTransform = '';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.mode = isPresent(mode) ? mode : ProgressMode.DETERMINATE;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  get value() {</span>
+<span class="cstat-no" title="statement not covered" >    return this.value_;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  set value(v)</span> {
+<span class="cstat-no" title="statement not covered" >    if (isPresent(v)) {</span>
+<span class="cstat-no" title="statement not covered" >      this.value_ = MdProgressLinear.clamp(v);</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnChanges(_)</span> {
+    // If the mode does not use a value, or if there is no value, do nothing.
+<span class="cstat-no" title="statement not covered" >    if (this.mode === ProgressMode.QUERY || this.mode === ProgressMode.INDETERMINATE ||</span>
+        isBlank(this.value)) {
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.primaryBarTransform = this.transformForValue(this.value);</span>
+&nbsp;
+    // The bufferValue is only used in buffer mode.
+<span class="cstat-no" title="statement not covered" >    if (this.mode === ProgressMode.BUFFER) {</span>
+<span class="cstat-no" title="statement not covered" >      this.secondaryBarTransform = this.transformForValue(this.bufferValue);</span>
+    }
+  }
+&nbsp;
+  /** Gets the CSS `transform` property for a progress bar based on the given value (0 - 100). */
+<span class="fstat-no" title="function not covered" >  transformForValue(value)</span> {
+    // TODO(jelbourn): test perf gain of caching these, since there are only 101 values.
+<span class="cstat-no" title="statement not covered" >    let scale = value / 100;</span>
+<span class="cstat-no" title="statement not covered" >    let translateX = (value - 100) / 2;</span>
+<span class="cstat-no" title="statement not covered" >    return `translateX(${translateX}%) scale(${scale}, 1)`;</span>
+  }
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Dec 26 2015 16:20:11 GMT-0800 (PST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

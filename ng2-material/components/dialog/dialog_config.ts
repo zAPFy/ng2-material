@@ -51,9 +51,4 @@ export class MdDialogConfig {
     return this;
   }
 
-  dialogRef(ref: MdDialogRef): MdDialogConfig {
-    this.context.dialog = ref;
-    return this;
-  }
-
 }

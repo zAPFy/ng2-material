@@ -127,8 +127,8 @@
   },
   {
     "lines": {
-      "found": 56,
-      "hit": 52,
+      "found": 55,
+      "hit": 51,
       "percent": 93
     },
     "functions": {
@@ -163,13 +163,13 @@
   },
   {
     "lines": {
-      "found": 35,
-      "hit": 35,
+      "found": 32,
+      "hit": 32,
       "percent": 100
     },
     "functions": {
-      "hit": 10,
-      "found": 10,
+      "hit": 9,
+      "found": 9,
       "percent": 100
     },
     "branches": {
@@ -217,13 +217,13 @@
   },
   {
     "lines": {
-      "found": 13,
-      "hit": 13,
+      "found": 15,
+      "hit": 15,
       "percent": 100
     },
     "functions": {
-      "hit": 1,
-      "found": 1,
+      "hit": 2,
+      "found": 2,
       "percent": 100
     },
     "branches": {
@@ -415,32 +415,32 @@
   },
   {
     "lines": {
-      "found": 60,
-      "hit": 15,
-      "percent": 25
+      "found": 70,
+      "hit": 44,
+      "percent": 63
     },
     "functions": {
-      "hit": 1,
-      "found": 9,
-      "percent": 11
+      "hit": 8,
+      "found": 13,
+      "percent": 62
     },
     "branches": {
-      "hit": 0,
-      "found": 16,
-      "percent": 0
+      "hit": 5,
+      "found": 20,
+      "percent": 25
     },
     "file": "ng2-material/components/toolbar/toolbar.ts"
   },
   {
     "lines": {
       "found": 19,
-      "hit": 3,
-      "percent": 16
+      "hit": 8,
+      "percent": 42
     },
     "functions": {
-      "hit": 0,
+      "hit": 3,
       "found": 6,
-      "percent": 0
+      "percent": 50
     },
     "branches": {
       "hit": 0,

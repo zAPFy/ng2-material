@@ -34,7 +34,6 @@ var MdDialog = (function () {
         if (options === void 0) { options = null; }
         var config = lang_1.isPresent(options) ? options : new dialog_config_1.MdDialogConfig();
         var dialogRef = new dialog_ref_1.MdDialogRef();
-        config.dialogRef(dialogRef);
         var bindings = core_1.Injector.resolve([core_1.provide(dialog_ref_1.MdDialogRef, { useValue: dialogRef })]);
         var backdropRefPromise = this._openBackdrop(elementRef, bindings, options);
         return this.componentLoader.loadNextToLocation(dialog_container_1.MdDialogContainer, elementRef)
