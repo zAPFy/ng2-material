@@ -12,13 +12,8 @@ var all_1 = require('ng2-material/all');
 var ProgressLinearBasicUsage = (function () {
     function ProgressLinearBasicUsage() {
         var _this = this;
-        this.modes = [];
-        this.mode = 'query';
-        this.activated = true;
         this.determinateValue = 30;
         this.determinateValue2 = 30;
-        this._counter = 0;
-        this._j = 0;
         setInterval(function () {
             _this.determinateValue += 1;
             _this.determinateValue2 += 1.5;
@@ -28,35 +23,15 @@ var ProgressLinearBasicUsage = (function () {
             if (_this.determinateValue2 > 100) {
                 _this.determinateValue2 = 30;
             }
-            if ((_this._j < 2) && !_this.modes[_this._j] && _this.activated) {
-                _this.modes[_this._j] = (_this._j === 0) ? 'buffer' : 'query';
-            }
-            if (_this._counter++ % 4 === 0) {
-                _this._j++;
-            }
-            if (_this._j === 2) {
-                _this.mode = 'indeterminate';
-            }
         }, 100, 0, true);
-        setInterval(function () {
-            _this.mode = (_this.mode === 'query' ? 'determinate' : 'query');
-        }, 7200, 0, true);
     }
-    ProgressLinearBasicUsage.prototype.toggleActivation = function () {
-        if (!this.activated) {
-            this.modes = [null, null, null, null, null];
-        }
-        if (this.activated) {
-            this._j = this._counter = 0;
-            this.determinateValue = 30;
-            this.determinateValue2 = 30;
-        }
-        this.activated = !this.activated;
-    };
-    ;
     ProgressLinearBasicUsage = __decorate([
         core_1.Component({ selector: 'progress-linear-basic-usage' }),
-        core_1.View({ templateUrl: 'examples/components/progress_linear/basic_usage.html', directives: [all_1.MATERIAL_DIRECTIVES] }), 
+        core_1.View({
+            templateUrl: 'examples/components/progress_linear/basic_usage.html',
+            styleUrls: ['examples/components/progress_linear/basic_usage.css'],
+            directives: [all_1.MATERIAL_DIRECTIVES]
+        }), 
         __metadata('design:paramtypes', [])
     ], ProgressLinearBasicUsage);
     return ProgressLinearBasicUsage;

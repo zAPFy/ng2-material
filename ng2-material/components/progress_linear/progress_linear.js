@@ -44,6 +44,7 @@ var ProgressMode = (function () {
     ], ProgressMode);
     return ProgressMode;
 })();
+exports.ProgressMode = ProgressMode;
 var MdProgressLinear = (function () {
     function MdProgressLinear(mode) {
         this.primaryBarTransform = '';
@@ -66,12 +67,13 @@ var MdProgressLinear = (function () {
         configurable: true
     });
     MdProgressLinear.prototype.ngOnChanges = function (_) {
-        if (this.mode === ProgressMode.QUERY || this.mode === ProgressMode.INDETERMINATE ||
-            lang_2.isBlank(this.value)) {
+        if (this.mode === ProgressMode.QUERY || this.mode === ProgressMode.INDETERMINATE) {
             return;
         }
-        this.primaryBarTransform = this.transformForValue(this.value);
-        if (this.mode === ProgressMode.BUFFER) {
+        if (!lang_2.isBlank(this.value)) {
+            this.primaryBarTransform = this.transformForValue(this.value);
+        }
+        if (this.mode === ProgressMode.BUFFER && !lang_2.isBlank(this.bufferValue)) {
             this.secondaryBarTransform = this.transformForValue(this.bufferValue);
         }
     };
@@ -95,12 +97,13 @@ var MdProgressLinear = (function () {
     MdProgressLinear = __decorate([
         core_1.Component({
             selector: 'md-progress-linear',
-            inputs: ['value', 'bufferValue'],
+            inputs: ['value', 'bufferValue', 'mode'],
             host: {
                 'role': 'progressbar',
                 'aria-valuemin': '0',
                 'aria-valuemax': '100',
-                '[attr.aria-valuenow]': 'value'
+                '[attr.aria-valuenow]': 'value',
+                '[attr.mode]': 'mode'
             }
         }),
         core_1.View({

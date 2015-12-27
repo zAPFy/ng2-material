@@ -1569,6 +1569,7 @@ System.register("ng2-material/components/progress_linear/progress_linear.ts", ["
                 ], ProgressMode);
                 return ProgressMode;
             })();
+            exports_1("ProgressMode", ProgressMode);
             MdProgressLinear = (function () {
                 function MdProgressLinear(mode) {
                     this.primaryBarTransform = '';
@@ -1593,13 +1594,14 @@ System.register("ng2-material/components/progress_linear/progress_linear.ts", ["
                 });
                 MdProgressLinear.prototype.ngOnChanges = function (_) {
                     // If the mode does not use a value, or if there is no value, do nothing.
-                    if (this.mode === ProgressMode.QUERY || this.mode === ProgressMode.INDETERMINATE ||
-                        lang_2.isBlank(this.value)) {
+                    if (this.mode === ProgressMode.QUERY || this.mode === ProgressMode.INDETERMINATE) {
                         return;
                     }
-                    this.primaryBarTransform = this.transformForValue(this.value);
+                    if (!lang_2.isBlank(this.value)) {
+                        this.primaryBarTransform = this.transformForValue(this.value);
+                    }
                     // The bufferValue is only used in buffer mode.
-                    if (this.mode === ProgressMode.BUFFER) {
+                    if (this.mode === ProgressMode.BUFFER && !lang_2.isBlank(this.bufferValue)) {
                         this.secondaryBarTransform = this.transformForValue(this.bufferValue);
                     }
                 };
@@ -1625,12 +1627,13 @@ System.register("ng2-material/components/progress_linear/progress_linear.ts", ["
                 MdProgressLinear = __decorate([
                     core_1.Component({
                         selector: 'md-progress-linear',
-                        inputs: ['value', 'bufferValue'],
+                        inputs: ['value', 'bufferValue', 'mode'],
                         host: {
                             'role': 'progressbar',
                             'aria-valuemin': '0',
                             'aria-valuemax': '100',
-                            '[attr.aria-valuenow]': 'value'
+                            '[attr.aria-valuenow]': 'value',
+                            '[attr.mode]': 'mode'
                         }
                     }),
                     core_1.View({

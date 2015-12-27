@@ -5342,13 +5342,14 @@ md-progress-linear {
   display: block;
   width: 100%;
   height: 5px; }
+  md-progress-linear[hidden] {
+    display: none; }
   md-progress-linear *, md-progress-linear *:before {
     box-sizing: border-box; }
   md-progress-linear .md-progress-linear-container {
     overflow: hidden;
     position: relative;
     height: 5px;
-    top: 5px;
     -webkit-transform: translate(0, 5px) scale(1, 0);
             transform: translate(0, 5px) scale(1, 0);
     -webkit-transition: all .3s linear;
@@ -5363,17 +5364,17 @@ md-progress-linear {
   md-progress-linear .md-progress-linear-bar1, md-progress-linear .md-progress-linear-bar2 {
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear; }
-  md-progress-linear[mode="determinate"] .md-progress-linear-bar1 {
+  md-progress-linear[mode=determinate] .md-progress-linear-bar1 {
     display: none; }
-  md-progress-linear[mode="indeterminate"] .md-progress-linear-bar1 {
+  md-progress-linear[mode=indeterminate] .md-progress-linear-bar1 {
     -webkit-animation: indeterminate1 4s infinite linear;
             animation: indeterminate1 4s infinite linear; }
-  md-progress-linear[mode="indeterminate"] .md-progress-linear-bar2 {
+  md-progress-linear[mode=indeterminate] .md-progress-linear-bar2 {
     -webkit-animation: indeterminate2 4s infinite linear;
             animation: indeterminate2 4s infinite linear; }
-  md-progress-linear[mode="buffer"] .md-progress-linear-container {
+  md-progress-linear[mode=buffer] .md-progress-linear-container {
     background-color: transparent !important; }
-  md-progress-linear[mode="buffer"] .md-progress-linear-dashed:before {
+  md-progress-linear[mode=buffer] .md-progress-linear-dashed:before {
     content: "";
     display: block;
     height: 5px;
@@ -5385,7 +5386,9 @@ md-progress-linear {
     background-position: 0px -23px;
     -webkit-animation: buffer 3s infinite linear;
             animation: buffer 3s infinite linear; }
-  md-progress-linear[mode="query"] .md-progress-linear-bar2 {
+  md-progress-linear[mode=query] .md-progress-linear-bar1 {
+    display: none; }
+  md-progress-linear[mode=query] .md-progress-linear-bar2 {
     -webkit-animation: query 0.8s infinite cubic-bezier(0.39, 0.575, 0.565, 1);
             animation: query 0.8s infinite cubic-bezier(0.39, 0.575, 0.565, 1); }
 
@@ -5640,21 +5643,29 @@ md-progress-linear.md-accent .md-progress-linear-container {
   background-color: #f8bbd0; }
 md-progress-linear.md-accent .md-progress-linear-bar {
   background-color: #e91e63; }
-md-progress-linear[mode=buffer].md-primary .md-progress-linear-bar1 {
-  background-color: #c5cae9; }
-md-progress-linear[mode=buffer].md-primary .md-progress-linear-dashed:before {
-  background: -webkit-radial-gradient(#c5cae9 0%, #c5cae9 16%, transparent 42%);
-  background: radial-gradient(#c5cae9 0%, #c5cae9 16%, transparent 42%); }
-md-progress-linear[mode=buffer].md-warn .md-progress-linear-bar1 {
-  background-color: #ffcdd2; }
-md-progress-linear[mode=buffer].md-warn .md-progress-linear-dashed:before {
-  background: -webkit-radial-gradient(#ffcdd2 0%, #ffcdd2 16%, transparent 42%);
-  background: radial-gradient(#ffcdd2 0%, #ffcdd2 16%, transparent 42%); }
-md-progress-linear[mode=buffer].md-accent .md-progress-linear-bar1 {
-  background-color: #f8bbd0; }
-md-progress-linear[mode=buffer].md-accent .md-progress-linear-dashed:before {
-  background: -webkit-radial-gradient(#f8bbd0 0%, #f8bbd0 16%, transparent 42%);
-  background: radial-gradient(#f8bbd0 0%, #f8bbd0 16%, transparent 42%); }
+md-progress-linear[mode=buffer] {
+  background-color: transparent !important;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear; }
+  md-progress-linear[mode=buffer] .md-progress-linear-display:before {
+    display: block;
+    -webkit-animation: buffer 3s infinite linear;
+            animation: buffer 3s infinite linear; }
+  md-progress-linear[mode=buffer].md-primary .md-progress-linear-bar1 {
+    background-color: #c5cae9; }
+  md-progress-linear[mode=buffer].md-primary .md-progress-linear-dashed:before {
+    background: -webkit-radial-gradient(#c5cae9 0%, #c5cae9 16%, transparent 42%);
+    background: radial-gradient(#c5cae9 0%, #c5cae9 16%, transparent 42%); }
+  md-progress-linear[mode=buffer].md-warn .md-progress-linear-bar1 {
+    background-color: #ffcdd2; }
+  md-progress-linear[mode=buffer].md-warn .md-progress-linear-dashed:before {
+    background: -webkit-radial-gradient(#ffcdd2 0%, #ffcdd2 16%, transparent 42%);
+    background: radial-gradient(#ffcdd2 0%, #ffcdd2 16%, transparent 42%); }
+  md-progress-linear[mode=buffer].md-accent .md-progress-linear-bar1 {
+    background-color: #f8bbd0; }
+  md-progress-linear[mode=buffer].md-accent .md-progress-linear-dashed:before {
+    background: -webkit-radial-gradient(#f8bbd0 0%, #f8bbd0 16%, transparent 42%);
+    background: radial-gradient(#f8bbd0 0%, #f8bbd0 16%, transparent 42%); }
 
 .md-whiteframe-z1 {
   box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
@@ -6456,7 +6467,7 @@ md-tabs.md-primary > md-tabs-wrapper {
 md-tabs.md-warn > md-tabs-wrapper {
   background-color: #f44336; }
   md-tabs.md-warn > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]) {
-    color: #e57373; }
+    color: #ffcdd2; }
     md-tabs.md-warn > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active, md-tabs.md-warn > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active [md-icon], md-tabs.md-warn > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused, md-tabs.md-warn > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused [md-icon] {
       color: white; }
     md-tabs.md-warn > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused {
@@ -6486,7 +6497,7 @@ md-toolbar.md-accent > md-tabs > md-tabs-wrapper {
 md-toolbar.md-warn > md-tabs > md-tabs-wrapper {
   background-color: #f44336; }
   md-toolbar.md-warn > md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]) {
-    color: #e57373; }
+    color: #ffcdd2; }
     md-toolbar.md-warn > md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active, md-toolbar.md-warn > md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active [md-icon], md-toolbar.md-warn > md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused, md-toolbar.md-warn > md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused [md-icon] {
       color: white; }
     md-toolbar.md-warn > md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused {

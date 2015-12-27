@@ -503,6 +503,13 @@ declare module 'ng2-material/components/list/list' {
 }
 declare module 'ng2-material/components/progress_linear/progress_linear' {
 	import { OnChanges } from 'angular2/core';
+	/** Different display / behavior modes for progress_linear. */
+	export class ProgressMode {
+	    static DETERMINATE: string;
+	    static INDETERMINATE: string;
+	    static BUFFER: string;
+	    static QUERY: string;
+	}
 	export class MdProgressLinear implements OnChanges {
 	    /** Clamps a value to be between 0 and 100. */
 	    static clamp(v: any): number;

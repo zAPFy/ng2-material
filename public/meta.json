@@ -74,6 +74,7 @@
     "examples": [
       {
         "template": "examples/components/progress_linear/basic_usage.html",
+        "styles": "examples/components/progress_linear/basic_usage.scss",
         "source": "examples/components/progress_linear/basic_usage.ts",
         "component": "progress-linear-basic-usage",
         "name": "Basic Usage"
