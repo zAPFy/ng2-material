@@ -534,6 +534,146 @@ declare module 'ng2-material/components/progress_linear/progress_linear' {
 declare module 'ng2-material/components/progress_circular/progress_circular' {
 	import { MdProgressLinear } from 'ng2-material/components/progress_linear/progress_linear';
 	export class MdProgressCircular extends MdProgressLinear {
+	    /** Value for the circle diameter. */
+	    diameter_: string;
+	    /** CSS `transform` property applied to the circle diameter. */
+	    diameterTransformation: string;
+	    /** CSS property length of circle preloader side. */
+	    outerSize: string;
+	    /** CSS `transform` property applied to the circle gap. */
+	    gapTransition: string;
+	    /** CSS `transition` property applied to circle. */
+	    defaultHalfTransition: string;
+	    /** CSS `transform` property applied to the left half of circle. */
+	    leftHalfTransform: string;
+	    /** CSS `transform` property applied to the right half of circle. */
+	    rightHalfTransform: string;
+	    constructor(mode: string);
+	    diameter: string;
+	    ngOnInit(): void;
+	    ngOnChanges(_: any): void;
+	    transformLeftHalf(value: any): void;
+	    transformRightHalf(value: any): void;
+	    updateScale(): void;
+	    getDiameterRatio(): number;
+	}
+
+}
+declare module 'ng2-material/core/util/media' {
+	import { EventEmitter } from "angular2/core";
+	/**
+	 * As defined in core/style/variables.scss
+	 *
+	 * $layout-breakpoint-xs:     600px !default;
+	 * $layout-breakpoint-sm:     960px !default;
+	 * $layout-breakpoint-md:     1280px !default;
+	 * $layout-breakpoint-lg:     1920px !default;
+	 *
+	 */
+	export const MEDIA: any;
+	export const MEDIA_PRIORITY: any;
+	/**
+	 * Reference to a Media query listener. When you are done with it, call the `destroy` method
+	 * to release its reference.
+	 */
+	export class MediaListener {
+	    query: string;
+	    private _mql;
+	    private _media;
+	    /**
+	     * Emits when the query that this is listening for changes.
+	     */
+	    onMatched: EventEmitter<string>;
+	    /**
+	     * Determine if this query is currently matched by the viewport.
+	     * @returns {boolean} True if the query is matched.
+	     */
+	    matches: boolean;
+	    private _destroyed;
+	    private _listener;
+	    constructor(query: string, _mql: MediaQueryList, _media: Media);
+	    /**
+	     * Destroy and unhook this listener.
+	     */
+	    destroy(): void;
+	}
+	/**
+	 * Injectable class for being notified of changes to viewport media queries.
+	 */
+	export class Media {
+	    private _cache;
+	    listen(query: string): MediaListener;
+	    unregisterListener(listener: MediaListener): void;
+	    static hasMedia(size: string): boolean;
+	    static getQuery(size: string): string;
+	}
+
+}
+declare module 'ng2-material/core/util/util' {
+	/**
+	 * Returns a function, that, as long as it continues to be invoked, will not
+	 * be triggered. The function will be called after it stops being called for
+	 * N milliseconds.
+	 * @param wait Integer value of msecs to delay (since last debounce reset); default value 10 msecs
+	 */
+	export function debounce(func: any, wait: any, scope: any): () => void;
+	/**
+	 * Returns a function that can only be triggered every `delay` milliseconds.
+	 * In other words, the function will not be called unless it has been more
+	 * than `delay` milliseconds since the last call.
+	 */
+	export function throttle(func: any, delay: any, scope: any): () => void;
+	export function rAF(callback: any): void;
+
+}
+declare module 'ng2-material/components/peekaboo/peekaboo' {
+	import { Media } from 'ng2-material/core/util/media';
+	import { OnDestroy } from "angular2/core";
+	/** Different peekaboo actions to apply when active */
+	export class PeekabooAction {
+	    static SHOW: string;
+	    static HIDE: string;
+	}
+	/**
+	 * @name mdPeekaboo
+	 *
+	 * @description
+	 * The `[md-peekaboo]` directive is an attribute that toggles the visibility of elements based
+	 * on the current viewport size and scrollTop.
+	 *
+	 */
+	export class MdPeekaboo implements OnDestroy {
+	    media: Media;
+	    static SIZES: string[];
+	    break: number;
+	    breakAction: string;
+	    static MakeNumber(value: any): number;
+	    private _active;
+	    active: boolean;
+	    scrollTop: number;
+	    private _breakXs;
+	    breakXs: number;
+	    private _breakSm;
+	    breakSm: number;
+	    private _breakMd;
+	    breakMd: number;
+	    private _breakLg;
+	    breakLg: number;
+	    private _breakXl;
+	    breakXl: number;
+	    private _breakpoint;
+	    breakpoint: string;
+	    private _mediaListeners;
+	    constructor(action: string, media: Media);
+	    ngOnDestroy(): any;
+	    private _watchMediaQuery(size);
+	    private _windowScroll;
+	    /**
+	     * Evaluate the current scroll and media breakpoint to determine what scrollTop
+	     * value should be used for the peekaboo active state.
+	     * @returns number The scrollTop breakpoint that was evaluated against.
+	     */
+	    evaluate(): number;
 	}
 
 }
@@ -626,23 +766,6 @@ declare module 'ng2-material/components/switcher/switch' {
 	export class MdSwitch extends MdCheckbox {
 	    constructor(tabindex: string);
 	}
-
-}
-declare module 'ng2-material/core/util/util' {
-	/**
-	 * Returns a function, that, as long as it continues to be invoked, will not
-	 * be triggered. The function will be called after it stops being called for
-	 * N milliseconds.
-	 * @param wait Integer value of msecs to delay (since last debounce reset); default value 10 msecs
-	 */
-	export function debounce(func: any, wait: any, scope: any): () => void;
-	/**
-	 * Returns a function that can only be triggered every `delay` milliseconds.
-	 * In other words, the function will not be called unless it has been more
-	 * than `delay` milliseconds since the last call.
-	 */
-	export function throttle(func: any, delay: any, scope: any): () => void;
-	export function rAF(callback: any): void;
 
 }
 declare module 'ng2-material/components/toolbar/toolbar' {
@@ -757,6 +880,7 @@ declare module 'ng2-material/all' {
 	export * from 'ng2-material/components/list/list';
 	export * from 'ng2-material/components/progress_linear/progress_linear';
 	export * from 'ng2-material/components/progress_circular/progress_circular';
+	export * from 'ng2-material/components/peekaboo/peekaboo';
 	export * from 'ng2-material/components/radio/radio_button';
 	export * from 'ng2-material/components/radio/radio_dispatcher';
 	export * from 'ng2-material/components/switcher/switch';

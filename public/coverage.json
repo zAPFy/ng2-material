@@ -1,9 +1,9 @@
 [
   {
     "lines": {
-      "found": 52,
-      "hit": 43,
-      "percent": 83
+      "found": 55,
+      "hit": 46,
+      "percent": 84
     },
     "functions": {
       "hit": 1,
@@ -343,21 +343,57 @@
   },
   {
     "lines": {
-      "found": 5,
-      "hit": 5,
+      "found": 46,
+      "hit": 46,
       "percent": 100
     },
     "functions": {
-      "hit": 1,
-      "found": 1,
+      "hit": 12,
+      "found": 12,
       "percent": 100
     },
     "branches": {
-      "hit": 0,
-      "found": 0,
-      "percent": 100
+      "hit": 15,
+      "found": 19,
+      "percent": 79
     },
     "file": "ng2-material/components/progress_circular/progress_circular.ts"
+  },
+  {
+    "lines": {
+      "found": 96,
+      "hit": 92,
+      "percent": 96
+    },
+    "functions": {
+      "hit": 22,
+      "found": 24,
+      "percent": 92
+    },
+    "branches": {
+      "hit": 28,
+      "found": 31,
+      "percent": 90
+    },
+    "file": "ng2-material/components/peekaboo/peekaboo.ts"
+  },
+  {
+    "lines": {
+      "found": 49,
+      "hit": 45,
+      "percent": 92
+    },
+    "functions": {
+      "hit": 8,
+      "found": 10,
+      "percent": 80
+    },
+    "branches": {
+      "hit": 5,
+      "found": 12,
+      "percent": 42
+    },
+    "file": "ng2-material/core/util/media.ts"
   },
   {
     "lines": {
@@ -452,13 +488,13 @@
   {
     "lines": {
       "found": 58,
-      "hit": 58,
-      "percent": 100
+      "hit": 56,
+      "percent": 97
     },
     "functions": {
-      "hit": 15,
+      "hit": 13,
       "found": 15,
-      "percent": 100
+      "percent": 87
     },
     "branches": {
       "hit": 16,

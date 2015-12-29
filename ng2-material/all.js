@@ -30,6 +30,8 @@ var progress_linear_1 = require('./components/progress_linear/progress_linear');
 __export(require('./components/progress_linear/progress_linear'));
 var progress_circular_1 = require('./components/progress_circular/progress_circular');
 __export(require('./components/progress_circular/progress_circular'));
+var peekaboo_1 = require('./components/peekaboo/peekaboo');
+__export(require('./components/peekaboo/peekaboo'));
 var radio_button_1 = require('./components/radio/radio_button');
 var radio_dispatcher_1 = require('./components/radio/radio_dispatcher');
 __export(require('./components/radio/radio_button'));
@@ -40,6 +42,7 @@ var toolbar_1 = require('./components/toolbar/toolbar');
 __export(require('./components/toolbar/toolbar'));
 var tabs_1 = require('./components/tabs/tabs');
 var compiler_1 = require("angular2/compiler");
+var media_1 = require("./core/util/media");
 __export(require('./components/toolbar/toolbar'));
 exports.MATERIAL_DIRECTIVES = lang_1.CONST_EXPR([
     button_1.MdAnchor, button_1.MdButton,
@@ -50,6 +53,7 @@ exports.MATERIAL_DIRECTIVES = lang_1.CONST_EXPR([
     icon_1.MdIcon,
     input_1.MdInput, input_1.MdInputContainer,
     list_1.MdList, list_1.MdListItem,
+    peekaboo_1.MdPeekaboo,
     progress_linear_1.MdProgressLinear,
     progress_circular_1.MdProgressCircular,
     radio_button_1.MdRadioButton, radio_button_1.MdRadioGroup,
@@ -86,6 +90,7 @@ var MaterialTemplateResolver = (function (_super) {
 exports.MaterialTemplateResolver = MaterialTemplateResolver;
 exports.MATERIAL_PROVIDERS = [
     dialog_2.MdDialog,
+    media_1.Media,
     radio_dispatcher_1.MdRadioDispatcher,
     core_1.provide(compiler_1.UrlResolver, { useValue: new MaterialTemplateResolver() })
 ];

@@ -1651,7 +1651,7 @@ System.register("ng2-material/components/progress_linear/progress_linear.ts", ["
     }
 });
 
-System.register("ng2-material/components/progress_circular/progress_circular.ts", ["angular2/core.js", "ng2-material/components/progress_linear/progress_linear.ts"], function(exports_1) {
+System.register("ng2-material/components/progress_circular/progress_circular.ts", ["angular2/core.js", "angular2/src/facade/lang.js", "ng2-material/components/progress_linear/progress_linear.ts", "angular2/src/facade/math.js"], function(exports_1) {
     var __extends = (this && this.__extends) || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
         function __() { this.constructor = d; }
@@ -1666,33 +1666,422 @@ System.register("ng2-material/components/progress_circular/progress_circular.ts"
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, progress_linear_1;
-    var MdProgressCircular;
+    var __param = (this && this.__param) || function (paramIndex, decorator) {
+        return function (target, key) { decorator(target, key, paramIndex); }
+    };
+    var core_1, lang_1, progress_linear_1, math_1;
+    var ProgressMode, Defaults, MdProgressCircular;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
+            function (lang_1_1) {
+                lang_1 = lang_1_1;
+            },
             function (progress_linear_1_1) {
                 progress_linear_1 = progress_linear_1_1;
+            },
+            function (math_1_1) {
+                math_1 = math_1_1;
             }],
         execute: function() {
+            ProgressMode = (function () {
+                function ProgressMode() {
+                }
+                ProgressMode.DETERMINATE = 'determinate';
+                ProgressMode.INDETERMINATE = 'indeterminate';
+                __decorate([
+                    lang_1.CONST(), 
+                    __metadata('design:type', Object)
+                ], ProgressMode, "DETERMINATE", void 0);
+                __decorate([
+                    lang_1.CONST(), 
+                    __metadata('design:type', Object)
+                ], ProgressMode, "INDETERMINATE", void 0);
+                ProgressMode = __decorate([
+                    lang_1.CONST(), 
+                    __metadata('design:paramtypes', [])
+                ], ProgressMode);
+                return ProgressMode;
+            })();
+            Defaults = (function () {
+                function Defaults() {
+                }
+                Defaults.DEFAULT_PROGRESS_SIZE = 100;
+                Defaults.DEFAULT_SCALING = 0.5;
+                Defaults.DEFAULT_HALF_TRANSITION = 'transform 0.1s linear';
+                __decorate([
+                    lang_1.CONST(), 
+                    __metadata('design:type', Object)
+                ], Defaults, "DEFAULT_PROGRESS_SIZE", void 0);
+                __decorate([
+                    lang_1.CONST(), 
+                    __metadata('design:type', Object)
+                ], Defaults, "DEFAULT_SCALING", void 0);
+                __decorate([
+                    lang_1.CONST(), 
+                    __metadata('design:type', Object)
+                ], Defaults, "DEFAULT_HALF_TRANSITION", void 0);
+                Defaults = __decorate([
+                    lang_1.CONST(), 
+                    __metadata('design:paramtypes', [])
+                ], Defaults);
+                return Defaults;
+            })();
             MdProgressCircular = (function (_super) {
                 __extends(MdProgressCircular, _super);
-                function MdProgressCircular() {
-                    _super.apply(this, arguments);
+                function MdProgressCircular(mode) {
+                    _super.call(this, mode);
+                    this.defaultHalfTransition = Defaults.DEFAULT_HALF_TRANSITION;
                 }
+                Object.defineProperty(MdProgressCircular.prototype, "diameter", {
+                    get: function () {
+                        return this.diameter_;
+                    },
+                    set: function (v) {
+                        if (lang_1.isPresent(v)) {
+                            this.diameter_ = v;
+                        }
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                MdProgressCircular.prototype.ngOnInit = function () {
+                    this.updateScale();
+                };
+                MdProgressCircular.prototype.ngOnChanges = function (_) {
+                    if (this.mode === ProgressMode.INDETERMINATE || lang_1.isBlank(this.value)) {
+                        return;
+                    }
+                    this.gapTransition = (this.value <= 50) ? '' : 'borderBottomColor 0.1s linear';
+                    this.transformLeftHalf(this.value);
+                    this.transformRightHalf(this.value);
+                };
+                MdProgressCircular.prototype.transformLeftHalf = function (value) {
+                    var rotation = (value <= 50) ? 135 : (((value - 50) / 50 * 180) + 135);
+                    this.leftHalfTransform = "rotate(" + rotation + "deg)";
+                };
+                MdProgressCircular.prototype.transformRightHalf = function (value) {
+                    var rotation = (value >= 50) ? 45 : (value / 50 * 180 - 135);
+                    this.rightHalfTransform = "rotate(" + rotation + "deg)";
+                };
+                MdProgressCircular.prototype.updateScale = function () {
+                    this.outerSize = 100 * this.getDiameterRatio() + 'px';
+                    this.diameterTransformation = "translate(-50%, -50%) scale( " + this.getDiameterRatio() + " )";
+                };
+                MdProgressCircular.prototype.getDiameterRatio = function () {
+                    if (!this.diameter)
+                        return Defaults.DEFAULT_SCALING;
+                    var match = /([0-9]*)%/.exec(this.diameter);
+                    var value = math_1.Math.max(0, (match && match[1] / 100) || parseFloat(this.diameter));
+                    return (value > 1) ? value / Defaults.DEFAULT_PROGRESS_SIZE : value;
+                };
+                __decorate([
+                    core_1.Input('diameter'), 
+                    __metadata('design:type', String)
+                ], MdProgressCircular.prototype, "diameter_", void 0);
                 MdProgressCircular = __decorate([
-                    core_1.Component({ selector: 'md-progress-circular' }),
+                    core_1.Component({
+                        selector: 'md-progress-circular',
+                        inputs: ['value', 'diameter'],
+                        host: {
+                            'role': 'progressbar',
+                            'aria-valuemin': '0',
+                            'aria-valuemax': '100',
+                            '[attr.aria-valuenow]': 'value',
+                            '[style.width]': 'outerSize',
+                            '[style.height]': 'outerSize'
+                        }
+                    }),
                     core_1.View({
-                        template: "\n    <div class=\"md-spinner-wrapper\">\n      <div class=\"md-inner\">\n        <div class=\"md-gap\"></div>\n        <div class=\"md-left\">\n          <div class=\"md-half-circle\"></div>\n        </div>\n        <div class=\"md-right\">\n          <div class=\"md-half-circle\"></div>\n        </div>\n      </div>\n    </div>",
+                        template: "\n    <div class=\"md-scale-wrapper\" [style.transform]=\"diameterTransformation\">\n      <div class=\"md-spinner-wrapper\">\n        <div class=\"md-inner\">\n          <div class=\"md-gap\" [style.transition]=\"gapTransition\"></div>\n          <div class=\"md-left\">\n            <div class=\"md-half-circle\" [style.transform]=\"leftHalfTransform\" [style.transition]=\"defaultHalfTransition\"></div>\n          </div>\n          <div class=\"md-right\">\n            <div class=\"md-half-circle\" [style.transform]=\"rightHalfTransform\"  [style.transition]=\"defaultHalfTransition\"></div>\n          </div>\n        </div>\n      </div>\n    </div>",
+                        directives: [],
                         encapsulation: core_1.ViewEncapsulation.None
-                    }), 
-                    __metadata('design:paramtypes', [])
+                    }),
+                    __param(0, core_1.Attribute('mode')), 
+                    __metadata('design:paramtypes', [String])
                 ], MdProgressCircular);
                 return MdProgressCircular;
             })(progress_linear_1.MdProgressLinear);
             exports_1("MdProgressCircular", MdProgressCircular);
+        }
+    }
+});
+
+System.register("ng2-material/components/peekaboo/peekaboo.ts", ["angular2/core.js", "ng2-material/core/util/media.ts", "angular2/src/facade/lang.js"], function(exports_1) {
+    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+    var __metadata = (this && this.__metadata) || function (k, v) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    };
+    var __param = (this && this.__param) || function (paramIndex, decorator) {
+        return function (target, key) { decorator(target, key, paramIndex); }
+    };
+    var core_1, media_1, core_2, lang_1, lang_2, core_3, lang_3, lang_4;
+    var PeekabooAction, MdPeekaboo;
+    return {
+        setters:[
+            function (core_1_1) {
+                core_1 = core_1_1;
+                core_2 = core_1_1;
+                core_3 = core_1_1;
+            },
+            function (media_1_1) {
+                media_1 = media_1_1;
+            },
+            function (lang_1_1) {
+                lang_1 = lang_1_1;
+                lang_2 = lang_1_1;
+                lang_3 = lang_1_1;
+                lang_4 = lang_1_1;
+            }],
+        execute: function() {
+            /** Different peekaboo actions to apply when active */
+            PeekabooAction = (function () {
+                function PeekabooAction() {
+                }
+                PeekabooAction.SHOW = 'show';
+                PeekabooAction.HIDE = 'hide';
+                __decorate([
+                    lang_1.CONST(), 
+                    __metadata('design:type', Object)
+                ], PeekabooAction, "SHOW", void 0);
+                __decorate([
+                    lang_1.CONST(), 
+                    __metadata('design:type', Object)
+                ], PeekabooAction, "HIDE", void 0);
+                PeekabooAction = __decorate([
+                    lang_1.CONST(), 
+                    __metadata('design:paramtypes', [])
+                ], PeekabooAction);
+                return PeekabooAction;
+            })();
+            exports_1("PeekabooAction", PeekabooAction);
+            /**
+             * @name mdPeekaboo
+             *
+             * @description
+             * The `[md-peekaboo]` directive is an attribute that toggles the visibility of elements based
+             * on the current viewport size and scrollTop.
+             *
+             */
+            MdPeekaboo = (function () {
+                function MdPeekaboo(action, media) {
+                    var _this = this;
+                    this.media = media;
+                    this.break = 100;
+                    this._active = false;
+                    this._breakXs = -1;
+                    this._breakSm = -1;
+                    this._breakMd = -1;
+                    this._breakLg = -1;
+                    this._breakXl = -1;
+                    this._breakpoint = null;
+                    this._mediaListeners = [];
+                    this._windowScroll = this.evaluate.bind(this);
+                    if (lang_2.isPresent(action)) {
+                        this.breakAction = action;
+                    }
+                    window.addEventListener('scroll', this._windowScroll);
+                    MdPeekaboo.SIZES.forEach(function (size) {
+                        _this._watchMediaQuery(size);
+                        if (media_1.Media.hasMedia(size)) {
+                            _this._breakpoint = size;
+                        }
+                    });
+                    this.evaluate();
+                }
+                MdPeekaboo.MakeNumber = function (value) {
+                    return lang_4.isString(value) ? lang_3.NumberWrapper.parseInt(value, 10) : value;
+                };
+                Object.defineProperty(MdPeekaboo.prototype, "active", {
+                    get: function () {
+                        return this._active;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(MdPeekaboo.prototype, "scrollTop", {
+                    get: function () {
+                        return window.pageYOffset || document.documentElement.scrollTop;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(MdPeekaboo.prototype, "breakXs", {
+                    get: function () {
+                        return this._breakXs;
+                    },
+                    set: function (value) {
+                        this._breakXs = MdPeekaboo.MakeNumber(value);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(MdPeekaboo.prototype, "breakSm", {
+                    get: function () {
+                        return this._breakSm;
+                    },
+                    set: function (value) {
+                        this._breakSm = MdPeekaboo.MakeNumber(value);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(MdPeekaboo.prototype, "breakMd", {
+                    get: function () {
+                        return this._breakMd;
+                    },
+                    set: function (value) {
+                        this._breakMd = MdPeekaboo.MakeNumber(value);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(MdPeekaboo.prototype, "breakLg", {
+                    get: function () {
+                        return this._breakLg;
+                    },
+                    set: function (value) {
+                        this._breakLg = MdPeekaboo.MakeNumber(value);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(MdPeekaboo.prototype, "breakXl", {
+                    get: function () {
+                        return this._breakXl;
+                    },
+                    set: function (value) {
+                        this._breakXl = MdPeekaboo.MakeNumber(value);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(MdPeekaboo.prototype, "breakpoint", {
+                    get: function () {
+                        return this._breakpoint;
+                    },
+                    set: function (size) {
+                        this._breakpoint = size;
+                        this.evaluate();
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                MdPeekaboo.prototype.ngOnDestroy = function () {
+                    this._mediaListeners.forEach(function (l) {
+                        l.destroy();
+                    });
+                    this._mediaListeners = [];
+                    window.removeEventListener('scroll', this._windowScroll);
+                };
+                MdPeekaboo.prototype._watchMediaQuery = function (size) {
+                    var _this = this;
+                    var l = this.media.listen(media_1.Media.getQuery(size));
+                    l.onMatched.subscribe(function (q) {
+                        _this.breakpoint = size;
+                    });
+                    this._mediaListeners.push(l);
+                };
+                /**
+                 * Evaluate the current scroll and media breakpoint to determine what scrollTop
+                 * value should be used for the peekaboo active state.
+                 * @returns number The scrollTop breakpoint that was evaluated against.
+                 */
+                MdPeekaboo.prototype.evaluate = function () {
+                    var top = this.scrollTop;
+                    var bp = this.break;
+                    switch (this._breakpoint) {
+                        case 'xl':
+                            if (this._breakXl !== -1) {
+                                bp = this._breakXl;
+                                break;
+                            }
+                        case 'lg':
+                            if (this._breakLg !== -1) {
+                                bp = this._breakLg;
+                                break;
+                            }
+                        case 'md':
+                            if (this._breakMd !== -1) {
+                                bp = this._breakMd;
+                                break;
+                            }
+                        case 'sm':
+                            if (this._breakSm !== -1) {
+                                bp = this._breakSm;
+                                break;
+                            }
+                        case 'xs':
+                            if (this._breakXs !== -1) {
+                                bp = this._breakXs;
+                                break;
+                            }
+                    }
+                    if (top >= bp && !this._active) {
+                        this._active = true;
+                    }
+                    else if (top < bp && this._active) {
+                        this._active = false;
+                    }
+                    return bp;
+                };
+                MdPeekaboo.SIZES = ['xs', 'sm', 'md', 'lg', 'xl'];
+                __decorate([
+                    core_2.Input(), 
+                    __metadata('design:type', Number)
+                ], MdPeekaboo.prototype, "break", void 0);
+                __decorate([
+                    core_2.Input(), 
+                    __metadata('design:type', String)
+                ], MdPeekaboo.prototype, "breakAction", void 0);
+                __decorate([
+                    core_2.Input(), 
+                    __metadata('design:type', Number), 
+                    __metadata('design:paramtypes', [Number])
+                ], MdPeekaboo.prototype, "breakXs", null);
+                __decorate([
+                    core_2.Input(), 
+                    __metadata('design:type', Number), 
+                    __metadata('design:paramtypes', [Number])
+                ], MdPeekaboo.prototype, "breakSm", null);
+                __decorate([
+                    core_2.Input(), 
+                    __metadata('design:type', Number), 
+                    __metadata('design:paramtypes', [Number])
+                ], MdPeekaboo.prototype, "breakMd", null);
+                __decorate([
+                    core_2.Input(), 
+                    __metadata('design:type', Number), 
+                    __metadata('design:paramtypes', [Number])
+                ], MdPeekaboo.prototype, "breakLg", null);
+                __decorate([
+                    core_2.Input(), 
+                    __metadata('design:type', Number), 
+                    __metadata('design:paramtypes', [Number])
+                ], MdPeekaboo.prototype, "breakXl", null);
+                MdPeekaboo = __decorate([
+                    core_1.Directive({
+                        selector: '[md-peekaboo]',
+                        inputs: ['break', 'breakXs', 'breakSm', 'breakMd', 'breakLg', 'breakXl'],
+                        host: {
+                            '[class.md-peekaboo-active]': 'active',
+                            '[attr.breakAction]': 'breakAction'
+                        }
+                    }),
+                    __param(0, core_3.Attribute('breakAction')), 
+                    __metadata('design:paramtypes', [String, (typeof (_a = typeof media_1.Media !== 'undefined' && media_1.Media) === 'function' && _a) || Object])
+                ], MdPeekaboo);
+                return MdPeekaboo;
+                var _a;
+            })();
+            exports_1("MdPeekaboo", MdPeekaboo);
         }
     }
 });
@@ -2946,13 +3335,164 @@ System.register("ng2-material/components/tabs/tabs.ts", ["angular2/core.js", "an
     }
 });
 
-System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "angular2/core.js", "ng2-material/components/button/button.ts", "ng2-material/components/checkbox/checkbox.ts", "ng2-material/components/content/content.ts", "ng2-material/components/dialog/dialog.ts", "ng2-material/components/divider/divider.ts", "ng2-material/components/grid_list/grid_list.ts", "ng2-material/components/icon/icon.ts", "ng2-material/components/input/input.ts", "ng2-material/components/list/list.ts", "ng2-material/components/progress_linear/progress_linear.ts", "ng2-material/components/progress_circular/progress_circular.ts", "ng2-material/components/radio/radio_button.ts", "ng2-material/components/radio/radio_dispatcher.ts", "ng2-material/components/switcher/switch.ts", "ng2-material/components/toolbar/toolbar.ts", "ng2-material/components/tabs/tabs.ts", "angular2/compiler.js"], function(exports_1) {
+System.register("ng2-material/core/util/media.ts", ["angular2/core.js"], function(exports_1) {
+    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+    var __metadata = (this && this.__metadata) || function (k, v) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    };
+    var core_1, core_2, core_3;
+    var MEDIA, MEDIA_PRIORITY, MediaListener, Media;
+    return {
+        setters:[
+            function (core_1_1) {
+                core_1 = core_1_1;
+                core_2 = core_1_1;
+                core_3 = core_1_1;
+            }],
+        execute: function() {
+            /**
+             * As defined in core/style/variables.scss
+             *
+             * $layout-breakpoint-xs:     600px !default;
+             * $layout-breakpoint-sm:     960px !default;
+             * $layout-breakpoint-md:     1280px !default;
+             * $layout-breakpoint-lg:     1920px !default;
+             *
+             */
+            exports_1("MEDIA", MEDIA = {
+                'xs': '(max-width: 599px)',
+                'gt-xs': '(min-width: 600px)',
+                'sm': '(min-width: 600px) and (max-width: 959px)',
+                'gt-sm': '(min-width: 960px)',
+                'md': '(min-width: 960px) and (max-width: 1279px)',
+                'gt-md': '(min-width: 1280px)',
+                'lg': '(min-width: 1280px) and (max-width: 1919px)',
+                'gt-lg': '(min-width: 1920px)',
+                'xl': '(min-width: 1920px)'
+            });
+            exports_1("MEDIA_PRIORITY", MEDIA_PRIORITY = [
+                'xl',
+                'gt-lg',
+                'lg',
+                'gt-md',
+                'md',
+                'gt-sm',
+                'sm',
+                'gt-xs',
+                'xs'
+            ]);
+            /**
+             * Reference to a Media query listener. When you are done with it, call the `destroy` method
+             * to release its reference.
+             */
+            MediaListener = (function () {
+                function MediaListener(query, _mql, _media) {
+                    var _this = this;
+                    this.query = query;
+                    this._mql = _mql;
+                    this._media = _media;
+                    /**
+                     * Emits when the query that this is listening for changes.
+                     */
+                    this.onMatched = new core_3.EventEmitter();
+                    this._destroyed = false;
+                    this._listener = function (mql) { return _this.onMatched.emit(query); };
+                    this._mql.addListener(this._listener);
+                }
+                Object.defineProperty(MediaListener.prototype, "matches", {
+                    /**
+                     * Determine if this query is currently matched by the viewport.
+                     * @returns {boolean} True if the query is matched.
+                     */
+                    get: function () {
+                        return !this._destroyed && this._mql.matches;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                /**
+                 * Destroy and unhook this listener.
+                 */
+                MediaListener.prototype.destroy = function () {
+                    if (!this._destroyed) {
+                        this._mql.removeListener(this._listener);
+                        this._media.unregisterListener(this);
+                        this._destroyed = true;
+                        this._listener = null;
+                        this._mql = null;
+                    }
+                };
+                __decorate([
+                    core_2.Output(), 
+                    __metadata('design:type', (typeof (_a = typeof core_3.EventEmitter !== 'undefined' && core_3.EventEmitter) === 'function' && _a) || Object)
+                ], MediaListener.prototype, "onMatched", void 0);
+                return MediaListener;
+                var _a;
+            })();
+            exports_1("MediaListener", MediaListener);
+            /**
+             * Injectable class for being notified of changes to viewport media queries.
+             */
+            Media = (function () {
+                function Media() {
+                    this._cache = {};
+                }
+                Media.prototype.listen = function (query) {
+                    var listener = this._cache[query];
+                    if (!listener) {
+                        listener = this._cache[query] = {
+                            mql: window.matchMedia(query),
+                            references: 0
+                        };
+                    }
+                    listener.references++;
+                    return new MediaListener(query, listener.mql, this);
+                };
+                Media.prototype.unregisterListener = function (listener) {
+                    var cached = this._cache[listener.query];
+                    if (cached) {
+                        cached.references--;
+                        delete this._cache[listener.query];
+                    }
+                };
+                Media.hasMedia = function (size) {
+                    var query = Media.getQuery(size);
+                    if (!query) {
+                        return false;
+                    }
+                    return window.matchMedia(query).matches;
+                };
+                Media.getQuery = function (size) {
+                    var query = MEDIA[size];
+                    if (!query) {
+                        console.warn("unknown media query size " + size + ". Expected one of [" + MEDIA_PRIORITY.join(',') + "]");
+                        return null;
+                    }
+                    return query;
+                };
+                Media = __decorate([
+                    core_1.Injectable(), 
+                    __metadata('design:paramtypes', [])
+                ], Media);
+                return Media;
+            })();
+            exports_1("Media", Media);
+        }
+    }
+});
+
+System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "angular2/core.js", "ng2-material/components/button/button.ts", "ng2-material/components/checkbox/checkbox.ts", "ng2-material/components/content/content.ts", "ng2-material/components/dialog/dialog.ts", "ng2-material/components/divider/divider.ts", "ng2-material/components/grid_list/grid_list.ts", "ng2-material/components/icon/icon.ts", "ng2-material/components/input/input.ts", "ng2-material/components/list/list.ts", "ng2-material/components/progress_linear/progress_linear.ts", "ng2-material/components/progress_circular/progress_circular.ts", "ng2-material/components/peekaboo/peekaboo.ts", "ng2-material/components/radio/radio_button.ts", "ng2-material/components/radio/radio_dispatcher.ts", "ng2-material/components/switcher/switch.ts", "ng2-material/components/toolbar/toolbar.ts", "ng2-material/components/tabs/tabs.ts", "angular2/compiler.js", "ng2-material/core/util/media.ts"], function(exports_1) {
     var __extends = (this && this.__extends) || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
-    var lang_1, core_1, button_1, checkbox_1, content_1, dialog_1, divider_1, grid_list_1, icon_1, input_1, list_1, progress_linear_1, progress_circular_1, radio_button_1, radio_dispatcher_1, switch_1, toolbar_1, tabs_1, compiler_1;
+    var lang_1, core_1, button_1, checkbox_1, content_1, dialog_1, divider_1, grid_list_1, icon_1, input_1, list_1, progress_linear_1, progress_circular_1, peekaboo_1, radio_button_1, radio_dispatcher_1, switch_1, toolbar_1, tabs_1, compiler_1, media_1;
     var MATERIAL_DIRECTIVES, BASE_URL, MaterialTemplateResolver, MATERIAL_PROVIDERS;
     /**
      * Specify the baseUrl to load templates and styles from.
@@ -3027,6 +3567,10 @@ System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "angular2
                 progress_circular_1 = progress_circular_1_1;
                 exportStar_1(progress_circular_1_1);
             },
+            function (peekaboo_1_1) {
+                peekaboo_1 = peekaboo_1_1;
+                exportStar_1(peekaboo_1_1);
+            },
             function (radio_button_1_1) {
                 radio_button_1 = radio_button_1_1;
                 exportStar_1(radio_button_1_1);
@@ -3049,6 +3593,9 @@ System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "angular2
             },
             function (compiler_1_1) {
                 compiler_1 = compiler_1_1;
+            },
+            function (media_1_1) {
+                media_1 = media_1_1;
             }],
         execute: function() {
             /**
@@ -3063,6 +3610,7 @@ System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "angular2
                 icon_1.MdIcon,
                 input_1.MdInput, input_1.MdInputContainer,
                 list_1.MdList, list_1.MdListItem,
+                peekaboo_1.MdPeekaboo,
                 progress_linear_1.MdProgressLinear,
                 progress_circular_1.MdProgressCircular,
                 radio_button_1.MdRadioButton, radio_button_1.MdRadioGroup,
@@ -3106,6 +3654,7 @@ System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "angular2
              */
             exports_1("MATERIAL_PROVIDERS", MATERIAL_PROVIDERS = [
                 dialog_1.MdDialog,
+                media_1.Media,
                 radio_dispatcher_1.MdRadioDispatcher,
                 core_1.provide(compiler_1.UrlResolver, { useValue: new MaterialTemplateResolver() })
             ]);

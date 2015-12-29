@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ng2-material/core/util/media.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">ng2-material/core/util/</a> media.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.57% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>48/53</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">41.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>5/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>8/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">91.84% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>45/49</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">121×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120×</span>
+<span class="cline-any cline-yes">120×</span>
+<span class="cline-any cline-yes">120×</span>
+<span class="cline-any cline-yes">120×</span>
+<span class="cline-any cline-yes">120×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">120×</span>
+<span class="cline-any cline-yes">120×</span>
+<span class="cline-any cline-yes">120×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120×</span>
+<span class="cline-any cline-yes">120×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">120×</span>
+<span class="cline-any cline-yes">120×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">120×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">240×</span>
+<span class="cline-any cline-yes">240×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">240×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {CONST} from "angular2/src/facade/lang";
+import {Injectable} from "angular2/core";
+import {Output} from "angular2/core";
+import {EventEmitter} from "angular2/core";
+&nbsp;
+&nbsp;
+/**
+ * As defined in core/style/variables.scss
+ *
+ * $layout-breakpoint-xs:     600px !default;
+ * $layout-breakpoint-sm:     960px !default;
+ * $layout-breakpoint-md:     1280px !default;
+ * $layout-breakpoint-lg:     1920px !default;
+ *
+ */
+export const MEDIA: any = {
+  'xs': '(max-width: 599px)',
+  'gt-xs': '(min-width: 600px)',
+  'sm': '(min-width: 600px) and (max-width: 959px)',
+  'gt-sm': '(min-width: 960px)',
+  'md': '(min-width: 960px) and (max-width: 1279px)',
+  'gt-md': '(min-width: 1280px)',
+  'lg': '(min-width: 1280px) and (max-width: 1919px)',
+  'gt-lg': '(min-width: 1920px)',
+  'xl': '(min-width: 1920px)'
+};
+&nbsp;
+export const MEDIA_PRIORITY: any = [
+  'xl',
+  'gt-lg',
+  'lg',
+  'gt-md',
+  'md',
+  'gt-sm',
+  'sm',
+  'gt-xs',
+  'xs'
+];
+&nbsp;
+/**
+ * Reference to a Media query listener. When you are done with it, call the `destroy` method
+ * to release its reference.
+ */
+export class MediaListener {
+&nbsp;
+  /**
+   * Emits when the query that this is listening for changes.
+   */
+  @Output() onMatched: EventEmitter&lt;string&gt; = new EventEmitter&lt;string&gt;();
+&nbsp;
+  /**
+   * Determine if this query is currently matched by the viewport.
+   * @returns {boolean} True if the query is matched.
+   */
+<span class="fstat-no" title="function not covered" >  get matches(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >    return !this._destroyed &amp;&amp; this._mql.matches;</span>
+  }
+&nbsp;
+  private _destroyed: boolean = false;
+&nbsp;
+  private _listener: MediaQueryListListener;
+&nbsp;
+  constructor(public query: string,
+              private _mql: MediaQueryList,
+              private _media: Media) {
+    this._listener = <span class="fstat-no" title="function not covered" >(mql: MediaQueryList)</span> =&gt; <span class="cstat-no" title="statement not covered" >this.onMatched.emit(query);</span>
+    this._mql.addListener(this._listener);
+  }
+&nbsp;
+  /**
+   * Destroy and unhook this listener.
+   */
+  destroy() {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!this._destroyed) {
+      this._mql.removeListener(this._listener);
+      this._media.unregisterListener(this);
+      this._destroyed = true;
+      this._listener = null;
+      this._mql = null;
+    }
+  }
+&nbsp;
+}
+&nbsp;
+interface IMediaQueryCache {
+  references:number;
+  mql:MediaQueryList;
+}
+&nbsp;
+/**
+ * Injectable class for being notified of changes to viewport media queries.
+ */
+@Injectable()
+export class Media {
+  private _cache: {[query:string]:IMediaQueryCache} = {};
+&nbsp;
+  listen(query: string): MediaListener {
+    let listener = this._cache[query];
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!listener) {
+      listener = this._cache[query] = {
+        mql: window.matchMedia(query),
+        references: 0
+      };
+    }
+    listener.references++;
+    return new MediaListener(query, listener.mql, this);
+  }
+&nbsp;
+  unregisterListener(listener: MediaListener): void {
+    let cached = this._cache[listener.query];
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (cached) {
+      cached.references--;
+      delete this._cache[listener.query];
+    }
+  }
+&nbsp;
+  static hasMedia(size: string): boolean {
+    let query = Media.getQuery(size);
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!query) {
+<span class="cstat-no" title="statement not covered" >      return false;</span>
+    }
+    return window.matchMedia(query).matches;
+  }
+&nbsp;
+  static getQuery(size: string): string {
+    let query = MEDIA[size];
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!query) {
+<span class="cstat-no" title="statement not covered" >      console.warn(`unknown media query size ${size}. Expected one of [${MEDIA_PRIORITY.join(',')}]`);</span>
+<span class="cstat-no" title="statement not covered" >      return null;</span>
+    }
+    return query;
+  }
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 28 2015 16:29:01 GMT-0800 (PST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

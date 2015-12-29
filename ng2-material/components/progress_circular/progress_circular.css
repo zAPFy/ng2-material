@@ -6,6 +6,8 @@ md-progress-circular {
   padding-top: 0 !important;
   margin-bottom: 0 !important;
   z-index: 2; }
+  md-progress-circular[hidden] {
+    visibility: hidden; }
   md-progress-circular .md-spinner-wrapper {
     display: block;
     position: absolute;
@@ -51,23 +53,23 @@ md-progress-circular {
         md-progress-circular .md-spinner-wrapper .md-inner .md-right .md-half-circle {
           right: 0;
           border-left-color: transparent; }
-  md-progress-circular .md-mode-indeterminate .md-spinner-wrapper {
+  md-progress-circular[mode="indeterminate"] .md-spinner-wrapper, md-progress-circular:not([mode]) .md-spinner-wrapper {
     -webkit-animation: outer-rotate 2.91667s linear infinite;
             animation: outer-rotate 2.91667s linear infinite; }
-    md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner {
+    md-progress-circular[mode="indeterminate"] .md-spinner-wrapper .md-inner, md-progress-circular:not([mode]) .md-spinner-wrapper .md-inner {
       -webkit-animation: sporadic-rotate 5.25s cubic-bezier(0.35, 0, 0.25, 1) infinite;
               animation: sporadic-rotate 5.25s cubic-bezier(0.35, 0, 0.25, 1) infinite; }
-      md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner .md-left .md-half-circle, md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner .md-right .md-half-circle {
+      md-progress-circular[mode="indeterminate"] .md-spinner-wrapper .md-inner .md-left .md-half-circle, md-progress-circular[mode="indeterminate"] .md-spinner-wrapper .md-inner .md-right .md-half-circle, md-progress-circular:not([mode]) .md-spinner-wrapper .md-inner .md-left .md-half-circle, md-progress-circular:not([mode]) .md-spinner-wrapper .md-inner .md-right .md-half-circle {
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
         -webkit-animation-duration: 1.3125s;
                 animation-duration: 1.3125s;
         -webkit-animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
                 animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1); }
-      md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner .md-left .md-half-circle {
+      md-progress-circular[mode="indeterminate"] .md-spinner-wrapper .md-inner .md-left .md-half-circle, md-progress-circular:not([mode]) .md-spinner-wrapper .md-inner .md-left .md-half-circle {
         -webkit-animation-name: left-wobble;
                 animation-name: left-wobble; }
-      md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner .md-right .md-half-circle {
+      md-progress-circular[mode="indeterminate"] .md-spinner-wrapper .md-inner .md-right .md-half-circle, md-progress-circular:not([mode]) .md-spinner-wrapper .md-inner .md-right .md-half-circle {
         -webkit-animation-name: right-wobble;
                 animation-name: right-wobble; }
   md-progress-circular md-progress-circular.ng-hide .md-spinner-wrapper {

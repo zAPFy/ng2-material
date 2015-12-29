@@ -34,6 +34,9 @@ export * from './components/progress_linear/progress_linear';
 import {MdProgressCircular} from './components/progress_circular/progress_circular';
 export * from './components/progress_circular/progress_circular';
 
+import {MdPeekaboo} from './components/peekaboo/peekaboo';
+export * from './components/peekaboo/peekaboo';
+
 import {MdRadioButton, MdRadioGroup} from './components/radio/radio_button';
 import {MdRadioDispatcher} from './components/radio/radio_dispatcher';
 export * from './components/radio/radio_button';
@@ -47,6 +50,7 @@ export * from './components/toolbar/toolbar';
 
 import {MdTabs, MdTab} from './components/tabs/tabs';
 import {UrlResolver} from "angular2/compiler";
+import {Media} from "./core/util/media";
 export * from './components/toolbar/toolbar';
 
 /**
@@ -61,6 +65,7 @@ export const MATERIAL_DIRECTIVES: Type[] = CONST_EXPR([
   MdIcon,
   MdInput, MdInputContainer,
   MdList, MdListItem,
+  MdPeekaboo,
   MdProgressLinear,
   MdProgressCircular,
   MdRadioButton, MdRadioGroup,
@@ -111,6 +116,7 @@ export class MaterialTemplateResolver extends UrlResolver {
  */
 export const MATERIAL_PROVIDERS: any[] = [
   MdDialog,
+  Media,
   MdRadioDispatcher,
   provide(UrlResolver, {useValue: new MaterialTemplateResolver()})
 ];

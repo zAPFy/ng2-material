@@ -1,0 +1,10 @@
+[md-peekaboo][breakAction=show] {
+  display: none; }
+  [md-peekaboo][breakAction=show].md-peekaboo-active {
+    display: inherit; }
+[md-peekaboo][breakAction=hide] {
+  display: inherit; }
+  [md-peekaboo][breakAction=hide].md-peekaboo-active {
+    display: none; }
+
+/*# sourceMappingURL=peekaboo.css.map */

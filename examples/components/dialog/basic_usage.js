@@ -12,15 +12,13 @@ var all_1 = require('ng2-material/all');
 var core_2 = require("angular2/core");
 var dom_adapter_1 = require("angular2/src/platform/dom/dom_adapter");
 var dialog_1 = require("ng2-material/components/dialog/dialog");
-function hasMedia(size) {
-    return true;
-}
+var media_1 = require("../../../ng2-material/core/util/media");
 var DialogBasicUsage = (function () {
     function DialogBasicUsage(dialog, element) {
         this.dialog = dialog;
         this.element = element;
         this.status = '  ';
-        this.customFullscreen = hasMedia('xs') || hasMedia('sm');
+        this.customFullscreen = media_1.Media.hasMedia('xs') || media_1.Media.hasMedia('sm');
     }
     DialogBasicUsage.prototype.showAlert = function (ev) {
         var config = new dialog_1.MdDialogConfig()

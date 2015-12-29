@@ -2749,7 +2749,7 @@ input {
     max-height: 33.33%; }
   [layout="column"] > [flex-gt-md="66"], [layout="column"] > [flex-gt-md="67"] {
     max-height: 66.66%; } }
-@media (min-width: 960px) and (max-width: 1199px) {
+@media (min-width: 960px) and (max-width: 1279px) {
   [hide]:not([show-gt-sm]):not([show-gt-md]):not([show-lg]):not([show]), [hide-gt-sm]:not([show-gt-sm]):not([show-gt-md]):not([show-lg]):not([show]), [hide-gt-md]:not([show-gt-sm]):not([show-gt-md]):not([show-lg]):not([show]) {
     display: none; }
 
@@ -3247,7 +3247,7 @@ input {
     max-height: 33.33%; }
   [layout="column"] > [flex-lg="66"], [layout="column"] > [flex-lg="67"] {
     max-height: 66.66%; } }
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   [hide-gt-sm]:not([show-gt-sm]):not([show-gt-md]):not([show-gt-lg]):not([show]), [hide-gt-md]:not([show-gt-sm]):not([show-gt-md]):not([show-gt-lg]):not([show]), [hide-gt-lg]:not([show-gt-sm]):not([show-gt-md]):not([show-gt-lg]):not([show]), [hide]:not([show-gt-sm]):not([show-gt-md]):not([show-gt-lg]):not([show]) {
     display: none; }
 
@@ -5118,6 +5118,15 @@ md-list md-list-item > md-icon {
     md-list md-list-item > md-icon.md-highlight.md-accent {
       color: #e91e63; }
 
+[md-peekaboo][breakAction=show] {
+  display: none; }
+  [md-peekaboo][breakAction=show].md-peekaboo-active {
+    display: inherit; }
+[md-peekaboo][breakAction=hide] {
+  display: inherit; }
+  [md-peekaboo][breakAction=hide].md-peekaboo-active {
+    display: none; }
+
 md-progress-circular {
   display: block;
   position: relative;
@@ -5126,6 +5135,8 @@ md-progress-circular {
   padding-top: 0 !important;
   margin-bottom: 0 !important;
   z-index: 2; }
+  md-progress-circular[hidden] {
+    visibility: hidden; }
   md-progress-circular .md-spinner-wrapper {
     display: block;
     position: absolute;
@@ -5171,23 +5182,23 @@ md-progress-circular {
         md-progress-circular .md-spinner-wrapper .md-inner .md-right .md-half-circle {
           right: 0;
           border-left-color: transparent; }
-  md-progress-circular .md-mode-indeterminate .md-spinner-wrapper {
+  md-progress-circular[mode="indeterminate"] .md-spinner-wrapper, md-progress-circular:not([mode]) .md-spinner-wrapper {
     -webkit-animation: outer-rotate 2.91667s linear infinite;
             animation: outer-rotate 2.91667s linear infinite; }
-    md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner {
+    md-progress-circular[mode="indeterminate"] .md-spinner-wrapper .md-inner, md-progress-circular:not([mode]) .md-spinner-wrapper .md-inner {
       -webkit-animation: sporadic-rotate 5.25s cubic-bezier(0.35, 0, 0.25, 1) infinite;
               animation: sporadic-rotate 5.25s cubic-bezier(0.35, 0, 0.25, 1) infinite; }
-      md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner .md-left .md-half-circle, md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner .md-right .md-half-circle {
+      md-progress-circular[mode="indeterminate"] .md-spinner-wrapper .md-inner .md-left .md-half-circle, md-progress-circular[mode="indeterminate"] .md-spinner-wrapper .md-inner .md-right .md-half-circle, md-progress-circular:not([mode]) .md-spinner-wrapper .md-inner .md-left .md-half-circle, md-progress-circular:not([mode]) .md-spinner-wrapper .md-inner .md-right .md-half-circle {
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
         -webkit-animation-duration: 1.3125s;
                 animation-duration: 1.3125s;
         -webkit-animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
                 animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1); }
-      md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner .md-left .md-half-circle {
+      md-progress-circular[mode="indeterminate"] .md-spinner-wrapper .md-inner .md-left .md-half-circle, md-progress-circular:not([mode]) .md-spinner-wrapper .md-inner .md-left .md-half-circle {
         -webkit-animation-name: left-wobble;
                 animation-name: left-wobble; }
-      md-progress-circular .md-mode-indeterminate .md-spinner-wrapper .md-inner .md-right .md-half-circle {
+      md-progress-circular[mode="indeterminate"] .md-spinner-wrapper .md-inner .md-right .md-half-circle, md-progress-circular:not([mode]) .md-spinner-wrapper .md-inner .md-right .md-half-circle {
         -webkit-animation-name: right-wobble;
                 animation-name: right-wobble; }
   md-progress-circular md-progress-circular.ng-hide .md-spinner-wrapper {
@@ -6037,6 +6048,10 @@ md-toolbar {
     height: 128px;
     min-height: 128px;
     max-height: 128px; }
+  md-toolbar.md-hero {
+    height: 256px;
+    min-height: 256px;
+    max-height: 256px; }
   md-toolbar.md-medium-tall {
     height: 88px;
     min-height: 88px;
@@ -6047,10 +6062,12 @@ md-toolbar {
       max-height: 48px; }
   md-toolbar > .md-indent {
     margin-left: 64px; }
-  md-toolbar ~ md-content > md-list {
-    padding: 0; }
-    md-toolbar ~ md-content > md-list md-list-item:last-child md-divider {
-      display: none; }
+  md-toolbar ~ md-content {
+    overflow-y: hidden; }
+    md-toolbar ~ md-content > md-list {
+      padding: 0; }
+      md-toolbar ~ md-content > md-list md-list-item:last-child md-divider {
+        display: none; }
 
 .md-toolbar-tools {
   font-size: 20px;

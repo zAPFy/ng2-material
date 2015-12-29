@@ -13,7 +13,8 @@
         "component": "button-basic-usage",
         "name": "Basic Usage"
       }
-    ]
+    ],
+    "readme": "<p>Buttons are great for clicking.</p>\n"
   },
   {
     "name": "Card",
@@ -61,6 +62,22 @@
         "styles": "examples/components/dialog/basic_usage.scss",
         "source": "examples/components/dialog/basic_usage.ts",
         "component": "dialog-basic-usage",
+        "name": "Basic Usage"
+      }
+    ]
+  },
+  {
+    "name": "Progress Circular",
+    "sources": [
+      "ng2-material/components/progress_circular/progress_circular.ts"
+    ],
+    "id": "progress-circular",
+    "examples": [
+      {
+        "template": "examples/components/progress_circular/basic_usage.html",
+        "styles": "examples/components/progress_circular/basic_usage.scss",
+        "source": "examples/components/progress_circular/basic_usage.ts",
+        "component": "progress-circular-basic-usage",
         "name": "Basic Usage"
       }
     ]

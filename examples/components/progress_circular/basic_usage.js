@@ -8,41 +8,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var base_1 = require('../../base');
+var all_1 = require('ng2-material/all');
 var ProgressCircularBasicUsage = (function () {
     function ProgressCircularBasicUsage() {
         var _this = this;
-        this.imagePath = 'public/images/washedout.png';
-        this.modes = [];
-        this.activated = true;
         this.determinateValue = 30;
-        this._counter = 0;
-        this._j = 0;
+        this.deactivated = false;
         setInterval(function () {
             _this.determinateValue += 1;
             if (_this.determinateValue > 100) {
                 _this.determinateValue = 30;
             }
-            if ((_this._j < 5) && !_this.modes[_this._j] && _this.activated) {
-                _this.modes[_this._j] = 'indeterminate';
-            }
-            if (_this._counter++ % 4 === 0) {
-                _this._j++;
-            }
         }, 100, 0, true);
     }
-    ProgressCircularBasicUsage.prototype.toggleActivation = function () {
-        if (!this.activated) {
-            this.modes = [];
-        }
-        if (this.activated) {
-            this._j = this._counter = 0;
-        }
+    ProgressCircularBasicUsage.prototype.toogleActivation = function () {
+        this.deactivated = !this.deactivated;
+        this.mode = this.deactivated ? 'indeterminate' : '';
     };
-    ;
     ProgressCircularBasicUsage = __decorate([
         core_1.Component({ selector: 'progress-circular-basic-usage' }),
-        core_1.View({ templateUrl: 'examples/components/progress_circular/basic_usage.html', directives: [base_1.MATERIAL_DIRECTIVES] }), 
+        core_1.View({
+            templateUrl: 'examples/components/progress_circular/basic_usage.html',
+            styleUrls: ['examples/components/progress_circular/basic_usage.css'],
+            directives: [all_1.MATERIAL_DIRECTIVES]
+        }), 
         __metadata('design:paramtypes', [])
     ], ProgressCircularBasicUsage);
     return ProgressCircularBasicUsage;
