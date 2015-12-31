@@ -50,7 +50,7 @@ md-toolbar {
   md-toolbar > .md-indent {
     margin-left: 64px; }
   md-toolbar ~ md-content {
-    overflow-y: hidden; }
+    overflow: hidden; }
     md-toolbar ~ md-content > md-list {
       padding: 0; }
       md-toolbar ~ md-content > md-list md-list-item:last-child md-divider {

@@ -27,6 +27,7 @@ var DemosApp = (function () {
     function DemosApp(http, navigation) {
         var _this = this;
         this.navigation = navigation;
+        this.site = 'Angular2 Material';
         http.get('public/version.json')
             .subscribe(function (res) {
             _this.version = res.json().version;

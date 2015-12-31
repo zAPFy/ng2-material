@@ -774,6 +774,7 @@ System.register("ng2-material/components/dialog/dialog.ts", ["angular2/core.js",
                         var backdrop = componentRef.instance;
                         backdrop.clickClose = options.clickClose;
                         _this.renderer.setElementClass(componentRef.location, 'md-backdrop', true);
+                        _this.renderer.setElementClass(componentRef.location, 'md-opaque', true);
                         _this.renderer.setElementClass(componentRef.location, 'md-backdrop-absolute', !!options.container);
                         dom_adapter_1.DOM.appendChild(options.container || _this._defaultContainer, componentRef.location.nativeElement);
                         return backdrop.show().then(function () { return componentRef; });

@@ -14,6 +14,7 @@ var all_1 = require("../../ng2-material/all");
 var example_1 = require("../example");
 var router_2 = require("angular2/router");
 var navigation_1 = require("../services/navigation");
+var dom_adapter_1 = require("angular2/src/platform/dom/dom_adapter");
 var ComponentPage = (function () {
     function ComponentPage(_components, _navigation, _routeParams) {
         this._components = _components;
@@ -28,6 +29,8 @@ var ComponentPage = (function () {
         var id = this._routeParams.get('id');
         this._components.getComponent(id).then(function (c) {
             _this.value = c;
+            dom_adapter_1.DOM.setTitle(c.name + ' – ng2-material');
+            _this._navigation.currentTitle = c.name;
             _this._components.getNext(c).then(function (next) {
                 _this._navigation.nextLink = _this._navigation.componentLink(next);
             });
@@ -39,7 +42,7 @@ var ComponentPage = (function () {
     ComponentPage = __decorate([
         core_1.Component({
             selector: 'component-page',
-            template: "\n    <h1 class=\"examples-title\">{{ value.name }}</h1>\n    <p class=\"examples-intro\" *ngIf=\"value.readme\" [innerHtml]=\"value.readme\"></p>\n\n    <example *ngFor=\"#demo of value.examples\" [model]=\"demo\"></example>\n    <md-divider></md-divider>",
+            template: "\n    <h1 class=\"examples-title\">Examples</h1>\n    <p class=\"examples-intro\" *ngIf=\"value.readme\" [innerHtml]=\"value.readme\"></p>\n\n    <example *ngFor=\"#demo of value.examples\" [model]=\"demo\"></example>",
             directives: [example_1.default, router_2.ROUTER_DIRECTIVES, all_1.MATERIAL_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [components_1.ComponentsService, navigation_1.NavigationService, router_1.RouteParams])

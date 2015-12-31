@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("angular2/core");
 var NavigationService = (function () {
     function NavigationService() {
+        this.currentTitle = null;
         this.nextLink = null;
         this.prevLink = null;
     }

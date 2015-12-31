@@ -3806,7 +3806,6 @@ input {
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.12);
   -webkit-transition: opacity 450ms;
   transition: opacity 450ms;
   opacity: 0;
@@ -3825,6 +3824,15 @@ input {
     z-index: 69; }
   .md-backdrop.md-sidenav-backdrop {
     z-index: 59; }
+  .md-backdrop.md-opaque.md-active {
+    opacity: .48; }
+
+.md-backdrop {
+  background-color: rgba(33, 33, 33, 0); }
+  .md-backdrop.md-opaque {
+    background-color: #212121; }
+    .md-backdrop.md-opaque.md-active {
+      opacity: .48; }
 
 .md-whiteframe-z1 {
   box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
@@ -6119,7 +6127,7 @@ md-toolbar {
   md-toolbar > .md-indent {
     margin-left: 64px; }
   md-toolbar ~ md-content {
-    overflow-y: hidden; }
+    overflow: hidden; }
     md-toolbar ~ md-content > md-list {
       padding: 0; }
       md-toolbar ~ md-content > md-list md-list-item:last-child md-divider {
@@ -6685,12 +6693,12 @@ md-toolbar.demo-toolbar [md-button] {
 
 demos-app md-content.examples {
   width: 800px; }
+  @media screen and (max-width: 1280px) {
+    demos-app md-content.examples {
+      width: 960px; } }
   @media screen and (max-width: 960px) {
     demos-app md-content.examples {
-      width: 640px; } }
-  @media screen and (max-width: 600px) {
-    demos-app md-content.examples {
-      width: 480px; } }
+      width: 580px; } }
   @media screen and (max-width: 600px) {
     demos-app md-content.examples {
       width: 360px; } }
@@ -6701,12 +6709,12 @@ demos-app footer {
     margin: auto;
     padding: 0 25px;
     width: 80%; }
+    @media screen and (max-width: 1280px) {
+      demos-app footer .container {
+        width: 960px; } }
     @media screen and (max-width: 960px) {
       demos-app footer .container {
-        width: 640px; } }
-    @media screen and (max-width: 600px) {
-      demos-app footer .container {
-        width: 480px; } }
+        width: 580px; } }
     @media screen and (max-width: 600px) {
       demos-app footer .container {
         width: 360px; } }
@@ -6737,9 +6745,12 @@ demos-app .fixed-toolbar, demos-app .shadow-toolbar {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 60; }
+  z-index: 30; }
   demos-app .fixed-toolbar.shadow-toolbar, demos-app .shadow-toolbar.shadow-toolbar {
-    z-index: 59; }
+    z-index: 29; }
+  @media screen and (max-width: 600px) {
+    demos-app .fixed-toolbar .verbose-title, demos-app .shadow-toolbar .verbose-title {
+      display: none; } }
 demos-app md-toolbar.hero {
   height: 256px;
   min-height: 256px;
@@ -6751,12 +6762,15 @@ demos-app md-toolbar.hero {
     font-weight: 400;
     line-height: 1.5;
     margin: 0 auto;
-    overflow: hidden;
+    overflow: visible;
     width: 1160px;
     white-space: nowrap; }
   @media screen and (max-width: 1280px) {
     demos-app md-toolbar.hero h1 {
-      width: 760px; } }
+      width: 960px; } }
+  @media screen and (max-width: 960px) {
+    demos-app md-toolbar.hero h1 {
+      width: 580px; } }
   @media screen and (max-width: 600px) {
     demos-app md-toolbar.hero {
       height: 128px;

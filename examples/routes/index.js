@@ -12,6 +12,7 @@ var components_1 = require("../services/components");
 var navigation_1 = require("../services/navigation");
 var all_1 = require("ng2-material/all");
 var router_1 = require("angular2/router");
+var dom_adapter_1 = require("angular2/src/platform/dom/dom_adapter");
 var IndexPage = (function () {
     function IndexPage(_components, navigation) {
         this._components = _components;
@@ -23,6 +24,9 @@ var IndexPage = (function () {
         this._components.getComponents()
             .then(function (comps) {
             _this.components = comps;
+            var title = 'Angular2 Material';
+            dom_adapter_1.DOM.setTitle(title);
+            _this.navigation.currentTitle = title;
             _this.navigation.prevLink = _this.navigation.componentLink(comps[comps.length - 1]);
             _this.navigation.nextLink = _this.navigation.componentLink(comps[0]);
         });
