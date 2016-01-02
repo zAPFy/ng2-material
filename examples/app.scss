@@ -4,7 +4,7 @@ $md-font-url: '../public/font/';
 @import "../ng2-material/all";
 @import "example";
 
-$app-content-lg: 960px;
+$app-content-lg: 940px;
 $app-content-md: 580px;
 $app-content-sm: 360px;
 
@@ -12,7 +12,7 @@ demos-app {
 
   md-content.examples {
     width: 800px;
-    @media screen and (max-width: $layout-breakpoint-lg) {
+    @media screen and (min-width: $layout-breakpoint-lg - 1) {
       width: $app-content-lg;
     }
     @media screen and (max-width: $layout-breakpoint-md) {
@@ -30,14 +30,15 @@ demos-app {
       margin: auto;
       padding: 0 25px;
       width: 80%;
-      @media screen and (max-width: $layout-breakpoint-lg) {
+      @media screen and (min-width: $layout-breakpoint-lg - 1) {
         width: $app-content-lg;
       }
       @media screen and (max-width: $layout-breakpoint-md) {
         width: $app-content-md;
       }
       @media screen and (max-width: $layout-breakpoint-sm) {
-        width: $app-content-sm;
+        width: 100%;
+        margin: 0;
       }
 
       a.previous, a.next {
@@ -56,7 +57,11 @@ demos-app {
           white-space: nowrap;
         }
         i {
+          height:47px;
+          height: 47px;
           padding-top: 24px;
+          margin: 0 10px;
+          vertical-align:bottom;
         }
       }
       .previous {
@@ -102,14 +107,14 @@ demos-app {
       white-space: nowrap;
 
     }
-    @media screen and (max-width: $layout-breakpoint-lg) {
+    @media screen and (min-width: $layout-breakpoint-md + 1) {
       h1 {
-        width: $app-content-lg;
+        width: $app-content-lg - 32px;
       }
     }
     @media screen and (max-width: $layout-breakpoint-md) {
       h1 {
-        width: $app-content-md;
+        width: $app-content-md - 32px;
       }
     }
     @media screen and (max-width: $layout-breakpoint-sm) {
@@ -118,14 +123,13 @@ demos-app {
       @include md-tall-toolbar();
       h1 {
         font-size: $title-font-size-base;
-        width: $app-content-sm;
+        width: $app-content-sm - 80px;
         margin-left: 0;
       }
     }
   }
 
   md-content {
-    max-width: 800px;
     > section {
       > h1 {
         margin-top: rem(6);

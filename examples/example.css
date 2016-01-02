@@ -6,10 +6,13 @@
 
 .layout-content,
 .doc-content {
-  max-width: 864px;
   min-width: 300px;
   margin: 16px;
   box-sizing: border-box; }
+  @media screen and (max-width: 600px) {
+    .layout-content,
+    .doc-content {
+      margin: 0; } }
 
 docs-demo {
   display: block;
@@ -58,7 +61,6 @@ md-tabs.demo-source-tabs .md-header {
   overflow: hidden;
   display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-box;
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex; }
@@ -66,7 +68,6 @@ md-tabs.demo-source-tabs .md-header {
 .doc-content > * {
   -webkit-box-flex: 1 1 auto;
   -webkit-flex: 1 1 auto;
-  -moz-box-flex: 1 1 auto;
   -moz-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto; }
@@ -74,7 +75,6 @@ md-tabs.demo-source-tabs .md-header {
 .demo-content > * {
   -webkit-box-flex: 1 1 0%;
   -webkit-flex: 1 1 0%;
-  -moz-box-flex: 1 1 0%;
   -moz-flex: 1 1 0%;
   -ms-flex: 1 1 0%;
   flex: 1 1 0%; }
@@ -97,7 +97,6 @@ md-toolbar.demo-toolbar [md-button].active, md-toolbar.demo-toolbar [md-button].
 
 md-toolbar.demo-toolbar [md-button] {
   -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s linear;
   transition: all 0.3s linear;
   color: #616161; }
 

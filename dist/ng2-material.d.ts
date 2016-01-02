@@ -556,6 +556,7 @@ declare module 'ng2-material/components/progress_circular/progress_circular' {
 	    transformRightHalf(value: any): void;
 	    updateScale(): void;
 	    getDiameterRatio(): number;
+	    webkit(style: string): string;
 	}
 
 }

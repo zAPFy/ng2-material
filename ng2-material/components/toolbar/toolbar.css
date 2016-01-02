@@ -49,12 +49,12 @@ md-toolbar {
       max-height: 48px; }
   md-toolbar > .md-indent {
     margin-left: 64px; }
-  md-toolbar ~ md-content {
+  md-toolbar ~ md-content:not([scroll-shrink]) {
     overflow: hidden; }
-    md-toolbar ~ md-content > md-list {
-      padding: 0; }
-      md-toolbar ~ md-content > md-list md-list-item:last-child md-divider {
-        display: none; }
+  md-toolbar ~ md-content > md-list {
+    padding: 0; }
+    md-toolbar ~ md-content > md-list md-list-item:last-child md-divider {
+      display: none; }
 
 .md-toolbar-tools {
   font-size: 20px;

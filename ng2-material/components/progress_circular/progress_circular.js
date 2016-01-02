@@ -110,6 +110,9 @@ var MdProgressCircular = (function (_super) {
         var value = math_1.Math.max(0, (match && match[1] / 100) || parseFloat(this.diameter));
         return (value > 1) ? value / Defaults.DEFAULT_PROGRESS_SIZE : value;
     };
+    MdProgressCircular.prototype.webkit = function (style) {
+        return "-webkit-" + style;
+    };
     __decorate([
         core_1.Input('diameter'), 
         __metadata('design:type', String)
@@ -128,7 +131,7 @@ var MdProgressCircular = (function (_super) {
             }
         }),
         core_1.View({
-            template: "\n    <div class=\"md-scale-wrapper\" [style.transform]=\"diameterTransformation\">\n      <div class=\"md-spinner-wrapper\">\n        <div class=\"md-inner\">\n          <div class=\"md-gap\" [style.transition]=\"gapTransition\"></div>\n          <div class=\"md-left\">\n            <div class=\"md-half-circle\" [style.transform]=\"leftHalfTransform\" [style.transition]=\"defaultHalfTransition\"></div>\n          </div>\n          <div class=\"md-right\">\n            <div class=\"md-half-circle\" [style.transform]=\"rightHalfTransform\"  [style.transition]=\"defaultHalfTransition\"></div>\n          </div>\n        </div>\n      </div>\n    </div>",
+            template: "\n    <div class=\"md-scale-wrapper\"\n     [style.-webkit-transform]=\"diameterTransformation\"\n     [style.transform]=\"diameterTransformation\">\n      <div class=\"md-spinner-wrapper\">\n        <div class=\"md-inner\">\n          <div class=\"md-gap\"\n          [style.-webkit-transition]=\"gapTransition\"\n          [style.transition]=\"gapTransition\"></div>\n          <div class=\"md-left\">\n            <div class=\"md-half-circle\"\n              [style.-webkit-transform]=\"leftHalfTransform\"\n              [style.transform]=\"leftHalfTransform\"\n              [style.-webkit-transition]=\"defaultHalfTransition\"\n              [style.transition]=\"defaultHalfTransition\"></div>\n          </div>\n          <div class=\"md-right\">\n            <div class=\"md-half-circle\"\n              [style.-webkit-transform]=\"rightHalfTransform\"\n              [style.transform]=\"rightHalfTransform\"\n              [style.-webkit-transition]=\"defaultHalfTransition\"\n              [style.transition]=\"defaultHalfTransition\"></div>\n          </div>\n        </div>\n      </div>\n    </div>",
             directives: [],
             encapsulation: core_1.ViewEncapsulation.None
         }),

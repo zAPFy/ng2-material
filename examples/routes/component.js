@@ -29,7 +29,7 @@ var ComponentPage = (function () {
         var id = this._routeParams.get('id');
         this._components.getComponent(id).then(function (c) {
             _this.value = c;
-            dom_adapter_1.DOM.setTitle(c.name + ' – ng2-material');
+            dom_adapter_1.DOM.setTitle('ng2-material – ' + c.name);
             _this._navigation.currentTitle = c.name;
             _this._components.getNext(c).then(function (next) {
                 _this._navigation.nextLink = _this._navigation.componentLink(next);

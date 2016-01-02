@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">98.18% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>53/53</span>
+        <span class='fraction'>54/55</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">78.95% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>15/19</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">92.31% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>12/12</span>
+        <span class='fraction'>12/13</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">97.92% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>46/46</span>
+        <span class='fraction'>47/48</span>
       </div>
     </div>
   </div>
@@ -173,7 +173,23 @@
 128
 129
 130
-131</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -192,6 +208,18 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -302,6 +330,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {Component, View, ViewEncapsulation, Attribute, Input, SimpleChange} from 'angular2/core';
 import {CONST, isBlank, isPresent} from 'angular2/src/facade/lang';
@@ -335,15 +367,27 @@ class Defaults {
 })
 @View({
   template: `
-    &lt;div class="md-scale-wrapper" [style.transform]="diameterTransformation"&gt;
+    &lt;div class="md-scale-wrapper"
+     [style.-webkit-transform]="diameterTransformation"
+     [style.transform]="diameterTransformation"&gt;
       &lt;div class="md-spinner-wrapper"&gt;
         &lt;div class="md-inner"&gt;
-          &lt;div class="md-gap" [style.transition]="gapTransition"&gt;&lt;/div&gt;
+          &lt;div class="md-gap"
+          [style.-webkit-transition]="gapTransition"
+          [style.transition]="gapTransition"&gt;&lt;/div&gt;
           &lt;div class="md-left"&gt;
-            &lt;div class="md-half-circle" [style.transform]="leftHalfTransform" [style.transition]="defaultHalfTransition"&gt;&lt;/div&gt;
+            &lt;div class="md-half-circle"
+              [style.-webkit-transform]="leftHalfTransform"
+              [style.transform]="leftHalfTransform"
+              [style.-webkit-transition]="defaultHalfTransition"
+              [style.transition]="defaultHalfTransition"&gt;&lt;/div&gt;
           &lt;/div&gt;
           &lt;div class="md-right"&gt;
-            &lt;div class="md-half-circle" [style.transform]="rightHalfTransform"  [style.transition]="defaultHalfTransition"&gt;&lt;/div&gt;
+            &lt;div class="md-half-circle"
+              [style.-webkit-transform]="rightHalfTransform"
+              [style.transform]="rightHalfTransform"
+              [style.-webkit-transition]="defaultHalfTransition"
+              [style.transition]="defaultHalfTransition"&gt;&lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -432,6 +476,10 @@ export class MdProgressCircular extends MdProgressLinear {
 &nbsp;
     return (value &gt; 1) ? value / Defaults.DEFAULT_PROGRESS_SIZE : value;
   }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  webkit(style:string)</span> {
+<span class="cstat-no" title="statement not covered" >    return `-webkit-${style}`;</span>
+  }
 }
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -439,7 +487,7 @@ export class MdProgressCircular extends MdProgressLinear {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Dec 30 2015 18:38:18 GMT-0800 (PST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jan 01 2016 17:22:59 GMT-0800 (PST)
 </div>
 </div>
 <script src="../../../prettify.js"></script>

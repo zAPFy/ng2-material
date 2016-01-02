@@ -343,14 +343,14 @@
   },
   {
     "lines": {
-      "found": 46,
-      "hit": 46,
-      "percent": 100
+      "found": 48,
+      "hit": 47,
+      "percent": 98
     },
     "functions": {
       "hit": 12,
-      "found": 12,
-      "percent": 100
+      "found": 13,
+      "percent": 92
     },
     "branches": {
       "hit": 15,
@@ -488,13 +488,13 @@
   {
     "lines": {
       "found": 58,
-      "hit": 56,
-      "percent": 97
+      "hit": 58,
+      "percent": 100
     },
     "functions": {
-      "hit": 13,
+      "hit": 15,
       "found": 15,
-      "percent": 87
+      "percent": 100
     },
     "branches": {
       "hit": 16,
