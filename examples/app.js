@@ -50,6 +50,7 @@ var DemosApp = (function () {
     return DemosApp;
 })();
 exports.DemosApp = DemosApp;
+core_1.enableProdMode();
 browser_1.bootstrap(DemosApp, [
     http_1.HTTP_PROVIDERS, router_1.ROUTER_PROVIDERS, all_1.MATERIAL_PROVIDERS,
     components_1.ComponentsService, navigation_1.NavigationService, version_1.VersionService,
