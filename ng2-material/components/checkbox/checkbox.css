@@ -6,6 +6,7 @@
   box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
   z-index: 2; }
 
+/* mixin definition ; sets LTR and RTL within the same style call */
 md-checkbox {
   box-sizing: border-box;
   display: block;
@@ -16,7 +17,17 @@ md-checkbox {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
-          user-select: none; }
+          user-select: none;
+  position: relative; }
+  md-checkbox.md-align-top-left .md-checkbox-container {
+    top: 12px; }
+  md-checkbox:last-of-type {
+    margin-left: inherit;
+    margin-right: 0; }
+    html[dir=rtl] md-checkbox:last-of-type {
+      margin-left: 0; }
+    html[dir=rtl] md-checkbox:last-of-type {
+      margin-right: inherit; }
   md-checkbox *, md-checkbox *:after {
     box-sizing: border-box; }
   md-checkbox[aria-checked="true"] .md-checkbox-icon {
@@ -40,11 +51,19 @@ md-checkbox {
     content: ' '; }
 
 .md-checkbox-container {
-  position: relative;
-  top: 4px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   display: inline-block;
   width: 18px;
-  height: 18px; }
+  height: 18px;
+  left: 0;
+  right: auto; }
+  html[dir=rtl] .md-checkbox-container {
+    left: auto; }
+  html[dir=rtl] .md-checkbox-container {
+    right: 0; }
   .md-checkbox-container:after {
     content: '';
     position: absolute;
@@ -77,14 +96,19 @@ md-checkbox {
   border: 1px dotted transparent;
   position: relative;
   display: inline-block;
-  margin-left: 10px;
   vertical-align: middle;
   white-space: normal;
   pointer-events: none;
   -webkit-user-select: text;
      -moz-user-select: text;
       -ms-user-select: text;
-          user-select: text; }
+          user-select: text;
+  margin-left: 28px;
+  margin-right: 0; }
+  html[dir=rtl] .md-checkbox-label {
+    margin-left: 0; }
+  html[dir=rtl] .md-checkbox-label {
+    margin-right: 28px; }
 
 md-checkbox .md-ripple {
   color: #d81b60; }
@@ -116,6 +140,8 @@ md-checkbox:not([disabled]).md-warn[aria-checked="true"] .md-checkbox-icon:after
   border-color: #eeeeee; }
 md-checkbox[disabled] .md-checkbox-icon {
   border-color: rgba(0, 0, 0, 0.26); }
+md-checkbox[disabled] .md-checkbox-label {
+  color: rgba(0, 0, 0, 0.26); }
 md-checkbox[disabled][aria-checked="true"] .md-checkbox-icon {
   background-color: rgba(0, 0, 0, 0.26); }
 

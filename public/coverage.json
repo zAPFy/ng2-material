@@ -1,19 +1,19 @@
 [
   {
     "lines": {
-      "found": 55,
-      "hit": 46,
-      "percent": 84
+      "found": 40,
+      "hit": 40,
+      "percent": 100
     },
     "functions": {
-      "hit": 1,
-      "found": 3,
-      "percent": 33
+      "hit": 0,
+      "found": 0,
+      "percent": 100
     },
     "branches": {
       "hit": 0,
-      "found": 6,
-      "percent": 0
+      "found": 0,
+      "percent": 100
     },
     "file": "ng2-material/all.ts"
   },
@@ -74,18 +74,18 @@
   {
     "lines": {
       "found": 29,
-      "hit": 16,
-      "percent": 55
+      "hit": 20,
+      "percent": 69
     },
     "functions": {
-      "hit": 1,
+      "hit": 3,
       "found": 6,
-      "percent": 17
+      "percent": 50
     },
     "branches": {
-      "hit": 0,
+      "hit": 1,
       "found": 8,
-      "percent": 0
+      "percent": 13
     },
     "file": "ng2-material/components/checkbox/checkbox.ts"
   },
@@ -199,8 +199,8 @@
   },
   {
     "lines": {
-      "found": 42,
-      "hit": 42,
+      "found": 47,
+      "hit": 47,
       "percent": 100
     },
     "functions": {
@@ -209,8 +209,8 @@
       "percent": 100
     },
     "branches": {
-      "hit": 8,
-      "found": 8,
+      "hit": 9,
+      "found": 9,
       "percent": 100
     },
     "file": "ng2-material/components/backdrop/backdrop.ts"
@@ -290,36 +290,36 @@
   {
     "lines": {
       "found": 35,
-      "hit": 18,
-      "percent": 51
+      "hit": 29,
+      "percent": 83
     },
     "functions": {
-      "hit": 2,
+      "hit": 6,
       "found": 10,
-      "percent": 20
+      "percent": 60
     },
     "branches": {
-      "hit": 0,
+      "hit": 3,
       "found": 6,
-      "percent": 0
+      "percent": 50
     },
     "file": "ng2-material/components/input/input.ts"
   },
   {
     "lines": {
       "found": 24,
-      "hit": 14,
-      "percent": 58
+      "hit": 20,
+      "percent": 83
     },
     "functions": {
-      "hit": 2,
+      "hit": 5,
       "found": 5,
-      "percent": 40
+      "percent": 100
     },
     "branches": {
-      "hit": 0,
+      "hit": 1,
       "found": 6,
-      "percent": 0
+      "percent": 17
     },
     "file": "ng2-material/components/list/list.ts"
   },
@@ -434,13 +434,13 @@
   {
     "lines": {
       "found": 7,
-      "hit": 6,
-      "percent": 86
+      "hit": 7,
+      "percent": 100
     },
     "functions": {
-      "hit": 1,
+      "hit": 2,
       "found": 2,
-      "percent": 50
+      "percent": 100
     },
     "branches": {
       "hit": 0,
@@ -451,50 +451,68 @@
   },
   {
     "lines": {
-      "found": 70,
-      "hit": 44,
-      "percent": 63
+      "found": 4,
+      "hit": 4,
+      "percent": 100
     },
     "functions": {
-      "hit": 8,
-      "found": 13,
-      "percent": 62
+      "hit": 1,
+      "found": 1,
+      "percent": 100
     },
     "branches": {
-      "hit": 5,
+      "hit": 0,
+      "found": 0,
+      "percent": 100
+    },
+    "file": "ng2-material/components/subheader/subheader.ts"
+  },
+  {
+    "lines": {
+      "found": 70,
+      "hit": 63,
+      "percent": 90
+    },
+    "functions": {
+      "hit": 11,
+      "found": 13,
+      "percent": 85
+    },
+    "branches": {
+      "hit": 12,
       "found": 20,
-      "percent": 25
+      "percent": 60
     },
     "file": "ng2-material/components/toolbar/toolbar.ts"
   },
   {
     "lines": {
       "found": 19,
-      "hit": 8,
-      "percent": 42
+      "hit": 11,
+      "percent": 58
     },
     "functions": {
-      "hit": 3,
+      "hit": 4,
       "found": 6,
-      "percent": 50
+      "percent": 67
     },
     "branches": {
-      "hit": 0,
+      "hit": 1,
       "found": 6,
-      "percent": 0
+      "percent": 17
     },
     "file": "ng2-material/core/util/util.ts"
   },
   {
     "lines": {
       "found": 58,
-      "hit": 56,
-      "percent": 97
+      "hit": 58,
+      "percent": 100
     },
     "functions": {
-      "hit": 13,
+      "hit": 15,
       "found": 15,
-      "percent": 87
+      "percent": 100
     },
     "branches": {
       "hit": 16,

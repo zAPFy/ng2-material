@@ -76,7 +76,8 @@ var MdInput = (function () {
     ], MdInput.prototype, "mdFocusChange", void 0);
     MdInput = __decorate([
         core_1.Directive({
-            selector: 'md-input-container input',
+            selector: 'input[md-input],input.md-input',
+            providers: [MdInputContainer],
             host: {
                 'class': 'md-input',
                 '(input)': 'updateValue($event)',

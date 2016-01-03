@@ -1,13 +1,7 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 var lang_1 = require('angular2/src/facade/lang');
-var core_1 = require('angular2/core');
 var button_1 = require('./components/button/button');
 __export(require('./components/button/button'));
 var checkbox_1 = require('./components/checkbox/checkbox');
@@ -38,10 +32,11 @@ __export(require('./components/radio/radio_button'));
 __export(require('./components/radio/radio_dispatcher'));
 var switch_1 = require('./components/switcher/switch');
 __export(require('./components/switcher/switch'));
+var subheader_1 = require("./components/subheader/subheader");
+__export(require('./components/subheader/subheader'));
 var toolbar_1 = require('./components/toolbar/toolbar');
 __export(require('./components/toolbar/toolbar'));
 var tabs_1 = require('./components/tabs/tabs');
-var compiler_1 = require("angular2/compiler");
 var media_1 = require("./core/util/media");
 __export(require('./components/toolbar/toolbar'));
 exports.MATERIAL_DIRECTIVES = lang_1.CONST_EXPR([
@@ -57,41 +52,14 @@ exports.MATERIAL_DIRECTIVES = lang_1.CONST_EXPR([
     progress_linear_1.MdProgressLinear,
     progress_circular_1.MdProgressCircular,
     radio_button_1.MdRadioButton, radio_button_1.MdRadioGroup,
+    subheader_1.MdSubheader,
     switch_1.MdSwitch,
     toolbar_1.MdToolbar,
     tabs_1.MdTab, tabs_1.MdTabs
 ]);
-var BASE_URL = null;
-function setBaseUrl(url) {
-    BASE_URL = url;
-}
-exports.setBaseUrl = setBaseUrl;
-var MaterialTemplateResolver = (function (_super) {
-    __extends(MaterialTemplateResolver, _super);
-    function MaterialTemplateResolver() {
-        _super.apply(this, arguments);
-    }
-    MaterialTemplateResolver.prototype.resolve = function (baseUrl, url) {
-        if (!BASE_URL) {
-            return _super.prototype.resolve.call(this, baseUrl, url);
-        }
-        if (baseUrl.startsWith(BASE_URL)) {
-            baseUrl = baseUrl.substr(0, BASE_URL.length);
-        }
-        var result = _super.prototype.resolve.call(this, baseUrl, url);
-        if (MaterialTemplateResolver.RESOURCE_MATCHER.test(result)) {
-            return "" + BASE_URL + result;
-        }
-        return result;
-    };
-    MaterialTemplateResolver.RESOURCE_MATCHER = /^ng2-material\/.*?\.(html|css)$/;
-    return MaterialTemplateResolver;
-})(compiler_1.UrlResolver);
-exports.MaterialTemplateResolver = MaterialTemplateResolver;
 exports.MATERIAL_PROVIDERS = [
     dialog_2.MdDialog,
     media_1.Media,
-    radio_dispatcher_1.MdRadioDispatcher,
-    core_1.provide(compiler_1.UrlResolver, { useValue: new MaterialTemplateResolver() })
+    radio_dispatcher_1.MdRadioDispatcher
 ];
 //# sourceMappingURL=all.js.map

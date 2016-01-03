@@ -245,6 +245,7 @@ System.register("ng2-material/components/backdrop/backdrop.ts", ["ng2-material/c
                      */
                     this.onShown = new core_7.EventEmitter();
                     this._visible = false;
+                    this._transitioning = false;
                 }
                 Object.defineProperty(MdBackdrop.prototype, "visible", {
                     /**
@@ -257,7 +258,7 @@ System.register("ng2-material/components/backdrop/backdrop.ts", ["ng2-material/c
                     configurable: true
                 });
                 MdBackdrop.prototype.onClick = function () {
-                    if (this.clickClose && this.visible) {
+                    if (this.clickClose && !this._transitioning && this.visible) {
                         this.hide();
                     }
                 };
@@ -271,8 +272,10 @@ System.register("ng2-material/components/backdrop/backdrop.ts", ["ng2-material/c
                         return Promise.resolve();
                     }
                     this._visible = true;
+                    this._transitioning = true;
                     this.onShowing.emit(this);
                     return animate_1.Animate.enter(this.element.nativeElement, 'md-active').then(function () {
+                        _this._transitioning = false;
                         _this.onShown.emit(_this);
                     });
                 };
@@ -286,8 +289,10 @@ System.register("ng2-material/components/backdrop/backdrop.ts", ["ng2-material/c
                         return Promise.resolve();
                     }
                     this._visible = false;
+                    this._transitioning = true;
                     this.onHiding.emit(this);
                     return animate_1.Animate.leave(this.element.nativeElement, 'md-active').then(function () {
+                        _this._transitioning = false;
                         _this.onHidden.emit(_this);
                     });
                 };
@@ -1362,7 +1367,8 @@ System.register("ng2-material/components/input/input.ts", ["angular2/core.js", "
                 ], MdInput.prototype, "mdFocusChange", void 0);
                 MdInput = __decorate([
                     core_1.Directive({
-                        selector: 'md-input-container input',
+                        selector: 'input[md-input],input.md-input',
+                        providers: [MdInputContainer],
                         host: {
                             'class': 'md-input',
                             '(input)': 'updateValue($event)',
@@ -2670,6 +2676,46 @@ System.register("ng2-material/components/switcher/switch.ts", ["angular2/core.js
     }
 });
 
+System.register("ng2-material/components/subheader/subheader.ts", ["angular2/core.js"], function(exports_1) {
+    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+    var __metadata = (this && this.__metadata) || function (k, v) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    };
+    var core_1;
+    var MdSubheader;
+    return {
+        setters:[
+            function (core_1_1) {
+                core_1 = core_1_1;
+            }],
+        execute: function() {
+            MdSubheader = (function () {
+                function MdSubheader() {
+                }
+                MdSubheader = __decorate([
+                    core_1.Component({
+                        selector: 'md-subheader',
+                        host: {
+                            'class': 'md-subheader'
+                        }
+                    }),
+                    core_1.View({
+                        template: "\n    <div class=\"md-subheader-inner\">\n      <span class=\"md-subheader-content\"><ng-content></ng-content></span>\n    </div>"
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], MdSubheader);
+                return MdSubheader;
+            })();
+            exports_1("MdSubheader", MdSubheader);
+        }
+    }
+});
+
 System.register("ng2-material/core/util/util.ts", [], function(exports_1) {
     /**
      * Returns a function, that, as long as it continues to be invoked, will not
@@ -3491,27 +3537,12 @@ System.register("ng2-material/core/util/media.ts", ["angular2/core.js"], functio
     }
 });
 
-System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "angular2/core.js", "ng2-material/components/button/button.ts", "ng2-material/components/checkbox/checkbox.ts", "ng2-material/components/content/content.ts", "ng2-material/components/dialog/dialog.ts", "ng2-material/components/divider/divider.ts", "ng2-material/components/grid_list/grid_list.ts", "ng2-material/components/icon/icon.ts", "ng2-material/components/input/input.ts", "ng2-material/components/list/list.ts", "ng2-material/components/progress_linear/progress_linear.ts", "ng2-material/components/progress_circular/progress_circular.ts", "ng2-material/components/peekaboo/peekaboo.ts", "ng2-material/components/radio/radio_button.ts", "ng2-material/components/radio/radio_dispatcher.ts", "ng2-material/components/switcher/switch.ts", "ng2-material/components/toolbar/toolbar.ts", "ng2-material/components/tabs/tabs.ts", "angular2/compiler.js", "ng2-material/core/util/media.ts"], function(exports_1) {
-    var __extends = (this && this.__extends) || function (d, b) {
-        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-    var lang_1, core_1, button_1, checkbox_1, content_1, dialog_1, divider_1, grid_list_1, icon_1, input_1, list_1, progress_linear_1, progress_circular_1, peekaboo_1, radio_button_1, radio_dispatcher_1, switch_1, toolbar_1, tabs_1, compiler_1, media_1;
-    var MATERIAL_DIRECTIVES, BASE_URL, MaterialTemplateResolver, MATERIAL_PROVIDERS;
-    /**
-     * Specify the baseUrl to load templates and styles from.
-     * @param url
-     */
-    function setBaseUrl(url) {
-        BASE_URL = url;
-    }
-    exports_1("setBaseUrl", setBaseUrl);
+System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "ng2-material/components/button/button.ts", "ng2-material/components/checkbox/checkbox.ts", "ng2-material/components/content/content.ts", "ng2-material/components/dialog/dialog.ts", "ng2-material/components/divider/divider.ts", "ng2-material/components/grid_list/grid_list.ts", "ng2-material/components/icon/icon.ts", "ng2-material/components/input/input.ts", "ng2-material/components/list/list.ts", "ng2-material/components/progress_linear/progress_linear.ts", "ng2-material/components/progress_circular/progress_circular.ts", "ng2-material/components/peekaboo/peekaboo.ts", "ng2-material/components/radio/radio_button.ts", "ng2-material/components/radio/radio_dispatcher.ts", "ng2-material/components/switcher/switch.ts", "ng2-material/components/subheader/subheader.ts", "ng2-material/components/toolbar/toolbar.ts", "ng2-material/components/tabs/tabs.ts", "ng2-material/core/util/media.ts"], function(exports_1) {
+    var lang_1, button_1, checkbox_1, content_1, dialog_1, divider_1, grid_list_1, icon_1, input_1, list_1, progress_linear_1, progress_circular_1, peekaboo_1, radio_button_1, radio_dispatcher_1, switch_1, subheader_1, toolbar_1, tabs_1, media_1;
+    var MATERIAL_DIRECTIVES, MATERIAL_PROVIDERS;
     var exportedNames_1 = {
         'MATERIAL_DIRECTIVES': true,
-        'MaterialTemplateResolver': true,
-        'MATERIAL_PROVIDERS': true,
-        'setBaseUrl': true
+        'MATERIAL_PROVIDERS': true
     };
     function exportStar_1(m) {
         var exports = {};
@@ -3524,9 +3555,6 @@ System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "angular2
         setters:[
             function (lang_1_1) {
                 lang_1 = lang_1_1;
-            },
-            function (core_1_1) {
-                core_1 = core_1_1;
             },
             function (button_1_1) {
                 button_1 = button_1_1;
@@ -3588,6 +3616,10 @@ System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "angular2
                 switch_1 = switch_1_1;
                 exportStar_1(switch_1_1);
             },
+            function (subheader_1_1) {
+                subheader_1 = subheader_1_1;
+                exportStar_1(subheader_1_1);
+            },
             function (toolbar_1_1) {
                 toolbar_1 = toolbar_1_1;
                 exportStar_1(toolbar_1_1);
@@ -3595,9 +3627,6 @@ System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "angular2
             },
             function (tabs_1_1) {
                 tabs_1 = tabs_1_1;
-            },
-            function (compiler_1_1) {
-                compiler_1 = compiler_1_1;
             },
             function (media_1_1) {
                 media_1 = media_1_1;
@@ -3619,49 +3648,18 @@ System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "angular2
                 progress_linear_1.MdProgressLinear,
                 progress_circular_1.MdProgressCircular,
                 radio_button_1.MdRadioButton, radio_button_1.MdRadioGroup,
+                subheader_1.MdSubheader,
                 switch_1.MdSwitch,
                 toolbar_1.MdToolbar,
                 tabs_1.MdTab, tabs_1.MdTabs
             ]));
-            /**
-             * Reference to specified base load URL for templates and styles.
-             * @private
-             */
-            BASE_URL = null;
-            /**
-             * This is a workaround to tell us where to load templates and styles from until
-             * we have a better template bundling strategy.
-             */
-            MaterialTemplateResolver = (function (_super) {
-                __extends(MaterialTemplateResolver, _super);
-                function MaterialTemplateResolver() {
-                    _super.apply(this, arguments);
-                }
-                MaterialTemplateResolver.prototype.resolve = function (baseUrl, url) {
-                    if (!BASE_URL) {
-                        return _super.prototype.resolve.call(this, baseUrl, url);
-                    }
-                    if (baseUrl.startsWith(BASE_URL)) {
-                        baseUrl = baseUrl.substr(0, BASE_URL.length);
-                    }
-                    var result = _super.prototype.resolve.call(this, baseUrl, url);
-                    if (MaterialTemplateResolver.RESOURCE_MATCHER.test(result)) {
-                        return "" + BASE_URL + result;
-                    }
-                    return result;
-                };
-                MaterialTemplateResolver.RESOURCE_MATCHER = /^ng2-material\/.*?\.(html|css)$/;
-                return MaterialTemplateResolver;
-            })(compiler_1.UrlResolver);
-            exports_1("MaterialTemplateResolver", MaterialTemplateResolver);
             /**
              * Collection of Material Design component providers.
              */
             exports_1("MATERIAL_PROVIDERS", MATERIAL_PROVIDERS = [
                 dialog_1.MdDialog,
                 media_1.Media,
-                radio_dispatcher_1.MdRadioDispatcher,
-                core_1.provide(compiler_1.UrlResolver, { useValue: new MaterialTemplateResolver() })
+                radio_dispatcher_1.MdRadioDispatcher
             ]);
         }
     }

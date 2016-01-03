@@ -24,6 +24,7 @@ var MdBackdrop = (function () {
         this.onShowing = new core_7.EventEmitter();
         this.onShown = new core_7.EventEmitter();
         this._visible = false;
+        this._transitioning = false;
     }
     Object.defineProperty(MdBackdrop.prototype, "visible", {
         get: function () {
@@ -33,7 +34,7 @@ var MdBackdrop = (function () {
         configurable: true
     });
     MdBackdrop.prototype.onClick = function () {
-        if (this.clickClose && this.visible) {
+        if (this.clickClose && !this._transitioning && this.visible) {
             this.hide();
         }
     };
@@ -43,8 +44,10 @@ var MdBackdrop = (function () {
             return Promise.resolve();
         }
         this._visible = true;
+        this._transitioning = true;
         this.onShowing.emit(this);
         return animate_1.Animate.enter(this.element.nativeElement, 'md-active').then(function () {
+            _this._transitioning = false;
             _this.onShown.emit(_this);
         });
     };
@@ -54,8 +57,10 @@ var MdBackdrop = (function () {
             return Promise.resolve();
         }
         this._visible = false;
+        this._transitioning = true;
         this.onHiding.emit(this);
         return animate_1.Animate.leave(this.element.nativeElement, 'md-active').then(function () {
+            _this._transitioning = false;
             _this.onHidden.emit(_this);
         });
     };

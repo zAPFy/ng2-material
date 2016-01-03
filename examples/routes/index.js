@@ -13,6 +13,7 @@ var navigation_1 = require("../services/navigation");
 var all_1 = require("ng2-material/all");
 var router_1 = require("angular2/router");
 var dom_adapter_1 = require("angular2/src/platform/dom/dom_adapter");
+var highlight_1 = require("../highlight");
 var IndexPage = (function () {
     function IndexPage(_components, navigation) {
         this._components = _components;
@@ -33,8 +34,8 @@ var IndexPage = (function () {
     };
     IndexPage = __decorate([
         core_1.Component({
-            template: "\n    <h1 class=\"examples-title\">Getting Started</h1>\n    <p class=\"examples-intro\">\n      There are many examples linked from this page. Here's the <a href=\"coverage/\" target=\"_blank\">test coverage</a> report, and a\n      <a href=\"http://plnkr.co/edit/CnDUjVufVnevluFOBvdD?p=preview\" target=\"_blank\">plunkr template</a> to get you going.\n      <span>\n        You can find the source code for this project on <a href=\"https://github.com/justindujardin/ng2-material\">Github</a>.\n      </span>\n\n    </p>\n\n\n    <nav class=\"examples-toc\">\n      <h1>Components</h1>\n      <ul>\n        <li *ngFor=\"#value of components\"><a [routerLink]=\"['Component', {id: value.id}]\">{{value.name}}</a></li>\n      </ul>\n    </nav>",
-            directives: [router_1.ROUTER_DIRECTIVES, all_1.MATERIAL_DIRECTIVES]
+            templateUrl: 'examples/routes/index.html',
+            directives: [router_1.ROUTER_DIRECTIVES, highlight_1.Highlight, all_1.MATERIAL_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [components_1.ComponentsService, navigation_1.NavigationService])
     ], IndexPage);

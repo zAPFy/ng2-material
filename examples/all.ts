@@ -16,6 +16,9 @@ import RadioBasicUsage from './components/radio/basic_usage';
 import SwitchBasicUsage from './components/switch/basic_usage';
 import TabsDynamicHeight from './components/tabs/dynamic_height';
 import TabsDynamicTabs from './components/tabs/dynamic_tabs';
+import CheckboxBasicUsage from "./components/checkbox/basic_usage";
+import CheckboxSyncing from "./components/checkbox/syncing";
+import ListBasicUsage from "./components/list/basic_usage";
 
 /**
  * Collection of Material Design component directives.
@@ -23,7 +26,9 @@ import TabsDynamicTabs from './components/tabs/dynamic_tabs';
 export const DEMO_DIRECTIVES: Type[] = CONST_EXPR([
   CardBasicUsage, CardInlineActions, CardActionButtons,
   ButtonBasicUsage,
+  CheckboxBasicUsage, CheckboxSyncing,
   DialogBasicUsage,
+  ListBasicUsage,
   RadioBasicUsage,
   SwitchBasicUsage,
   TabsDynamicHeight,

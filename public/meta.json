@@ -47,6 +47,29 @@
     ]
   },
   {
+    "name": "Checkbox",
+    "sources": [
+      "ng2-material/components/checkbox/checkbox.ts"
+    ],
+    "id": "checkbox",
+    "examples": [
+      {
+        "template": "examples/components/checkbox/basic_usage.html",
+        "styles": "examples/components/checkbox/basic_usage.scss",
+        "source": "examples/components/checkbox/basic_usage.ts",
+        "component": "checkbox-basic-usage",
+        "name": "Basic Usage"
+      },
+      {
+        "template": "examples/components/checkbox/syncing.html",
+        "styles": "examples/components/checkbox/syncing.scss",
+        "source": "examples/components/checkbox/syncing.ts",
+        "component": "checkbox-syncing",
+        "name": "Syncing"
+      }
+    ]
+  },
+  {
     "name": "Dialog",
     "sources": [
       "ng2-material/components/dialog/dialog_basic.ts",
@@ -62,6 +85,22 @@
         "styles": "examples/components/dialog/basic_usage.scss",
         "source": "examples/components/dialog/basic_usage.ts",
         "component": "dialog-basic-usage",
+        "name": "Basic Usage"
+      }
+    ]
+  },
+  {
+    "name": "List",
+    "sources": [
+      "ng2-material/components/list/list.ts"
+    ],
+    "id": "list",
+    "examples": [
+      {
+        "template": "examples/components/list/basic_usage.html",
+        "styles": "examples/components/list/basic_usage.scss",
+        "source": "examples/components/list/basic_usage.ts",
+        "component": "list-basic-usage",
         "name": "Basic Usage"
       }
     ]

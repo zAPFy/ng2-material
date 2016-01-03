@@ -255,6 +255,7 @@ declare module 'ng2-material/components/backdrop/backdrop' {
 	    onShown: EventEmitter<MdBackdrop>;
 	    constructor(element: ElementRef);
 	    private _visible;
+	    private _transitioning;
 	    /**
 	     * Read-only property indicating whether the backdrop is visible or not.
 	     */
@@ -769,6 +770,11 @@ declare module 'ng2-material/components/switcher/switch' {
 	}
 
 }
+declare module 'ng2-material/components/subheader/subheader' {
+	export class MdSubheader {
+	}
+
+}
 declare module 'ng2-material/components/toolbar/toolbar' {
 	import { AfterContentInit, OnChanges, OnDestroy } from "angular2/core";
 	import { ElementRef } from "angular2/core";
@@ -885,26 +891,13 @@ declare module 'ng2-material/all' {
 	export * from 'ng2-material/components/radio/radio_button';
 	export * from 'ng2-material/components/radio/radio_dispatcher';
 	export * from 'ng2-material/components/switcher/switch';
+	export * from 'ng2-material/components/subheader/subheader';
 	export * from 'ng2-material/components/toolbar/toolbar';
-	import { UrlResolver } from "angular2/compiler";
 	export * from 'ng2-material/components/toolbar/toolbar';
 	/**
 	 * Collection of Material Design component directives.
 	 */
 	export const MATERIAL_DIRECTIVES: Type[];
-	/**
-	 * Specify the baseUrl to load templates and styles from.
-	 * @param url
-	 */
-	export function setBaseUrl(url: string): void;
-	/**
-	 * This is a workaround to tell us where to load templates and styles from until
-	 * we have a better template bundling strategy.
-	 */
-	export class MaterialTemplateResolver extends UrlResolver {
-	    static RESOURCE_MATCHER: RegExp;
-	    resolve(baseUrl: string, url: string): string;
-	}
 	/**
 	 * Collection of Material Design component providers.
 	 */
