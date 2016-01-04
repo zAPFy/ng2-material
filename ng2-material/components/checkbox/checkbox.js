@@ -13,13 +13,13 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 var core_1 = require('angular2/core');
 var lang_1 = require('angular2/src/facade/lang');
 var key_codes_1 = require('../../core/key_codes');
-var lang_2 = require('angular2/src/facade/lang');
 var core_2 = require('angular2/core');
+var util_1 = require("../../core/util/util");
 var MdCheckbox = (function () {
     function MdCheckbox(tabindex) {
         this.checkedChange = new core_2.EventEmitter();
         this.checked = false;
-        this.tabindex = lang_1.isPresent(tabindex) ? lang_2.NumberWrapper.parseInt(tabindex, 10) : 0;
+        this.tabindex = util_1.parseTabIndexAttribute(tabindex);
         this.disabled_ = false;
     }
     Object.defineProperty(MdCheckbox.prototype, "disabled", {
@@ -72,10 +72,11 @@ var MdCheckbox = (function () {
                 '[attr.aria-disabled]': 'disabled',
                 '[tabindex]': 'tabindex',
                 '(keydown)': 'onKeydown($event)',
+                '(click)': 'toggle($event)'
             }
         }),
         core_1.View({
-            template: "\n    <div (click)=\"toggle($event)\">\n      <div class=\"md-checkbox-container\">\n        <div class=\"md-checkbox-icon\"></div>\n      </div>\n      <div class=\"md-checkbox-label\"><ng-content></ng-content></div>\n    </div>",
+            template: "\n    <div class=\"md-checkbox-container\">\n      <div class=\"md-checkbox-icon\"></div>\n    </div>\n    <div class=\"md-checkbox-label\"><ng-content></ng-content></div>",
             directives: [],
             encapsulation: core_1.ViewEncapsulation.None
         }),

@@ -935,7 +935,8 @@ System.register("ng2-material/components/grid_list/grid_list.ts", ["angular2/cor
                     configurable: true
                 });
                 MdGridList.prototype.ngAfterContentChecked = function () {
-                    this.layoutTiles();
+                    var _this = this;
+                    setTimeout(function () { return _this.layoutTiles(); }, 0);
                 };
                 /** Computes and applies the size and position for all children grid tiles. */
                 MdGridList.prototype.layoutTiles = function () {
@@ -1106,7 +1107,7 @@ System.register("ng2-material/components/grid_list/grid_list.ts", ["angular2/cor
                         }
                     }),
                     core_1.View({
-                        template: "\n    <style>@import \"ng2-material/components/grid_list/grid-list.css\";</style>\n    <figure>\n      <ng-content></ng-content>\n    </figure>",
+                        template: "\n    <figure>\n      <ng-content></ng-content>\n    </figure>",
                         encapsulation: core_1.ViewEncapsulation.None
                     }),
                     __param(0, core_1.SkipSelf()),
@@ -2096,7 +2097,7 @@ System.register("ng2-material/components/peekaboo/peekaboo.ts", ["angular2/core.
     }
 });
 
-System.register("ng2-material/components/radio/radio_button.ts", ["angular2/core.js", "angular2/src/facade/lang.js", "angular2/src/facade/async.js", "ng2-material/components/radio/radio_dispatcher.ts", "ng2-material/core/key_codes.ts"], function(exports_1) {
+System.register("ng2-material/components/radio/radio_button.ts", ["angular2/core.js", "angular2/src/facade/lang.js", "angular2/src/facade/async.js", "ng2-material/components/radio/radio_dispatcher.ts", "ng2-material/core/key_codes.ts", "ng2-material/core/util/util.ts"], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2109,7 +2110,7 @@ System.register("ng2-material/components/radio/radio_button.ts", ["angular2/core
     var __param = (this && this.__param) || function (paramIndex, decorator) {
         return function (target, key) { decorator(target, key, paramIndex); }
     };
-    var core_1, lang_1, async_1, radio_dispatcher_1, key_codes_1, core_2;
+    var core_1, lang_1, async_1, radio_dispatcher_1, key_codes_1, core_2, util_1;
     var _uniqueIdCounter, MdRadioGroup, MdRadioButton;
     return {
         setters:[
@@ -2128,17 +2129,17 @@ System.register("ng2-material/components/radio/radio_button.ts", ["angular2/core
             },
             function (key_codes_1_1) {
                 key_codes_1 = key_codes_1_1;
+            },
+            function (util_1_1) {
+                util_1 = util_1_1;
             }],
         execute: function() {
-            // TODO(jdd): [disabled] style
             // TODO(jelbourn): Behaviors to test
-            // Radios set default tab index iff not in parent group
             // Radio name is pulled on parent group
-            // Radio group changes on arrow keys
-            // Radio group skips disabled radios on arrow keys
             _uniqueIdCounter = 0;
             MdRadioGroup = (function () {
                 function MdRadioGroup(tabindex, disabled, radioDispatcher) {
+                    this.change = new async_1.EventEmitter();
                     /** The HTML name attribute applied to radio buttons in this group. */
                     this.name_ = "md-radio-group-" + _uniqueIdCounter++;
                     /** Array of child radio buttons. */
@@ -2146,25 +2147,19 @@ System.register("ng2-material/components/radio/radio_button.ts", ["angular2/core
                     this.disabled_ = false;
                     /** The ID of the selected radio button. */
                     this.selectedRadioId = '';
-                    this.change = new async_1.EventEmitter();
                     this.radioDispatcher = radioDispatcher;
                     // The simple presence of the `disabled` attribute dictates disabled state.
                     this.disabled = lang_1.isPresent(disabled);
                     // If the user has not set a tabindex, default to zero (in the normal document flow).
-                    this.tabindex = lang_1.isPresent(tabindex) ? lang_1.NumberWrapper.parseInt(tabindex, 10) : 0;
+                    this.tabindex = util_1.parseTabIndexAttribute(tabindex);
                 }
                 Object.defineProperty(MdRadioGroup.prototype, "value", {
                     get: function () {
                         return this.value_;
                     },
                     set: function (value) {
-                        var button = this.getChildByValue(value);
                         this.value_ = value;
-                        if (button) {
-                            this.selectedRadioId = button.id;
-                            this.activedescendant = button.id;
-                            button.checked = true;
-                        }
+                        this._setChildValue(value);
                     },
                     enumerable: true,
                     configurable: true
@@ -2185,20 +2180,21 @@ System.register("ng2-material/components/radio/radio_button.ts", ["angular2/core
                 });
                 /** Change handler invoked when bindings are resolved or when bindings have changed. */
                 MdRadioGroup.prototype.ngOnChanges = function (_) {
-                    var _this = this;
                     // If the component has a disabled attribute with no value, it will set disabled = ''.
                     this.disabled = lang_1.isPresent(this.disabled) && this.disabled !== false;
                     // If the value of this radio-group has been set or changed, we have to look through the
                     // child radio buttons and select the one that has a corresponding value (if any).
                     if (lang_1.isPresent(this.value) && this.value !== '') {
                         this.radioDispatcher.notify(this.name_);
-                        this.radios_.forEach(function (radio) {
-                            if (radio.value === _this.value) {
-                                radio.checked = true;
-                                _this.selectedRadioId = radio.id;
-                                _this.activedescendant = radio.id;
-                            }
-                        });
+                        this._setChildValue(this.value);
+                    }
+                };
+                MdRadioGroup.prototype._setChildValue = function (value) {
+                    var button = this.getChildByValue(value);
+                    if (button) {
+                        this.selectedRadioId = button.id;
+                        this.activedescendant = button.id;
+                        button.checked = true;
                     }
                 };
                 /** Update the value of this radio group from a child md-radio being selected. */
@@ -2211,6 +2207,10 @@ System.register("ng2-material/components/radio/radio_button.ts", ["angular2/core
                 /** Registers a child radio button with this group. */
                 MdRadioGroup.prototype.register = function (radio) {
                     this.radios_.push(radio);
+                };
+                /** Unregister a child radio button with this group. */
+                MdRadioGroup.prototype.unregister = function (radio) {
+                    this.radios_ = this.radios_.filter(function (r) { return r.id !== radio.id; });
                 };
                 /** Handles up and down arrow key presses to change the selected child radio. */
                 MdRadioGroup.prototype.onKeydown = function (event) {
@@ -2260,21 +2260,17 @@ System.register("ng2-material/components/radio/radio_button.ts", ["angular2/core
                         this.stepSelectedRadio(step + (step < 0 ? -1 : 1));
                         return;
                     }
-                    this.radioDispatcher.notify(this.name_);
+                    this.updateValue(radio.value, radio.id);
                     radio.checked = true;
-                    async_1.ObservableWrapper.callEmit(this.change, null);
-                    this.value = radio.value;
-                    this.selectedRadioId = radio.id;
-                    this.activedescendant = radio.id;
                 };
-                __decorate([
-                    core_2.Input('value'), 
-                    __metadata('design:type', Object)
-                ], MdRadioGroup.prototype, "value_", void 0);
                 __decorate([
                     core_2.Output('valueChange'), 
                     __metadata('design:type', (typeof (_a = typeof async_1.EventEmitter !== 'undefined' && async_1.EventEmitter) === 'function' && _a) || Object)
                 ], MdRadioGroup.prototype, "change", void 0);
+                __decorate([
+                    core_2.Input('value'), 
+                    __metadata('design:type', Object)
+                ], MdRadioGroup.prototype, "value_", void 0);
                 MdRadioGroup = __decorate([
                     core_1.Component({
                         selector: 'md-radio-group',
@@ -2283,7 +2279,6 @@ System.register("ng2-material/components/radio/radio_button.ts", ["angular2/core
                             'role': 'radiogroup',
                             '[attr.aria-disabled]': 'disabled',
                             '[attr.aria-activedescendant]': 'activedescendant',
-                            // TODO(jelbourn): Remove ^ when event retargeting is fixed.
                             '(keydown)': 'onKeydown($event)',
                             '[tabindex]': 'tabindex',
                         }
@@ -2301,14 +2296,14 @@ System.register("ng2-material/components/radio/radio_button.ts", ["angular2/core
             })();
             exports_1("MdRadioGroup", MdRadioGroup);
             MdRadioButton = (function () {
-                function MdRadioButton(radioGroup, id, value, tabindex, radioDispatcher) {
+                function MdRadioButton(radioGroup, id, value, checked, tabindex, radioDispatcher) {
                     // Assertions. Ideally these should be stripped out by the compiler.
                     // TODO(jelbourn): Assert that there's no name binding AND a parent radio group.
                     var _this = this;
                     this.radioGroup = radioGroup;
                     this.radioDispatcher = radioDispatcher;
                     this.value = value ? value : null;
-                    this.checked = false;
+                    this.checked = lang_1.isPresent(checked) ? true : false;
                     this.id = lang_1.isPresent(id) ? id : "md-radio-" + _uniqueIdCounter++;
                     // Whenever a radio button with the same name is checked, uncheck this radio button.
                     radioDispatcher.listen(function (name) {
@@ -2320,10 +2315,13 @@ System.register("ng2-material/components/radio/radio_button.ts", ["angular2/core
                     if (lang_1.isPresent(radioGroup)) {
                         this.name = radioGroup.getName();
                         this.radioGroup.register(this);
+                        if (this.checked) {
+                            this.radioGroup.updateValue(this.value, this.id);
+                        }
                     }
                     // If the user has not set a tabindex, default to zero (in the normal document flow).
                     if (!lang_1.isPresent(radioGroup)) {
-                        this.tabindex = lang_1.isPresent(tabindex) ? lang_1.NumberWrapper.parseInt(tabindex, 10) : 0;
+                        this.tabindex = util_1.parseTabIndexAttribute(tabindex);
                     }
                     else {
                         this.tabindex = -1;
@@ -2333,6 +2331,11 @@ System.register("ng2-material/components/radio/radio_button.ts", ["angular2/core
                 MdRadioButton.prototype.ngOnInit = function () {
                     if (lang_1.isPresent(this.radioGroup)) {
                         this.name = this.radioGroup.getName();
+                    }
+                };
+                MdRadioButton.prototype.ngOnDestroy = function () {
+                    if (lang_1.isPresent(this.radioGroup)) {
+                        this.radioGroup.unregister(this);
                     }
                 };
                 /** Whether this radio button is disabled, taking the parent group into account. */
@@ -2390,7 +2393,7 @@ System.register("ng2-material/components/radio/radio_button.ts", ["angular2/core
                         }
                     }),
                     core_1.View({
-                        template: "\n    <!-- TODO(jelbourn): render the radio on either side of the content -->\n    <label role=\"radio\" class=\"md-radio-root\"\n        [class.md-radio-checked]=\"checked\">\n      <!-- The actual radio part of the control. -->\n      <div class=\"md-radio-container\">\n        <div class=\"md-radio-off\"></div>\n        <div class=\"md-radio-on\"></div>\n      </div>\n\n      <!-- The label for radio control. -->\n      <div class=\"md-radio-label\">\n          <ng-content></ng-content>\n      </div>\n    </label>",
+                        template: "\n    <label role=\"radio\" class=\"md-radio-root\" [class.md-radio-checked]=\"checked\">\n      <div class=\"md-radio-container\">\n        <div class=\"md-radio-off\"></div>\n        <div class=\"md-radio-on\"></div>\n      </div>\n      <div class=\"md-radio-label\">\n        <ng-content></ng-content>\n      </div>\n    </label>",
                         directives: [],
                         encapsulation: core_1.ViewEncapsulation.None
                     }),
@@ -2399,8 +2402,9 @@ System.register("ng2-material/components/radio/radio_button.ts", ["angular2/core
                     __param(0, core_1.Host()),
                     __param(1, core_1.Attribute('id')),
                     __param(2, core_1.Attribute('value')),
-                    __param(3, core_1.Attribute('tabindex')), 
-                    __metadata('design:paramtypes', [MdRadioGroup, String, String, String, (typeof (_a = typeof radio_dispatcher_1.MdRadioDispatcher !== 'undefined' && radio_dispatcher_1.MdRadioDispatcher) === 'function' && _a) || Object])
+                    __param(3, core_1.Attribute('checked')),
+                    __param(4, core_1.Attribute('tabindex')), 
+                    __metadata('design:paramtypes', [MdRadioGroup, String, String, String, String, (typeof (_a = typeof radio_dispatcher_1.MdRadioDispatcher !== 'undefined' && radio_dispatcher_1.MdRadioDispatcher) === 'function' && _a) || Object])
                 ], MdRadioButton);
                 return MdRadioButton;
                 var _a;
@@ -2508,7 +2512,7 @@ System.register("ng2-material/core/key_codes.ts", ["angular2/src/facade/lang.js"
     }
 });
 
-System.register("ng2-material/components/checkbox/checkbox.ts", ["angular2/core.js", "angular2/src/facade/lang.js", "ng2-material/core/key_codes.ts"], function(exports_1) {
+System.register("ng2-material/components/checkbox/checkbox.ts", ["angular2/core.js", "angular2/src/facade/lang.js", "ng2-material/core/key_codes.ts", "ng2-material/core/util/util.ts"], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2521,7 +2525,7 @@ System.register("ng2-material/components/checkbox/checkbox.ts", ["angular2/core.
     var __param = (this && this.__param) || function (paramIndex, decorator) {
         return function (target, key) { decorator(target, key, paramIndex); }
     };
-    var core_1, lang_1, key_codes_1, lang_2, core_2;
+    var core_1, lang_1, key_codes_1, core_2, util_1;
     var MdCheckbox;
     return {
         setters:[
@@ -2531,10 +2535,12 @@ System.register("ng2-material/components/checkbox/checkbox.ts", ["angular2/core.
             },
             function (lang_1_1) {
                 lang_1 = lang_1_1;
-                lang_2 = lang_1_1;
             },
             function (key_codes_1_1) {
                 key_codes_1 = key_codes_1_1;
+            },
+            function (util_1_1) {
+                util_1 = util_1_1;
             }],
         execute: function() {
             // TODO(jdd): ng-true-value, ng-false-value
@@ -2542,7 +2548,7 @@ System.register("ng2-material/components/checkbox/checkbox.ts", ["angular2/core.
                 function MdCheckbox(tabindex) {
                     this.checkedChange = new core_2.EventEmitter();
                     this.checked = false;
-                    this.tabindex = lang_1.isPresent(tabindex) ? lang_2.NumberWrapper.parseInt(tabindex, 10) : 0;
+                    this.tabindex = util_1.parseTabIndexAttribute(tabindex);
                     this.disabled_ = false;
                 }
                 Object.defineProperty(MdCheckbox.prototype, "disabled", {
@@ -2595,10 +2601,11 @@ System.register("ng2-material/components/checkbox/checkbox.ts", ["angular2/core.
                             '[attr.aria-disabled]': 'disabled',
                             '[tabindex]': 'tabindex',
                             '(keydown)': 'onKeydown($event)',
+                            '(click)': 'toggle($event)'
                         }
                     }),
                     core_1.View({
-                        template: "\n    <div (click)=\"toggle($event)\">\n      <div class=\"md-checkbox-container\">\n        <div class=\"md-checkbox-icon\"></div>\n      </div>\n      <div class=\"md-checkbox-label\"><ng-content></ng-content></div>\n    </div>",
+                        template: "\n    <div class=\"md-checkbox-container\">\n      <div class=\"md-checkbox-icon\"></div>\n    </div>\n    <div class=\"md-checkbox-label\"><ng-content></ng-content></div>",
                         directives: [],
                         encapsulation: core_1.ViewEncapsulation.None
                     }),
@@ -2716,7 +2723,8 @@ System.register("ng2-material/components/subheader/subheader.ts", ["angular2/cor
     }
 });
 
-System.register("ng2-material/core/util/util.ts", [], function(exports_1) {
+System.register("ng2-material/core/util/util.ts", ["angular2/src/facade/lang.js"], function(exports_1) {
+    var lang_1, lang_2;
     /**
      * Returns a function, that, as long as it continues to be invoked, will not
      * be triggered. The function will be called after it stops being called for
@@ -2757,8 +2765,16 @@ System.register("ng2-material/core/util/util.ts", [], function(exports_1) {
         window.requestAnimationFrame(callback);
     }
     exports_1("rAF", rAF);
+    function parseTabIndexAttribute(attr) {
+        return lang_1.isPresent(attr) ? lang_2.NumberWrapper.parseInt(attr, 10) : 0;
+    }
+    exports_1("parseTabIndexAttribute", parseTabIndexAttribute);
     return {
-        setters:[],
+        setters:[
+            function (lang_1_1) {
+                lang_1 = lang_1_1;
+                lang_2 = lang_1_1;
+            }],
         execute: function() {
         }
     }

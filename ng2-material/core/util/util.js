@@ -1,3 +1,5 @@
+var lang_1 = require("angular2/src/facade/lang");
+var lang_2 = require("angular2/src/facade/lang");
 function debounce(func, wait, scope) {
     var timer;
     return function debounced() {
@@ -27,4 +29,8 @@ function rAF(callback) {
     window.requestAnimationFrame(callback);
 }
 exports.rAF = rAF;
+function parseTabIndexAttribute(attr) {
+    return lang_1.isPresent(attr) ? lang_2.NumberWrapper.parseInt(attr, 10) : 0;
+}
+exports.parseTabIndexAttribute = parseTabIndexAttribute;
 //# sourceMappingURL=util.js.map

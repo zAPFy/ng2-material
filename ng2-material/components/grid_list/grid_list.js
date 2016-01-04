@@ -60,7 +60,8 @@ var MdGridList = (function () {
         configurable: true
     });
     MdGridList.prototype.ngAfterContentChecked = function () {
-        this.layoutTiles();
+        var _this = this;
+        setTimeout(function () { return _this.layoutTiles(); }, 0);
     };
     MdGridList.prototype.layoutTiles = function () {
         var tracker = new TileCoordinator(this.cols, this.tiles);
@@ -174,7 +175,7 @@ var MdGridTile = (function () {
             }
         }),
         core_1.View({
-            template: "\n    <style>@import \"ng2-material/components/grid_list/grid-list.css\";</style>\n    <figure>\n      <ng-content></ng-content>\n    </figure>",
+            template: "\n    <figure>\n      <ng-content></ng-content>\n    </figure>",
             encapsulation: core_1.ViewEncapsulation.None
         }),
         __param(0, core_1.SkipSelf()),

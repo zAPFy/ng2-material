@@ -16,30 +16,26 @@ var async_1 = require('angular2/src/facade/async');
 var radio_dispatcher_1 = require('./radio_dispatcher');
 var key_codes_1 = require('../../core/key_codes');
 var core_2 = require('angular2/core');
+var util_1 = require("../../core/util/util");
 var _uniqueIdCounter = 0;
 var MdRadioGroup = (function () {
     function MdRadioGroup(tabindex, disabled, radioDispatcher) {
+        this.change = new async_1.EventEmitter();
         this.name_ = "md-radio-group-" + _uniqueIdCounter++;
         this.radios_ = [];
         this.disabled_ = false;
         this.selectedRadioId = '';
-        this.change = new async_1.EventEmitter();
         this.radioDispatcher = radioDispatcher;
         this.disabled = lang_1.isPresent(disabled);
-        this.tabindex = lang_1.isPresent(tabindex) ? lang_1.NumberWrapper.parseInt(tabindex, 10) : 0;
+        this.tabindex = util_1.parseTabIndexAttribute(tabindex);
     }
     Object.defineProperty(MdRadioGroup.prototype, "value", {
         get: function () {
             return this.value_;
         },
         set: function (value) {
-            var button = this.getChildByValue(value);
             this.value_ = value;
-            if (button) {
-                this.selectedRadioId = button.id;
-                this.activedescendant = button.id;
-                button.checked = true;
-            }
+            this._setChildValue(value);
         },
         enumerable: true,
         configurable: true
@@ -58,17 +54,18 @@ var MdRadioGroup = (function () {
         configurable: true
     });
     MdRadioGroup.prototype.ngOnChanges = function (_) {
-        var _this = this;
         this.disabled = lang_1.isPresent(this.disabled) && this.disabled !== false;
         if (lang_1.isPresent(this.value) && this.value !== '') {
             this.radioDispatcher.notify(this.name_);
-            this.radios_.forEach(function (radio) {
-                if (radio.value === _this.value) {
-                    radio.checked = true;
-                    _this.selectedRadioId = radio.id;
-                    _this.activedescendant = radio.id;
-                }
-            });
+            this._setChildValue(this.value);
+        }
+    };
+    MdRadioGroup.prototype._setChildValue = function (value) {
+        var button = this.getChildByValue(value);
+        if (button) {
+            this.selectedRadioId = button.id;
+            this.activedescendant = button.id;
+            button.checked = true;
         }
     };
     MdRadioGroup.prototype.updateValue = function (value, id) {
@@ -79,6 +76,9 @@ var MdRadioGroup = (function () {
     };
     MdRadioGroup.prototype.register = function (radio) {
         this.radios_.push(radio);
+    };
+    MdRadioGroup.prototype.unregister = function (radio) {
+        this.radios_ = this.radios_.filter(function (r) { return r.id !== radio.id; });
     };
     MdRadioGroup.prototype.onKeydown = function (event) {
         if (this.disabled) {
@@ -121,21 +121,17 @@ var MdRadioGroup = (function () {
             this.stepSelectedRadio(step + (step < 0 ? -1 : 1));
             return;
         }
-        this.radioDispatcher.notify(this.name_);
+        this.updateValue(radio.value, radio.id);
         radio.checked = true;
-        async_1.ObservableWrapper.callEmit(this.change, null);
-        this.value = radio.value;
-        this.selectedRadioId = radio.id;
-        this.activedescendant = radio.id;
     };
-    __decorate([
-        core_2.Input('value'), 
-        __metadata('design:type', Object)
-    ], MdRadioGroup.prototype, "value_", void 0);
     __decorate([
         core_2.Output('valueChange'), 
         __metadata('design:type', async_1.EventEmitter)
     ], MdRadioGroup.prototype, "change", void 0);
+    __decorate([
+        core_2.Input('value'), 
+        __metadata('design:type', Object)
+    ], MdRadioGroup.prototype, "value_", void 0);
     MdRadioGroup = __decorate([
         core_1.Component({
             selector: 'md-radio-group',
@@ -160,12 +156,12 @@ var MdRadioGroup = (function () {
 })();
 exports.MdRadioGroup = MdRadioGroup;
 var MdRadioButton = (function () {
-    function MdRadioButton(radioGroup, id, value, tabindex, radioDispatcher) {
+    function MdRadioButton(radioGroup, id, value, checked, tabindex, radioDispatcher) {
         var _this = this;
         this.radioGroup = radioGroup;
         this.radioDispatcher = radioDispatcher;
         this.value = value ? value : null;
-        this.checked = false;
+        this.checked = lang_1.isPresent(checked) ? true : false;
         this.id = lang_1.isPresent(id) ? id : "md-radio-" + _uniqueIdCounter++;
         radioDispatcher.listen(function (name) {
             if (name === _this.name) {
@@ -175,9 +171,12 @@ var MdRadioButton = (function () {
         if (lang_1.isPresent(radioGroup)) {
             this.name = radioGroup.getName();
             this.radioGroup.register(this);
+            if (this.checked) {
+                this.radioGroup.updateValue(this.value, this.id);
+            }
         }
         if (!lang_1.isPresent(radioGroup)) {
-            this.tabindex = lang_1.isPresent(tabindex) ? lang_1.NumberWrapper.parseInt(tabindex, 10) : 0;
+            this.tabindex = util_1.parseTabIndexAttribute(tabindex);
         }
         else {
             this.tabindex = -1;
@@ -186,6 +185,11 @@ var MdRadioButton = (function () {
     MdRadioButton.prototype.ngOnInit = function () {
         if (lang_1.isPresent(this.radioGroup)) {
             this.name = this.radioGroup.getName();
+        }
+    };
+    MdRadioButton.prototype.ngOnDestroy = function () {
+        if (lang_1.isPresent(this.radioGroup)) {
+            this.radioGroup.unregister(this);
         }
     };
     MdRadioButton.prototype.isDisabled = function () {
@@ -235,7 +239,7 @@ var MdRadioButton = (function () {
             }
         }),
         core_1.View({
-            template: "\n    <!-- TODO(jelbourn): render the radio on either side of the content -->\n    <label role=\"radio\" class=\"md-radio-root\"\n        [class.md-radio-checked]=\"checked\">\n      <!-- The actual radio part of the control. -->\n      <div class=\"md-radio-container\">\n        <div class=\"md-radio-off\"></div>\n        <div class=\"md-radio-on\"></div>\n      </div>\n\n      <!-- The label for radio control. -->\n      <div class=\"md-radio-label\">\n          <ng-content></ng-content>\n      </div>\n    </label>",
+            template: "\n    <label role=\"radio\" class=\"md-radio-root\" [class.md-radio-checked]=\"checked\">\n      <div class=\"md-radio-container\">\n        <div class=\"md-radio-off\"></div>\n        <div class=\"md-radio-on\"></div>\n      </div>\n      <div class=\"md-radio-label\">\n        <ng-content></ng-content>\n      </div>\n    </label>",
             directives: [],
             encapsulation: core_1.ViewEncapsulation.None
         }),
@@ -244,8 +248,9 @@ var MdRadioButton = (function () {
         __param(0, core_1.Host()),
         __param(1, core_1.Attribute('id')),
         __param(2, core_1.Attribute('value')),
-        __param(3, core_1.Attribute('tabindex')), 
-        __metadata('design:paramtypes', [MdRadioGroup, String, String, String, radio_dispatcher_1.MdRadioDispatcher])
+        __param(3, core_1.Attribute('checked')),
+        __param(4, core_1.Attribute('tabindex')), 
+        __metadata('design:paramtypes', [MdRadioGroup, String, String, String, String, radio_dispatcher_1.MdRadioDispatcher])
     ], MdRadioButton);
     return MdRadioButton;
 })();

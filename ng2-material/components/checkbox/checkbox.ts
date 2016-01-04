@@ -4,6 +4,7 @@ import {KeyCodes} from '../../core/key_codes';
 import {KeyboardEvent} from 'angular2/src/facade/browser';
 import {NumberWrapper} from 'angular2/src/facade/lang';
 import {Input, Output, EventEmitter} from 'angular2/core';
+import {parseTabIndexAttribute} from "../../core/util/util";
 
 // TODO(jdd): ng-true-value, ng-false-value
 
@@ -16,16 +17,15 @@ import {Input, Output, EventEmitter} from 'angular2/core';
     '[attr.aria-disabled]': 'disabled',
     '[tabindex]': 'tabindex',
     '(keydown)': 'onKeydown($event)',
+    '(click)': 'toggle($event)'
   }
 })
 @View({
   template: `
-    <div (click)="toggle($event)">
-      <div class="md-checkbox-container">
-        <div class="md-checkbox-icon"></div>
-      </div>
-      <div class="md-checkbox-label"><ng-content></ng-content></div>
-    </div>`,
+    <div class="md-checkbox-container">
+      <div class="md-checkbox-icon"></div>
+    </div>
+    <div class="md-checkbox-label"><ng-content></ng-content></div>`,
   directives: [],
   encapsulation: ViewEncapsulation.None
 })
@@ -44,7 +44,7 @@ export class MdCheckbox {
 
   constructor(@Attribute('tabindex') tabindex: string) {
     this.checked = false;
-    this.tabindex = isPresent(tabindex) ? NumberWrapper.parseInt(tabindex, 10) : 0;
+    this.tabindex = parseTabIndexAttribute(tabindex);
     this.disabled_ = false;
   }
 

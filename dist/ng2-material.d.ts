@@ -107,6 +107,24 @@ declare module 'ng2-material/core/key_codes' {
 	}
 
 }
+declare module 'ng2-material/core/util/util' {
+	/**
+	 * Returns a function, that, as long as it continues to be invoked, will not
+	 * be triggered. The function will be called after it stops being called for
+	 * N milliseconds.
+	 * @param wait Integer value of msecs to delay (since last debounce reset); default value 10 msecs
+	 */
+	export function debounce(func: any, wait: any, scope: any): () => void;
+	/**
+	 * Returns a function that can only be triggered every `delay` milliseconds.
+	 * In other words, the function will not be called unless it has been more
+	 * than `delay` milliseconds since the last call.
+	 */
+	export function throttle(func: any, delay: any, scope: any): () => void;
+	export function rAF(callback: any): void;
+	export function parseTabIndexAttribute(attr: any): number;
+
+}
 declare module 'ng2-material/components/checkbox/checkbox' {
 	import { EventEmitter } from 'angular2/core';
 	export class MdCheckbox {
@@ -611,23 +629,6 @@ declare module 'ng2-material/core/util/media' {
 	}
 
 }
-declare module 'ng2-material/core/util/util' {
-	/**
-	 * Returns a function, that, as long as it continues to be invoked, will not
-	 * be triggered. The function will be called after it stops being called for
-	 * N milliseconds.
-	 * @param wait Integer value of msecs to delay (since last debounce reset); default value 10 msecs
-	 */
-	export function debounce(func: any, wait: any, scope: any): () => void;
-	/**
-	 * Returns a function that can only be triggered every `delay` milliseconds.
-	 * In other words, the function will not be called unless it has been more
-	 * than `delay` milliseconds since the last call.
-	 */
-	export function throttle(func: any, delay: any, scope: any): () => void;
-	export function rAF(callback: any): void;
-
-}
 declare module 'ng2-material/components/peekaboo/peekaboo' {
 	import { Media } from 'ng2-material/core/util/media';
 	import { OnDestroy } from "angular2/core";
@@ -698,7 +699,9 @@ declare module 'ng2-material/components/radio/radio_button' {
 	import { OnChanges, OnInit } from 'angular2/core';
 	import { EventEmitter } from 'angular2/src/facade/async';
 	import { MdRadioDispatcher } from 'ng2-material/components/radio/radio_dispatcher';
+	import { OnDestroy } from "angular2/core";
 	export class MdRadioGroup implements OnChanges {
+	    change: EventEmitter<any>;
 	    /** The selected value for the radio group. The value comes from the options. */
 	    value_: any;
 	    value: any;
@@ -712,7 +715,6 @@ declare module 'ng2-material/components/radio/radio_button' {
 	    disabled_: boolean;
 	    /** The ID of the selected radio button. */
 	    selectedRadioId: string;
-	    change: EventEmitter<any>;
 	    tabindex: number;
 	    constructor(tabindex: string, disabled: string, radioDispatcher: MdRadioDispatcher);
 	    /** Gets the name of this group, as to be applied in the HTML 'name' attribute. */
@@ -720,10 +722,13 @@ declare module 'ng2-material/components/radio/radio_button' {
 	    disabled: boolean;
 	    /** Change handler invoked when bindings are resolved or when bindings have changed. */
 	    ngOnChanges(_: any): void;
+	    private _setChildValue(value);
 	    /** Update the value of this radio group from a child md-radio being selected. */
 	    updateValue(value: any, id: string): void;
 	    /** Registers a child radio button with this group. */
 	    register(radio: MdRadioButton): void;
+	    /** Unregister a child radio button with this group. */
+	    unregister(radio: MdRadioButton): void;
 	    /** Handles up and down arrow key presses to change the selected child radio. */
 	    onKeydown(event: KeyboardEvent): void;
 	    getSelectedRadioIndex(): number;
@@ -734,7 +739,7 @@ declare module 'ng2-material/components/radio/radio_button' {
 	    /** Steps the selected radio based on the given step value (usually either +1 or -1). */
 	    stepSelectedRadio(step: any): void;
 	}
-	export class MdRadioButton implements OnInit {
+	export class MdRadioButton implements OnInit, OnDestroy {
 	    /** Whether this radio is checked. */
 	    checked: boolean;
 	    /** Whether the radio is disabled. */
@@ -750,9 +755,10 @@ declare module 'ng2-material/components/radio/radio_button' {
 	    /** Dispatcher for coordinating radio unique-selection by name. */
 	    radioDispatcher: MdRadioDispatcher;
 	    tabindex: number;
-	    constructor(radioGroup: MdRadioGroup, id: string, value: string, tabindex: string, radioDispatcher: MdRadioDispatcher);
+	    constructor(radioGroup: MdRadioGroup, id: string, value: string, checked: string, tabindex: string, radioDispatcher: MdRadioDispatcher);
 	    /** Change handler invoked when bindings are resolved or when bindings have changed. */
 	    ngOnInit(): void;
+	    ngOnDestroy(): any;
 	    /** Whether this radio button is disabled, taking the parent group into account. */
 	    isDisabled(): boolean;
 	    disabled: any;

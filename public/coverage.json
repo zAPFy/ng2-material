@@ -20,18 +20,18 @@
   {
     "lines": {
       "found": 35,
-      "hit": 26,
-      "percent": 74
+      "hit": 33,
+      "percent": 94
     },
     "functions": {
-      "hit": 7,
+      "hit": 10,
       "found": 12,
-      "percent": 58
+      "percent": 83
     },
     "branches": {
-      "hit": 4,
+      "hit": 10,
       "found": 12,
-      "percent": 33
+      "percent": 83
     },
     "file": "ng2-material/components/button/button.ts"
   },
@@ -74,18 +74,18 @@
   {
     "lines": {
       "found": 29,
-      "hit": 20,
-      "percent": 69
+      "hit": 29,
+      "percent": 100
     },
     "functions": {
-      "hit": 3,
+      "hit": 6,
       "found": 6,
-      "percent": 50
+      "percent": 100
     },
     "branches": {
-      "hit": 1,
-      "found": 8,
-      "percent": 13
+      "hit": 6,
+      "found": 6,
+      "percent": 100
     },
     "file": "ng2-material/components/checkbox/checkbox.ts"
   },
@@ -106,6 +106,24 @@
       "percent": 100
     },
     "file": "ng2-material/core/key_codes.ts"
+  },
+  {
+    "lines": {
+      "found": 23,
+      "hit": 15,
+      "percent": 65
+    },
+    "functions": {
+      "hit": 5,
+      "found": 7,
+      "percent": 71
+    },
+    "branches": {
+      "hit": 3,
+      "found": 8,
+      "percent": 38
+    },
+    "file": "ng2-material/core/util/util.ts"
   },
   {
     "lines": {
@@ -254,18 +272,18 @@
   {
     "lines": {
       "found": 138,
-      "hit": 44,
-      "percent": 32
+      "hit": 114,
+      "percent": 83
     },
     "functions": {
-      "hit": 6,
-      "found": 33,
-      "percent": 18
+      "hit": 33,
+      "found": 34,
+      "percent": 97
     },
     "branches": {
-      "hit": 0,
+      "hit": 15,
       "found": 28,
-      "percent": 0
+      "percent": 54
     },
     "file": "ng2-material/components/grid_list/grid_list.ts"
   },
@@ -397,19 +415,19 @@
   },
   {
     "lines": {
-      "found": 121,
-      "hit": 93,
-      "percent": 77
+      "found": 124,
+      "hit": 124,
+      "percent": 100
     },
     "functions": {
-      "hit": 21,
-      "found": 24,
-      "percent": 88
+      "hit": 27,
+      "found": 27,
+      "percent": 100
     },
     "branches": {
-      "hit": 36,
+      "hit": 59,
       "found": 60,
-      "percent": 60
+      "percent": 98
     },
     "file": "ng2-material/components/radio/radio_button.ts"
   },
@@ -484,24 +502,6 @@
       "percent": 60
     },
     "file": "ng2-material/components/toolbar/toolbar.ts"
-  },
-  {
-    "lines": {
-      "found": 19,
-      "hit": 11,
-      "percent": 58
-    },
-    "functions": {
-      "hit": 4,
-      "found": 6,
-      "percent": 67
-    },
-    "branches": {
-      "hit": 1,
-      "found": 6,
-      "percent": 17
-    },
-    "file": "ng2-material/core/util/util.ts"
   },
   {
     "lines": {
