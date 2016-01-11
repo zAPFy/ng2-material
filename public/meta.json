@@ -90,6 +90,29 @@
     ]
   },
   {
+    "name": "Input",
+    "sources": [
+      "ng2-material/components/input/input.ts"
+    ],
+    "id": "input",
+    "examples": [
+      {
+        "template": "examples/components/input/basic_usage.html",
+        "styles": "examples/components/input/basic_usage.scss",
+        "source": "examples/components/input/basic_usage.ts",
+        "component": "input-basic-usage",
+        "name": "Basic Usage"
+      },
+      {
+        "template": "examples/components/input/form_builder.html",
+        "styles": "examples/components/input/form_builder.scss",
+        "source": "examples/components/input/form_builder.ts",
+        "component": "input-form-builder",
+        "name": "Form Builder"
+      }
+    ]
+  },
+  {
     "name": "List",
     "sources": [
       "ng2-material/components/list/list.ts"

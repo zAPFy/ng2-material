@@ -1267,7 +1267,7 @@ System.register("ng2-material/components/icon/icon.ts", ["angular2/core.js"], fu
     }
 });
 
-System.register("ng2-material/components/input/input.ts", ["angular2/core.js", "angular2/src/facade/async.js"], function(exports_1) {
+System.register("ng2-material/components/form/validators.ts", ["angular2/src/facade/lang.js", "angular2/common.js", "angular2/core.js", "ng2-material/core/util/util.ts"], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1280,84 +1280,443 @@ System.register("ng2-material/components/input/input.ts", ["angular2/core.js", "
     var __param = (this && this.__param) || function (paramIndex, decorator) {
         return function (target, key) { decorator(target, key, paramIndex); }
     };
-    var core_1, async_1, core_2;
-    var MdInputContainer, MdInput;
+    var lang_1, common_1, core_1, util_1, lang_2;
+    var PATTERN_VALIDATOR, MdPatternValidator, MAXLENGTH_VALIDATOR, MdMaxLengthValidator, MAXVALUE_VALIDATOR, MdMaxValueValidator, MINVALUE_VALIDATOR, MdMinValueValidator, NUMBER_REQUIRED_VALIDATOR, MdNumberRequiredValidator, INPUT_VALIDATORS;
+    return {
+        setters:[
+            function (lang_1_1) {
+                lang_1 = lang_1_1;
+                lang_2 = lang_1_1;
+            },
+            function (common_1_1) {
+                common_1 = common_1_1;
+            },
+            function (core_1_1) {
+                core_1 = core_1_1;
+            },
+            function (util_1_1) {
+                util_1 = util_1_1;
+            }],
+        execute: function() {
+            PATTERN_VALIDATOR = lang_1.CONST_EXPR(new core_1.Provider(common_1.NG_VALIDATORS, {
+                useExisting: core_1.forwardRef(function () { return MdPatternValidator; }),
+                multi: true
+            }));
+            MdPatternValidator = (function () {
+                function MdPatternValidator(pattern) {
+                    if (lang_2.isPresent(pattern)) {
+                        this.mdPattern = pattern;
+                    }
+                }
+                /**
+                 * Returns a validator that checks to see if a string matches a given Regular Expression
+                 */
+                MdPatternValidator.inline = function (pattern) {
+                    return function validate(control) {
+                        if (control.value === '' || new RegExp(pattern).test(control.value)) {
+                            return null;
+                        }
+                        return {
+                            mdPattern: true
+                        };
+                    };
+                };
+                MdPatternValidator.prototype.validate = function (control) {
+                    return MdPatternValidator.inline(this.mdPattern)(control);
+                };
+                __decorate([
+                    core_1.Input('mdPattern'), 
+                    __metadata('design:type', String)
+                ], MdPatternValidator.prototype, "mdPattern", void 0);
+                MdPatternValidator = __decorate([
+                    core_1.Directive({
+                        selector: '[mdPattern]',
+                        providers: [PATTERN_VALIDATOR]
+                    }),
+                    __param(0, core_1.Attribute('mdPattern')), 
+                    __metadata('design:paramtypes', [Object])
+                ], MdPatternValidator);
+                return MdPatternValidator;
+            })();
+            exports_1("MdPatternValidator", MdPatternValidator);
+            MAXLENGTH_VALIDATOR = lang_1.CONST_EXPR(new core_1.Provider(common_1.NG_VALIDATORS, {
+                useExisting: core_1.forwardRef(function () { return MdMaxLengthValidator; }),
+                multi: true
+            }));
+            MdMaxLengthValidator = (function () {
+                function MdMaxLengthValidator(attr) {
+                    if (lang_2.isPresent(attr)) {
+                        this.mdMaxLength = attr;
+                    }
+                }
+                /**
+                 * Returns a validator that checks for a maximum length of a string
+                 */
+                MdMaxLengthValidator.inline = function (length) {
+                    return function validate(control) {
+                        if (!control.value || control.value.length <= length) {
+                            return null;
+                        }
+                        return {
+                            mdMaxLength: true
+                        };
+                    };
+                };
+                MdMaxLengthValidator.prototype.validate = function (control) {
+                    return MdMaxLengthValidator.inline(this.mdMaxLength)(control);
+                };
+                __decorate([
+                    core_1.Input('mdMaxLength'), 
+                    __metadata('design:type', String)
+                ], MdMaxLengthValidator.prototype, "mdMaxLength", void 0);
+                MdMaxLengthValidator = __decorate([
+                    core_1.Directive({ selector: '[mdMaxLength]', providers: [MAXLENGTH_VALIDATOR] }),
+                    __param(0, core_1.Attribute('mdMaxLength')), 
+                    __metadata('design:paramtypes', [Object])
+                ], MdMaxLengthValidator);
+                return MdMaxLengthValidator;
+            })();
+            exports_1("MdMaxLengthValidator", MdMaxLengthValidator);
+            MAXVALUE_VALIDATOR = lang_1.CONST_EXPR(new core_1.Provider(common_1.NG_VALIDATORS, {
+                useExisting: core_1.forwardRef(function () { return MdMaxValueValidator; }),
+                multi: true
+            }));
+            MdMaxValueValidator = (function () {
+                function MdMaxValueValidator(attr) {
+                    if (lang_2.isPresent(attr)) {
+                        this.mdMax = attr;
+                    }
+                }
+                /**
+                 * Returns a validator that checks for a maximum number value
+                 */
+                MdMaxValueValidator.inline = function (length) {
+                    return function validate(control) {
+                        if (lang_2.NumberWrapper.isNaN(control.value) || control.value <= length) {
+                            return null;
+                        }
+                        return {
+                            mdMax: true
+                        };
+                    };
+                };
+                MdMaxValueValidator.prototype.validate = function (control) {
+                    return MdMaxValueValidator.inline(this.mdMax)(control);
+                };
+                __decorate([
+                    core_1.Input('mdMax'), 
+                    __metadata('design:type', String)
+                ], MdMaxValueValidator.prototype, "mdMax", void 0);
+                MdMaxValueValidator = __decorate([
+                    core_1.Directive({ selector: '[mdMax]', providers: [MAXVALUE_VALIDATOR] }),
+                    __param(0, core_1.Attribute('mdMax')), 
+                    __metadata('design:paramtypes', [Object])
+                ], MdMaxValueValidator);
+                return MdMaxValueValidator;
+            })();
+            exports_1("MdMaxValueValidator", MdMaxValueValidator);
+            MINVALUE_VALIDATOR = lang_1.CONST_EXPR(new core_1.Provider(common_1.NG_VALIDATORS, {
+                useExisting: core_1.forwardRef(function () { return MdMinValueValidator; }),
+                multi: true
+            }));
+            MdMinValueValidator = (function () {
+                function MdMinValueValidator(attr) {
+                    if (lang_2.isPresent(attr)) {
+                        this.mdMin = attr;
+                    }
+                }
+                /**
+                 * Returns a validator that checks for a minimum number value
+                 */
+                MdMinValueValidator.inline = function (length) {
+                    return function validate(control) {
+                        if (lang_2.NumberWrapper.isNaN(control.value) || control.value >= length) {
+                            return null;
+                        }
+                        return {
+                            mdMin: true
+                        };
+                    };
+                };
+                MdMinValueValidator.prototype.validate = function (control) {
+                    return MdMaxValueValidator.inline(this.mdMin)(control);
+                };
+                __decorate([
+                    core_1.Input('mdMin'), 
+                    __metadata('design:type', String)
+                ], MdMinValueValidator.prototype, "mdMin", void 0);
+                MdMinValueValidator = __decorate([
+                    core_1.Directive({ selector: '[mdMin]', providers: [MINVALUE_VALIDATOR] }),
+                    __param(0, core_1.Attribute('mdMin')), 
+                    __metadata('design:paramtypes', [Object])
+                ], MdMinValueValidator);
+                return MdMinValueValidator;
+            })();
+            exports_1("MdMinValueValidator", MdMinValueValidator);
+            NUMBER_REQUIRED_VALIDATOR = lang_1.CONST_EXPR(new core_1.Provider(common_1.NG_VALIDATORS, {
+                useExisting: core_1.forwardRef(function () { return MdNumberRequiredValidator; }),
+                multi: true
+            }));
+            MdNumberRequiredValidator = (function () {
+                function MdNumberRequiredValidator() {
+                }
+                /**
+                 * Returns a validator that checks for the existence of a truthy value
+                 */
+                MdNumberRequiredValidator.inline = function () {
+                    return function validate(control) {
+                        var isNum = !lang_2.NumberWrapper.isNaN(control.value) && util_1.isNumber(control.value);
+                        return isNum ? null : { mdNumberRequired: true };
+                    };
+                };
+                MdNumberRequiredValidator.prototype.validate = function (control) {
+                    return MdNumberRequiredValidator.inline()(control);
+                };
+                MdNumberRequiredValidator = __decorate([
+                    core_1.Directive({ selector: '[mdNumberRequired]', providers: [NUMBER_REQUIRED_VALIDATOR] }), 
+                    __metadata('design:paramtypes', [])
+                ], MdNumberRequiredValidator);
+                return MdNumberRequiredValidator;
+            })();
+            exports_1("MdNumberRequiredValidator", MdNumberRequiredValidator);
+            exports_1("INPUT_VALIDATORS", INPUT_VALIDATORS = [
+                MdMaxLengthValidator,
+                MdPatternValidator,
+                MdMaxValueValidator,
+                MdMinValueValidator,
+                MdNumberRequiredValidator
+            ]);
+        }
+    }
+});
+
+System.register("ng2-material/components/form/messages.ts", ["angular2/core.js", "angular2/common.js", "angular2/src/facade/lang.js"], function(exports_1) {
+    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+    var __metadata = (this && this.__metadata) || function (k, v) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    };
+    var __param = (this && this.__param) || function (paramIndex, decorator) {
+        return function (target, key) { decorator(target, key, paramIndex); }
+    };
+    var core_1, common_1, lang_1;
+    var MdMessage, MdMessages;
+    return {
+        setters:[
+            function (core_1_1) {
+                core_1 = core_1_1;
+            },
+            function (common_1_1) {
+                common_1 = common_1_1;
+            },
+            function (lang_1_1) {
+                lang_1 = lang_1_1;
+            }],
+        execute: function() {
+            // TODO(jd): Behaviors to test
+            // - md-messages with no md-message children act as message for all errors in a field
+            // - md-message="propName" binds to FormBuilder group by given name
+            // - [md-message]="viewLocal" binds to given NgControlName referenced from the view
+            // - [md-messages] adds md-valid and md-invalid class based on field validation state
+            // - throws informative errors when it fails to bind to a given form field because it cannot be found.
+            MdMessage = (function () {
+                function MdMessage(pattern) {
+                    this.okay = true;
+                    if (lang_1.isPresent(pattern)) {
+                        this.errorKey = pattern;
+                    }
+                }
+                __decorate([
+                    core_1.Input('md-message'), 
+                    __metadata('design:type', String)
+                ], MdMessage.prototype, "errorKey", void 0);
+                MdMessage = __decorate([
+                    core_1.Directive({
+                        selector: '[md-message]',
+                        host: {
+                            '[style.display]': 'okay ? "none" : "inherit"'
+                        }
+                    }),
+                    __param(0, core_1.Attribute('md-message')), 
+                    __metadata('design:paramtypes', [Object])
+                ], MdMessage);
+                return MdMessage;
+            })();
+            exports_1("MdMessage", MdMessage);
+            MdMessages = (function () {
+                function MdMessages(messages, form, pattern) {
+                    this.messages = messages;
+                    this.form = form;
+                    this.valid = true;
+                    /**
+                     * Subscription to value changes that is to be dropped when the component is destroyed.
+                     * @type {null}
+                     * @private
+                     */
+                    this._unsubscribe = null;
+                    if (lang_1.isPresent(pattern)) {
+                        this.property = pattern;
+                    }
+                }
+                Object.defineProperty(MdMessages.prototype, "isTouched", {
+                    get: function () {
+                        if (this.property instanceof common_1.NgControlName) {
+                            return this.property.touched;
+                        }
+                        var prop = this.property;
+                        var group = this.form.control;
+                        var ctrl = group.controls[prop];
+                        return ctrl && ctrl.touched;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                MdMessages.prototype.ngOnInit = function () {
+                    if (this.property instanceof common_1.NgControlName) {
+                        var ctrl = this.property;
+                        this.form = ctrl.formDirective;
+                        this._unsubscribe = ctrl.update.subscribe(this._valueChanged.bind(this));
+                    }
+                    else {
+                        if (!this.form) {
+                            throw new Error('md-messages cannot bind to text property without a parent NgFormModel');
+                        }
+                        var prop = this.property;
+                        var group = this.form.control;
+                        if (!group) {
+                            throw new Error('md-messages cannot bind to text property without a ControlGroup');
+                        }
+                        var ctrl = group.controls[prop];
+                        if (!ctrl) {
+                            throw new Error("md-messages cannot find property(" + prop + ") in ControlGroup!");
+                        }
+                        this._unsubscribe = ctrl.valueChanges.subscribe(this._valueChanged.bind(this));
+                    }
+                };
+                MdMessages.prototype.ngOnDestroy = function () {
+                    this._unsubscribe.unsubscribe();
+                };
+                MdMessages.prototype._valueChanged = function (newValue) {
+                    var errors = null;
+                    if (this.property instanceof common_1.NgControlName) {
+                        var ctrl = this.property;
+                        errors = ctrl.errors;
+                    }
+                    else {
+                        var prop = this.property;
+                        var group = this.form.control;
+                        var ctrl = group.controls[prop];
+                        errors = ctrl.errors;
+                    }
+                    this.valid = !errors;
+                    if (errors) {
+                        this.messages.toArray().forEach(function (m) {
+                            m.okay = !m.errorKey ? !errors : !lang_1.isPresent(errors[m.errorKey]);
+                        });
+                    }
+                };
+                __decorate([
+                    core_1.Input('md-messages'), 
+                    __metadata('design:type', Object)
+                ], MdMessages.prototype, "property", void 0);
+                MdMessages = __decorate([
+                    core_1.Directive({
+                        selector: '[md-messages]',
+                        host: {
+                            'md-messages': '',
+                            '[style.display]': '(valid || !isTouched) ? "none" : "inherit"',
+                            '[class.md-valid]': 'valid && isTouched',
+                            '[class.md-invalid]': '!valid && isTouched'
+                        }
+                    }),
+                    __param(0, core_1.Query(MdMessage)),
+                    __param(1, core_1.Optional()),
+                    __param(1, core_1.SkipSelf()),
+                    __param(1, core_1.Host()),
+                    __param(2, core_1.Attribute('md-messages')), 
+                    __metadata('design:paramtypes', [(typeof (_a = typeof core_1.QueryList !== 'undefined' && core_1.QueryList) === 'function' && _a) || Object, (typeof (_b = typeof common_1.NgFormModel !== 'undefined' && common_1.NgFormModel) === 'function' && _b) || Object, Object])
+                ], MdMessages);
+                return MdMessages;
+                var _a, _b;
+            })();
+            exports_1("MdMessages", MdMessages);
+        }
+    }
+});
+
+System.register("ng2-material/components/input/input.ts", ["angular2/core.js", "angular2/common.js", "angular2/src/facade/async.js", "angular2/src/facade/lang.js", "angular2/src/platform/dom/dom_adapter.js"], function(exports_1) {
+    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+    var __metadata = (this && this.__metadata) || function (k, v) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    };
+    var __param = (this && this.__param) || function (paramIndex, decorator) {
+        return function (target, key) { decorator(target, key, paramIndex); }
+    };
+    var core_1, common_1, async_1, core_2, lang_1, dom_adapter_1, async_2;
+    var MdInput, MdInputContainer;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
                 core_2 = core_1_1;
             },
+            function (common_1_1) {
+                common_1 = common_1_1;
+            },
             function (async_1_1) {
                 async_1 = async_1_1;
+                async_2 = async_1_1;
+            },
+            function (lang_1_1) {
+                lang_1 = lang_1_1;
+            },
+            function (dom_adapter_1_1) {
+                dom_adapter_1 = dom_adapter_1_1;
             }],
         execute: function() {
-            // TODO(jelbourn): validation (will depend on Forms API).
+            // TODO(jd): <select> hasFocus/hasValue classes
+            // TODO(jd): input container validation styles.
             // TODO(jelbourn): textarea resizing
             // TODO(jelbourn): max-length counter
-            // TODO(jelbourn): placeholder property
-            MdInputContainer = (function () {
-                function MdInputContainer(id) {
-                    // The MdInput or MdTextarea inside of this container.
-                    this._input = null;
-                    // Whether the input inside of this container has a non-empty value.
-                    this.inputHasValue = false;
-                    // Whether the input inside of this container has focus.
-                    this.inputHasFocus = false;
-                }
-                MdInputContainer.prototype.ngAfterContentChecked = function () {
-                    // Enforce that this directive actually contains a text input.
-                    if (this._input === null) {
-                        throw 'No <input> or <textarea> found inside of <md-input-container>';
-                    }
-                };
-                /** Registers the child MdInput or MdTextarea. */
-                MdInputContainer.prototype.registerInput = function (input) {
-                    var _this = this;
-                    if (this._input !== null) {
-                        throw 'Only one text input is allowed per <md-input-container>.';
-                    }
-                    this._input = input;
-                    this.inputHasValue = input.value != '';
-                    // Listen to input changes and focus events so that we can apply the appropriate CSS
-                    // classes based on the input state.
-                    async_1.ObservableWrapper.subscribe(input.mdChange, function (value) { _this.inputHasValue = value != ''; });
-                    async_1.ObservableWrapper.subscribe(input.mdFocusChange, function (hasFocus) { return _this.inputHasFocus = hasFocus; });
-                };
-                MdInputContainer = __decorate([
-                    core_1.Directive({
-                        selector: 'md-input-container',
-                        host: {
-                            '[class.md-input-has-value]': 'inputHasValue',
-                            '[class.md-input-focused]': 'inputHasFocus',
-                        }
-                    }),
-                    __param(0, core_1.Attribute('id')), 
-                    __metadata('design:paramtypes', [String])
-                ], MdInputContainer);
-                return MdInputContainer;
-            })();
-            exports_1("MdInputContainer", MdInputContainer);
             MdInput = (function () {
-                function MdInput(value, container, id) {
-                    // Events emitted by this directive. We use these special 'md-' events to communicate
-                    // to the parent MdInputContainer.
+                function MdInput(value, id) {
                     this.mdChange = new async_1.EventEmitter();
                     this.mdFocusChange = new async_1.EventEmitter();
-                    this.value = value == null ? '' : value;
-                    container.registerInput(this);
+                    if (lang_1.isPresent(value)) {
+                        this.value = value;
+                    }
                 }
-                MdInput.prototype.updateValue = function (event) {
-                    this.value = event.target.value;
-                    async_1.ObservableWrapper.callEmit(this.mdChange, this.value);
-                };
+                Object.defineProperty(MdInput.prototype, "value", {
+                    get: function () {
+                        return this._value;
+                    },
+                    set: function (value) {
+                        this._value = lang_1.isPresent(value) ? value : '';
+                        async_1.ObservableWrapper.callEmit(this.mdChange, this.value);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
                 MdInput.prototype.setHasFocus = function (hasFocus) {
                     async_1.ObservableWrapper.callEmit(this.mdFocusChange, hasFocus);
                 };
                 __decorate([
+                    core_2.Input('value'), 
+                    __metadata('design:type', String)
+                ], MdInput.prototype, "_value", void 0);
+                __decorate([
                     core_2.Input(), 
                     __metadata('design:type', String)
-                ], MdInput.prototype, "value", void 0);
+                ], MdInput.prototype, "placeholder", void 0);
                 __decorate([
                     core_2.Output(), 
                     __metadata('design:type', (typeof (_a = typeof async_1.EventEmitter !== 'undefined' && async_1.EventEmitter) === 'function' && _a) || Object)
@@ -1368,25 +1727,86 @@ System.register("ng2-material/components/input/input.ts", ["angular2/core.js", "
                 ], MdInput.prototype, "mdFocusChange", void 0);
                 MdInput = __decorate([
                     core_1.Directive({
-                        selector: 'input[md-input],input.md-input',
-                        providers: [MdInputContainer],
+                        selector: 'input[md-input],input.md-input,textarea[md-input],textarea.md-input',
                         host: {
                             'class': 'md-input',
-                            '(input)': 'updateValue($event)',
+                            '[value]': 'value',
+                            '(input)': 'value=$event.target.value',
                             '(focus)': 'setHasFocus(true)',
                             '(blur)': 'setHasFocus(false)'
-                        }
+                        },
+                        providers: [common_1.FORM_PROVIDERS]
                     }),
                     __param(0, core_1.Attribute('value')),
-                    __param(1, core_1.SkipSelf()),
-                    __param(1, core_1.Host()),
-                    __param(2, core_1.Attribute('id')), 
-                    __metadata('design:paramtypes', [String, MdInputContainer, String])
+                    __param(1, core_1.Attribute('id')), 
+                    __metadata('design:paramtypes', [String, String])
                 ], MdInput);
                 return MdInput;
                 var _a, _b;
             })();
             exports_1("MdInput", MdInput);
+            MdInputContainer = (function () {
+                function MdInputContainer(id, _element) {
+                    this._element = _element;
+                    // The MdInput or MdTextarea inside of this container.
+                    this._input = null;
+                    // Whether the input inside of this container has a non-empty value.
+                    this.inputHasValue = false;
+                    // Whether the input inside of this container has focus.
+                    this.inputHasFocus = false;
+                    // Whether the input inside of this container has a placeholder
+                    this.inputHasPlaceholder = false;
+                }
+                MdInputContainer.prototype.ngOnChanges = function (_) {
+                    this.inputHasValue = this._input.value != '';
+                    // TODO(jd): Is there something like @ContentChild that accepts a selector? I would prefer not to
+                    // use a directive for label elements because I cannot use a parent->child selector to make them
+                    // specific to md-input
+                    this.inputHasPlaceholder = !!dom_adapter_1.DOM.querySelector(this._element.nativeElement, 'label') && !!this._input.placeholder;
+                };
+                MdInputContainer.prototype.ngAfterContentInit = function () {
+                    var _this = this;
+                    // If there is no text input, just bail and do nothing.
+                    if (this._input === null) {
+                        return;
+                    }
+                    // TODO(jd): :sob: what is the correct way to update these variables after the component initializes?
+                    //  any time I do it directly here, debug mode complains about values changing after being checked. I
+                    //  need to wait until the content has been initialized so that `_input` is there
+                    // For now, just wrap it in a setTimeout to let the change detection finish up, and then set the values...
+                    async_2.TimerWrapper.setTimeout(function () { return _this.ngOnChanges({}); }, 0);
+                    // Listen to input changes and focus events so that we can apply the appropriate CSS
+                    // classes based on the input state.
+                    async_1.ObservableWrapper.subscribe(this._input.mdChange, function (value) {
+                        _this.inputHasValue = value != '';
+                    });
+                    async_1.ObservableWrapper.subscribe(this._input.mdFocusChange, function (hasFocus) {
+                        _this.inputHasFocus = hasFocus;
+                    });
+                };
+                __decorate([
+                    core_1.ContentChild(MdInput), 
+                    __metadata('design:type', MdInput)
+                ], MdInputContainer.prototype, "_input", void 0);
+                MdInputContainer = __decorate([
+                    core_1.Component({
+                        selector: 'md-input-container',
+                        host: {
+                            '[class.md-input-has-value]': 'inputHasValue',
+                            '[class.md-input-has-placeholder]': 'inputHasPlaceholder',
+                            '[class.md-input-focused]': 'inputHasFocus',
+                        }
+                    }),
+                    core_1.View({
+                        template: "<ng-content></ng-content><div class=\"md-errors-spacer\"></div>"
+                    }),
+                    __param(0, core_1.Attribute('id')), 
+                    __metadata('design:paramtypes', [String, (typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
+                ], MdInputContainer);
+                return MdInputContainer;
+                var _a;
+            })();
+            exports_1("MdInputContainer", MdInputContainer);
         }
     }
 });
@@ -2134,6 +2554,7 @@ System.register("ng2-material/components/radio/radio_button.ts", ["angular2/core
                 util_1 = util_1_1;
             }],
         execute: function() {
+            // TODO(jd): Use @ContentChildren instead of registering radio buttons with group parent manually.
             // TODO(jelbourn): Behaviors to test
             // Radio name is pulled on parent group
             _uniqueIdCounter = 0;
@@ -2434,7 +2855,7 @@ System.register("ng2-material/components/radio/radio_dispatcher.ts", ["angular2/
         execute: function() {
             /**
              * Class for radio buttons to coordinate unique selection based on name.
-             * Indended to be consumed as an Angular service.
+             * Intended to be consumed as an Angular service.
              */
             MdRadioDispatcher = (function () {
                 function MdRadioDispatcher() {
@@ -2543,7 +2964,7 @@ System.register("ng2-material/components/checkbox/checkbox.ts", ["angular2/core.
                 util_1 = util_1_1;
             }],
         execute: function() {
-            // TODO(jdd): ng-true-value, ng-false-value
+            // TODO(jd): ng-true-value, ng-false-value
             MdCheckbox = (function () {
                 function MdCheckbox(tabindex) {
                     this.checkedChange = new core_2.EventEmitter();
@@ -2769,6 +3190,10 @@ System.register("ng2-material/core/util/util.ts", ["angular2/src/facade/lang.js"
         return lang_1.isPresent(attr) ? lang_2.NumberWrapper.parseInt(attr, 10) : 0;
     }
     exports_1("parseTabIndexAttribute", parseTabIndexAttribute);
+    function isNumber(value) {
+        return Object.prototype.toString.call(value) === '[object Number]';
+    }
+    exports_1("isNumber", isNumber);
     return {
         setters:[
             function (lang_1_1) {
@@ -2899,7 +3324,7 @@ System.register("ng2-material/components/toolbar/toolbar.ts", ["angular2/core.js
                     if (!this.mdScrollShrink) {
                         return;
                     }
-                    // TODO(jdd): better way to find siblings?
+                    // TODO(jd): better way to find siblings?
                     this._content = dom_adapter_1.DOM.querySelector(dom_adapter_1.DOM.parentElement(this.el.nativeElement), 'md-content');
                     if (!this._content) {
                         return;
@@ -3553,8 +3978,8 @@ System.register("ng2-material/core/util/media.ts", ["angular2/core.js"], functio
     }
 });
 
-System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "ng2-material/components/button/button.ts", "ng2-material/components/checkbox/checkbox.ts", "ng2-material/components/content/content.ts", "ng2-material/components/dialog/dialog.ts", "ng2-material/components/divider/divider.ts", "ng2-material/components/grid_list/grid_list.ts", "ng2-material/components/icon/icon.ts", "ng2-material/components/input/input.ts", "ng2-material/components/list/list.ts", "ng2-material/components/progress_linear/progress_linear.ts", "ng2-material/components/progress_circular/progress_circular.ts", "ng2-material/components/peekaboo/peekaboo.ts", "ng2-material/components/radio/radio_button.ts", "ng2-material/components/radio/radio_dispatcher.ts", "ng2-material/components/switcher/switch.ts", "ng2-material/components/subheader/subheader.ts", "ng2-material/components/toolbar/toolbar.ts", "ng2-material/components/tabs/tabs.ts", "ng2-material/core/util/media.ts"], function(exports_1) {
-    var lang_1, button_1, checkbox_1, content_1, dialog_1, divider_1, grid_list_1, icon_1, input_1, list_1, progress_linear_1, progress_circular_1, peekaboo_1, radio_button_1, radio_dispatcher_1, switch_1, subheader_1, toolbar_1, tabs_1, media_1;
+System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "ng2-material/components/button/button.ts", "ng2-material/components/checkbox/checkbox.ts", "ng2-material/components/content/content.ts", "ng2-material/components/dialog/dialog.ts", "ng2-material/components/divider/divider.ts", "ng2-material/components/grid_list/grid_list.ts", "ng2-material/components/icon/icon.ts", "ng2-material/components/form/validators.ts", "ng2-material/components/form/messages.ts", "ng2-material/components/input/input.ts", "ng2-material/components/list/list.ts", "ng2-material/components/progress_linear/progress_linear.ts", "ng2-material/components/progress_circular/progress_circular.ts", "ng2-material/components/peekaboo/peekaboo.ts", "ng2-material/components/radio/radio_button.ts", "ng2-material/components/radio/radio_dispatcher.ts", "ng2-material/components/switcher/switch.ts", "ng2-material/components/subheader/subheader.ts", "ng2-material/components/toolbar/toolbar.ts", "ng2-material/components/tabs/tabs.ts", "ng2-material/core/util/media.ts"], function(exports_1) {
+    var lang_1, button_1, checkbox_1, content_1, dialog_1, divider_1, grid_list_1, icon_1, validators_1, messages_1, input_1, list_1, progress_linear_1, progress_circular_1, peekaboo_1, radio_button_1, radio_dispatcher_1, switch_1, subheader_1, toolbar_1, tabs_1, media_1;
     var MATERIAL_DIRECTIVES, MATERIAL_PROVIDERS;
     var exportedNames_1 = {
         'MATERIAL_DIRECTIVES': true,
@@ -3599,6 +4024,14 @@ System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "ng2-mate
             function (icon_1_1) {
                 icon_1 = icon_1_1;
                 exportStar_1(icon_1_1);
+            },
+            function (validators_1_1) {
+                validators_1 = validators_1_1;
+                exportStar_1(validators_1_1);
+            },
+            function (messages_1_1) {
+                messages_1 = messages_1_1;
+                exportStar_1(messages_1_1);
             },
             function (input_1_1) {
                 input_1 = input_1_1;
@@ -3659,6 +4092,10 @@ System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "ng2-mate
                 grid_list_1.MdGridList, grid_list_1.MdGridTile,
                 icon_1.MdIcon,
                 input_1.MdInput, input_1.MdInputContainer,
+                validators_1.MdPatternValidator, validators_1.MdMaxLengthValidator,
+                validators_1.MdMinValueValidator, validators_1.MdMaxValueValidator,
+                validators_1.MdNumberRequiredValidator,
+                messages_1.MdMessage, messages_1.MdMessages,
                 list_1.MdList, list_1.MdListItem,
                 peekaboo_1.MdPeekaboo,
                 progress_linear_1.MdProgressLinear,
@@ -3675,7 +4112,8 @@ System.register("ng2-material/all.ts", ["angular2/src/facade/lang.js", "ng2-mate
             exports_1("MATERIAL_PROVIDERS", MATERIAL_PROVIDERS = [
                 dialog_1.MdDialog,
                 media_1.Media,
-                radio_dispatcher_1.MdRadioDispatcher
+                radio_dispatcher_1.MdRadioDispatcher,
+                validators_1.INPUT_VALIDATORS
             ]);
         }
     }

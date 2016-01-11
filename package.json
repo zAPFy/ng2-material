@@ -1,6 +1,6 @@
 {
   "name": "ng2-material",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "",
   "main": "all.ts",
   "repository": {
@@ -60,6 +60,8 @@
   },
   "contributors": [
     "Jaroslav Řehořka <jaroslav.rehorka@gmail.com>",
-    "Justin DuJardin <justindujardin@users.noreply.github.com>"
+    "Justin DuJardin <justindujardin@users.noreply.github.com>",
+    "Adam Busbin <aw.busbin@gmail.com>",
+    "Chris Seto <chriskseto@gmail.com>"
   ]
 }

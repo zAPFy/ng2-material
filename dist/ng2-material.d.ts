@@ -123,6 +123,7 @@ declare module 'ng2-material/core/util/util' {
 	export function throttle(func: any, delay: any, scope: any): () => void;
 	export function rAF(callback: any): void;
 	export function parseTabIndexAttribute(attr: any): number;
+	export function isNumber(value: any): boolean;
 
 }
 declare module 'ng2-material/components/checkbox/checkbox' {
@@ -440,25 +441,113 @@ declare module 'ng2-material/components/icon/icon' {
 	}
 
 }
+declare module 'ng2-material/components/form/validators' {
+	import { Validator } from "angular2/common";
+	import { Control } from "angular2/common";
+	export class MdPatternValidator implements Validator {
+	    /**
+	     * Returns a validator that checks to see if a string matches a given Regular Expression
+	     */
+	    static inline(pattern: string): Function;
+	    mdPattern: string;
+	    constructor(pattern: any);
+	    validate(control: Control): {
+	        [key: string]: any;
+	    };
+	}
+	export class MdMaxLengthValidator implements Validator {
+	    /**
+	     * Returns a validator that checks for a maximum length of a string
+	     */
+	    static inline(length: number | string): Function;
+	    mdMaxLength: string;
+	    constructor(attr: any);
+	    validate(control: Control): {
+	        [key: string]: any;
+	    };
+	}
+	export class MdMaxValueValidator implements Validator {
+	    /**
+	     * Returns a validator that checks for a maximum number value
+	     */
+	    static inline(length: number | string): Function;
+	    mdMax: string;
+	    constructor(attr: any);
+	    validate(control: Control): {
+	        [key: string]: any;
+	    };
+	}
+	export class MdMinValueValidator implements Validator {
+	    /**
+	     * Returns a validator that checks for a minimum number value
+	     */
+	    static inline(length: number | string): Function;
+	    mdMin: string;
+	    constructor(attr: any);
+	    validate(control: Control): {
+	        [key: string]: any;
+	    };
+	}
+	export class MdNumberRequiredValidator implements Validator {
+	    /**
+	     * Returns a validator that checks for the existence of a truthy value
+	     */
+	    static inline(): Function;
+	    validate(control: Control): {
+	        [key: string]: any;
+	    };
+	}
+	export const INPUT_VALIDATORS: (typeof MdMaxLengthValidator | typeof MdPatternValidator | typeof MdMaxValueValidator | typeof MdMinValueValidator | typeof MdNumberRequiredValidator)[];
+
+}
+declare module 'ng2-material/components/form/messages' {
+	import { OnDestroy, OnInit, QueryList } from 'angular2/core';
+	import { NgFormModel, NgControlName } from 'angular2/common';
+	export class MdMessage {
+	    errorKey: string;
+	    okay: boolean;
+	    constructor(pattern: any);
+	}
+	export class MdMessages implements OnInit, OnDestroy {
+	    messages: QueryList<MdMessage>;
+	    form: NgFormModel;
+	    property: string | NgControlName;
+	    valid: boolean;
+	    isTouched: boolean;
+	    constructor(messages: QueryList<MdMessage>, form: NgFormModel, pattern: any);
+	    /**
+	     * Subscription to value changes that is to be dropped when the component is destroyed.
+	     * @type {null}
+	     * @private
+	     */
+	    private _unsubscribe;
+	    ngOnInit(): void;
+	    ngOnDestroy(): any;
+	    private _valueChanged(newValue);
+	}
+
+}
 declare module 'ng2-material/components/input/input' {
-	import { AfterContentChecked } from 'angular2/core';
+	import { AfterContentInit, ElementRef, OnChanges } from 'angular2/core';
 	import { EventEmitter } from 'angular2/src/facade/async';
-	export class MdInputContainer implements AfterContentChecked {
+	export class MdInput {
+	    _value: string;
+	    value: string;
+	    placeholder: string;
+	    mdChange: EventEmitter<any>;
+	    mdFocusChange: EventEmitter<any>;
+	    constructor(value: string, id: string);
+	    setHasFocus(hasFocus: boolean): void;
+	}
+	export class MdInputContainer implements AfterContentInit, OnChanges {
+	    private _element;
 	    _input: MdInput;
 	    inputHasValue: boolean;
 	    inputHasFocus: boolean;
-	    constructor(id: string);
-	    ngAfterContentChecked(): void;
-	    /** Registers the child MdInput or MdTextarea. */
-	    registerInput(input: any): void;
-	}
-	export class MdInput {
-	    value: string;
-	    mdChange: EventEmitter<any>;
-	    mdFocusChange: EventEmitter<any>;
-	    constructor(value: string, container: MdInputContainer, id: string);
-	    updateValue(event: any): void;
-	    setHasFocus(hasFocus: boolean): void;
+	    inputHasPlaceholder: boolean;
+	    constructor(id: string, _element: ElementRef);
+	    ngOnChanges(_: any): void;
+	    ngAfterContentInit(): void;
 	}
 
 }
@@ -683,11 +772,10 @@ declare module 'ng2-material/components/peekaboo/peekaboo' {
 declare module 'ng2-material/components/radio/radio_dispatcher' {
 	/**
 	 * Class for radio buttons to coordinate unique selection based on name.
-	 * Indended to be consumed as an Angular service.
+	 * Intended to be consumed as an Angular service.
 	 */
 	export class MdRadioDispatcher {
 	    listeners_: Function[];
-	    constructor();
 	    /** Notify other nadio buttons that selection for the given name has been set. */
 	    notify(name: string): void;
 	    /** Listen for future changes to radio button selection. */
@@ -889,6 +977,8 @@ declare module 'ng2-material/all' {
 	export * from 'ng2-material/components/divider/divider';
 	export * from 'ng2-material/components/grid_list/grid_list';
 	export * from 'ng2-material/components/icon/icon';
+	export * from 'ng2-material/components/form/validators';
+	export * from 'ng2-material/components/form/messages';
 	export * from 'ng2-material/components/input/input';
 	export * from 'ng2-material/components/list/list';
 	export * from 'ng2-material/components/progress_linear/progress_linear';

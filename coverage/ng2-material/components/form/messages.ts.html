@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ng2-material/components/form/messages.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">ng2-material/components/form/</a> messages.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">59.32% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>35/59</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">27.27% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">77.78% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">58.62% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>34/58</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {CONST_EXPR} from 'angular2/src/facade/lang';
+import {NG_VALIDATORS} from 'angular2/common';
+import {
+  Attribute, Input, Provider, Directive, Optional, SkipSelf, Host, OnDestroy, OnInit,
+  ContentChildren, QueryList, Query, AfterContentInit
+} from 'angular2/core';
+import {Validator, NgFormModel, NgControlName} from 'angular2/common';
+import {Control, ControlGroup, AbstractControl} from 'angular2/common';
+import {isPresent} from 'angular2/src/facade/lang';
+&nbsp;
+&nbsp;
+// TODO(jd): Behaviors to test
+// - md-messages with no md-message children act as message for all errors in a field
+// - md-message="propName" binds to FormBuilder group by given name
+// - [md-message]="viewLocal" binds to given NgControlName referenced from the view
+// - [md-messages] adds md-valid and md-invalid class based on field validation state
+// - throws informative errors when it fails to bind to a given form field because it cannot be found.
+&nbsp;
+@Directive({
+  selector: '[md-message]',
+  host: {
+    '[style.display]': 'okay ? "none" : "inherit"'
+  }
+})
+export class MdMessage {
+  @Input('md-message') errorKey: string;
+&nbsp;
+  okay: boolean = true;
+&nbsp;
+  constructor(@Attribute('md-message') pattern: any) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (isPresent(pattern)) {
+      this.errorKey = pattern;
+    }
+  }
+}
+&nbsp;
+&nbsp;
+@Directive({
+  selector: '[md-messages]',
+  host: {
+    'md-messages': '',
+    '[style.display]': '(valid || !isTouched) ? "none" : "inherit"',
+    '[class.md-valid]': 'valid &amp;&amp; isTouched',
+    '[class.md-invalid]': '!valid &amp;&amp; isTouched'
+  }
+})
+export class MdMessages implements OnInit, OnDestroy {
+&nbsp;
+  @Input('md-messages') property: string|NgControlName;
+&nbsp;
+  valid: boolean = true;
+&nbsp;
+  get isTouched(): boolean {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (this.property instanceof NgControlName) {
+      return (&lt;NgControlName&gt;this.property).touched;
+    }
+<span class="cstat-no" title="statement not covered" >    let prop = &lt;string&gt;this.property;</span>
+<span class="cstat-no" title="statement not covered" >    let group = this.form.control;</span>
+<span class="cstat-no" title="statement not covered" >    let ctrl = group.controls[prop];</span>
+<span class="cstat-no" title="statement not covered" >    return ctrl &amp;&amp; ctrl.touched;</span>
+  }
+&nbsp;
+&nbsp;
+  constructor(@Query(MdMessage) public messages: QueryList&lt;MdMessage&gt;,
+              @Optional() @SkipSelf() @Host() public form: NgFormModel,
+              @Attribute('md-messages') pattern: any) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (isPresent(pattern)) {
+      this.property = pattern;
+    }
+  }
+&nbsp;
+  /**
+   * Subscription to value changes that is to be dropped when the component is destroyed.
+   * @type {null}
+   * @private
+   */
+  private _unsubscribe: any = null;
+&nbsp;
+  ngOnInit() {
+    if (this.property instanceof NgControlName) {
+      let ctrl: NgControlName = &lt;NgControlName&gt;this.property;
+      this.form = ctrl.formDirective;
+      this._unsubscribe = (&lt;any&gt;ctrl).update.subscribe(this._valueChanged.bind(this));
+    }
+    else {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.form) {
+        throw new Error('md-messages cannot bind to text property without a parent NgFormModel');
+      }
+<span class="cstat-no" title="statement not covered" >      let prop = &lt;string&gt;this.property;</span>
+<span class="cstat-no" title="statement not covered" >      let group: ControlGroup = this.form.control;</span>
+<span class="cstat-no" title="statement not covered" >      if (!group) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('md-messages cannot bind to text property without a ControlGroup');</span>
+      }
+<span class="cstat-no" title="statement not covered" >      let ctrl: AbstractControl = group.controls[prop];</span>
+<span class="cstat-no" title="statement not covered" >      if (!ctrl) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error(`md-messages cannot find property(${prop}) in ControlGroup!`);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      this._unsubscribe = ctrl.valueChanges.subscribe(this._valueChanged.bind(this));</span>
+    }
+  }
+&nbsp;
+  ngOnDestroy(): any {
+    this._unsubscribe.unsubscribe();
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private _valueChanged(newValue: string)</span> {
+<span class="cstat-no" title="statement not covered" >    let errors: {[errorKey:string]:string} = null;</span>
+<span class="cstat-no" title="statement not covered" >    if (this.property instanceof NgControlName) {</span>
+<span class="cstat-no" title="statement not covered" >      let ctrl: NgControlName = &lt;NgControlName&gt;this.property;</span>
+<span class="cstat-no" title="statement not covered" >      errors = ctrl.errors;</span>
+    }
+    else {
+<span class="cstat-no" title="statement not covered" >      let prop = &lt;string&gt;this.property;</span>
+<span class="cstat-no" title="statement not covered" >      let group = this.form.control;</span>
+<span class="cstat-no" title="statement not covered" >      let ctrl: AbstractControl = group.controls[prop];</span>
+<span class="cstat-no" title="statement not covered" >      errors = ctrl.errors;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    this.valid = !errors;</span>
+<span class="cstat-no" title="statement not covered" >    if (errors) {</span>
+<span class="cstat-no" title="statement not covered" >      this.messages.toArray().forEach(<span class="fstat-no" title="function not covered" >(m: MdMessage)</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        m.okay = !m.errorKey ? !errors : !isPresent(errors[m.errorKey]);</span>
+      });
+    }
+&nbsp;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jan 10 2016 17:30:22 GMT-0800 (PST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

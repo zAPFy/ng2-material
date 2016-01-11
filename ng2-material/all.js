@@ -16,6 +16,10 @@ var grid_list_1 = require('./components/grid_list/grid_list');
 __export(require('./components/grid_list/grid_list'));
 var icon_1 = require('./components/icon/icon');
 __export(require('./components/icon/icon'));
+var validators_1 = require('./components/form/validators');
+__export(require('./components/form/validators'));
+var messages_1 = require('./components/form/messages');
+__export(require('./components/form/messages'));
 var input_1 = require('./components/input/input');
 __export(require('./components/input/input'));
 var list_1 = require('./components/list/list');
@@ -47,6 +51,10 @@ exports.MATERIAL_DIRECTIVES = lang_1.CONST_EXPR([
     grid_list_1.MdGridList, grid_list_1.MdGridTile,
     icon_1.MdIcon,
     input_1.MdInput, input_1.MdInputContainer,
+    validators_1.MdPatternValidator, validators_1.MdMaxLengthValidator,
+    validators_1.MdMinValueValidator, validators_1.MdMaxValueValidator,
+    validators_1.MdNumberRequiredValidator,
+    messages_1.MdMessage, messages_1.MdMessages,
     list_1.MdList, list_1.MdListItem,
     peekaboo_1.MdPeekaboo,
     progress_linear_1.MdProgressLinear,
@@ -60,6 +68,7 @@ exports.MATERIAL_DIRECTIVES = lang_1.CONST_EXPR([
 exports.MATERIAL_PROVIDERS = [
     dialog_2.MdDialog,
     media_1.Media,
-    radio_dispatcher_1.MdRadioDispatcher
+    radio_dispatcher_1.MdRadioDispatcher,
+    validators_1.INPUT_VALIDATORS
 ];
 //# sourceMappingURL=all.js.map

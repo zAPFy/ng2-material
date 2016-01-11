@@ -11,61 +11,42 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = require('angular2/core');
+var common_1 = require('angular2/common');
 var async_1 = require('angular2/src/facade/async');
 var core_2 = require('angular2/core');
-var MdInputContainer = (function () {
-    function MdInputContainer(id) {
-        this._input = null;
-        this.inputHasValue = false;
-        this.inputHasFocus = false;
-    }
-    MdInputContainer.prototype.ngAfterContentChecked = function () {
-        if (this._input === null) {
-            throw 'No <input> or <textarea> found inside of <md-input-container>';
-        }
-    };
-    MdInputContainer.prototype.registerInput = function (input) {
-        var _this = this;
-        if (this._input !== null) {
-            throw 'Only one text input is allowed per <md-input-container>.';
-        }
-        this._input = input;
-        this.inputHasValue = input.value != '';
-        async_1.ObservableWrapper.subscribe(input.mdChange, function (value) { _this.inputHasValue = value != ''; });
-        async_1.ObservableWrapper.subscribe(input.mdFocusChange, function (hasFocus) { return _this.inputHasFocus = hasFocus; });
-    };
-    MdInputContainer = __decorate([
-        core_1.Directive({
-            selector: 'md-input-container',
-            host: {
-                '[class.md-input-has-value]': 'inputHasValue',
-                '[class.md-input-focused]': 'inputHasFocus',
-            }
-        }),
-        __param(0, core_1.Attribute('id')), 
-        __metadata('design:paramtypes', [String])
-    ], MdInputContainer);
-    return MdInputContainer;
-})();
-exports.MdInputContainer = MdInputContainer;
+var lang_1 = require('angular2/src/facade/lang');
+var dom_adapter_1 = require("angular2/src/platform/dom/dom_adapter");
+var async_2 = require("angular2/src/facade/async");
 var MdInput = (function () {
-    function MdInput(value, container, id) {
+    function MdInput(value, id) {
         this.mdChange = new async_1.EventEmitter();
         this.mdFocusChange = new async_1.EventEmitter();
-        this.value = value == null ? '' : value;
-        container.registerInput(this);
+        if (lang_1.isPresent(value)) {
+            this.value = value;
+        }
     }
-    MdInput.prototype.updateValue = function (event) {
-        this.value = event.target.value;
-        async_1.ObservableWrapper.callEmit(this.mdChange, this.value);
-    };
+    Object.defineProperty(MdInput.prototype, "value", {
+        get: function () {
+            return this._value;
+        },
+        set: function (value) {
+            this._value = lang_1.isPresent(value) ? value : '';
+            async_1.ObservableWrapper.callEmit(this.mdChange, this.value);
+        },
+        enumerable: true,
+        configurable: true
+    });
     MdInput.prototype.setHasFocus = function (hasFocus) {
         async_1.ObservableWrapper.callEmit(this.mdFocusChange, hasFocus);
     };
     __decorate([
+        core_2.Input('value'), 
+        __metadata('design:type', String)
+    ], MdInput.prototype, "_value", void 0);
+    __decorate([
         core_2.Input(), 
         __metadata('design:type', String)
-    ], MdInput.prototype, "value", void 0);
+    ], MdInput.prototype, "placeholder", void 0);
     __decorate([
         core_2.Output(), 
         __metadata('design:type', async_1.EventEmitter)
@@ -76,22 +57,68 @@ var MdInput = (function () {
     ], MdInput.prototype, "mdFocusChange", void 0);
     MdInput = __decorate([
         core_1.Directive({
-            selector: 'input[md-input],input.md-input',
-            providers: [MdInputContainer],
+            selector: 'input[md-input],input.md-input,textarea[md-input],textarea.md-input',
             host: {
                 'class': 'md-input',
-                '(input)': 'updateValue($event)',
+                '[value]': 'value',
+                '(input)': 'value=$event.target.value',
                 '(focus)': 'setHasFocus(true)',
                 '(blur)': 'setHasFocus(false)'
-            }
+            },
+            providers: [common_1.FORM_PROVIDERS]
         }),
         __param(0, core_1.Attribute('value')),
-        __param(1, core_1.SkipSelf()),
-        __param(1, core_1.Host()),
-        __param(2, core_1.Attribute('id')), 
-        __metadata('design:paramtypes', [String, MdInputContainer, String])
+        __param(1, core_1.Attribute('id')), 
+        __metadata('design:paramtypes', [String, String])
     ], MdInput);
     return MdInput;
 })();
 exports.MdInput = MdInput;
+var MdInputContainer = (function () {
+    function MdInputContainer(id, _element) {
+        this._element = _element;
+        this._input = null;
+        this.inputHasValue = false;
+        this.inputHasFocus = false;
+        this.inputHasPlaceholder = false;
+    }
+    MdInputContainer.prototype.ngOnChanges = function (_) {
+        this.inputHasValue = this._input.value != '';
+        this.inputHasPlaceholder = !!dom_adapter_1.DOM.querySelector(this._element.nativeElement, 'label') && !!this._input.placeholder;
+    };
+    MdInputContainer.prototype.ngAfterContentInit = function () {
+        var _this = this;
+        if (this._input === null) {
+            return;
+        }
+        async_2.TimerWrapper.setTimeout(function () { return _this.ngOnChanges({}); }, 0);
+        async_1.ObservableWrapper.subscribe(this._input.mdChange, function (value) {
+            _this.inputHasValue = value != '';
+        });
+        async_1.ObservableWrapper.subscribe(this._input.mdFocusChange, function (hasFocus) {
+            _this.inputHasFocus = hasFocus;
+        });
+    };
+    __decorate([
+        core_1.ContentChild(MdInput), 
+        __metadata('design:type', MdInput)
+    ], MdInputContainer.prototype, "_input", void 0);
+    MdInputContainer = __decorate([
+        core_1.Component({
+            selector: 'md-input-container',
+            host: {
+                '[class.md-input-has-value]': 'inputHasValue',
+                '[class.md-input-has-placeholder]': 'inputHasPlaceholder',
+                '[class.md-input-focused]': 'inputHasFocus',
+            }
+        }),
+        core_1.View({
+            template: "<ng-content></ng-content><div class=\"md-errors-spacer\"></div>"
+        }),
+        __param(0, core_1.Attribute('id')), 
+        __metadata('design:paramtypes', [String, core_1.ElementRef])
+    ], MdInputContainer);
+    return MdInputContainer;
+})();
+exports.MdInputContainer = MdInputContainer;
 //# sourceMappingURL=input.js.map

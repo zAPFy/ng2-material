@@ -23,6 +23,8 @@ var core_2 = require("angular2/core");
 var components_1 = require("./services/components");
 var navigation_1 = require("./services/navigation");
 var version_1 = require("./services/version");
+var view_listener_1 = require('angular2/src/core/linker/view_listener');
+var common_dom_1 = require('angular2/platform/common_dom');
 var DemosApp = (function () {
     function DemosApp(http, navigation) {
         var _this = this;
@@ -50,10 +52,16 @@ var DemosApp = (function () {
     return DemosApp;
 })();
 exports.DemosApp = DemosApp;
-core_1.enableProdMode();
-browser_1.bootstrap(DemosApp, [
+var appProviders = [
     http_1.HTTP_PROVIDERS, router_1.ROUTER_PROVIDERS, all_1.MATERIAL_PROVIDERS,
     components_1.ComponentsService, navigation_1.NavigationService, version_1.VersionService,
     core_2.bind(router_4.LocationStrategy).toClass(router_3.HashLocationStrategy)
-]);
+];
+if (window.location.href.indexOf('github.com') !== -1) {
+    core_1.enableProdMode();
+}
+else {
+    appProviders.push(core_2.bind(view_listener_1.AppViewListener).toClass(common_dom_1.DebugElementViewListener));
+}
+browser_1.bootstrap(DemosApp, appProviders);
 //# sourceMappingURL=app.js.map

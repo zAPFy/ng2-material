@@ -22,7 +22,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>40/40</span>
+        <span class='fraction'>44/44</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>40/40</span>
+        <span class='fraction'>44/44</span>
       </div>
     </div>
   </div>
@@ -130,7 +130,22 @@
 85
 86
 87
-88</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -154,21 +169,11 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -183,6 +188,26 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -212,7 +237,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -239,6 +269,16 @@ export * from './components/grid_list/grid_list';
 &nbsp;
 import {MdIcon} from './components/icon/icon';
 export * from './components/icon/icon';
+&nbsp;
+import {
+  MdPatternValidator, MdMaxLengthValidator,
+  MdMinValueValidator, MdMaxValueValidator,
+  MdNumberRequiredValidator,
+  INPUT_VALIDATORS
+} from './components/form/validators';
+export * from './components/form/validators';
+import {MdMessage, MdMessages} from './components/form/messages';
+export * from './components/form/messages';
 &nbsp;
 import {MdInput, MdInputContainer} from './components/input/input';
 export * from './components/input/input';
@@ -285,6 +325,10 @@ export const MATERIAL_DIRECTIVES: Type[] = CONST_EXPR([
   MdGridList, MdGridTile,
   MdIcon,
   MdInput, MdInputContainer,
+  MdPatternValidator, MdMaxLengthValidator,
+  MdMinValueValidator, MdMaxValueValidator,
+  MdNumberRequiredValidator,
+  MdMessage, MdMessages,
   MdList, MdListItem,
   MdPeekaboo,
   MdProgressLinear,
@@ -302,7 +346,8 @@ export const MATERIAL_DIRECTIVES: Type[] = CONST_EXPR([
 export const MATERIAL_PROVIDERS: any[] = [
   MdDialog,
   Media,
-  MdRadioDispatcher
+  MdRadioDispatcher,
+  INPUT_VALIDATORS
 ];
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -310,7 +355,7 @@ export const MATERIAL_PROVIDERS: any[] = [
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jan 06 2016 20:45:24 GMT-0800 (PST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jan 10 2016 17:30:22 GMT-0800 (PST)
 </div>
 </div>
 <script src="../prettify.js"></script>

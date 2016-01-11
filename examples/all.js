@@ -18,11 +18,15 @@ var dynamic_tabs_1 = require('./components/tabs/dynamic_tabs');
 var basic_usage_9 = require("./components/checkbox/basic_usage");
 var syncing_1 = require("./components/checkbox/syncing");
 var basic_usage_10 = require("./components/list/basic_usage");
+var basic_usage_11 = require("./components/input/basic_usage");
+var form_builder_1 = require("./components/input/form_builder");
 exports.DEMO_DIRECTIVES = lang_1.CONST_EXPR([
     basic_usage_1.default, inline_actions_1.default, action_buttons_1.default,
     basic_usage_2.default,
     basic_usage_9.default, syncing_1.default,
     basic_usage_3.default,
+    basic_usage_11.default,
+    form_builder_1.InputFormBuilder,
     basic_usage_10.default,
     basic_usage_7.default,
     basic_usage_8.default,

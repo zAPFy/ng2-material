@@ -1,8 +1,8 @@
 [
   {
     "lines": {
-      "found": 40,
-      "hit": 40,
+      "found": 44,
+      "hit": 44,
       "percent": 100
     },
     "functions": {
@@ -38,13 +38,13 @@
   {
     "lines": {
       "found": 37,
-      "hit": 32,
-      "percent": 86
+      "hit": 33,
+      "percent": 89
     },
     "functions": {
-      "hit": 8,
+      "hit": 9,
       "found": 10,
-      "percent": 80
+      "percent": 90
     },
     "branches": {
       "hit": 3,
@@ -56,18 +56,18 @@
   {
     "lines": {
       "found": 71,
-      "hit": 66,
-      "percent": 93
+      "hit": 70,
+      "percent": 99
     },
     "functions": {
-      "hit": 18,
+      "hit": 20,
       "found": 20,
-      "percent": 90
+      "percent": 100
     },
     "branches": {
-      "hit": 11,
+      "hit": 12,
       "found": 18,
-      "percent": 61
+      "percent": 67
     },
     "file": "ng2-material/core/util/animate.ts"
   },
@@ -109,14 +109,14 @@
   },
   {
     "lines": {
-      "found": 23,
-      "hit": 15,
-      "percent": 65
+      "found": 25,
+      "hit": 17,
+      "percent": 68
     },
     "functions": {
-      "hit": 5,
-      "found": 7,
-      "percent": 71
+      "hit": 6,
+      "found": 8,
+      "percent": 75
     },
     "branches": {
       "hit": 3,
@@ -307,19 +307,55 @@
   },
   {
     "lines": {
-      "found": 35,
-      "hit": 29,
-      "percent": 83
+      "found": 81,
+      "hit": 51,
+      "percent": 63
     },
     "functions": {
+      "hit": 9,
+      "found": 29,
+      "percent": 31
+    },
+    "branches": {
+      "hit": 8,
+      "found": 28,
+      "percent": 29
+    },
+    "file": "ng2-material/components/form/validators.ts"
+  },
+  {
+    "lines": {
+      "found": 58,
+      "hit": 34,
+      "percent": 59
+    },
+    "functions": {
+      "hit": 7,
+      "found": 9,
+      "percent": 78
+    },
+    "branches": {
       "hit": 6,
-      "found": 10,
-      "percent": 60
+      "found": 22,
+      "percent": 27
+    },
+    "file": "ng2-material/components/form/messages.ts"
+  },
+  {
+    "lines": {
+      "found": 45,
+      "hit": 38,
+      "percent": 84
+    },
+    "functions": {
+      "hit": 8,
+      "found": 12,
+      "percent": 67
     },
     "branches": {
       "hit": 3,
-      "found": 6,
-      "percent": 50
+      "found": 8,
+      "percent": 38
     },
     "file": "ng2-material/components/input/input.ts"
   },
@@ -433,13 +469,13 @@
   },
   {
     "lines": {
-      "found": 10,
-      "hit": 10,
+      "found": 9,
+      "hit": 9,
       "percent": 100
     },
     "functions": {
-      "hit": 5,
-      "found": 5,
+      "hit": 4,
+      "found": 4,
       "percent": 100
     },
     "branches": {
