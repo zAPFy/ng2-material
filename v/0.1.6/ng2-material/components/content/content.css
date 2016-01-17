@@ -1,0 +1,27 @@
+.md-whiteframe-z1 {
+  box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
+  z-index: 1; }
+
+.md-whiteframe-z2 {
+  box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
+  z-index: 2; }
+
+md-content {
+  display: block;
+  position: relative;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; }
+  md-content[md-scroll-y] {
+    overflow-y: auto;
+    overflow-x: hidden; }
+  md-content[md-scroll-x] {
+    overflow-x: auto;
+    overflow-y: hidden; }
+  md-content.autoScroll {
+    -webkit-overflow-scrolling: auto; }
+
+md-content {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: white; }
+
+/*# sourceMappingURL=content.css.map */

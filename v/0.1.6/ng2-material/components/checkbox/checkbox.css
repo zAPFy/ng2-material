@@ -1,0 +1,207 @@
+.md-whiteframe-z1 {
+  box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
+  z-index: 1; }
+
+.md-whiteframe-z2 {
+  box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
+  z-index: 2; }
+
+md-checkbox {
+  box-sizing: border-box;
+  display: block;
+  margin: 15px;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: relative; }
+  md-checkbox.md-align-top-left .md-checkbox-container {
+    top: 12px; }
+  md-checkbox:last-of-type {
+    margin-left: inherit;
+    margin-right: 0; }
+    html[dir=rtl] md-checkbox:last-of-type {
+      margin-left: 0;
+      unicode-bidi: embed; }
+    body[dir=rtl] md-checkbox:last-of-type {
+      margin-left: 0;
+      unicode-bidi: embed; }
+    md-checkbox:last-of-type bdo[dir=rtl] {
+      direction: rtl;
+      unicode-bidi: bidi-override; }
+    md-checkbox:last-of-type bdo[dir=ltr] {
+      direction: ltr;
+      unicode-bidi: bidi-override; }
+    html[dir=rtl] md-checkbox:last-of-type {
+      margin-right: inherit;
+      unicode-bidi: embed; }
+    body[dir=rtl] md-checkbox:last-of-type {
+      margin-right: inherit;
+      unicode-bidi: embed; }
+    md-checkbox:last-of-type bdo[dir=rtl] {
+      direction: rtl;
+      unicode-bidi: bidi-override; }
+    md-checkbox:last-of-type bdo[dir=ltr] {
+      direction: ltr;
+      unicode-bidi: bidi-override; }
+  md-checkbox *, md-checkbox *:after {
+    box-sizing: border-box; }
+  md-checkbox[aria-checked="true"] .md-checkbox-icon {
+    border: none; }
+  md-checkbox[disabled] {
+    cursor: no-drop; }
+  md-checkbox:focus .md-checkbox-label:not(:empty) {
+    border-color: black; }
+  md-checkbox[aria-checked="true"] .md-checkbox-icon:after {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    display: table;
+    width: 6px;
+    height: 12px;
+    border: 2px solid;
+    border-top: 0;
+    border-left: 0;
+    content: ' '; }
+
+.md-checkbox-container {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  left: 0;
+  right: auto; }
+  html[dir=rtl] .md-checkbox-container {
+    left: auto;
+    unicode-bidi: embed; }
+  body[dir=rtl] .md-checkbox-container {
+    left: auto;
+    unicode-bidi: embed; }
+  .md-checkbox-container bdo[dir=rtl] {
+    direction: rtl;
+    unicode-bidi: bidi-override; }
+  .md-checkbox-container bdo[dir=ltr] {
+    direction: ltr;
+    unicode-bidi: bidi-override; }
+  html[dir=rtl] .md-checkbox-container {
+    right: 0;
+    unicode-bidi: embed; }
+  body[dir=rtl] .md-checkbox-container {
+    right: 0;
+    unicode-bidi: embed; }
+  .md-checkbox-container bdo[dir=rtl] {
+    direction: rtl;
+    unicode-bidi: bidi-override; }
+  .md-checkbox-container bdo[dir=ltr] {
+    direction: ltr;
+    unicode-bidi: bidi-override; }
+  .md-checkbox-container:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px; }
+  .md-checkbox-container .md-ripple-container {
+    position: absolute;
+    display: block;
+    width: auto;
+    height: auto;
+    left: -15px;
+    top: -15px;
+    right: -15px;
+    bottom: -15px; }
+
+.md-checkbox-icon {
+  -webkit-transition: 240ms;
+  transition: 240ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border: 2px solid;
+  border-radius: 2px; }
+
+.md-checkbox-label {
+  border: 1px dotted transparent;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  pointer-events: none;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
+  margin-left: 28px;
+  margin-right: 0; }
+  html[dir=rtl] .md-checkbox-label {
+    margin-left: 0;
+    unicode-bidi: embed; }
+  body[dir=rtl] .md-checkbox-label {
+    margin-left: 0;
+    unicode-bidi: embed; }
+  .md-checkbox-label bdo[dir=rtl] {
+    direction: rtl;
+    unicode-bidi: bidi-override; }
+  .md-checkbox-label bdo[dir=ltr] {
+    direction: ltr;
+    unicode-bidi: bidi-override; }
+  html[dir=rtl] .md-checkbox-label {
+    margin-right: 28px;
+    unicode-bidi: embed; }
+  body[dir=rtl] .md-checkbox-label {
+    margin-right: 28px;
+    unicode-bidi: embed; }
+  .md-checkbox-label bdo[dir=rtl] {
+    direction: rtl;
+    unicode-bidi: bidi-override; }
+  .md-checkbox-label bdo[dir=ltr] {
+    direction: ltr;
+    unicode-bidi: bidi-override; }
+
+md-checkbox .md-ripple {
+  color: #d81b60; }
+md-checkbox[aria-checked="true"] .md-ripple {
+  color: #757575; }
+md-checkbox .md-checkbox-icon {
+  border-color: rgba(0, 0, 0, 0.54); }
+md-checkbox[aria-checked="true"] .md-checkbox-icon {
+  background-color: rgba(233, 30, 99, 0.87); }
+md-checkbox[aria-checked="true"] .md-checkbox-icon:after {
+  border-color: #eeeeee; }
+md-checkbox:not([disabled]).md-primary .md-ripple {
+  color: #3949ab; }
+md-checkbox:not([disabled]).md-primary[aria-checked="true"] .md-ripple {
+  color: #757575; }
+md-checkbox:not([disabled]).md-primary .md-checkbox-icon {
+  border-color: rgba(0, 0, 0, 0.54); }
+md-checkbox:not([disabled]).md-primary[aria-checked="true"] .md-checkbox-icon {
+  background-color: rgba(63, 81, 181, 0.87); }
+md-checkbox:not([disabled]).md-primary[aria-checked="true"] .md-checkbox-icon:after {
+  border-color: #eeeeee; }
+md-checkbox:not([disabled]).md-warn .md-ripple {
+  color: #e53935; }
+md-checkbox:not([disabled]).md-warn .md-checkbox-icon {
+  border-color: rgba(0, 0, 0, 0.54); }
+md-checkbox:not([disabled]).md-warn[aria-checked="true"] .md-checkbox-icon {
+  background-color: rgba(244, 67, 54, 0.87); }
+md-checkbox:not([disabled]).md-warn[aria-checked="true"] .md-checkbox-icon:after {
+  border-color: #eeeeee; }
+md-checkbox[disabled] .md-checkbox-icon {
+  border-color: rgba(0, 0, 0, 0.26); }
+md-checkbox[disabled] .md-checkbox-label {
+  color: rgba(0, 0, 0, 0.26); }
+md-checkbox[disabled][aria-checked="true"] .md-checkbox-icon {
+  background-color: rgba(0, 0, 0, 0.26); }
+
+/*# sourceMappingURL=checkbox.css.map */

@@ -1,0 +1,560 @@
+[
+  {
+    "lines": {
+      "found": 44,
+      "hit": 44,
+      "percent": 100
+    },
+    "functions": {
+      "hit": 0,
+      "found": 0,
+      "percent": 100
+    },
+    "branches": {
+      "hit": 0,
+      "found": 0,
+      "percent": 100
+    },
+    "file": "ng2-material/all.ts"
+  },
+  {
+    "lines": {
+      "found": 35,
+      "hit": 33,
+      "percent": 94
+    },
+    "functions": {
+      "hit": 10,
+      "found": 12,
+      "percent": 83
+    },
+    "branches": {
+      "hit": 10,
+      "found": 12,
+      "percent": 83
+    },
+    "file": "ng2-material/components/button/button.ts"
+  },
+  {
+    "lines": {
+      "found": 37,
+      "hit": 33,
+      "percent": 89
+    },
+    "functions": {
+      "hit": 9,
+      "found": 10,
+      "percent": 90
+    },
+    "branches": {
+      "hit": 3,
+      "found": 6,
+      "percent": 50
+    },
+    "file": "ng2-material/core/util/ink.ts"
+  },
+  {
+    "lines": {
+      "found": 71,
+      "hit": 70,
+      "percent": 99
+    },
+    "functions": {
+      "hit": 20,
+      "found": 20,
+      "percent": 100
+    },
+    "branches": {
+      "hit": 12,
+      "found": 18,
+      "percent": 67
+    },
+    "file": "ng2-material/core/util/animate.ts"
+  },
+  {
+    "lines": {
+      "found": 29,
+      "hit": 29,
+      "percent": 100
+    },
+    "functions": {
+      "hit": 6,
+      "found": 6,
+      "percent": 100
+    },
+    "branches": {
+      "hit": 6,
+      "found": 6,
+      "percent": 100
+    },
+    "file": "ng2-material/components/checkbox/checkbox.ts"
+  },
+  {
+    "lines": {
+      "found": 8,
+      "hit": 8,
+      "percent": 100
+    },
+    "functions": {
+      "hit": 1,
+      "found": 1,
+      "percent": 100
+    },
+    "branches": {
+      "hit": 0,
+      "found": 0,
+      "percent": 100
+    },
+    "file": "ng2-material/core/key_codes.ts"
+  },
+  {
+    "lines": {
+      "found": 25,
+      "hit": 17,
+      "percent": 68
+    },
+    "functions": {
+      "hit": 6,
+      "found": 8,
+      "percent": 75
+    },
+    "branches": {
+      "hit": 3,
+      "found": 8,
+      "percent": 38
+    },
+    "file": "ng2-material/core/util/util.ts"
+  },
+  {
+    "lines": {
+      "found": 4,
+      "hit": 4,
+      "percent": 100
+    },
+    "functions": {
+      "hit": 1,
+      "found": 1,
+      "percent": 100
+    },
+    "branches": {
+      "hit": 0,
+      "found": 0,
+      "percent": 100
+    },
+    "file": "ng2-material/components/content/content.ts"
+  },
+  {
+    "lines": {
+      "found": 56,
+      "hit": 52,
+      "percent": 93
+    },
+    "functions": {
+      "hit": 12,
+      "found": 14,
+      "percent": 86
+    },
+    "branches": {
+      "hit": 10,
+      "found": 12,
+      "percent": 83
+    },
+    "file": "ng2-material/components/dialog/dialog.ts"
+  },
+  {
+    "lines": {
+      "found": 34,
+      "hit": 33,
+      "percent": 97
+    },
+    "functions": {
+      "hit": 10,
+      "found": 10,
+      "percent": 100
+    },
+    "branches": {
+      "hit": 7,
+      "found": 8,
+      "percent": 88
+    },
+    "file": "ng2-material/components/dialog/dialog_ref.ts"
+  },
+  {
+    "lines": {
+      "found": 32,
+      "hit": 32,
+      "percent": 100
+    },
+    "functions": {
+      "hit": 9,
+      "found": 9,
+      "percent": 100
+    },
+    "branches": {
+      "hit": 0,
+      "found": 0,
+      "percent": 100
+    },
+    "file": "ng2-material/components/dialog/dialog_config.ts"
+  },
+  {
+    "lines": {
+      "found": 25,
+      "hit": 23,
+      "percent": 92
+    },
+    "functions": {
+      "hit": 5,
+      "found": 7,
+      "percent": 71
+    },
+    "branches": {
+      "hit": 0,
+      "found": 2,
+      "percent": 0
+    },
+    "file": "ng2-material/components/dialog/dialog_container.ts"
+  },
+  {
+    "lines": {
+      "found": 47,
+      "hit": 47,
+      "percent": 100
+    },
+    "functions": {
+      "hit": 8,
+      "found": 8,
+      "percent": 100
+    },
+    "branches": {
+      "hit": 9,
+      "found": 9,
+      "percent": 100
+    },
+    "file": "ng2-material/components/backdrop/backdrop.ts"
+  },
+  {
+    "lines": {
+      "found": 15,
+      "hit": 15,
+      "percent": 100
+    },
+    "functions": {
+      "hit": 2,
+      "found": 2,
+      "percent": 100
+    },
+    "branches": {
+      "hit": 0,
+      "found": 0,
+      "percent": 100
+    },
+    "file": "ng2-material/components/dialog/dialog_basic.ts"
+  },
+  {
+    "lines": {
+      "found": 5,
+      "hit": 5,
+      "percent": 100
+    },
+    "functions": {
+      "hit": 1,
+      "found": 1,
+      "percent": 100
+    },
+    "branches": {
+      "hit": 0,
+      "found": 0,
+      "percent": 100
+    },
+    "file": "ng2-material/components/divider/divider.ts"
+  },
+  {
+    "lines": {
+      "found": 138,
+      "hit": 114,
+      "percent": 83
+    },
+    "functions": {
+      "hit": 33,
+      "found": 34,
+      "percent": 97
+    },
+    "branches": {
+      "hit": 15,
+      "found": 28,
+      "percent": 54
+    },
+    "file": "ng2-material/components/grid_list/grid_list.ts"
+  },
+  {
+    "lines": {
+      "found": 4,
+      "hit": 4,
+      "percent": 100
+    },
+    "functions": {
+      "hit": 1,
+      "found": 1,
+      "percent": 100
+    },
+    "branches": {
+      "hit": 0,
+      "found": 0,
+      "percent": 100
+    },
+    "file": "ng2-material/components/icon/icon.ts"
+  },
+  {
+    "lines": {
+      "found": 81,
+      "hit": 51,
+      "percent": 63
+    },
+    "functions": {
+      "hit": 9,
+      "found": 29,
+      "percent": 31
+    },
+    "branches": {
+      "hit": 8,
+      "found": 28,
+      "percent": 29
+    },
+    "file": "ng2-material/components/form/validators.ts"
+  },
+  {
+    "lines": {
+      "found": 58,
+      "hit": 34,
+      "percent": 59
+    },
+    "functions": {
+      "hit": 7,
+      "found": 9,
+      "percent": 78
+    },
+    "branches": {
+      "hit": 6,
+      "found": 22,
+      "percent": 27
+    },
+    "file": "ng2-material/components/form/messages.ts"
+  },
+  {
+    "lines": {
+      "found": 45,
+      "hit": 38,
+      "percent": 84
+    },
+    "functions": {
+      "hit": 8,
+      "found": 12,
+      "percent": 67
+    },
+    "branches": {
+      "hit": 3,
+      "found": 8,
+      "percent": 38
+    },
+    "file": "ng2-material/components/input/input.ts"
+  },
+  {
+    "lines": {
+      "found": 24,
+      "hit": 20,
+      "percent": 83
+    },
+    "functions": {
+      "hit": 5,
+      "found": 5,
+      "percent": 100
+    },
+    "branches": {
+      "hit": 1,
+      "found": 6,
+      "percent": 17
+    },
+    "file": "ng2-material/components/list/list.ts"
+  },
+  {
+    "lines": {
+      "found": 39,
+      "hit": 39,
+      "percent": 100
+    },
+    "functions": {
+      "hit": 8,
+      "found": 8,
+      "percent": 100
+    },
+    "branches": {
+      "hit": 14,
+      "found": 14,
+      "percent": 100
+    },
+    "file": "ng2-material/components/progress_linear/progress_linear.ts"
+  },
+  {
+    "lines": {
+      "found": 48,
+      "hit": 47,
+      "percent": 98
+    },
+    "functions": {
+      "hit": 12,
+      "found": 13,
+      "percent": 92
+    },
+    "branches": {
+      "hit": 15,
+      "found": 19,
+      "percent": 79
+    },
+    "file": "ng2-material/components/progress_circular/progress_circular.ts"
+  },
+  {
+    "lines": {
+      "found": 96,
+      "hit": 92,
+      "percent": 96
+    },
+    "functions": {
+      "hit": 22,
+      "found": 24,
+      "percent": 92
+    },
+    "branches": {
+      "hit": 28,
+      "found": 31,
+      "percent": 90
+    },
+    "file": "ng2-material/components/peekaboo/peekaboo.ts"
+  },
+  {
+    "lines": {
+      "found": 49,
+      "hit": 45,
+      "percent": 92
+    },
+    "functions": {
+      "hit": 8,
+      "found": 10,
+      "percent": 80
+    },
+    "branches": {
+      "hit": 5,
+      "found": 12,
+      "percent": 42
+    },
+    "file": "ng2-material/core/util/media.ts"
+  },
+  {
+    "lines": {
+      "found": 124,
+      "hit": 124,
+      "percent": 100
+    },
+    "functions": {
+      "hit": 27,
+      "found": 27,
+      "percent": 100
+    },
+    "branches": {
+      "hit": 59,
+      "found": 60,
+      "percent": 98
+    },
+    "file": "ng2-material/components/radio/radio_button.ts"
+  },
+  {
+    "lines": {
+      "found": 9,
+      "hit": 9,
+      "percent": 100
+    },
+    "functions": {
+      "hit": 4,
+      "found": 4,
+      "percent": 100
+    },
+    "branches": {
+      "hit": 0,
+      "found": 0,
+      "percent": 100
+    },
+    "file": "ng2-material/components/radio/radio_dispatcher.ts"
+  },
+  {
+    "lines": {
+      "found": 7,
+      "hit": 7,
+      "percent": 100
+    },
+    "functions": {
+      "hit": 2,
+      "found": 2,
+      "percent": 100
+    },
+    "branches": {
+      "hit": 0,
+      "found": 0,
+      "percent": 100
+    },
+    "file": "ng2-material/components/switcher/switch.ts"
+  },
+  {
+    "lines": {
+      "found": 4,
+      "hit": 4,
+      "percent": 100
+    },
+    "functions": {
+      "hit": 1,
+      "found": 1,
+      "percent": 100
+    },
+    "branches": {
+      "hit": 0,
+      "found": 0,
+      "percent": 100
+    },
+    "file": "ng2-material/components/subheader/subheader.ts"
+  },
+  {
+    "lines": {
+      "found": 70,
+      "hit": 63,
+      "percent": 90
+    },
+    "functions": {
+      "hit": 11,
+      "found": 13,
+      "percent": 85
+    },
+    "branches": {
+      "hit": 12,
+      "found": 20,
+      "percent": 60
+    },
+    "file": "ng2-material/components/toolbar/toolbar.ts"
+  },
+  {
+    "lines": {
+      "found": 58,
+      "hit": 58,
+      "percent": 100
+    },
+    "functions": {
+      "hit": 15,
+      "found": 15,
+      "percent": 100
+    },
+    "branches": {
+      "hit": 16,
+      "found": 16,
+      "percent": 100
+    },
+    "file": "ng2-material/components/tabs/tabs.ts"
+  }
+]

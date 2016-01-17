@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ng2-material/core/util/animate.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">ng2-material/core/util/</a> animate.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.68% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>75/76</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>20/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.59% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>70/71</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">80×</span>
+<span class="cline-any cline-yes">80×</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {DOM} from 'angular2/src/platform/dom/dom_adapter';
+&nbsp;
+/**
+ * Provide an API for animating elements with CSS transitions
+ */
+export class Animate {
+&nbsp;
+  /**
+   * Look up the transition event name for the browser type and cache it.
+   */
+  static TRANSITION_EVENT: string = Animate.whichTransitionEvent();
+&nbsp;
+  static enter(el: HTMLElement, cssClass: string): Promise&lt;void&gt; {
+    DOM.removeClass(el, cssClass);
+    return new Promise&lt;void&gt;((resolve)=&gt; {
+      var duration = Animate.getTransitionDuration(el, true);
+      var callTimeout = setTimeout(() =&gt; done(), duration);
+      var done = () =&gt; {
+        clearTimeout(callTimeout);
+        removeListener();
+        resolve();
+      };
+      let removeListener = DOM.onAndCancel(el, Animate.TRANSITION_EVENT, done);
+      DOM.addClass(el, cssClass);
+    });
+  }
+&nbsp;
+  static leave(el: HTMLElement, cssClass: string): Promise&lt;void&gt; {
+    return new Promise&lt;void&gt;((resolve)=&gt; {
+      var duration = Animate.getTransitionDuration(el, true);
+      var callTimeout = setTimeout(() =&gt; done(), duration);
+&nbsp;
+      var done = () =&gt; {
+        clearTimeout(callTimeout);
+        removeListener();
+        resolve();
+      };
+      let removeListener = DOM.onAndCancel(el, Animate.TRANSITION_EVENT, done);
+      DOM.removeClass(el, cssClass);
+    });
+  }
+&nbsp;
+  /**
+   * Get the duration of any transitions being applied to the given element.
+   *
+   * Based on: https://gist.github.com/snorpey/5323028
+   * @param element The element to query
+   * @param includeDelay Include any specified transition-delay value.
+   * @returns {number}
+   */
+  static getTransitionDuration(element: HTMLElement, includeDelay: boolean = false) {
+    var prefixes = ['moz', 'webkit', 'ms', 'o', 'khtml'];
+    var style: any = window.getComputedStyle(element);
+    for (let i = 0; i &lt; prefixes.length; i++) {
+      let duration = style['-' + prefixes[i] + '-transition-duration'];
+      if (!duration) {
+        continue;
+      }
+      duration = ( duration.indexOf('ms') &gt; -1 ) ? <span class="branch-0 cbranch-no" title="branch not covered" >parseFloat(duration) </span>: parseFloat(duration) * 1000;
+      if (includeDelay) {
+        var delay = style['-' + prefixes[i] + '-transition-delay'];
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof delay !== 'undefined') {
+          duration += ( delay.indexOf('ms') &gt; -1 ) ? <span class="branch-0 cbranch-no" title="branch not covered" >parseFloat(delay) </span>: parseFloat(delay) * 1000;
+        }
+      }
+      return duration;
+    }
+    return -1;
+  }
+&nbsp;
+  static setTransitionDuration(element: HTMLElement, delayMs: number) {
+    DOM.setStyle(element, 'transition-duration', `${delayMs}ms`);
+  }
+&nbsp;
+  /* From Modernizr */
+  static whichTransitionEvent(): string {
+    var t: string;
+    var el: any = document.createElement('fakeelement');
+    var transitions: {[prefix:string]:string} = {
+      'transition': 'transitionend',
+      'OTransition': 'oTransitionEnd',
+      'MozTransition': 'transitionend',
+      'WebkitTransition': 'webkitTransitionEnd'
+    };
+&nbsp;
+    for (t in transitions) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (el.style[t] !== undefined) {
+        return transitions[t];
+      }
+    }
+  }
+&nbsp;
+  static animateStyles(element: HTMLElement, styles: {[style:string]:string|number}, durationMs: number): Promise&lt;void&gt; {
+    let saveDuration = Animate.getTransitionDuration(element);
+    Animate.setTransitionDuration(element, durationMs);
+    return new Promise&lt;void&gt;((animResolve, animReject) =&gt; {
+      let callTimeout = setTimeout(() =&gt; done(), durationMs);
+&nbsp;
+      let done = () =&gt; {
+        clearTimeout(callTimeout);
+        removeListener();
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (saveDuration !== -1) {
+<span class="cstat-no" title="statement not covered" >          Animate.setTransitionDuration(element, saveDuration);</span>
+        }
+        animResolve();
+      };
+      let removeListener = DOM.onAndCancel(element, Animate.TRANSITION_EVENT, done);
+      Object.keys(styles).forEach((key: string) =&gt; {
+        DOM.setStyle(element, key, `${styles[key]}`);
+      });
+&nbsp;
+    });
+  }
+&nbsp;
+  /**
+   * Set CSS styles immediately by turning off transition duration and restoring it afterward
+   */
+  static setStyles(element: HTMLElement, styles: {[style:string]:string|number}): Promise&lt;void&gt; {
+    let saveDuration = Animate.getTransitionDuration(element);
+    Animate.setTransitionDuration(element, 0);
+    return new Promise&lt;void&gt;((resolve, reject) =&gt; {
+      Object.keys(styles).forEach((key: string) =&gt; {
+        DOM.setStyle(element, key, `${styles[key]}`);
+      });
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (saveDuration !== -1) {
+        Animate.setTransitionDuration(element, saveDuration);
+      }
+      resolve();
+    });
+  }
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jan 10 2016 17:30:22 GMT-0800 (PST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

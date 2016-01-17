@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ng2-material/components/progress_circular/progress_circular.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">ng2-material/components/progress_circular/</a> progress_circular.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.18% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>54/55</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.95% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>15/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.31% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>12/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.92% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>47/48</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {Component, View, ViewEncapsulation, Attribute, Input, SimpleChange} from 'angular2/core';
+import {CONST, isBlank, isPresent} from 'angular2/src/facade/lang';
+import {MdProgressLinear} from '../progress_linear/progress_linear';
+import {Math} from 'angular2/src/facade/math';
+&nbsp;
+@CONST()
+class ProgressMode {
+  @CONST() static DETERMINATE = 'determinate';
+  @CONST() static INDETERMINATE = 'indeterminate';
+}
+&nbsp;
+@CONST()
+class Defaults {
+  @CONST() static DEFAULT_PROGRESS_SIZE = 100;
+  @CONST() static DEFAULT_SCALING = 0.5;
+  @CONST() static DEFAULT_HALF_TRANSITION = 'transform 0.1s linear';
+}
+&nbsp;
+@Component({
+  selector: 'md-progress-circular',
+  inputs: ['value', 'diameter'],
+  host: {
+    'role': 'progressbar',
+    'aria-valuemin': '0',
+    'aria-valuemax': '100',
+    '[attr.aria-valuenow]': 'value',
+    '[style.width]': 'outerSize',
+    '[style.height]': 'outerSize'
+  }
+})
+@View({
+  template: `
+    &lt;div class="md-scale-wrapper"
+     [style.-webkit-transform]="diameterTransformation"
+     [style.transform]="diameterTransformation"&gt;
+      &lt;div class="md-spinner-wrapper"&gt;
+        &lt;div class="md-inner"&gt;
+          &lt;div class="md-gap"
+          [style.-webkit-transition]="gapTransition"
+          [style.transition]="gapTransition"&gt;&lt;/div&gt;
+          &lt;div class="md-left"&gt;
+            &lt;div class="md-half-circle"
+              [style.-webkit-transform]="leftHalfTransform"
+              [style.transform]="leftHalfTransform"
+              [style.-webkit-transition]="defaultHalfTransition"
+              [style.transition]="defaultHalfTransition"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="md-right"&gt;
+            &lt;div class="md-half-circle"
+              [style.-webkit-transform]="rightHalfTransform"
+              [style.transform]="rightHalfTransform"
+              [style.-webkit-transition]="defaultHalfTransition"
+              [style.transition]="defaultHalfTransition"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;`,
+  directives: [],
+  encapsulation: ViewEncapsulation.None
+})
+&nbsp;
+&nbsp;
+export class MdProgressCircular extends MdProgressLinear {
+&nbsp;
+  /** Value for the circle diameter. */
+  @Input('diameter') diameter_:string;
+&nbsp;
+  /** CSS `transform` property applied to the circle diameter. */
+  diameterTransformation:string;
+&nbsp;
+  /** CSS property length of circle preloader side. */
+  outerSize:string;
+&nbsp;
+  /** CSS `transform` property applied to the circle gap. */
+  gapTransition:string;
+&nbsp;
+  /** CSS `transition` property applied to circle. */
+  defaultHalfTransition:string;
+&nbsp;
+  /** CSS `transform` property applied to the left half of circle. */
+  leftHalfTransform:string;
+&nbsp;
+  /** CSS `transform` property applied to the right half of circle. */
+  rightHalfTransform:string;
+&nbsp;
+  constructor(@Attribute('mode') mode:string) {
+    super(mode);
+&nbsp;
+    this.defaultHalfTransition = Defaults.DEFAULT_HALF_TRANSITION;
+  }
+&nbsp;
+  get diameter() {
+    return this.diameter_;
+  }
+&nbsp;
+  set diameter(v) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (isPresent(v)) {
+      this.diameter_ = v;
+    }
+  }
+&nbsp;
+  ngOnInit() {
+    this.updateScale();
+  }
+&nbsp;
+  ngOnChanges(_) {
+    if (this.mode === ProgressMode.INDETERMINATE || isBlank(this.value)) {
+      return;
+    }
+&nbsp;
+    this.gapTransition = (this.value &lt;= 50) ? '' : <span class="branch-1 cbranch-no" title="branch not covered" >'borderBottomColor 0.1s linear';</span>
+&nbsp;
+    this.transformLeftHalf(this.value);
+    this.transformRightHalf(this.value);
+  }
+&nbsp;
+  transformLeftHalf(value) {
+    let rotation = (value &lt;= 50) ? 135 : (<span class="branch-1 cbranch-no" title="branch not covered" >((value - 50) / 50 * 180) + 135)</span>;
+&nbsp;
+    this.leftHalfTransform = `rotate(${rotation}deg)`;
+  }
+&nbsp;
+  transformRightHalf(value) {
+    let rotation = (value &gt;= 50) ? <span class="branch-0 cbranch-no" title="branch not covered" >45 </span>: (value / 50 * 180 - 135);
+&nbsp;
+    this.rightHalfTransform = `rotate(${rotation}deg)`;
+  }
+&nbsp;
+  updateScale() {
+    this.outerSize = 100 * this.getDiameterRatio() + 'px';
+    this.diameterTransformation = `translate(-50%, -50%) scale( ${this.getDiameterRatio()} )`;
+  }
+&nbsp;
+  getDiameterRatio():number {
+    if (!this.diameter) return Defaults.DEFAULT_SCALING;
+&nbsp;
+    var match = /([0-9]*)%/.exec(this.diameter);
+    var value = Math.max(0, (&lt;any&gt;match &amp;&amp; &lt;any&gt;match[1] / 100) || parseFloat(this.diameter));
+&nbsp;
+    return (value &gt; 1) ? value / Defaults.DEFAULT_PROGRESS_SIZE : value;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  webkit(style:string)</span> {
+<span class="cstat-no" title="statement not covered" >    return `-webkit-${style}`;</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jan 10 2016 17:30:22 GMT-0800 (PST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>
