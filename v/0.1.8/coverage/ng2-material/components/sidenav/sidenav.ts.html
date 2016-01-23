@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ng2-material/components/sidenav/sidenav.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">ng2-material/components/sidenav/</a> sidenav.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36.26% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>33/91</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">38.55% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>32/83</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {Directive, Injectable} from 'angular2/core';
+import {Input} from 'angular2/core';
+import {Animate} from "../../core/util/animate";
+import {MdDialog} from "../dialog/dialog";
+import {MdDialogRef} from "../dialog/dialog_ref";
+import {Media} from "../../core/util/media";
+import {MdBackdrop} from "../backdrop/backdrop";
+import {ElementRef} from "angular2/core";
+import {ContentChildren} from "angular2/core";
+import {OnDestroy} from "angular2/core";
+import {AfterContentInit} from "angular2/core";
+import {OnInit} from "angular2/core";
+import {QueryList} from "angular2/core";
+import {Component} from "angular2/core";
+import {ViewChild} from "angular2/core";
+import {ComponentRef} from "angular2/core";
+import {Renderer} from "angular2/core";
+import {DynamicComponentLoader} from "angular2/core";
+import {DOM} from "angular2/src/platform/dom/dom_adapter";
+import {Attribute} from "angular2/core";
+import {isPresent} from "angular2/src/facade/lang";
+import {forwardRef} from "angular2/core";
+import {Inject} from "angular2/core";
+&nbsp;
+// TODO(jd): Lock open sidenav
+// TODO(jd): Right alignment
+// TODO(jd): Behaviors for testing
+// - can lock open
+// - service can find sidenavs by name
+&nbsp;
+&nbsp;
+/**
+ * A slide-out navigation element that transitions in from the left or right.
+ *
+ * ```html
+ * &lt;nav md-sidenav="menu"&gt;
+ *   &lt;h1&gt;Components&lt;/h1&gt;
+ *   &lt;button md-button (click)="close()"&gt;Close&lt;/button&gt;
+ * &lt;/nav&gt;
+ * ```
+ */
+@Directive({
+  selector: '[md-sidenav]'
+})
+export class MdSidenav extends MdBackdrop implements OnInit, OnDestroy {
+  @Input('md-sidenav')
+<span class="cstat-no" title="statement not covered" >  name: string = 'default';</span>
+&nbsp;
+  private <span class="cstat-no" title="statement not covered" >_backdropRef: ComponentRef = null;</span>
+&nbsp;
+  private <span class="cstat-no" title="statement not covered" >_defaultContainer = DOM.query('body');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  transitionClass: string = 'md-closed';</span>
+<span class="cstat-no" title="statement not covered" >  transitionAddClass = false;</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor(public <span class="cstat-no" title="statement not covered" >element: ElementRef,</span></span>
+              public <span class="cstat-no" title="statement not covered" >dcl: DynamicComponentLoader,</span>
+              public <span class="cstat-no" title="statement not covered" >renderer: Renderer,</span>
+              @Inject(forwardRef(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>SidenavService)</span>) public <span class="cstat-no" title="statement not covered" >service: SidenavService,</span>
+              @Attribute('md-sidenav') name: string) {
+<span class="cstat-no" title="statement not covered" >    super(element);</span>
+<span class="cstat-no" title="statement not covered" >    DOM.addClass(this.element.nativeElement, this.transitionClass);</span>
+<span class="cstat-no" title="statement not covered" >    if (isPresent(name)) {</span>
+<span class="cstat-no" title="statement not covered" >      this.name = name;</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  show(): Promise&lt;void&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this._createBackdrop(this.element).then(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>super.show())</span>;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  _destroyBackdrop(): Promise&lt;void&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    if (this._backdropRef) {</span>
+<span class="cstat-no" title="statement not covered" >      this._backdropRef.dispose();</span>
+<span class="cstat-no" title="statement not covered" >      this._backdropRef = null;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return Promise.resolve();</span>
+  }
+&nbsp;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  toggle(): Promise&lt;void&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.visible ? this.hide() : this.show();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  isOpen(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >    return this.visible;</span>
+  }
+&nbsp;
+  private <span class="cstat-no" title="statement not covered" >_lockedOpen: boolean = false;</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >  isLockedOpen(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >    return this._lockedOpen;</span>
+  }
+&nbsp;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  _createBackdrop(elementRef: ElementRef)</span>: Promise&lt;ComponentRef&gt; {
+<span class="cstat-no" title="statement not covered" >    if (this._backdropRef) {</span>
+<span class="cstat-no" title="statement not covered" >      return Promise.resolve(this._backdropRef);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return this.dcl.loadNextToLocation(MdBackdrop, elementRef)</span>
+      .then(<span class="fstat-no" title="function not covered" >(componentRef)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >        let backdrop: MdBackdrop = componentRef.instance;</span>
+<span class="cstat-no" title="statement not covered" >        backdrop.clickClose = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.renderer.setElementClass(componentRef.location, 'md-backdrop', true);</span>
+<span class="cstat-no" title="statement not covered" >        this.renderer.setElementClass(componentRef.location, 'md-opaque', true);</span>
+<span class="cstat-no" title="statement not covered" >        DOM.appendChild(this._defaultContainer, componentRef.location.nativeElement);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this._backdropRef = componentRef;</span>
+        // When this component is shown/hidden, sync the backdrop
+<span class="cstat-no" title="statement not covered" >        this.onShowing.subscribe(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>backdrop.show())</span>;</span>
+<span class="cstat-no" title="statement not covered" >        this.onHiding.subscribe(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>backdrop.hide())</span>;</span>
+        // If the sidenav is hidden, release the backdrop
+<span class="cstat-no" title="statement not covered" >        this.onHidden.subscribe(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>this._destroyBackdrop())</span>;</span>
+        // If the backdrop is hidden, hide the nav
+<span class="cstat-no" title="statement not covered" >        backdrop.onHiding.subscribe(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>this.hide())</span>;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return componentRef;</span>
+      });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnInit(): any {</span>
+<span class="cstat-no" title="statement not covered" >    this.service.register(this);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnDestroy(): any {</span>
+<span class="cstat-no" title="statement not covered" >    this.service.unregister(this);</span>
+  }
+&nbsp;
+}
+&nbsp;
+@Injectable()
+export class SidenavService {
+  private <span class="cstat-no" title="statement not covered" >_instances: MdSidenav[] = [];</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >  register(instance: MdSidenav)</span> {
+<span class="cstat-no" title="statement not covered" >    this._instances.push(instance);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  unregister(instance: MdSidenav)</span> {
+<span class="cstat-no" title="statement not covered" >    this._instances = this._instances.filter(<span class="fstat-no" title="function not covered" >(c: MdSidenav)</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      return c.name !== instance.name;</span>
+    });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  show(name: string)</span>: Promise&lt;void&gt; {
+<span class="cstat-no" title="statement not covered" >    let instance: MdSidenav = this._findInstance(name);</span>
+<span class="cstat-no" title="statement not covered" >    if (!instance) {</span>
+<span class="cstat-no" title="statement not covered" >      return Promise.reject&lt;void&gt;('invalid container');</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return instance.show();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  hide(name: string)</span>: Promise&lt;void&gt; {
+<span class="cstat-no" title="statement not covered" >    let instance: MdSidenav = this._findInstance(name);</span>
+<span class="cstat-no" title="statement not covered" >    if (!instance) {</span>
+<span class="cstat-no" title="statement not covered" >      return Promise.reject&lt;void&gt;('invalid container');</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return instance.hide();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private _findInstance(name: string)</span>: MdSidenav {
+<span class="cstat-no" title="statement not covered" >    return this._instances.filter(<span class="fstat-no" title="function not covered" >(c: MdSidenav)</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      return c.name === name;</span>
+    })[0];
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jan 22 2016 17:41:54 GMT-0800 (PST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>
