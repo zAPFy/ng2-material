@@ -1,19 +1,21 @@
-import {View, Component} from 'angular2/core';
-import {Input} from 'angular2/core';
-import {DynamicComponentLoader} from "angular2/core";
-import {ElementRef} from "angular2/core";
-import {ComponentRef} from "angular2/core";
+import {
+  View,
+  Component,
+  Input,
+  DynamicComponentLoader,
+  ElementRef,
+  ComponentRef,
+  Query,
+  QueryList
+} from "angular2/core";
 import {IExampleData} from "./app";
 import {DEMO_DIRECTIVES} from "./all";
 import {MATERIAL_DIRECTIVES} from "ng2-material/all";
-import {Http} from "angular2/http";
-import {Response} from "angular2/http";
-import {Highlight} from './highlight';
+import {Http, Response} from "angular2/http";
+import {Highlight} from "./highlight";
 import {TimerWrapper} from "angular2/src/facade/async";
-import {DOM} from "angular2/src/platform/dom/dom_adapter";
 import {MdTabs} from "ng2-material/components/tabs/tabs";
-import {Query} from "angular2/core";
-import {QueryList} from "angular2/core";
+import "rxjs/add/operator/map";
 
 
 export interface ISourceFile {
@@ -50,7 +52,8 @@ export default class Example {
 
   constructor(private _element: ElementRef,
               public http: Http,
-              @Query(MdTabs) public panes: QueryList<MdTabs>,
+              @Query(MdTabs)
+              public panes: QueryList<MdTabs>,
               public dcl: DynamicComponentLoader) {
   }
 
@@ -69,7 +72,8 @@ export default class Example {
   /**
    * The selected type of source to view.
    */
-  @Input() public selected: string = 'html';
+  @Input()
+  public selected: string = 'html';
 
   applyModel(model: IExampleData) {
     this.orderedFiles = [];
@@ -99,8 +103,6 @@ export default class Example {
         this._loaded = true;
         this._reference = ref;
       });
-
-
   }
 
   addFile(url: string, type: string) {
@@ -115,7 +117,7 @@ export default class Example {
   }
 
   toggleSource() {
-    if(this.showSource){
+    if (this.showSource) {
       this.showTabs = false;
       TimerWrapper.setTimeout(() => {
         this.showSource = false;
@@ -127,6 +129,80 @@ export default class Example {
         this.showTabs = true;
       }, 25);
     }
+  }
+
+  getCodepenData(model: IExampleData) {
+    let result: any = {
+      title: model.name
+    };
+    this.orderedFiles.forEach((f: ISourceFile) => {
+      switch (f.type) {
+        case 'scss':
+          result.css = f.data;
+          result.css_pre_processor = 'scss';
+          break;
+        case 'html':
+          result.html = f.data;
+          break;
+        case 'typescript':
+          result.js = f.data;
+          result.js_pre_processor = 'typescript';
+          break;
+      }
+    });
+    result.head = document.head.innerHTML;
+
+    // All Optional
+    // title                 : "New Pen!",
+    // description           : "It's about stuff.",
+    // private               : false, // true || false
+    // tags                  : ["tag1", "tag2"], // an array of strings
+    // editors               : "101", // Set which editors are open. In this example HTML open, CSS closed, JS open
+    // html                  : "<div>HTML here.</div>",
+    // html_pre_processor    : "none" || "slim" || "haml" || "markdown",
+    // css                   : "html { color: red; }",
+    // css_pre_processor     : "none" || "less" || "scss" || "sass" || "stylus",
+    // css_starter           : "normalize" || "reset" || "neither",
+    // css_prefix            : "autoprefixer" || "prefixfree" || "neither",
+    // js                    : "alert('test');",
+    // js_pre_processor      : "none" || "coffeescript" || "babel" || "livescript" || "typescript",
+    // html_classes          : "loading",
+    // head                  : "<meta name='viewport' content='width=device-width'>",
+    // css_external          : "http://yoursite.com/style.css", // semi-colon separate multiple files
+    // js_external           : "http://yoursite.com/script.js" // semi-colon separate multiple files
+    //
+    // // Deprecated
+    //
+    // // These go in the CSS itself now, like `@import "compass";`
+    // css_pre_processor_lib : "bourbon" || "compass" || "nib" || "lesshat",
+    //
+    // // Link up in js_external if needed
+    // js_modernizr : "true" || "false",
+    // js_library   : "jquery" || "mootools" || "prototype",
+
+    return JSON.stringify(result);
+    // console.log(model);
+    // return JSON.stringify({
+    //   title: 'New Pen!',
+    //   html: '<div>Hello, World!</div>'
+    // });
+    // var body = 'data=' + JSON.stringify({
+    //     title: 'New Pen!',
+    //     html: '<div>Hello, World!</div>'
+    //   });
+    // var headers = new Headers();
+    // headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    // let xhr = this.http.post('http://codepen.io/pen/define', body, {headers: headers});
+    //
+    // xhr.map((response) => {
+    //     return response.json();
+    //   })
+    //   .subscribe((response) => {
+    //       console.log(`response: ${response}`)
+    //     },
+    //     (e) => console.error(`error: ${e}`),
+    //     () => console.log('Authentication Complete')
+    //   );
   }
 
 
