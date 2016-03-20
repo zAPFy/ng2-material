@@ -54,6 +54,7 @@ module.exports = function (grunt) {
             expand: true,
             src: [
               './node_modules/systemjs/dist/*.js',
+              './node_modules/@angular2-material/**/*.*',
               './node_modules/angular2/bundles/angular2-polyfills.js',
               './node_modules/angular2/bundles/angular2.dev.js',
               './node_modules/angular2/bundles/http.dev.js',
@@ -101,6 +102,9 @@ module.exports = function (grunt) {
       }
     },
     sass: {
+      options: {
+        loadPath: ['node_modules/@angular2-material/core/style']
+      },
       dist: {
         files: [
           {

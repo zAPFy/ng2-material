@@ -1,4 +1,14 @@
-import {Component, enableProdMode, bind, Input, OnDestroy, ApplicationRef} from "angular2/core";
+import {
+  Component,
+  enableProdMode,
+  bind,
+  Input,
+  OnDestroy,
+  ApplicationRef,
+  ViewChild,
+  provide,
+  AfterViewInit, ViewEncapsulation
+} from "angular2/core";
 import {bootstrap} from "angular2/platform/browser";
 import {
   ROUTER_PROVIDERS,
@@ -8,7 +18,7 @@ import {
   LocationStrategy,
   Router
 } from "angular2/router";
-import {MATERIAL_DIRECTIVES, MATERIAL_PROVIDERS} from "../ng2-material/all";
+import {MATERIAL_DIRECTIVES, MATERIAL_PROVIDERS, MdSidenavLayout} from "../ng2-material/all";
 import {DEMO_DIRECTIVES} from "./all";
 import Example from "./example";
 import {Http, Response, HTTP_PROVIDERS} from "angular2/http";
@@ -17,8 +27,8 @@ import {ComponentPage} from "./routes/component";
 import {ComponentsService, IComponentMeta} from "./services/components";
 import {NavigationService} from "./services/navigation";
 import {VersionService} from "./services/version";
-import {SidenavService} from "ng2-material/components/sidenav/sidenav_service";
 import {Media} from "ng2-material/core/util/media";
+import {UrlResolver} from "angular2/src/compiler/url_resolver";
 
 /**
  * Describe an example that can be dynamically loaded.
@@ -29,6 +39,17 @@ export interface IExampleData {
   styles: string;
   component: string;
   name: string;
+}
+
+
+export class Material2UrlResolver extends UrlResolver {
+  resolve(baseUrl: string, url: string): string {
+    let result = super.resolve(baseUrl, url);
+    if (url.indexOf('./components/') === 0) {
+      return `node_modules/@angular2-material/${result.replace('components/', '')}`;
+    }
+    return result;
+  }
 }
 
 @RouteConfig([
@@ -42,9 +63,13 @@ export interface IExampleData {
   directives: [MATERIAL_DIRECTIVES, ROUTER_DIRECTIVES, Example, DEMO_DIRECTIVES],
   host: {
     '[class.push-menu]': 'fullPage'
-  }
+  },
+  encapsulation: ViewEncapsulation.None
 })
-export class DemosApp implements OnDestroy {
+export class DemosApp implements OnDestroy, AfterViewInit {
+
+  @ViewChild(MdSidenavLayout)
+  layout: MdSidenavLayout;
 
   static SIDE_MENU_BREAKPOINT: string = 'gt-md';
 
@@ -59,19 +84,23 @@ export class DemosApp implements OnDestroy {
 
   private _subscription = null;
 
-  constructor(http: Http,
+  constructor(public http: Http,
               public navigation: NavigationService,
               public media: Media,
               public router: Router,
               public appRef: ApplicationRef,
-              private _components: ComponentsService,
-              private _sidenav: SidenavService) {
+              private _components: ComponentsService) {
+  }
+
+  ngAfterViewInit(): any {
     let query = Media.getQuery(DemosApp.SIDE_MENU_BREAKPOINT);
-    this._subscription = media.listen(query).onMatched.subscribe((mql: MediaQueryList) => {
+    this._subscription = this.media.listen(query).onMatched.subscribe((mql: MediaQueryList) => {
       this.fullPage = mql.matches;
+      this.layout.start.toggle(this.fullPage);
       this.appRef.tick();
     });
-    http.get('public/version.json')
+    this.layout.start.toggle(this.fullPage);
+    this.http.get('public/version.json')
       .subscribe((res: Response) => {
         this.version = res.json().version;
       });
@@ -88,7 +117,7 @@ export class DemosApp implements OnDestroy {
   }
 
   showMenu(event?) {
-    this._sidenav.show('menu');
+    this.layout.start.toggle(true);
   }
 
   navigate(to: any) {
@@ -98,6 +127,7 @@ export class DemosApp implements OnDestroy {
 }
 
 let appProviders = [
+  provide(UrlResolver, {useClass: Material2UrlResolver}),
   HTTP_PROVIDERS, ROUTER_PROVIDERS, MATERIAL_PROVIDERS,
   ComponentsService, NavigationService, VersionService,
   bind(LocationStrategy).toClass(HashLocationStrategy)

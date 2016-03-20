@@ -1,28 +1,26 @@
-import {Component} from "angular2/core";
-import {MATERIAL_DIRECTIVES, Media, SidenavService} from "ng2-material/all";
+import {Component, ViewChild} from "angular2/core";
+import {MATERIAL_DIRECTIVES, Media, MdSidenavLayout} from "ng2-material/all";
 
 
 @Component({
   selector: 'sidenav-basic-usage',
   templateUrl: 'examples/components/sidenav/basic_usage.html',
-  directives: [MATERIAL_DIRECTIVES],
-  providers: [SidenavService]
+  directives: [MATERIAL_DIRECTIVES]
 })
 export default class SidenavBasicUsage {
 
-  constructor(public sidenav: SidenavService) {
-
-  }
+  @ViewChild(MdSidenavLayout)
+  layout: MdSidenavLayout;
 
   hasMedia(breakSize: string): boolean {
     return Media.hasMedia(breakSize);
   }
 
   open(name: string) {
-    this.sidenav.show(name);
+    this.layout.start.toggle(true);
   }
 
   close(name: string) {
-    this.sidenav.hide(name);
+    this.layout.start.toggle(false);
   }
 }

@@ -24,11 +24,12 @@ import {MdRadioButton, MdRadioGroup} from "./components/radio/radio_button";
 import {MdRadioDispatcher} from "./components/radio/radio_dispatcher";
 import {MdSwitch} from "./components/switcher/switch";
 import {MdSubheader} from "./components/subheader/subheader";
-import {MdSidenav, MdSidenavContainer} from "./components/sidenav/sidenav";
-import {SidenavService} from "./components/sidenav/sidenav_service";
+import {MD_SIDENAV_DIRECTIVES} from "@angular2-material/sidenav/sidenav";
 import {MdToolbar} from "./components/toolbar/toolbar";
 import {MdTabs, MdTab} from "./components/tabs/tabs";
 import {Media} from "./core/util/media";
+export * from '@angular2-material/sidenav/sidenav';
+
 export * from './components/button/button';
 
 export * from './components/checkbox/checkbox';
@@ -62,9 +63,6 @@ export * from './components/switcher/switch';
 
 export * from './components/subheader/subheader';
 
-export * from './components/sidenav/sidenav';
-export * from './components/sidenav/sidenav_service';
-
 export * from './components/toolbar/toolbar';
 
 export * from './components/tabs/tabs';
@@ -76,7 +74,7 @@ export * from './core/util/animate';
 /**
  * Collection of Material Design component directives.
  */
-export const MATERIAL_DIRECTIVES: Type[] = CONST_EXPR([
+export const MATERIAL_DIRECTIVES: Type[] = (<Type[]>[
   MdAnchor, MdButton,
   MdCheckbox,
   MdContent,
@@ -93,12 +91,11 @@ export const MATERIAL_DIRECTIVES: Type[] = CONST_EXPR([
   MdProgressLinear,
   MdProgressCircular,
   MdRadioButton, MdRadioGroup,
-  MdSidenav, MdSidenavContainer,
   MdSubheader,
   MdSwitch,
   MdToolbar,
   MdTab, MdTabs
-]);
+]).concat(MD_SIDENAV_DIRECTIVES);
 
 /**
  * Collection of Material Design component providers.
@@ -106,7 +103,6 @@ export const MATERIAL_DIRECTIVES: Type[] = CONST_EXPR([
 export const MATERIAL_PROVIDERS: any[] = [
   MdDialog,
   Media,
-  SidenavService,
   MdRadioDispatcher,
   INPUT_VALIDATORS
 ];

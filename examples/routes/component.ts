@@ -5,7 +5,7 @@ import {MATERIAL_DIRECTIVES} from "../../ng2-material/all";
 import Example from "../example";
 import {NavigationService} from "../services/navigation";
 import {DOM} from "angular2/src/platform/dom/dom_adapter";
-import {SidenavService} from "../../ng2-material/components/sidenav/sidenav_service";
+import {MdSidenav,MdSidenavLayout} from "../../ng2-material/all";
 import {TimerWrapper} from "angular2/src/facade/async";
 
 @Component({
@@ -28,14 +28,10 @@ export class ComponentPage implements OnInit {
 
   constructor(private _components: ComponentsService,
               private _navigation: NavigationService,
-              private _sidenav: SidenavService,
               private _routeParams: RouteParams) {
   }
 
   ngOnInit() {
-    TimerWrapper.setTimeout(() => {
-      this._sidenav.hide('menu');
-    }, 0);
     let id = this._routeParams.get('id');
     this._components.getComponent(id).then((c: IComponentMeta) => {
       this.value = c;

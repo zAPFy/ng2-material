@@ -7,9 +7,12 @@ $app-content-lg: 940px;
 $app-content-md: 580px;
 $app-content-sm: 360px;
 
-$app-menu-width: $sidenav-mobile-width;
+$app-menu-width: 320px;
 
 demos-app {
+  md-sidenav {
+    width: $app-menu-width;
+  }
   height: 100%;
   min-height: 100%;
 

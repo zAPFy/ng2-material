@@ -1,5 +1,5 @@
-<md-sidenav-container layout="row" flex>
-  <md-sidenav name="menu" class="app-menu" [style]="fullPage ? 'side' : 'over'">
+<md-sidenav-layout layout="row" flex>
+  <md-sidenav #menu class="app-menu" [mode]="fullPage ? 'side' : 'over'">
     <md-toolbar [routerLink]="['Index']">
       <div class="md-toolbar-tools">
         <h1>ng2-material</h1>
@@ -82,5 +82,5 @@
     </footer>
 
   </section>
-</md-sidenav-container>
+</md-sidenav-layout>
 
