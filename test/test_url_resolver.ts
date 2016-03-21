@@ -6,8 +6,11 @@ export class TestUrlResolver extends UrlResolver {
   }
 
   resolve(baseUrl: string, url: string): string {
-    // The standard UrlResolver looks for "package:" templateUrls in
-    // node_modules, however in our repo we host material widgets at the root.
-    return `/base/${super.resolve(baseUrl, url)}`;
+
+    let result = super.resolve(baseUrl, url);
+    if (url.indexOf('./components/') === 0) {
+      return `/base/node_modules/@angular2-material/${result.replace('components/', '')}`;
+    }
+    return `/base/${result}`;
   }
 }
