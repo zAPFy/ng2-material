@@ -376,7 +376,7 @@ module.exports = function (grunt) {
       tables: true,
       breaks: false,
       pedantic: false,
-      sanitize: true,
+      sanitize: false,
       smartLists: true,
       smartypants: false
     });
@@ -408,6 +408,30 @@ module.exports = function (grunt) {
           return d;
         });
         writeJson('public/coverage.json', outMeta);
+        next();
+      });
+    });
+
+    // Copy Readme for official components BEFORE rendering readme markdown files.
+    tasks.push(function buildOfficialComponentDocs() {
+      glob("node_modules/@angular2-material/**/readme.md", function (err, files) {
+        files.forEach(function parseDemo(readmeFile) {
+          // Skip readme for core dependency
+          if (readmeFile.indexOf('/core/') !== -1) {
+            return;
+          }
+          var component = readableString(path.basename(path.dirname(readmeFile)));
+
+          // TODO(jd): add credits blurb with link to official source docs
+          var data = fs.readFileSync(readmeFile).toString();
+
+          try {
+            fs.writeFileSync('examples/components/' + component + '/readme.md', data);
+          }
+          catch(e){
+            console.log("could not copy documentation from material2 component: " + component, e);
+          }
+        });
         next();
       });
     });
