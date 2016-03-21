@@ -1,5 +1,5 @@
-import {Component, ViewChild} from "angular2/core";
-import {MATERIAL_DIRECTIVES, Media, MdSidenavLayout} from "ng2-material/all";
+import {Component} from "angular2/core";
+import {MATERIAL_DIRECTIVES, Media, MdSidenav} from "ng2-material/all";
 
 
 @Component({
@@ -8,19 +8,15 @@ import {MATERIAL_DIRECTIVES, Media, MdSidenavLayout} from "ng2-material/all";
   directives: [MATERIAL_DIRECTIVES]
 })
 export default class SidenavBasicUsage {
-
-  @ViewChild(MdSidenavLayout)
-  layout: MdSidenavLayout;
-
   hasMedia(breakSize: string): boolean {
     return Media.hasMedia(breakSize);
   }
 
-  open(name: string) {
-    this.layout.start.toggle(true);
+  open(sidenav: MdSidenav) {
+    sidenav.toggle(true);
   }
 
-  close(name: string) {
-    this.layout.start.toggle(false);
+  close(sidenav: MdSidenav) {
+    sidenav.toggle(false);
   }
 }
