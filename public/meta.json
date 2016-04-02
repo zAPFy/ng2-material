@@ -41,23 +41,6 @@
     "readme": "<p>A data table that supports static and selectable rows.</p>\n"
   },
   {
-    "name": "Sidenav",
-    "sources": [
-      "ng2-material/components/sidenav/sidenav_service.ts",
-      "ng2-material/components/sidenav/sidenav.ts"
-    ],
-    "id": "sidenav",
-    "examples": [
-      {
-        "template": "examples/components/sidenav/basic_usage.html",
-        "source": "examples/components/sidenav/basic_usage.ts",
-        "component": "sidenav-basic-usage",
-        "name": "Basic Usage"
-      }
-    ],
-    "readme": "<p>&lt;p&gt;Generated from: &lt;a href=&quot;https://github.com/angular/material2/tree/2.0.0-alpha.1/src/components/sidenav&quot; target=&quot;_blank&quot;&gt;@angular2-material/sidenav&lt;/a&gt;&lt;/p&gt;</p>\n<h1 id=\"mdsidenav\">MdSidenav</h1>\n<p>MdSidenav is the side navigation component for Material 2. It is composed of two components; <code>&lt;md-sidenav-layout&gt;</code> and <code>&lt;md-sidenav&gt;</code>.</p>\n<h2 id=\"screenshots\">Screenshots</h2>\n<p>&lt;img src=&quot;https://material.angularjs.org/material2_assets/sidenav-example.png&quot;&gt;</p>\n<h2 id=\"-md-sidenav-layout-\"><code>&lt;md-sidenav-layout&gt;</code></h2>\n<p>The parent component. Contains the code necessary to coordinate one or two sidenav and the backdrop.</p>\n<h3 id=\"properties\">Properties</h3>\n<table>\n<thead>\n<tr>\n<th>Name</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>start</code></td>\n<td>The start aligned <code>MdSidenav</code> instance, or <code>null</code> if none is specified. In LTR direction, this is the sidenav shown on the left side. In RTL direction, it will show on the right. There can only be one sidenav on either side.</td>\n</tr>\n<tr>\n<td><code>end</code></td>\n<td>The end aligned <code>MdSidenav</code> instance, or <code>null</code> if none is specified. This is the sidenav opposing the <code>start</code> sidenav. There can only be one sidenav on either side.</td>\n</tr>\n</tbody>\n</table>\n<h2 id=\"-md-sidenav-\"><code>&lt;md-sidenav&gt;</code></h2>\n<p>The sidenav panel.</p>\n<h3 id=\"bound-properties\">Bound Properties</h3>\n<table>\n<thead>\n<tr>\n<th>Name</th>\n<th>Type</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>align</code></td>\n<td>`&quot;start&quot;</td>\n<td>&quot;end&quot;`</td>\n<td>The alignment of this sidenav. In LTR direction, <code>&quot;start&quot;</code> will be shown on the left, <code>&quot;end&quot;</code> on the right. In RTL, it is reversed. <code>&quot;start&quot;</code> is used by default. An exception will be thrown if there are more than 1 sidenav on either side.</td>\n</tr>\n<tr>\n<td><code>mode</code></td>\n<td>`&quot;over&quot;</td>\n<td>&quot;push&quot;</td>\n<td>&quot;side&quot;`</td>\n<td>The mode or styling of the sidenav, default being <code>&quot;over&quot;</code>. With <code>&quot;over&quot;</code> the sidenav will appear above the content, and a backdrop will be shown. With <code>&quot;push&quot;</code> the sidenav will push the content of the <code>&lt;md-sidenav-layout&gt;</code> to the side, and show a backdrop over it. <code>&quot;side&quot;</code> will resize the content and keep the sidenav opened. Clicking the backdrop will close sidenavs that do not have <code>mode=&quot;side&quot;</code>.</td>\n</tr>\n<tr>\n<td><code>opened</code></td>\n<td><code>boolean</code></td>\n<td>Whether or not the sidenav is opened. Use this binding to open/close the sidenav.</td>\n</tr>\n</tbody>\n</table>\n<h3 id=\"events\">Events</h3>\n<table>\n<thead>\n<tr>\n<th>Name</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>open-start</code></td>\n<td>Emitted when the sidenav is starting opening. This should only be used to coordinate animations.</td>\n</tr>\n<tr>\n<td><code>close-start</code></td>\n<td>Emitted when the sidenav is starting closing. This should only be used to coordinate animations.</td>\n</tr>\n<tr>\n<td><code>open</code></td>\n<td>Emitted when the sidenav is done opening. Use this for, e.g., setting focus on controls or updating state.</td>\n</tr>\n<tr>\n<td><code>close</code></td>\n<td>Emitted when the sidenav is done closing.</td>\n</tr>\n</tbody>\n</table>\n<h3 id=\"methods\">Methods</h3>\n<table>\n<thead>\n<tr>\n<th>Signature</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>open(): Promise&lt;void&gt;</code></td>\n<td>Open the sidenav. Equivalent to <code>opened = true</code>. Returns a promise that will resolve when the animation completes, or be rejected if the animation was cancelled.</td>\n</tr>\n<tr>\n<td><code>close(): Promise&lt;void&gt;</code></td>\n<td>Close the sidenav. Equivalent to <code>opened = false</code>. Returns a promise that will resolve when the animation completes, or be rejected if the animation was cancelled.</td>\n</tr>\n<tr>\n<td><code>toggle(): Promise&lt;void&gt;</code></td>\n<td>Toggle the sidenav. This is equivalent to <code>opened = !opened</code>. Returns a promise that will resolve when the animation completes, or be rejected if the animation was cancelled.</td>\n</tr>\n</tbody>\n</table>\n<h3 id=\"notes\">Notes</h3>\n<p>The <code>&lt;md-sidenav&gt;</code> will resize based on its content. You can also set its width in CSS, like so:</p>\n<pre><code class=\"lang-css\">md-sidenav {\n  width: 200px;\n}\n</code></pre>\n<p>Try to avoid percent based width as <code>resize</code> events are not (yet) supported.</p>\n<h2 id=\"examples\">Examples</h2>\n<p>Here&#39;s a simple example of using the sidenav:</p>\n<pre><code class=\"lang-html\">&lt;app&gt;\n  &lt;md-sidenav-layout&gt;\n    &lt;md-sidenav #start (open)=&quot;mybutton.focus()&quot;&gt;\n      Start Sidenav.\n      &lt;br&gt;\n      &lt;md-button #mybutton (click)=&quot;start.close()&quot;&gt;Close&lt;/button&gt;\n    &lt;/md-sidenav&gt;\n    &lt;md-sidenav #end align=&quot;end&quot;&gt;\n      End Sidenav.\n      &lt;md-button (click)=&quot;end.close()&quot;&gt;Close&lt;/button&gt;\n    &lt;/md-sidenav&gt;\n\n    My regular content. This will be moved into the proper DOM at runtime.\n  &lt;/md-sidenav-layout&gt;\n&lt;/app&gt;\n</code></pre>\n"
-  },
-  {
     "name": "Card",
     "sources": [
       "ng2-material/components/card/card.ts"
@@ -214,6 +197,22 @@
         "styles": "examples/components/radio/basic_usage.scss",
         "source": "examples/components/radio/basic_usage.ts",
         "component": "radio-basic-usage",
+        "name": "Basic Usage"
+      }
+    ]
+  },
+  {
+    "name": "Sidenav",
+    "sources": [
+      "ng2-material/components/sidenav/sidenav_service.ts",
+      "ng2-material/components/sidenav/sidenav.ts"
+    ],
+    "id": "sidenav",
+    "examples": [
+      {
+        "template": "examples/components/sidenav/basic_usage.html",
+        "source": "examples/components/sidenav/basic_usage.ts",
+        "component": "sidenav-basic-usage",
         "name": "Basic Usage"
       }
     ]
