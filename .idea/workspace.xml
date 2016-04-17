@@ -1,9 +1,586 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24bfe2de-b436-42ac-b066-9e12c8d743be" name="Default" comment="chore: v0.3.4">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/v/0.3.4/examples/components/sidenav/readme.md" afterPath="" />
+    <list default="true" id="24bfe2de-b436-42ac-b066-9e12c8d743be" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/sort-arrow-sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/dist/MaterialIcons-Regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/dist/MaterialIcons-Regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/dist/MaterialIcons-Regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/dist/MaterialIcons-Regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/font/MaterialIcons-Regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/font/MaterialIcons-Regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/font/MaterialIcons-Regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/font/MaterialIcons-Regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/grass.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/lights.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/old-board.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/pool.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/rose.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/washedout.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coverage/ng2-material/components/data_table/data_table_selectable_tr.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coverage/ng2-material/core/util/viewport.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/platform/browser/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/platform/browser/bootstrap.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/platform/browser/bootstrap.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/platform/node/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/platform/node/bootstrap.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/platform/node/bootstrap.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ng2-material/components/data_table/data_table_selectable_tr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ng2-material/components/data_table/data_table_selectable_tr.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ng2-material/components/data_table/data_table_selectable_tr.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ng2-material/core/util/viewport.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ng2-material/core/util/viewport.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ng2-material/core/util/viewport.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/base.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/coverage.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/all.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/backdrop/backdrop.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/backdrop/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/button/button.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/button/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/checkbox/checkbox.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/checkbox/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/content/content.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/content/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/data_table/data_table.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/data_table/data_table_selectable_tr.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/data_table/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/dialog/dialog.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/dialog/dialog_basic.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/dialog/dialog_config.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/dialog/dialog_container.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/dialog/dialog_ref.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/dialog/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/divider/divider.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/divider/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/form/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/form/messages.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/form/validators.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/icon/icon.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/icon/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/ink/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/ink/ink.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/input/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/input/input.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/list/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/list/list.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/peekaboo/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/peekaboo/peekaboo.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/progress_circular/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/progress_circular/progress_circular.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/progress_linear/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/progress_linear/progress_linear.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/radio/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/radio/radio_button.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/radio/radio_dispatcher.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/sidenav/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/sidenav/sidenav.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/sidenav/sidenav_service.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/subheader/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/subheader/subheader.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/switcher/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/switcher/switch.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/tabs/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/tabs/tabs.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/toolbar/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/components/toolbar/toolbar.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/core/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/core/key_codes.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/core/util/animate.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/core/util/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/core/util/ink.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/core/util/media.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/core/util/util.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/core/util/viewport.ts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/ng2-material/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/prettify.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/prettify.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/coverage/sorter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/dist/MaterialIcons-Regular.ijmap" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/dist/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/dist/font.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/dist/font.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/dist/font.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/dist/ng2-material.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/dist/ng2-material.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/dist/ng2-material.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/dist/ng2-material.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/dist/ng2-material.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/dist/ng2-material.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/dist/ng2-material.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/all.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/all.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/all.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/app.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/app.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/app.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/app.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/app.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/app.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/button/basic_usage.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/button/basic_usage.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/button/basic_usage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/button/basic_usage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/button/basic_usage.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/button/basic_usage.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/button/basic_usage.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/button/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/action_buttons.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/action_buttons.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/action_buttons.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/action_buttons.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/action_buttons.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/action_buttons.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/action_buttons.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/basic_usage.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/basic_usage.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/basic_usage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/basic_usage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/basic_usage.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/basic_usage.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/basic_usage.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/inline_actions.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/inline_actions.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/inline_actions.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/inline_actions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/inline_actions.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/inline_actions.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/card/inline_actions.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/checkbox/basic_usage.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/checkbox/basic_usage.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/checkbox/basic_usage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/checkbox/basic_usage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/checkbox/basic_usage.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/checkbox/basic_usage.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/checkbox/basic_usage.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/checkbox/syncing.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/checkbox/syncing.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/checkbox/syncing.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/checkbox/syncing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/checkbox/syncing.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/checkbox/syncing.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/checkbox/syncing.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/data_table/basic_usage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/data_table/basic_usage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/data_table/basic_usage.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/data_table/basic_usage.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/data_table/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/data_table/selectable_usage.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/data_table/selectable_usage.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/data_table/selectable_usage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/data_table/selectable_usage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/data_table/selectable_usage.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/data_table/selectable_usage.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/data_table/selectable_usage.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/dialog/basic_usage.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/dialog/basic_usage.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/dialog/basic_usage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/dialog/basic_usage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/dialog/basic_usage.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/dialog/basic_usage.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/dialog/basic_usage.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/input/basic_usage.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/input/basic_usage.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/input/basic_usage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/input/basic_usage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/input/basic_usage.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/input/basic_usage.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/input/basic_usage.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/input/form_builder.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/input/form_builder.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/input/form_builder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/input/form_builder.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/input/form_builder.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/input/form_builder.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/input/form_builder.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/list/basic_usage.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/list/basic_usage.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/list/basic_usage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/list/basic_usage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/list/basic_usage.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/list/basic_usage.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/list/basic_usage.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/progress_circular/basic_usage.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/progress_circular/basic_usage.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/progress_circular/basic_usage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/progress_circular/basic_usage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/progress_circular/basic_usage.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/progress_circular/basic_usage.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/progress_circular/basic_usage.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/progress_linear/basic_usage.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/progress_linear/basic_usage.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/progress_linear/basic_usage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/progress_linear/basic_usage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/progress_linear/basic_usage.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/progress_linear/basic_usage.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/progress_linear/basic_usage.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/radio/basic_usage.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/radio/basic_usage.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/radio/basic_usage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/radio/basic_usage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/radio/basic_usage.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/radio/basic_usage.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/radio/basic_usage.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/sidenav/basic_usage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/sidenav/basic_usage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/sidenav/basic_usage.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/sidenav/basic_usage.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/switch/basic_usage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/switch/basic_usage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/switch/basic_usage.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/switch/basic_usage.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/tabs/dynamic_height.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/tabs/dynamic_height.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/tabs/dynamic_height.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/tabs/dynamic_height.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/tabs/dynamic_height.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/tabs/dynamic_height.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/tabs/dynamic_height.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/tabs/dynamic_tabs.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/tabs/dynamic_tabs.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/tabs/dynamic_tabs.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/tabs/dynamic_tabs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/tabs/dynamic_tabs.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/tabs/dynamic_tabs.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/tabs/dynamic_tabs.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/toolbar/basic_usage.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/toolbar/basic_usage.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/toolbar/basic_usage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/toolbar/basic_usage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/toolbar/basic_usage.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/toolbar/basic_usage.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/toolbar/basic_usage.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/toolbar/scroll_shrink.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/toolbar/scroll_shrink.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/toolbar/scroll_shrink.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/toolbar/scroll_shrink.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/toolbar/scroll_shrink.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/toolbar/scroll_shrink.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/toolbar/scroll_shrink.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/whiteframe/basic_usage.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/whiteframe/basic_usage.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/whiteframe/basic_usage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/whiteframe/basic_usage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/whiteframe/basic_usage.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/whiteframe/basic_usage.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/components/whiteframe/basic_usage.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/example.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/example.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/example.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/example.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/example.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/example.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/example.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/highlight.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/highlight.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/highlight.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/highlight.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/highlight.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/highlight.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/platform/browser/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/platform/browser/bootstrap.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/platform/browser/bootstrap.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/platform/node/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/platform/node/bootstrap.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/platform/node/bootstrap.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/routes/component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/routes/component.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/routes/component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/routes/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/routes/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/routes/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/routes/index.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/services/components.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/services/components.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/services/components.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/services/navigation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/services/navigation.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/services/navigation.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/services/version.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/services/version.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/examples/services/version.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/all.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/all.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/all.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/all.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/all.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/all.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/backdrop/backdrop.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/backdrop/backdrop.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/backdrop/backdrop.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/backdrop/backdrop.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/button/button.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/button/button.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/button/button.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/button/button.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/card/card.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/card/card.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/card/card.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/card/card.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/checkbox/checkbox.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/checkbox/checkbox.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/checkbox/checkbox.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/checkbox/checkbox.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/content/content.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/content/content.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/content/content.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/content/content.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/data_table/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/data_table/data_table.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/data_table/data_table.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/data_table/data_table.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/data_table/data_table.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/data_table/data_table_selectable_tr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/data_table/data_table_selectable_tr.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/data_table/data_table_selectable_tr.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/dialog/dialog.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/dialog/dialog.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/dialog/dialog.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/dialog/dialog.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/dialog/dialog_basic.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/dialog/dialog_basic.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/dialog/dialog_basic.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/dialog/dialog_config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/dialog/dialog_config.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/dialog/dialog_config.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/dialog/dialog_container.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/dialog/dialog_container.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/dialog/dialog_container.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/dialog/dialog_ref.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/dialog/dialog_ref.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/dialog/dialog_ref.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/divider/divider.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/divider/divider.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/divider/divider.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/divider/divider.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/form/messages.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/form/messages.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/form/messages.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/form/messages.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/form/validators.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/form/validators.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/form/validators.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/icon/icon.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/icon/icon.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/icon/icon.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/icon/icon.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/ink/ink.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/ink/ink.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/ink/ink.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/input/input.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/input/input.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/input/input.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/input/input.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/list/list.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/list/list.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/list/list.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/list/list.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/peekaboo/peekaboo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/peekaboo/peekaboo.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/peekaboo/peekaboo.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/peekaboo/peekaboo.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/progress_circular/progress_circular.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/progress_circular/progress_circular.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/progress_circular/progress_circular.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/progress_circular/progress_circular.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/progress_linear/progress_linear.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/progress_linear/progress_linear.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/progress_linear/progress_linear.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/progress_linear/progress_linear.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/radio/radio_button.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/radio/radio_button.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/radio/radio_button.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/radio/radio_button.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/radio/radio_dispatcher.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/radio/radio_dispatcher.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/radio/radio_dispatcher.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/radio/radio_group.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/sidenav/sidenav.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/sidenav/sidenav.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/sidenav/sidenav.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/sidenav/sidenav.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/sidenav/sidenav_service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/sidenav/sidenav_service.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/sidenav/sidenav_service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/subheader/subheader.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/subheader/subheader.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/subheader/subheader.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/subheader/subheader.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/switcher/switch.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/switcher/switch.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/switcher/switch.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/switcher/switch.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/tabs/tabs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/tabs/tabs.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/tabs/tabs.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/tabs/tabs.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/toolbar/toolbar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/toolbar/toolbar.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/toolbar/toolbar.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/toolbar/toolbar.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/components/whiteframe/whiteframe.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/key_codes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/key_codes.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/key_codes.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/style/default-theme.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/style/layout.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/style/mixins.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/style/palette.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/style/shadows.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/style/structure.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/style/theme-functions.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/style/typography.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/style/variables.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/util/animate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/util/animate.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/util/animate.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/util/ink.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/util/ink.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/util/ink.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/util/media.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/util/media.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/util/media.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/util/util.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/util/util.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/util/util.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/util/viewport.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/util/viewport.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/core/util/viewport.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/webpack_all.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/webpack_all.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/webpack_all.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/webpack_styles.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/webpack_styles.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/ng2-material/webpack_styles.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/angular2/bundles/angular2-polyfills.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/angular2/bundles/angular2.dev.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/angular2/bundles/http.dev.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/angular2/bundles/router.dev.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/angular2/typings/browser.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/angular2/typings/es6-collections/es6-collections.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/angular2/typings/es6-promise/es6-promise.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/es6-shim/es6-sham.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/es6-shim/es6-sham.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/es6-shim/es6-shim.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/es6-shim/es6-shim.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/highlight.pack.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/agate.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/androidstudio.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/arta.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/ascetic.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-cave.dark.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-cave.light.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-dune.dark.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-dune.light.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-estuary.dark.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-estuary.light.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-forest.dark.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-forest.light.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-heath.dark.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-heath.light.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-lakeside.dark.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-lakeside.light.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-plateau.dark.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-plateau.light.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-savanna.dark.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-savanna.light.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-seaside.dark.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-seaside.light.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-sulphurpool.dark.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/atelier-sulphurpool.light.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/brown_paper.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/codepen-embed.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/color-brewer.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/dark.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/darkula.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/default.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/docco.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/far.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/foundation.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/github-gist.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/github.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/googlecode.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/grayscale.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/hopscotch.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/hybrid.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/idea.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/ir_black.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/kimbie.dark.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/kimbie.light.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/magula.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/mono-blue.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/monokai.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/monokai_sublime.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/obsidian.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/paraiso.dark.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/paraiso.light.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/pojoaque.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/railscasts.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/rainbow.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/school_book.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/solarized_dark.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/solarized_light.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/sunburst.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/tomorrow-night-blue.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/tomorrow-night-bright.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/tomorrow-night-eighties.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/tomorrow-night.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/tomorrow.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/vs.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/xcode.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/highlightjs/styles/zenburn.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/rxjs/bundles/Rx.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/systemjs/dist/system-csp-production.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/systemjs/dist/system-csp-production.src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/systemjs/dist/system-polyfills.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/systemjs/dist/system-polyfills.src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/systemjs/dist/system-register-only.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/systemjs/dist/system-register-only.src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/systemjs/dist/system.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/node_modules/systemjs/dist/system.src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/coverage.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/font/MaterialIcons-Regular.ijmap" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/font/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/font/codepoints" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/font/font.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/font/font.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/font/font.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/avatars/avatar1.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/avatars/avatar10.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/avatars/avatar11.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/avatars/avatar12.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/avatars/avatar13.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/avatars/avatar14.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/avatars/avatar15.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/avatars/avatar16.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/avatars/avatar2.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/avatars/avatar3.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/avatars/avatar4.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/avatars/avatar5.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/avatars/avatar6.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/avatars/avatar7.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/avatars/avatar8.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/avatars/avatar9.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/images/logo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/meta.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v/0.3.5/public/version.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/MaterialIcons-Regular.eot" afterPath="$PROJECT_DIR$/dist/MaterialIcons-Regular.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/MaterialIcons-Regular.ttf" afterPath="$PROJECT_DIR$/dist/MaterialIcons-Regular.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/MaterialIcons-Regular.woff" afterPath="$PROJECT_DIR$/dist/MaterialIcons-Regular.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/MaterialIcons-Regular.woff2" afterPath="$PROJECT_DIR$/dist/MaterialIcons-Regular.woff2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/font/MaterialIcons-Regular.eot" afterPath="$PROJECT_DIR$/public/font/MaterialIcons-Regular.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/font/MaterialIcons-Regular.ttf" afterPath="$PROJECT_DIR$/public/font/MaterialIcons-Regular.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/font/MaterialIcons-Regular.woff" afterPath="$PROJECT_DIR$/public/font/MaterialIcons-Regular.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/font/MaterialIcons-Regular.woff2" afterPath="$PROJECT_DIR$/public/font/MaterialIcons-Regular.woff2" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/coverage.txt" afterPath="$PROJECT_DIR$/coverage/coverage.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/index.html" afterPath="$PROJECT_DIR$/coverage/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/ng2-material/all.ts.html" afterPath="$PROJECT_DIR$/coverage/ng2-material/all.ts.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/ng2-material/components/backdrop/backdrop.ts.html" afterPath="$PROJECT_DIR$/coverage/ng2-material/components/backdrop/backdrop.ts.html" />
@@ -15,7 +592,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/ng2-material/components/content/content.ts.html" afterPath="$PROJECT_DIR$/coverage/ng2-material/components/content/content.ts.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/ng2-material/components/content/index.html" afterPath="$PROJECT_DIR$/coverage/ng2-material/components/content/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/ng2-material/components/data_table/data_table.ts.html" afterPath="$PROJECT_DIR$/coverage/ng2-material/components/data_table/data_table.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/ng2-material/components/data_table/data_table_tr.ts.html" afterPath="$PROJECT_DIR$/coverage/ng2-material/components/data_table/data_table_tr.ts.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/ng2-material/components/data_table/index.html" afterPath="$PROJECT_DIR$/coverage/ng2-material/components/data_table/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/ng2-material/components/dialog/dialog.ts.html" afterPath="$PROJECT_DIR$/coverage/ng2-material/components/dialog/dialog.ts.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/ng2-material/components/dialog/dialog_basic.ts.html" afterPath="$PROJECT_DIR$/coverage/ng2-material/components/dialog/dialog_basic.ts.html" />
@@ -64,68 +640,91 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/ng2-material/core/util/media.ts.html" afterPath="$PROJECT_DIR$/coverage/ng2-material/core/util/media.ts.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/ng2-material/core/util/util.ts.html" afterPath="$PROJECT_DIR$/coverage/ng2-material/core/util/util.ts.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/ng2-material/index.html" afterPath="$PROJECT_DIR$/coverage/ng2-material/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/MaterialIcons-Regular.ijmap" afterPath="$PROJECT_DIR$/dist/MaterialIcons-Regular.ijmap" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/ng2-material.css" afterPath="$PROJECT_DIR$/dist/ng2-material.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/ng2-material.css.map" afterPath="$PROJECT_DIR$/dist/ng2-material.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/ng2-material.d.ts" afterPath="$PROJECT_DIR$/dist/ng2-material.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/ng2-material.js" afterPath="$PROJECT_DIR$/dist/ng2-material.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/ng2-material.js.map" afterPath="$PROJECT_DIR$/dist/ng2-material.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/ng2-material.min.js" afterPath="$PROJECT_DIR$/dist/ng2-material.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/ng2-material.min.js.map" afterPath="$PROJECT_DIR$/dist/ng2-material.min.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/app.css" afterPath="$PROJECT_DIR$/examples/app.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/app.css.map" afterPath="$PROJECT_DIR$/examples/app.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/app.js" afterPath="$PROJECT_DIR$/examples/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/app.js.map" afterPath="$PROJECT_DIR$/examples/app.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/app.ts" afterPath="$PROJECT_DIR$/examples/app.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/components/data_table/selectable_usage.html" afterPath="$PROJECT_DIR$/examples/components/data_table/selectable_usage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/components/dialog/basic_usage.js" afterPath="$PROJECT_DIR$/examples/components/dialog/basic_usage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/components/dialog/basic_usage.js.map" afterPath="$PROJECT_DIR$/examples/components/dialog/basic_usage.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/components/dialog/basic_usage.ts" afterPath="$PROJECT_DIR$/examples/components/dialog/basic_usage.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/components/input/form_builder.html" afterPath="$PROJECT_DIR$/examples/components/input/form_builder.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/components/input/form_builder.js" afterPath="$PROJECT_DIR$/examples/components/input/form_builder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/components/input/form_builder.js.map" afterPath="$PROJECT_DIR$/examples/components/input/form_builder.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/components/input/form_builder.ts" afterPath="$PROJECT_DIR$/examples/components/input/form_builder.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/components/sidenav/basic_usage.js" afterPath="$PROJECT_DIR$/examples/components/sidenav/basic_usage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/components/sidenav/basic_usage.js.map" afterPath="$PROJECT_DIR$/examples/components/sidenav/basic_usage.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/components/sidenav/basic_usage.ts" afterPath="$PROJECT_DIR$/examples/components/sidenav/basic_usage.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/components/tabs/dynamic_tabs.js" afterPath="$PROJECT_DIR$/examples/components/tabs/dynamic_tabs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/components/tabs/dynamic_tabs.js.map" afterPath="$PROJECT_DIR$/examples/components/tabs/dynamic_tabs.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/components/tabs/dynamic_tabs.ts" afterPath="$PROJECT_DIR$/examples/components/tabs/dynamic_tabs.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/example.js" afterPath="$PROJECT_DIR$/examples/example.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/example.js.map" afterPath="$PROJECT_DIR$/examples/example.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/example.ts" afterPath="$PROJECT_DIR$/examples/example.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/routes/component.js" afterPath="$PROJECT_DIR$/examples/routes/component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/routes/component.js.map" afterPath="$PROJECT_DIR$/examples/routes/component.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/routes/component.ts" afterPath="$PROJECT_DIR$/examples/routes/component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/routes/index.js" afterPath="$PROJECT_DIR$/examples/routes/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/routes/index.js.map" afterPath="$PROJECT_DIR$/examples/routes/index.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/routes/index.ts" afterPath="$PROJECT_DIR$/examples/routes/index.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/all.css" afterPath="$PROJECT_DIR$/ng2-material/all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/all.css.map" afterPath="$PROJECT_DIR$/ng2-material/all.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/all.js" afterPath="$PROJECT_DIR$/ng2-material/all.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/all.js.map" afterPath="$PROJECT_DIR$/ng2-material/all.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/all.ts" afterPath="$PROJECT_DIR$/ng2-material/all.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/backdrop/backdrop.js" afterPath="$PROJECT_DIR$/ng2-material/components/backdrop/backdrop.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/backdrop/backdrop.js.map" afterPath="$PROJECT_DIR$/ng2-material/components/backdrop/backdrop.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/backdrop/backdrop.ts" afterPath="$PROJECT_DIR$/ng2-material/components/backdrop/backdrop.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/data_table/README.md" afterPath="$PROJECT_DIR$/ng2-material/components/data_table/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/data_table/data_table.js" afterPath="$PROJECT_DIR$/ng2-material/components/data_table/data_table.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/data_table/data_table.js.map" afterPath="$PROJECT_DIR$/ng2-material/components/data_table/data_table.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/data_table/data_table.scss" afterPath="$PROJECT_DIR$/ng2-material/components/data_table/data_table.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/data_table/data_table.ts" afterPath="$PROJECT_DIR$/ng2-material/components/data_table/data_table.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/input/input.js" afterPath="$PROJECT_DIR$/ng2-material/components/input/input.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/input/input.js.map" afterPath="$PROJECT_DIR$/ng2-material/components/input/input.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/input/input.ts" afterPath="$PROJECT_DIR$/ng2-material/components/input/input.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/peekaboo/peekaboo.js" afterPath="$PROJECT_DIR$/ng2-material/components/peekaboo/peekaboo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/peekaboo/peekaboo.js.map" afterPath="$PROJECT_DIR$/ng2-material/components/peekaboo/peekaboo.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/peekaboo/peekaboo.ts" afterPath="$PROJECT_DIR$/ng2-material/components/peekaboo/peekaboo.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/sidenav/sidenav.js" afterPath="$PROJECT_DIR$/ng2-material/components/sidenav/sidenav.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/sidenav/sidenav.js.map" afterPath="$PROJECT_DIR$/ng2-material/components/sidenav/sidenav.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/sidenav/sidenav.ts" afterPath="$PROJECT_DIR$/ng2-material/components/sidenav/sidenav.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/toolbar/toolbar.js" afterPath="$PROJECT_DIR$/ng2-material/components/toolbar/toolbar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/toolbar/toolbar.js.map" afterPath="$PROJECT_DIR$/ng2-material/components/toolbar/toolbar.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/components/toolbar/toolbar.ts" afterPath="$PROJECT_DIR$/ng2-material/components/toolbar/toolbar.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/core/util/animate.js" afterPath="$PROJECT_DIR$/ng2-material/core/util/animate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/core/util/animate.js.map" afterPath="$PROJECT_DIR$/ng2-material/core/util/animate.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/core/util/animate.ts" afterPath="$PROJECT_DIR$/ng2-material/core/util/animate.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/core/util/media.js" afterPath="$PROJECT_DIR$/ng2-material/core/util/media.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/core/util/media.js.map" afterPath="$PROJECT_DIR$/ng2-material/core/util/media.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/core/util/media.ts" afterPath="$PROJECT_DIR$/ng2-material/core/util/media.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/core/util/util.js" afterPath="$PROJECT_DIR$/ng2-material/core/util/util.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/core/util/util.js.map" afterPath="$PROJECT_DIR$/ng2-material/core/util/util.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/core/util/util.ts" afterPath="$PROJECT_DIR$/ng2-material/core/util/util.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/webpack_all.js.map" afterPath="$PROJECT_DIR$/ng2-material/webpack_all.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/webpack_all.ts" afterPath="$PROJECT_DIR$/ng2-material/webpack_all.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/webpack_styles.js.map" afterPath="$PROJECT_DIR$/ng2-material/webpack_styles.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng2-material/webpack_styles.ts" afterPath="$PROJECT_DIR$/ng2-material/webpack_styles.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/angular2/bundles/angular2-polyfills.js" afterPath="$PROJECT_DIR$/node_modules/angular2/bundles/angular2-polyfills.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/angular2/bundles/angular2.dev.js" afterPath="$PROJECT_DIR$/node_modules/angular2/bundles/angular2.dev.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/angular2/bundles/http.dev.js" afterPath="$PROJECT_DIR$/node_modules/angular2/bundles/http.dev.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/angular2/bundles/router.dev.js" afterPath="$PROJECT_DIR$/node_modules/angular2/bundles/router.dev.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/coverage.json" afterPath="$PROJECT_DIR$/public/coverage.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/font/MaterialIcons-Regular.ijmap" afterPath="$PROJECT_DIR$/public/font/MaterialIcons-Regular.ijmap" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/font/codepoints" afterPath="$PROJECT_DIR$/public/font/codepoints" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/meta.json" afterPath="$PROJECT_DIR$/public/meta.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/all.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/all.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/backdrop/backdrop.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/backdrop/backdrop.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/backdrop/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/backdrop/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/button/button.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/button/button.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/button/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/button/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/checkbox/checkbox.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/checkbox/checkbox.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/checkbox/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/checkbox/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/content/content.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/content/content.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/content/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/content/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/data_table/data_table.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/data_table/data_table.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/data_table/data_table_tr.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/data_table/data_table_tr.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/data_table/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/data_table/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/dialog/dialog.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/dialog/dialog.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/dialog/dialog_basic.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/dialog/dialog_basic.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/dialog/dialog_config.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/dialog/dialog_config.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/dialog/dialog_container.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/dialog/dialog_container.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/dialog/dialog_ref.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/dialog/dialog_ref.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/dialog/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/dialog/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/divider/divider.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/divider/divider.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/divider/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/divider/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/form/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/form/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/form/messages.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/form/messages.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/form/validators.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/form/validators.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/icon/icon.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/icon/icon.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/icon/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/icon/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/ink/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/ink/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/ink/ink.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/ink/ink.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/input/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/input/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/input/input.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/input/input.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/list/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/list/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/list/list.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/list/list.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/peekaboo/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/peekaboo/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/peekaboo/peekaboo.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/peekaboo/peekaboo.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/progress_circular/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/progress_circular/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/progress_circular/progress_circular.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/progress_circular/progress_circular.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/progress_linear/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/progress_linear/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/progress_linear/progress_linear.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/progress_linear/progress_linear.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/radio/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/radio/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/radio/radio_button.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/radio/radio_button.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/radio/radio_dispatcher.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/radio/radio_dispatcher.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/sidenav/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/sidenav/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/sidenav/sidenav.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/sidenav/sidenav.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/sidenav/sidenav_service.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/sidenav/sidenav_service.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/subheader/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/subheader/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/subheader/subheader.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/subheader/subheader.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/switcher/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/switcher/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/switcher/switch.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/switcher/switch.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/tabs/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/tabs/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/tabs/tabs.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/tabs/tabs.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/toolbar/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/toolbar/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/toolbar/toolbar.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/components/toolbar/toolbar.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/core/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/core/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/core/key_codes.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/core/key_codes.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/core/util/animate.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/core/util/animate.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/core/util/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/core/util/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/core/util/ink.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/core/util/ink.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/core/util/media.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/core/util/media.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/core/util/util.ts.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/core/util/util.ts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/index.html" afterPath="$PROJECT_DIR$/v/0.3.4/coverage/ng2-material/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v/0.3.4/public/meta.json" afterPath="$PROJECT_DIR$/v/0.3.4/public/meta.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/version.json" afterPath="$PROJECT_DIR$/public/version.json" />
     </list>
     <ignored path="ng2-material.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -196,11 +795,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="font.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/v/0.3.5/dist/font.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="base.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/coverage/base.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+            <state relative-caret-position="255">
+              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -227,8 +836,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="253" />
-    <option name="y" value="218" />
+    <option name="x" value="241" />
+    <option name="y" value="89" />
     <option name="width" value="1630" />
     <option name="height" value="847" />
   </component>
@@ -289,7 +898,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="0.3.4" />
+              <option name="myItemId" value="0.3.5" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -317,68 +926,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="examples" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng2-material GHPAGES" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng2-material" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="examples" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng2-material GHPAGES" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng2-material" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="examples" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sidenav" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng2-material GHPAGES" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng2-material" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="coverage" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -497,7 +1052,8 @@
       <workItem from="1459109350704" duration="815000" />
       <workItem from="1459117732943" duration="167000" />
       <workItem from="1459123412765" duration="1121000" />
-      <workItem from="1459609269927" duration="426000" />
+      <workItem from="1459609269927" duration="1233000" />
+      <workItem from="1460915752956" duration="142000" />
     </task>
     <task id="LOCAL-00001" summary="chore: update for 0.0.4">
       <created>1450106110866</created>
@@ -800,14 +1356,21 @@
       <option name="project" value="LOCAL" />
       <updated>1459265326327</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="chore: v0.3.4">
+      <created>1459609707164</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1459609707164</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4211000" />
+    <option name="totallyTimeSpent" value="5160000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="253" y="218" width="1630" height="847" extended-state="0" />
+    <frame x="241" y="89" width="1630" height="847" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24673711" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -816,7 +1379,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18543047" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18494056" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -876,13 +1439,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/v/0.2.11/dist/font.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/coverage/base.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1193,21 +1749,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/components/sidenav/readme.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/v/0.3.4/examples/components/sidenav/readme.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/examples/components/sidenav/readme.md" />
+    <entry file="file://$PROJECT_DIR$/v/0.3.4/examples/components/sidenav/readme.md" />
+    <entry file="file://$PROJECT_DIR$/v/0.3.5/dist/font.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1217,8 +1761,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/coverage/base.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+        <state relative-caret-position="255">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding />
         </state>
       </provider>

@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ng2-material/components/data_table/data_table_selectable_tr.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">ng2-material/components/data_table/</a> data_table_selectable_tr.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.88% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>62/64</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">85.71% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>18/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.36% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>53/55</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {Component, Output, Input, EventEmitter, Inject, Optional, forwardRef, ElementRef, AfterContentInit} from "angular2/core";
+import {isPresent} from "angular2/src/facade/lang";
+import 'rxjs/add/operator/share';
+import 'rxjs/add/operator/map';
+import {MdCheckbox} from "../checkbox/checkbox";
+import {MdDataTable} from './data_table';
+&nbsp;
+/**
+ * MdDataTable row
+ */
+export interface ITableSelectableRow {
+  selectableValue: string;
+  onChange: EventEmitter&lt;ITableSelectableRowSelectionChange&gt;;
+  isActive: boolean;
+  change: () =&gt; void;
+  ngAfterContentInit: () =&gt; void;
+}
+&nbsp;
+/**
+ * Selectable change event data
+ */
+export interface ITableSelectableRowSelectionChange {
+  name: string;
+  target: ITableSelectableRow;
+  isActive: boolean;
+  selectableValue: string;
+}
+&nbsp;
+export abstract class AbstractMdDataTableSelectableRow implements AfterContentInit, ITableSelectableRow {
+  @Input('selectable-value')
+  selectableValue: string;
+  @Output()
+  onChange: EventEmitter&lt;ITableSelectableRowSelectionChange&gt; = new EventEmitter(false);
+  isActive: boolean = false;
+&nbsp;
+  constructor(@Optional()
+              @Inject(forwardRef(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>MdDataTable)</span>)
+              public table: MdDataTable, protected _element: ElementRef) {
+    this.onChange.share();
+  }
+&nbsp;
+  /**
+   * Change active status
+   */
+  change() {
+    this.isActive = !this.isActive;
+&nbsp;
+    let event: ITableSelectableRowSelectionChange = {
+      name: 'selectable_row_change',
+      target: this,
+      isActive: this.isActive,
+      selectableValue: this.selectableValue
+    }
+    this.onChange.emit(event);
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngAfterContentInit() {</span>}
+}
+&nbsp;
+@Component({
+  selector: 'tr[md-data-table-header-selectable-row]',
+  template: `
+        &lt;th class="md-data-check-cell"&gt;
+            &lt;md-checkbox #check [checked]="isActive"&gt;&lt;/md-checkbox&gt;
+        &lt;/th&gt;
+        &lt;ng-content&gt;&lt;/ng-content&gt;
+    `,
+  directives: [MdCheckbox],
+  host: {
+    '[class.active]': 'isActive',
+    '(click)': 'change()'
+  }
+})
+export class MdDataTableHeaderSelectableRow extends AbstractMdDataTableSelectableRow {
+  constructor(@Optional()
+              @Inject(forwardRef(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>MdDataTable)</span>)
+              public table: MdDataTable, protected _element: ElementRef) {
+    super(table, _element);
+  }
+&nbsp;
+  _bindListener(): void {
+    this.table.onSelectableChange
+      .map(event =&gt; event.allSelected)
+      .subscribe(newActiveStatus =&gt; this.isActive = newActiveStatus);
+  }
+&nbsp;
+  ngAfterContentInit() {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (isPresent(this.table)) {
+      this._bindListener();
+    }
+  }
+}
+&nbsp;
+@Component({
+  selector: 'tr[md-data-table-selectable-row]',
+  template: `
+        &lt;td class="md-data-check-cell"&gt;
+          &lt;md-checkbox #check [checked]="isActive"&gt;&lt;/md-checkbox&gt;
+        &lt;/td&gt;
+        &lt;ng-content&gt;&lt;/ng-content&gt;
+    `,
+  directives: [MdCheckbox],
+  host: {
+    '[class.active]': 'isActive',
+    '(click)': 'change()'
+  }
+})
+export class MdDataTableSelectableRow extends AbstractMdDataTableSelectableRow {
+  constructor(@Optional()
+              @Inject(forwardRef(() =&gt; MdDataTable))
+              public table: MdDataTable, protected _element: ElementRef) {
+    super(table, _element);
+  }
+&nbsp;
+  /**
+   * @param {any} element
+   *
+   * @returns {string}
+   */
+  _getIndex(element): string {
+    return Array.prototype.indexOf.call(element.parentNode.children, element).toString();
+  }
+&nbsp;
+  _bindListener(): void {
+    this.table.onSelectableChange
+      .map(event =&gt; {
+        return event.values !== undefined &amp;&amp;
+          event.values.length &amp;&amp;
+          (event.values.findIndex((value: string) =&gt; value === this.selectableValue)) !== -1;
+      })
+      .subscribe(newActiveStatus =&gt; this.isActive = newActiveStatus);
+  }
+&nbsp;
+  ngAfterContentInit() {
+    let element = this._element.nativeElement;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (this.selectableValue === undefined) {
+      this.selectableValue = this._getIndex(element);
+    }
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (isPresent(this.table)) {
+      this._bindListener();
+    }
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Apr 17 2016 10:55:13 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>
