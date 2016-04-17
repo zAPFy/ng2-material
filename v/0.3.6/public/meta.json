@@ -1,0 +1,293 @@
+[
+  {
+    "name": "Button",
+    "sources": [
+      "ng2-material/components/button/button.ts"
+    ],
+    "id": "button",
+    "examples": [
+      {
+        "template": "examples/components/button/basic_usage.html",
+        "styles": "examples/components/button/basic_usage.scss",
+        "source": "examples/components/button/basic_usage.ts",
+        "component": "button-basic-usage",
+        "name": "Basic Usage"
+      }
+    ],
+    "readme": "<p>Buttons are great for clicking.</p>\n"
+  },
+  {
+    "name": "Data Table",
+    "sources": [
+      "ng2-material/components/data_table/data_table_selectable_tr.ts",
+      "ng2-material/components/data_table/data_table.ts"
+    ],
+    "id": "data-table",
+    "examples": [
+      {
+        "template": "examples/components/data_table/basic_usage.html",
+        "source": "examples/components/data_table/basic_usage.ts",
+        "component": "data-table-basic-usage",
+        "name": "Basic Usage"
+      },
+      {
+        "template": "examples/components/data_table/selectable_usage.html",
+        "styles": "examples/components/data_table/selectable_usage.scss",
+        "source": "examples/components/data_table/selectable_usage.ts",
+        "component": "data-table-selectable-usage",
+        "name": "Selectable Usage"
+      }
+    ],
+    "readme": "<p>A data table that supports static and selectable rows.</p>\n"
+  },
+  {
+    "name": "Card",
+    "sources": [
+      "ng2-material/components/card/card.ts"
+    ],
+    "id": "card",
+    "examples": [
+      {
+        "template": "examples/components/card/action_buttons.html",
+        "styles": "examples/components/card/action_buttons.scss",
+        "source": "examples/components/card/action_buttons.ts",
+        "component": "card-action-buttons",
+        "name": "Action Buttons"
+      },
+      {
+        "template": "examples/components/card/basic_usage.html",
+        "styles": "examples/components/card/basic_usage.scss",
+        "source": "examples/components/card/basic_usage.ts",
+        "component": "card-basic-usage",
+        "name": "Basic Usage"
+      },
+      {
+        "template": "examples/components/card/inline_actions.html",
+        "styles": "examples/components/card/inline_actions.scss",
+        "source": "examples/components/card/inline_actions.ts",
+        "component": "card-inline-actions",
+        "name": "Inline Actions"
+      }
+    ]
+  },
+  {
+    "name": "Checkbox",
+    "sources": [
+      "ng2-material/components/checkbox/checkbox.ts"
+    ],
+    "id": "checkbox",
+    "examples": [
+      {
+        "template": "examples/components/checkbox/basic_usage.html",
+        "styles": "examples/components/checkbox/basic_usage.scss",
+        "source": "examples/components/checkbox/basic_usage.ts",
+        "component": "checkbox-basic-usage",
+        "name": "Basic Usage"
+      },
+      {
+        "template": "examples/components/checkbox/syncing.html",
+        "styles": "examples/components/checkbox/syncing.scss",
+        "source": "examples/components/checkbox/syncing.ts",
+        "component": "checkbox-syncing",
+        "name": "Syncing"
+      }
+    ]
+  },
+  {
+    "name": "Dialog",
+    "sources": [
+      "ng2-material/components/dialog/dialog_basic.ts",
+      "ng2-material/components/dialog/dialog_config.ts",
+      "ng2-material/components/dialog/dialog_container.ts",
+      "ng2-material/components/dialog/dialog_ref.ts",
+      "ng2-material/components/dialog/dialog.ts"
+    ],
+    "id": "dialog",
+    "examples": [
+      {
+        "template": "examples/components/dialog/basic_usage.html",
+        "styles": "examples/components/dialog/basic_usage.scss",
+        "source": "examples/components/dialog/basic_usage.ts",
+        "component": "dialog-basic-usage",
+        "name": "Basic Usage"
+      }
+    ]
+  },
+  {
+    "name": "Input",
+    "sources": [
+      "ng2-material/components/input/input.ts"
+    ],
+    "id": "input",
+    "examples": [
+      {
+        "template": "examples/components/input/basic_usage.html",
+        "styles": "examples/components/input/basic_usage.scss",
+        "source": "examples/components/input/basic_usage.ts",
+        "component": "input-basic-usage",
+        "name": "Basic Usage"
+      },
+      {
+        "template": "examples/components/input/form_builder.html",
+        "styles": "examples/components/input/form_builder.scss",
+        "source": "examples/components/input/form_builder.ts",
+        "component": "input-form-builder",
+        "name": "Form Builder"
+      }
+    ]
+  },
+  {
+    "name": "List",
+    "sources": [
+      "ng2-material/components/list/list.ts"
+    ],
+    "id": "list",
+    "examples": [
+      {
+        "template": "examples/components/list/basic_usage.html",
+        "styles": "examples/components/list/basic_usage.scss",
+        "source": "examples/components/list/basic_usage.ts",
+        "component": "list-basic-usage",
+        "name": "Basic Usage"
+      }
+    ]
+  },
+  {
+    "name": "Progress Circular",
+    "sources": [
+      "ng2-material/components/progress_circular/progress_circular.ts"
+    ],
+    "id": "progress-circular",
+    "examples": [
+      {
+        "template": "examples/components/progress_circular/basic_usage.html",
+        "styles": "examples/components/progress_circular/basic_usage.scss",
+        "source": "examples/components/progress_circular/basic_usage.ts",
+        "component": "progress-circular-basic-usage",
+        "name": "Basic Usage"
+      }
+    ]
+  },
+  {
+    "name": "Progress Linear",
+    "sources": [
+      "ng2-material/components/progress_linear/progress_linear.ts"
+    ],
+    "id": "progress-linear",
+    "examples": [
+      {
+        "template": "examples/components/progress_linear/basic_usage.html",
+        "styles": "examples/components/progress_linear/basic_usage.scss",
+        "source": "examples/components/progress_linear/basic_usage.ts",
+        "component": "progress-linear-basic-usage",
+        "name": "Basic Usage"
+      }
+    ]
+  },
+  {
+    "name": "Radio",
+    "sources": [
+      "ng2-material/components/radio/radio_button.ts",
+      "ng2-material/components/radio/radio_dispatcher.ts"
+    ],
+    "id": "radio",
+    "examples": [
+      {
+        "template": "examples/components/radio/basic_usage.html",
+        "styles": "examples/components/radio/basic_usage.scss",
+        "source": "examples/components/radio/basic_usage.ts",
+        "component": "radio-basic-usage",
+        "name": "Basic Usage"
+      }
+    ]
+  },
+  {
+    "name": "Sidenav",
+    "sources": [
+      "ng2-material/components/sidenav/sidenav_service.ts",
+      "ng2-material/components/sidenav/sidenav.ts"
+    ],
+    "id": "sidenav",
+    "examples": [
+      {
+        "template": "examples/components/sidenav/basic_usage.html",
+        "source": "examples/components/sidenav/basic_usage.ts",
+        "component": "sidenav-basic-usage",
+        "name": "Basic Usage"
+      }
+    ]
+  },
+  {
+    "name": "Switch",
+    "sources": [],
+    "id": "switch",
+    "examples": [
+      {
+        "template": "examples/components/switch/basic_usage.html",
+        "source": "examples/components/switch/basic_usage.ts",
+        "component": "switch-basic-usage",
+        "name": "Basic Usage"
+      }
+    ]
+  },
+  {
+    "name": "Tabs",
+    "sources": [
+      "ng2-material/components/tabs/tabs.ts"
+    ],
+    "id": "tabs",
+    "examples": [
+      {
+        "template": "examples/components/tabs/dynamic_height.html",
+        "styles": "examples/components/tabs/dynamic_height.scss",
+        "source": "examples/components/tabs/dynamic_height.ts",
+        "component": "tabs-dynamic-height",
+        "name": "Dynamic Height"
+      },
+      {
+        "template": "examples/components/tabs/dynamic_tabs.html",
+        "styles": "examples/components/tabs/dynamic_tabs.scss",
+        "source": "examples/components/tabs/dynamic_tabs.ts",
+        "component": "tabs-dynamic-tabs",
+        "name": "Dynamic Tabs"
+      }
+    ]
+  },
+  {
+    "name": "Toolbar",
+    "sources": [
+      "ng2-material/components/toolbar/toolbar.ts"
+    ],
+    "id": "toolbar",
+    "examples": [
+      {
+        "template": "examples/components/toolbar/basic_usage.html",
+        "styles": "examples/components/toolbar/basic_usage.scss",
+        "source": "examples/components/toolbar/basic_usage.ts",
+        "component": "toolbar-basic-usage",
+        "name": "Basic Usage"
+      },
+      {
+        "template": "examples/components/toolbar/scroll_shrink.html",
+        "styles": "examples/components/toolbar/scroll_shrink.scss",
+        "source": "examples/components/toolbar/scroll_shrink.ts",
+        "component": "toolbar-scroll-shrink",
+        "name": "Scroll Shrink"
+      }
+    ]
+  },
+  {
+    "name": "Whiteframe",
+    "sources": [],
+    "id": "whiteframe",
+    "examples": [
+      {
+        "template": "examples/components/whiteframe/basic_usage.html",
+        "styles": "examples/components/whiteframe/basic_usage.scss",
+        "source": "examples/components/whiteframe/basic_usage.ts",
+        "component": "whiteframe-basic-usage",
+        "name": "Basic Usage"
+      }
+    ]
+  }
+]
